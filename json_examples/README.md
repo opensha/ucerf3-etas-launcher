@@ -64,6 +64,34 @@ This represents a rupture built from UCERF3 fault subsections, and requires alre
 | mag | yes | Rupture magnitude | `"mag": 5.3` |
 | subSectIndexes | yes | JSON array of integer UCERF3 subsection indexes that comprise the rupture | `"subSectIndexes": [ 1412,1413 ]` |
 
+#### Trigger Ruptures Example
+
+Here is an example specifying 3 trigger ruptures, one of each type. The first one is a UCERF3 Fault System Rupture set rupture, followed by a Point Source Rupture, then finally a UCERF3 Section Based Rupture
+
+```
+"triggerRuptures": [
+    {
+      "occurrenceTimeMillis": 1532638606760,
+      "fssIndex": 187455,
+      "mag": 6.7
+    },
+    {
+      "occurrenceTimeMillis": 1532665006760,
+      "mag": 5.3,
+      "latitude": 34.213,
+      "longitude": -118.537,
+      "depth": 18.2
+    },
+    {
+      "occurrenceTimeMillis": 1532725006760,
+      "mag": 6.2,
+      "subSectIndexes": [
+        1412
+      ]
+    }
+  ]
+```
+
 ## Binary Output Filters
 
 TODO
