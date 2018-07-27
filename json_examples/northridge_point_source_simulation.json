@@ -1,0 +1,41 @@
+{
+  "numSimulations": 10000,
+  "duration": 10.0,
+  "startTimeMillis": 758809855000,
+  "includeSpontaneous": false,
+  "binaryOutput": true,
+  "binaryOutputFilters": [
+    {
+      "prefix": "results_complete",
+      "descendantsOnly": false
+    },
+    {
+      "prefix": "results_m5_preserve_chain",
+      "minMag": 5.0,
+      "preserveChainBelowMag": true,
+      "descendantsOnly": false
+    }
+  ],
+  "forceRecalc": false,
+  "numRetries": 3,
+  "triggerRuptures": [
+    {
+      "mag": 6.7,
+      "latitude": 34.213,
+      "longitude": -118.537,
+      "depth": 18.2
+    }
+  ],
+  "cacheDir": "/home/kevin/OpenSHA/UCERF3/etas/simulations/cache_fm3p1_ba",
+  "fssFile": "/home/kevin/workspace/opensha-ucerf3/src/scratch/UCERF3/data/scratch/InversionSolutions/2013_05_10-ucerf3p3-production-10runs_COMPOUND_SOL_FM3_1_SpatSeisU3_MEAN_BRANCH_AVG_SOL.zip",
+  "outputDir": "/tmp/etas_output",
+  "probModel": "FULL_TD",
+  "applySubSeisForSupraNucl": true,
+  "totRateScaleFactor": 1.14,
+  "gridSeisCorr": true,
+  "timeIndependentERF": false,
+  "griddedOnly": false,
+  "imposeGR": false,
+  "includeIndirectTriggering": true,
+  "gridSeisDiscr": 0.1
+}
