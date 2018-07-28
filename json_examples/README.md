@@ -1,22 +1,25 @@
 # ETAS Configuration File Documentation
 
+This directory contains example JSON UCERF3-ETAS configuration files. Users will probably want to start with one of the supplied examples, and update them as needed. Documentation for each field is below, with those fields most likely to require updating in highlighted in bold.
+
 ## Calculation Paramters
 
-This section describes calculation extents and some calculation parameters
+This section describes calculation extents and some calculation parameters.
 
 | **Name** | **Required?** | **Description** | **Example** |
 |-------|-------|-------|-------|
-| numSimulations | yes | Number of etas simulations to perform for the given configuration, must be >0 | `"numSimulations": 10000` |
-| duration | yes | Simulation duration in years | `"duration": 10.0` |
-| startYear | no | Simulation start year (integer). Must supply this or startTimeMillis below (not both) | `"startYear": 2018` |
-| startTimeMillis | no | Simulation start time in epoch milliseconds. Must supply this or startYear above (not both) | `"startTimeMillis": 1514764800000` |
-| includeSpontaneous | yes | If 'true', spontaneous events will be computed, if 'false', only triggered (and either trigger ruptures or a trigger catalog must be supplied) | `"includeSpontaneous": true` |
+| **numSimulations** | yes | Number of etas simulations to perform for the given configuration, must be >0 | `"numSimulations": 10000` |
+| **duration** | yes | Simulation duration in years | `"duration": 10.0` |
+| **startYear** | no | Simulation start year (integer). Must supply this or startTimeMillis below (not both) | `"startYear": 2018` |
+| **startTimeMillis** | no | Simulation start time in epoch milliseconds. Must supply this or startYear above (not both) | `"startTimeMillis": 1514764800000` |
+| **includeSpontaneous** | yes | If 'true', spontaneous events will be computed, if 'false', only triggered (and either trigger ruptures or a trigger catalog must be supplied) | `"includeSpontaneous": true` |
 | randomSeed | no | Can be used to reproduce a single run, only valid if numSimulations=1 | `"randomSeed": 1234567` |
 | binaryOutput | yes | If yes, catalogs will be converted to binary format when each simulation completes to save space. Recommended for large simulation counts (>100) | `"binaryOutput": true` |
 | binaryOutputFilters | no | If supplied, consolidated binary files will be written for each of the given configurations. This works even with binaryOutput=false, and can be used to automatically generated magnitude filtered files for analysis later | [see object format below](#binary-output-filters)  |
 | forceRecalc | no | If true, all simulations will be recalculated even if they finished in an earlier run (with the same output directory). | `"forceRecalc": false` |
-| simulationName | no | Simulation name. If omitted, one will be automatically generated (but won't be very descriptive). Will show up in output plots. | `"simulationName": "Mojave M7, no spontaneous"` |
+| **simulationName** | no | Simulation name. If omitted, one will be automatically generated (but won't be very descriptive). Will show up in output plots. | `"simulationName": "Mojave M7, no spontaneous"` |
 | numRetries | no | Number of times to try a simulation before exiting if errors are encountered. Setting >1 will help to recover from things like filesystem issues during a large simulation. | `"numRetries": 3` |
+| **outputDir** | yes | Path to output directory where all results will be written | `"outputDir": "/path/to/etas_output"` |
 
 ## Input Ruptures ##
 
@@ -24,9 +27,9 @@ Input ruptures are all optional, though at least one must be supplied if include
 
  **Name** | **Required?** | **Description** | **Example** |
 |-------|-------|-------|-------|
-| triggerCatalog | no | Path to trigger catalog file inb 10 column format. This can be a custom catalog, or can be the UCERF3 historical catalog | `"triggerCatalog": "/path/to/trigger_catalog.txt"` |
-| triggerCatalogSurfaceMappings | no | Path to XML file with finite surface mappings for ruptures in triggerCatalog. Complicated format, and probably only useful for the UCERF3 historical catalog | `"triggerCatalogSurfaceMappings": "/path/to/u3_historical_catalog_finite_fault_mappings.xml"` |
-| triggerRuptures | no | Speicification of individual trigger ruptures. Array format, and you can include as many as needed. | [see description below](#trigger-ruptures) |
+| **triggerCatalog** | no | Path to trigger catalog file inb 10 column format. This can be a custom catalog, or can be the UCERF3 historical catalog | `"triggerCatalog": "/path/to/trigger_catalog.txt"` |
+| **triggerCatalogSurfaceMappings** | no | Path to XML file with finite surface mappings for ruptures in triggerCatalog. Complicated format, and probably only useful for the UCERF3 historical catalog | `"triggerCatalogSurfaceMappings": "/path/to/u3_historical_catalog_finite_fault_mappings.xml"` |
+| **triggerRuptures** | no | Speicification of individual trigger ruptures. Array format, and you can include as many as needed. | [see description below](#trigger-ruptures) |
 
 ### Trigger Ruptures
 
@@ -91,6 +94,29 @@ Here is an example specifying 3 trigger ruptures, one of each type. The first on
     }
   ]
 ```
+
+### Input File Paths
+
+These paths must be updated for each system, or if you want to use different fault system solution files
+
+ **Name** | **Required?** | **Description** | **Example** |
+|-------|-------|-------|-------|
+| **cacheDir** | yes | Path to ETAS cache files. These are specific to each UCERF3 Fault System Solution | `"cacheDir": "/path/to/cache_fm3p1_ba"` |
+| **fssFile** | yes | Path to UCERF3 Fault System Solution zip file | `"fssFile": "/path/to/2013_05_10-ucerf3p3-production-10runs_COMPOUND_SOL_FM3_1_SpatSeisU3_MEAN_BRANCH_AVG_SOL.zip"` |
+
+### UCERF3 ETAS Parameters
+
+ **Name** | **Required?** | **Description** | **Example** |
+|-------|-------|-------|-------|
+| **probModel** | yes | UCERF3 probability model, one of FULL_TD, NO_ERT, or POISSON | `"probModel": "FULL_TD"` |
+| applySubSeisForSupraNucl | yes | This tells whether to correct gridded seismicity rates soas not to be less than the expected rate of aftershocks from supraseismogenic events | `"applySubSeisForSupraNucl": true` |
+| totRateScaleFactor | yes | The amount by which the total region MFD is multiplied by. Should use 1.14 for UCERF3-TD fault based | `"totRateScaleFactor": 1.14` |
+| gridSeisCorr | Apply the gridded seismicity correction file in cacheDir to rates of gridded seismicity nodes | `"gridSeisCorr": true` |
+| timeIndependentERF | yes | If true, disables elastic rebound time-dependence in the ERF. Can lead to runaway sequences that never end | `"timeIndependentERF": false` |
+| griddedOnly | yes | If true, gridded only (no faults) ETAS simulations will be preformed | `"griddedOnly": false` |
+| imposeGR | yes | This tells whether to impose Gutenberg-Richter in sampling ETAS aftershocks | `"imposeGR": false` |
+| includeIndirectTriggering | yes | Include secondary, tertiary, etc events | `"includeIndirectTriggering": true` |
+| gridSeisDiscr | yes | lat lon discretization of gridded seismicity (degrees) | `"gridSeisDiscr": 0.1` |
 
 ## Binary Output Filters
 
