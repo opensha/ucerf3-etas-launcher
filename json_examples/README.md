@@ -120,4 +120,14 @@ These paths must be updated for each system, or if you want to use different fau
 
 ## Binary Output Filters
 
-TODO
+These options tell the ETAS simulator to write consolidated binary files which contain all simulations in a single file. You can also filter catalogs for faster processing later. Filtering can be done by magnitude or to only include descendants of input events (filter out all spontaneous events).
+
+They should be entered as a JSON array, with one array entry for each output filter.
+
+ **Name** | **Required?** | **Description** | **Example** |
+|-------|-------|-------|-------|
+| prefix | yes | Output prefix. Will be written to outputDir/prefix.bin. During the simulation, they will be written to outputDir/prefix_partial.bin until the files are completed | `"prefix": "results_m5_preserve_chain"` |
+| minMag | no | Minimum magnitude to include in the output file, or all magnitudes if omitted | `"minMag": 5.0` |
+| preserveChainBelowMag | no | If minMag is supplied, then this controls whether full dependency chains of ruptures should be preserved. This keeps any foreshocks to a M>=minMag rupture, even if the foreshock (or a foreshock's foreshock, etc) has M<minMag. Recommended, as lineage for all ruptures will be fully maintained | "preserveChainBelowMag": true |
+| descendantsOnly | no | If true, only descendants of triggered events (and each event triggered by those events, and so on) will be included. This will filter out all spontaneous events | "descendantsOnly": false |
+| includeTriggerCatalogDescendants | no | If true and descendantsOnly=true, then a descendants of triggerCatalog will also be includced. If false, only descendants of triggerRuptures will be included | "includeTriggerCatalogDescendants": false |
