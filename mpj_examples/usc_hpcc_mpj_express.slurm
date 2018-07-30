@@ -1,29 +1,23 @@
 #!/bin/bash
 
+#SBATCH -t 00:1440:00
+#SBATCH -N 18
+#SBATCH -p scec
+#SBATCH --mem 0
+
 ######################
 ## INPUT PARAMETERS ##
 ######################
 
+# the above '#SBATCH' lines are requred, and are supposed to start with a '#'. They must be at the beginning of the file
+# the '-t hh:mm:ss' argument is the wall clock time of the job
+# the '-N 18' argument specifies the number of nodes required, in this case 18
+# the 'p scec' argument specifies the queue, this line can be removed if you want the default queue
+# the '--mem 0' argument fixes some USC HPC weirdness and shouldn't be removed
+
 ## ETAS PARAMETERS ##
 
 ETAS_CONF_JSON=/path/to/etas_conf.json
-
-## SLURM PARAMETERS ##
-
-# NOTE: These are supposed to start with a '#', do not remove that character before 'SBATCH'
-
-# this is the total wall clock time with format hh:mm:ss
-# I usuall specify fully in minutes, so 00:1440:00 means 1440 minutes = 24 hours
-#SBATCH -t 00:1440:00
-
-# this is the total number of nodes
-#SBATCH -N 18
-
-# this is the queue to submit to, remove this line if you want the default queue
-#SBATCH -p scec
-
-# SLURM option that should not be changed for HPCC
-#SBATCH --mem 0
 
 ## JAVA/MPJ PARAMETERS ##
 
