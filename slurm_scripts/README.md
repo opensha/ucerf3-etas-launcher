@@ -14,7 +14,7 @@ Many of these scripts assume that the parallel job was submitted with `slurm_sub
 | scancel_me.sh | *(none)* | Cancels all running SLURM jobs for the current user |
 | **scec_queue_check.py** | `[<queue-name>]` | Prints out information on all running jobs in the given queue (defaults to "scec" queue) including counts of nodes in use across all users. Useful to quickly see if there are nodes available for a job |
 | slurm_interactive.sh | `[<minutes> [<queue-name>]]` | Launches an interactive single node SLURM job. Defaults to 60 minutes and the main queue, but can be overriden with command line arguments |
-| **slurm_submit.sh | `<file-name>` | Submits the given SLURM batch script, and instructs SLURM to direct STDOUT to <file-name>.o<job-id> and STDOUT to <file-name>.e<job-id>. Other scripts assume this convention for STDOUT and STDERR files |
+| **slurm_submit.sh** | `<file-name>` | Submits the given SLURM batch script, and instructs SLURM to direct STDOUT to <file-name>.o<job-id> and STDOUT to <file-name>.e<job-id>. Other scripts assume this convention for STDOUT and STDERR files |
 | stderr_job.sh | `[<job-id>]` | Cats the STDERR for the given job ID, or the first running job if no ID supplied |
 | stdout_job.sh | `[<job-id>]` | Cats the STDOUT for the given job ID, or the first running job if no ID supplied |
 | **stdout_job_tail.sh** | `[<job-id>]` | Tails the STDOUT file for the given job ID, or the first running job if no ID supplied |
