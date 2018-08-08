@@ -29,6 +29,7 @@ Input ruptures are all optional, though at least one must be supplied if include
 |-------|-------|-------|-------|
 | **triggerCatalog** | no | Path to trigger catalog file inb 10 column format. This can be a custom catalog, or can be the UCERF3 historical catalog | `"triggerCatalog": "/path/to/trigger_catalog.txt"` |
 | **triggerCatalogSurfaceMappings** | no | Path to XML file with finite surface mappings for ruptures in triggerCatalog. Complicated format, and probably only useful for the UCERF3 historical catalog | `"triggerCatalogSurfaceMappings": "/path/to/u3_historical_catalog_finite_fault_mappings.xml"` |
+| **treatTriggerCatalogAsSpontaneous**| no | If true, ruptures in the triggerCatalog (and their descendants) will be treated as spontanous for purposes of output plots/tables. If false, their descendants will be included in analysis which filters out spontaneous ruptures | `"treatTriggerCatalogAsSpontaneous": true` |
 | **triggerRuptures** | no | Speicification of individual trigger ruptures. Array format, and you can include as many as needed. | [see description below](#trigger-ruptures) |
 
 ### Trigger Ruptures
@@ -130,4 +131,3 @@ They should be entered as a JSON array, with one array entry for each output fil
 | minMag | no | Minimum magnitude to include in the output file, or all magnitudes if omitted | `"minMag": 5.0` |
 | preserveChainBelowMag | no | If minMag is supplied, then this controls whether full dependency chains of ruptures should be preserved. This keeps any foreshocks to a M>=minMag rupture, even if the foreshock (or a foreshock's foreshock, etc) has M<minMag. Recommended, as lineage for all ruptures will be fully maintained | "preserveChainBelowMag": true |
 | descendantsOnly | no | If true, only descendants of triggered events (and each event triggered by those events, and so on) will be included. This will filter out all spontaneous events | "descendantsOnly": false |
-| includeTriggerCatalogDescendants | no | If true and descendantsOnly=true, then a descendants of triggerCatalog will also be includced. If false, only descendants of triggerRuptures will be included | "includeTriggerCatalogDescendants": false |
