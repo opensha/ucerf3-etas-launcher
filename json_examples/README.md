@@ -131,3 +131,20 @@ They should be entered as a JSON array, with one array entry for each output fil
 | minMag | no | Minimum magnitude to include in the output file, or all magnitudes if omitted | `"minMag": 5.0` |
 | preserveChainBelowMag | no | If minMag is supplied, then this controls whether full dependency chains of ruptures should be preserved. This keeps any foreshocks to a M>=minMag rupture, even if the foreshock (or a foreshock's foreshock, etc) has M<minMag. Recommended, as lineage for all ruptures will be fully maintained | "preserveChainBelowMag": true |
 | descendantsOnly | no | If true, only descendants of triggered events (and each event triggered by those events, and so on) will be included. This will filter out all spontaneous events | "descendantsOnly": false |
+
+### Binay Output Filters Example
+
+```
+  "binaryOutputFilters": [
+    {
+      "prefix": "results_complete",
+      "descendantsOnly": false
+    },
+    {
+      "prefix": "results_m5_preserve_chain",
+      "minMag": 5.0,
+      "preserveChainBelowMag": true,
+      "descendantsOnly": false
+    }
+  ]
+```
