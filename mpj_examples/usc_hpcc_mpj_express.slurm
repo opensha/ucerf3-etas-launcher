@@ -33,7 +33,7 @@ THREADS=12
 MPJ_HOME=/home/scec-00/kmilner/mpj-current
 
 # path to the opensha-ucerf3 jar file
-JAR_FILE=/home/scec-02/kmilner/ucerf3-etas-launcher/opensha-ucerf3-all.jar
+JAR_FILE=/home/scec-02/kmilner/ucerf3/ucerf3-etas-launcher/opensha-ucerf3-all.jar
 
 # simulations are sent out in batches to each compute node. these paramters control the size of those batches
 # smaller max size will allow for better checking of progress with watch_logparse.sh, but more wasted time at the end of batches waiting on a single calculation to finish
