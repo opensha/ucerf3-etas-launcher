@@ -39,6 +39,14 @@ ETAS simulations are defined with [JSON](https://beginnersbook.com/2015/04/json-
 
 ## Running Single-Machine ETAS Simulations
 
-Once you have defined a [JSON ETAS configuration file](json_examples), you can use the scripts in the [sbin directory](sbin). More detailed information on these scripts is available in the [README](sbin/README.md).
+Once you have defined a [JSON ETAS configuration file](json_examples), you can use the scripts in the [sbin directory](sbin). More detailed information on these scripts is available in the [README](sbin/README.md). Commands shown below assume that you have added the sbin direcotory to your PATH.
 
-To run a set of ETAS simulations on a single machine (but possibly with multiple threads), use the 
+To run a set of ETAS simulations on a single machine (but possibly with multiple threads), use the `u3etas_launcher.sh` command:
+
+`u3etas_launcher.sh [--threads <num-threads>] </path/to/etas_configuration.json>`
+
+For example, to run ETAS simulations for a JSON file in the current directory named "config.json" with 3 threads:
+
+`u3etas_launcher.sh --threads 3 config.json`
+
+Output files for each catalog will be written in the "results" subdirectory of the simulation output directory (which is defined in the JSON configuration file). If [binary output filters](json_examples/README.md#binary-output-filters) are configured in the JSON file, then results will be consolidated as they complete into one or more binary files in the top level simulation output directory.
