@@ -25,7 +25,7 @@ ETAS_CONF_JSON=/path/to/etas_conf.json
 # maxmimum memory in gigabytes. should be close to, but not over, total memory available
 MEM_GIGS=60
 
-# number of etas threads. should be approximately MEM_GIGS/4, and no more than the total number of threads available
+# number of etas threads. should be approximately MEM_GIGS/5, and no more than the total number of threads available
 THREADS=12
 
 # MPJ_HOME directory. on USC HPC, it's fine to just use mine

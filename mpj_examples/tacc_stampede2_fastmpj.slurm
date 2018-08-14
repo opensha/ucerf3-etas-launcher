@@ -23,10 +23,10 @@ ETAS_CONF_JSON=/path/to/etas_config.json
 ## JAVA/MPJ PARAMETERS ##
 
 # maxmimum memory in gigabytes. should be close to, but not over, total memory available
-MEM_GIGS=185
+MEM_GIGS=170
 
-# number of etas threads. should be approximately MEM_GIGS/4, and no more than the total number of threads available
-THREADS=48
+# number of etas threads. should be approximately MEM_GIGS/5, and no more than the total number of threads available
+THREADS=20
 
 # FMPJ_HOME directory, fine to use mine
 FMPJ_HOME=/home1/00950/kevinm/FastMPJ
