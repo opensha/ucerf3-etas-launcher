@@ -50,3 +50,15 @@ For example, to run ETAS simulations for a JSON file in the current directory na
 `u3etas_launcher.sh --threads 3 config.json`
 
 Output files for each catalog will be written in the "results" subdirectory of the simulation output directory (which is defined in the JSON configuration file). If [binary output filters](json_examples/README.md#binary-output-filters) are configured in the JSON file, then results will be consolidated as they complete into one or more binary files in the top level simulation output directory.
+
+## Plotting Simulation Output
+
+Once you have completed a set of ETAS Simulations, you can generate standard plots such as magnitude frequency distributions (MFDs), section participation rates, and nucleation maps. This is done with the `u3etas_plot_generator.sh` script, which creats plots (along with some CSV file tables) in the "plots" subdirectory of the simulation output directory. It also generates both Makrdown "README.md" HTML "index.html" files for viewing plots and metdata in the the main simulation output directory.
+
+To run the plot generator, use this command:
+
+`u3etas_plot_generator.sh </path/to/etas_configuration.json> </path/to/etas_output.bin or /path/to/results>`
+
+For example, if config.json exists in the current directory and results are consoludated using a [binary output filter](json_examples/README.md#binary-output-filters) in results.bin:
+
+`u3etas_plot_generator.sh config.json results.bin`
