@@ -15,9 +15,9 @@ ETAS simulations require about 5 GB of memory per thread, so choose the number o
 
 ## Plot ETAS results: u3etas_plot_generator.sh
 
-USAGE: `u3etas_plot_generator.sh [--no-maps] </path/to/etas_config.json> </path/to/binary_catalogs_output.bin>`
+USAGE: `u3etas_plot_generator.sh [--no-maps] </path/to/etas_config.json> </path/to/binary_catalogs_output.bin OR /path/to/results directory>`
 
-This script is used to generate output plots/HTML for ETAS simulations. It requires an ETAS configuration JSON file and the path to a binary ETAS catalogs file. The latter will automatically be generated during ETAS simulations as long as the `binaryOutputFilters` section is populated in the JSON input file (see documentation in the json_examples directory), or can be generated after the fact with the `u3etas_binary_writer.sh` script in this directory.
+This script is used to generate output plots/HTML for ETAS simulations. It requires an ETAS configuration JSON file and the path to either a binary ETAS catalogs file or the results directory. Binary catalog files are preferred for faster plot generation and will automatically be generated during ETAS simulations as long as the `binaryOutputFilters` section is populated in the JSON input file (see documentation in the json_examples directory), or can be generated after the fact with the `u3etas_binary_writer.sh` script in this directory. Alternatively, you can pass the path to the "results" directory.
 
 If you don't have internet access, or the opensha.usc.edu map server is down, pass the optional "--no-maps" argument to disable plots which require the server.
 
