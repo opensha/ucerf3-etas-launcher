@@ -14,18 +14,13 @@
       "minMag": 5.0,
       "preserveChainBelowMag": true,
       "descendantsOnly": false
-    },
-    {
-      "prefix": "results_triggered_descendants_chain",
-      "descendantsOnly": true,
-      "includeTriggerCatalogDescendants": true
     }
   ],
   "forceRecalc": false,
   "numRetries": 3,
-  "cacheDir": "/home/kevin/OpenSHA/UCERF3/etas/simulations/cache_fm3p1_ba",
-  "fssFile": "/home/kevin/workspace/opensha-ucerf3/src/scratch/UCERF3/data/scratch/InversionSolutions/2013_05_10-ucerf3p3-production-10runs_COMPOUND_SOL_FM3_1_SpatSeisU3_MEAN_BRANCH_AVG_SOL.zip",
-  "outputDir": "/tmp/etas_output",
+  "outputDir": "/path/to/output",
+  "cacheDir": "$ETAS_LAUNCHER/inputs/cache_fm3p1_ba",
+  "fssFile": "$ETAS_LAUNCHER/inputs/2013_05_10-ucerf3p3-production-10runs_COMPOUND_SOL_FM3_1_SpatSeisU3_MEAN_BRANCH_AVG_SOL.zip",
   "probModel": "FULL_TD",
   "applySubSeisForSupraNucl": true,
   "totRateScaleFactor": 1.14,

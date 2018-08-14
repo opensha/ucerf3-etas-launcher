@@ -21,5 +21,5 @@ fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../"
 
-java -Xmx${MEM_GIGS}G -cp $DIR/opensha-ucerf3-all.jar $@
+java -Xmx${MEM_GIGS}G -cp $DIR/lib/opensha-ucerf3-all.jar $@
 exit $?
