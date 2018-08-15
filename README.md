@@ -15,7 +15,7 @@ First, clone this entire repository from GitHub or download it as a zip file. He
 
 `git clone https://github.com/opensha/ucerf3-etas-launcher.git`
 
-Thend efine the following environmental variables in your login script (outside the scope of this documentation, for most users editing `~/.bash_profile` is a good place to do this)
+Then define the following environmental variables in your login script (outside the scope of this documentation, for most users editing `~/.bash_profile` is a good place to do this)
 
   * `ETAS_LAUNCHER`: the path to the `ucerf3-etas-launcher` directory. Optional but recommended as it allows for the use of relative paths in ETAS configuration files
     * You may also want to add `$ETAS_LAUNCHER/sbin` to your PATH for easy access to ETAS launcher/processing scripts
@@ -30,7 +30,7 @@ Here is an example `~/.bash_profile` script defining these variables. This assum
 export ETAS_MEM_GB=14
 export ETAS_LAUNCHER=/home/kevin/git/ucerf3-etas-launcher
 export ETAS_THREADS=3
-export PATH=PATH:$ETAS_LAUNCHER/sbin/
+export PATH=$PATH:$ETAS_LAUNCHER/sbin/
 ```
 
 ## Configuring ETAS Simulations
