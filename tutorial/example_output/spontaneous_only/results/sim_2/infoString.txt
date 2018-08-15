@@ -1,0 +1,72 @@
+Spontaneous Only
+
+randomSeed=-4984999706661170163
+
+histQkList.size()=0
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 143.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2018; hr=0; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.7786
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 0 input observed events produced 0 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3171006318727904	(sample num over total expected num)
+	numSpontEventsSampled=8672
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	1/31/2018	mag=6.6662817	Inversion Src #241892; 5 SECTIONS BETWEEN San Andreas (San Bernardino S), Subsection 0 AND San Andreas (San Bernardino S), Subsection 4
+	nthRup=241878, srcIndex=241878, RupIndexInSource=0, fltSysRupIndex=241892	gen=0	parID=-1 (spontaneous)
+	12/28/2021	mag=6.0986614	Inversion Src #49651; 8 SECTIONS BETWEEN San Andreas (Creeping Section) 2011 CFM, Subsection 9 AND San Andreas (Creeping Section) 2011 CFM, Subsection 16
+	nthRup=49637, srcIndex=49637, RupIndexInSource=0, fltSysRupIndex=49651	gen=0	parID=-1 (spontaneous)
+	1/10/2027	mag=6.7653356	Inversion Src #250469; 5 SECTIONS BETWEEN Cerro Prieto, Subsection 7 AND Cerro Prieto, Subsection 11
+	nthRup=250455, srcIndex=250455, RupIndexInSource=0, fltSysRupIndex=250469	gen=1	parID=6699	parMag=2.9499999999999997
+
+Looping over events took 235 secs
+
+Total num ruptures: 19009
+Num spontaneous: 8672
+Num 1st Gen: 4144
+Num 2nd Gen: 3545
+Num 3rd Gen: 1657
+Num 4th Gen: 557
+Num 5th Gen: 335
+Num 6th Gen: 74
+Num 7th Gen: 17
+Num 8th Gen: 7
+Num 9th Gen: 1
+Num 10th Gen: 0
+

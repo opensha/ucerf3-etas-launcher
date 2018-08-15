@@ -1,0 +1,76 @@
+Spontaneous Only
+
+randomSeed=2109232406865012907
+
+histQkList.size()=0
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 143.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2018; hr=0; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.7786
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 0 input observed events produced 0 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.31907519761554076	(sample num over total expected num)
+	numSpontEventsSampled=8726
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	3/22/2022	mag=7.07092	Inversion Src #100893; 4 SECTIONS BETWEEN Trinidad (alt1), Subsection 4 AND Trinidad (alt1), Subsection 7
+	nthRup=100879, srcIndex=100879, RupIndexInSource=0, fltSysRupIndex=100893	gen=2	parID=10576	parMag=3.15
+	3/22/2022	mag=7.717873	Inversion Src #100722; 14 SECTIONS BETWEEN Big Lagoon - Bald Mtn 2011 CFM, Subsection 2 AND Big Lagoon - Bald Mtn 2011 CFM, Subsection 15
+	nthRup=100708, srcIndex=100708, RupIndexInSource=0, fltSysRupIndex=100722	gen=3	parID=10841	parMag=7.070919777959007
+	8/3/2022	mag=5.8987956	Inversion Src #32858; 6 SECTIONS BETWEEN San Andreas (Parkfield), Subsection 2 AND San Andreas (Parkfield), Subsection 7
+	nthRup=32858, srcIndex=32858, RupIndexInSource=0, fltSysRupIndex=32858	gen=1	parID=1680	parMag=4.550000000000001
+	4/18/2025	mag=6.4115653	Inversion Src #249771; 2 SECTIONS BETWEEN Round Valley, Subsection 1 AND Round Valley, Subsection 0
+	nthRup=249757, srcIndex=249757, RupIndexInSource=0, fltSysRupIndex=249771	gen=3	parID=10629	parMag=5.75
+	11/24/2027	mag=6.0844784	Inversion Src #91559; 2 SECTIONS BETWEEN Calaveras (Central) 2011 CFM, Subsection 8 AND Calaveras (Central) 2011 CFM, Subsection 9
+	nthRup=91545, srcIndex=91545, RupIndexInSource=0, fltSysRupIndex=91559	gen=2	parID=36442	parMag=2.75
+
+Looping over events took 346 secs
+
+Total num ruptures: 36524
+Num spontaneous: 8726
+Num 1st Gen: 3058
+Num 2nd Gen: 1154
+Num 3rd Gen: 2752
+Num 4th Gen: 10429
+Num 5th Gen: 5436
+Num 6th Gen: 2871
+Num 7th Gen: 1230
+Num 8th Gen: 442
+Num 9th Gen: 270
+Num 10th Gen: 113
+

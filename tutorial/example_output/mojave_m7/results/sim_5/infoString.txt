@@ -1,0 +1,67 @@
+Mojave M7
+
+randomSeed=8098356476773923504
+
+histQkList.size()=0
+includeSpontEvents=false
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 143.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2018; hr=0; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.7463
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 1 input observed events produced 1735 primary aftershocks
+
+Magnitude of Scenario: 7.0306487
+
+Expected number of primary events for Scenario: 1788.485152217564
+
+Observed number of primary events for Scenario: 1735.0
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+
+Looping over events took 3 secs
+
+Total num ruptures: 2572
+Num spontaneous: 0
+Num 1st Gen: 1735
+Num 2nd Gen: 546
+Num 3rd Gen: 197
+Num 4th Gen: 68
+Num 5th Gen: 19
+Num 6th Gen: 5
+Num 7th Gen: 2
+Num 8th Gen: 0
+Num 9th Gen: 0
+Num 10th Gen: 0
+

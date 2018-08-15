@@ -1,0 +1,314 @@
+Parent ID,Parent Name,Total Mean Annual Rate,Total 10 Year Prob
+861,Airport Lake,0.0,0.0
+667,Almanor 2011 CFM,0.0,0.0
+219,Anacapa-Dume alt 1,0.0,0.0
+197,Anaheim,0.0,0.0
+722,Antelope Valley 2011,0.0,0.0
+845,Ash Hill,0.0,0.0
+881,Baker,0.0,0.0
+668,Bartlett Springs 2011 CFM,0.01,0.1
+669,Battle Creek 2011 CFM,0.0,0.0
+842,Bear River fault zone,0.01,0.1
+581,Bennett Valley 2011 CFM,0.0,0.0
+158,Bicycle Lake,0.0,0.0
+741,Big Lagoon - Bald Mtn 2011 CFM,0.01,0.1
+192,Big Pine (Central),0.0,0.0
+191,Big Pine (East),0.0,0.0
+200,Big Pine (West),0.0,0.0
+87,Blackwater,0.0,0.0
+169,Blue Cut,0.01,0.1
+170,Brawley (Seismic Zone) alt 1,0.0,0.0
+541,Breckenridge 2011,0.0,0.0
+882,Bullion Mountains,0.0,0.0
+94,Burnt Mtn,0.0,0.0
+561,Butano 2011 CFM,0.0,0.0
+165,Cady,0.0,0.0
+602,Calaveras (Central) 2011 CFM,0.02,0.2
+601,Calaveras (No) 2011 CFM,0.01,0.1
+621,Calaveras (So) - Paicines extension 2011 CFM,0.01,0.1
+603,Calaveras (So) 2011 CFM,0.0,0.0
+88,Calico-Hidalgo,0.0,0.0
+724,Camp Rock 2011,0.0,0.0
+173,Canada David (Detachment),0.0,0.0
+176,Carlsbad,0.0,0.0
+721,Carson Range (Genoa),0.01,0.1
+670,Casmalia 2011 CFM,0.0,0.0
+34,Cedar Mtn-Mahogany Mtn,0.0,0.0
+172,Cerro Prieto,0.01,0.1
+129,Channel Islands Thrust,0.0,0.0
+214,Channel Islands Western Deep Ramp,0.0,0.0
+238,Chino alt 1,0.0,0.0
+124,Clamshell-Sawpit,0.0,0.0
+844,Clayton,0.0,0.0
+81,Cleghorn,0.0,0.0
+884,Cleghorn Lake,0.01,0.1
+883,Cleghorn Pass,0.0,0.0
+582,Collayami 2011 CFM,0.0,0.0
+184,Compton,0.0,0.0
+622,Concord 2011 CFM,0.01,0.1
+626,Contra Costa (Lafayette) 2011 CFM,0.0,0.0
+633,Contra Costa Shear Zone (connector) 2011 CFM,0.0,0.0
+776,Coronado Bank alt1,0.0,0.0
+157,Coyote Canyon,0.0,0.0
+163,Coyote Lake,0.0,0.0
+125,Cucamonga,0.0,0.0
+894,Davis Creek,0.0,0.0
+245,Death Valley (Black Mtns Frontal),0.0,0.0
+45,Death Valley (Fish Lake Valley),0.0,0.0
+46,Death Valley (No),0.0,0.0
+246,Death Valley (So),0.0,0.0
+51,Deep Springs,0.0,0.0
+230,Del Valle,0.0,0.0
+889,Dog Valley,0.0,0.0
+888,Dry Mountain,0.0,0.0
+249,Earthquake Valley,0.0,0.0
+255,Earthquake Valley (No  Extension),0.0,0.0
+256,Earthquake Valley (So Extension),0.0,0.0
+671,East Huasna 2011 CFM,0.0,0.0
+672,Eaton Roughs 2011 CFM,0.01,0.1
+96,Elmore Ranch,0.0,0.0
+103,Elsinore (Coyote Mountains),0.0,0.0
+296,Elsinore (Glen Ivy) rev,0.01,0.1
+102,Elsinore (Julian),0.0,0.0
+402,Elsinore (Stepovers Combined),0.0,0.0
+299,Elsinore (Temecula) rev,0.0,0.0
+196,Elysian Park (Lower CFM),0.0,0.0
+146,Elysian Park (Upper),0.0,0.0
+90,Emerson-Copper Mtn 2011,0.0,0.0
+95,Eureka Peak,0.0,0.0
+20,Fickle Hill (alt1),0.0,0.0
+698,Fish Slough 2011 CFM,0.0,0.0
+893,Fitzhugh Creek,0.0,0.0
+204,Fontana (Seismicity),0.0,0.0
+634,Franklin 2011 CFM,0.01,0.1
+699,Garberville - Briceland 2011 CFM,0.0,0.0
+159,Garlic Springs,0.0,0.0
+341,Garlock (Central),0.0,0.0
+48,Garlock (East),0.0,0.0
+49,Garlock (West),0.0,0.0
+700,Gillem - Big Crack 2011 CFM,0.0,0.0
+160,Goldstone Lake,0.0,0.0
+701,Goose Lake 2011 CFM,0.0,0.0
+86,Gravel Hills-Harper Lk,0.0,0.0
+131,Great Valley 01,0.0,0.0
+133,Great Valley 02,0.0,0.0
+132,Great Valley 03 Mysterious Ridge,0.0,0.0
+383,Great Valley 03a Dunnigan Hills,0.0,0.0
+134,Great Valley 04a Trout Creek,0.0,0.0
+381,Great Valley 04b Gordon Valley,0.0,0.0
+717,Great Valley 05 Pittsburg - Kirby Hills alt1,0.0,0.0
+645,Great Valley 06 (Midland) 2011 CFM alt1,0.0,0.0
+136,Great Valley 07 (Orestimba),0.0,0.0
+137,Great Valley 08 (Quinto),0.0,0.0
+151,Great Valley 09 (Laguna Seca),0.0,0.0
+138,Great Valley 10 (Panoche),0.0,0.0
+139,Great Valley 11,0.0,0.0
+140,Great Valley 12,0.0,0.0
+142,Great Valley 13 (Coalinga),0.0,0.0
+141,Great Valley 14 (Kettleman Hills),0.0,0.0
+623,Green Valley 2011 CFM,0.02,0.1
+636,Greenville (No) 2011 CFM,0.0,0.0
+635,Greenville (So) 2011 CFM,0.0,0.0
+702,Hartley Springs 2011 CFM,0.0,0.0
+37,Hat Creek-McArthur-Mayfield,0.0,0.0
+639,Hayward (No) 2011 CFM,0.0,0.0
+638,Hayward (So) 2011 CFM,0.0,0.0
+637,Hayward (So) extension 2011 CFM,0.01,0.1
+167,Hector Mine,0.0,0.0
+84,Helendale-So Lockhart,0.0,0.0
+703,Hilton Creek 2011 CFM,0.0,0.0
+108,Hollywood,0.0,0.0
+228,Holser alt 1,0.0,0.0
+723,Homestead Valley 2011,0.0,0.0
+704,Honey Lake 2011 CFM,0.0,0.0
+30,Hosgri,0.0,0.0
+208,Hosgri (Extension),0.0,0.0
+50,Hunter Mountain-Saline Valley,0.0,0.0
+677,Hunting Creek - Bartlett Springs connector 2011,0.01,0.1
+640,Hunting Creek - Berryessa 2011 CFM,0.02,0.1
+97,Imperial,0.0,0.0
+678,Incline Village 2011 CFM,0.0,0.0
+65,Independence rev 2011,0.0,0.0
+892,Jess Valley,0.0,0.0
+91,Johnson Valley (No) 2011 rev,0.0,0.0
+168,Joshua Tree (Seismicity),0.0,0.0
+679,Keddie Ridge 2011 CFM,0.0,0.0
+542,Kern Canyon (Lake Isabella) 2011,0.0,0.0
+544,Kern Canyon (North Kern) 2011,0.0,0.0
+543,Kern Canyon (South Kern) 2011,0.0,0.0
+92,Kickapoo,0.0,0.0
+680,King Range 2011 CFM,0.0,0.0
+641,La Panza 2011,0.0,0.0
+104,Laguna Salada,0.0,0.0
+207,Lake Isabella (Seismicity),0.0,0.0
+642,Las Positas,0.0,0.0
+890,Last Chance,0.0,0.0
+85,Lenwood-Lockhart-Old Woman Springs,0.0,0.0
+705,Likely 2011 CFM,0.0,0.0
+681,Lions Head 2011 CFM,0.0,0.0
+144,Little Lake,0.0,0.0
+16,Little Salmon (Offshore),0.0,0.0
+17,Little Salmon (Onshore),0.0,0.0
+683,Los Alamos 2011 CFM,0.0,0.0
+780,Los Alamos extension,0.0,0.0
+643,Los Medanos - Roe Island,0.0,0.0
+74,Los Osos 2011,0.0,0.0
+201,Lost Hills,0.0,0.0
+166,Ludlow,0.0,0.0
+644,Maacama 2011 CFM,0.0,0.0
+22,Mad River (alt1),0.0,0.0
+221,Malibu Coast (Extension) alt 1,0.0,0.0
+220,Malibu Coast alt 1,0.0,0.0
+164,Manix-Afton Hills,0.0,0.0
+21,McKinleyville (alt1),0.0,0.0
+155,McLean Lake,0.0,0.0
+13,Mendocino,0.01,0.1
+605,Mission (connected) 2011 CFM,0.0,0.0
+250,Mission Creek,0.0,0.0
+779,Mission Hills 2011,0.0,0.0
+78,Mission Ridge-Arroyo Parida-Santa Ana,0.0,0.0
+686,Mohawk Valley 2011 CFM,0.0,0.0
+707,Mono Lake 2011 CFM,0.0,0.0
+646,Monte Vista - Shannon 2011 CFM,0.0,0.0
+11,Monterey Bay-Tularcitos,0.0,0.0
+188,Morales (East),0.0,0.0
+187,Morales (West),0.0,0.0
+711,Mount Diablo Thrust North CFM,0.0,0.0
+713,Mount Diablo Thrust South,0.0,0.0
+156,Nelson Lake,0.0,0.0
+122,Newport-Inglewood (Offshore),0.0,0.0
+235,Newport-Inglewood alt 1,0.0,0.0
+83,North Frontal  (East),0.0,0.0
+82,North Frontal  (West),0.0,0.0
+199,North Salt Lake,0.0,0.0
+687,North Tahoe 2011 CFM,0.0,0.0
+130,Northridge,0.0,0.0
+211,Northridge Hills,0.0,0.0
+116,Oak Ridge (Onshore),0.0,0.0
+709,Oceanic - West Huasna,0.0,0.0
+777,Oceanside alt1,0.0,0.0
+921,Ortigalita (North),0.0,0.0
+9,Ortigalita (South),0.0,0.0
+64,Owens Valley,0.0,0.0
+891,Owens Valley Keough Hot Springs,0.0,0.0
+47,Owl Lake,0.0,0.0
+841,Ozena,0.0,0.0
+109,Palos Verdes,0.0,0.0
+244,Panamint Valley,0.0,0.0
+162,Paradise,0.0,0.0
+186,Peralta Hills,0.0,0.0
+647,Pilarcitos 2011 CFM,0.0,0.0
+193,Pine Mtn,0.0,0.0
+93,Pinto Mtn,0.01,0.1
+89,Pisgah-Bullion Mtn-Mesquite Lk,0.01,0.1
+212,Pitas Point (Lower West),0.0,0.0
+215,Pitas Point (Lower)-Montalvo,0.0,0.0
+688,Pittville 2011 CFM,0.01,0.1
+58,Pleito,0.0,0.0
+666,Point Reyes 2011 CFM,0.0,0.0
+843,Point Reyes 2011 connector,0.0,0.0
+545,Polaris 2011 CFM,0.0,0.0
+240,Puente Hills,0.0,0.0
+648,Quien Sabe 2011 CFM,0.0,0.0
+152,Raymond,0.0,0.0
+118,Red Mountain,0.0,0.0
+161,Red Pass,0.0,0.0
+232,Redondo Canyon alt 1,0.0,0.0
+649,Reliz 2011 CFM,0.0,0.0
+205,Richfield,0.0,0.0
+650,Rinconada 2011 CFM,0.0,0.0
+38,Robinson Creek,0.0,0.0
+689,Rocky Ledge 2011 CFM,0.0,0.0
+651,Rodgers Creek - Healdsburg 2011 CFM,0.01,0.1
+123,Rose Canyon,0.0,0.0
+42,Round Valley,0.01,0.1
+690,Russ 2011 CFM,0.0,0.0
+287,San Andreas (Big Bend),0.0,0.0
+300,San Andreas (Carrizo) rev,0.0,0.0
+285,San Andreas (Cholame) rev,0.0,0.0
+295,San Andreas (Coachella) rev,0.0,0.0
+658,San Andreas (Creeping Section) 2011 CFM,0.04,0.3
+286,San Andreas (Mojave N),0.0,0.0
+301,San Andreas (Mojave S),0.03,0.3
+294,San Andreas (North Branch Mill Creek),0.0,0.0
+654,San Andreas (North Coast) 2011 CFM,0.0,0.0
+653,San Andreas (Offshore) 2011 CFM,0.0,0.0
+32,San Andreas (Parkfield),0.03,0.3
+655,San Andreas (Peninsula) 2011 CFM,0.0,0.0
+282,San Andreas (San Bernardino N),0.02,0.2
+283,San Andreas (San Bernardino S),0.01,0.1
+284,San Andreas (San Gorgonio Pass-Garnet HIll),0.0,0.0
+657,San Andreas (Santa Cruz Mts) 2011 CFM,0.0,0.0
+80,San Cayetano,0.0,0.0
+178,San Clemente,0.0,0.0
+774,San Diego Trough north alt1,0.0,0.0
+177,San Diego Trough south,0.0,0.0
+247,San Gabriel,0.0,0.0
+248,San Gabriel (Extension),0.0,0.0
+194,San Gorgonio Pass,0.0,0.0
+660,San Gregorio (North) 2011 CFM,0.0,0.0
+661,San Gregorio (South) 2011 CFM,0.0,0.0
+293,San Jacinto (Anza) rev,0.0,0.0
+99,San Jacinto (Borrego),0.0,0.0
+292,San Jacinto (Clark) rev,0.0,0.0
+101,San Jacinto (Coyote Creek),0.0,0.0
+901,San Jacinto (Lytle Creek connector),0.0,0.0
+119,San Jacinto (San Bernardino),0.0,0.0
+289,San Jacinto (San Jacinto Valley) rev,0.0,0.0
+401,San Jacinto (Stepovers Combined),0.0,0.0
+28,San Jacinto (Superstition Mtn),0.0,0.0
+143,San Joaquin Hills,0.0,0.0
+107,San Jose,0.0,0.0
+31,San Juan,0.0,0.0
+692,San Luis Range - Oceano 2011 CFM,0.0,0.0
+693,San Luis Range - Pecho 2011 CFM,0.0,0.0
+691,San Luis Range 2011 CFM,0.0,0.0
+181,San Pedro Basin,0.0,0.0
+183,San Pedro Escarpment,0.0,0.0
+198,San Vicente,0.0,0.0
+775,Santa Cruz Catalina Ridge alt1,0.01,0.1
+111,Santa Cruz Island,0.0,0.0
+185,Santa Monica Bay,0.0,0.0
+226,Santa Monica alt 1,0.0,0.0
+110,Santa Rosa Island,0.0,0.0
+778,Santa Susana East (connector),0.0,0.0
+227,Santa Susana alt 1,0.0,0.0
+79,Santa Ynez (East),0.0,0.0
+77,Santa Ynez (West),0.01,0.1
+781,Santa Ynez River,0.01,0.1
+662,Sargent 2011 CFM,0.0,0.0
+209,Scodie Lineament,0.0,0.0
+885,Sheephole,0.0,0.0
+547,Shoreline,0.0,0.0
+114,Sierra Madre,0.0,0.0
+113,Sierra Madre (San Fernando),0.0,0.0
+210,Sierra Nevada  (No Extension),0.0,0.0
+664,Silver Creek 2011 CFM,0.0,0.0
+115,Simi-Santa Rosa,0.0,0.0
+202,Sisar,0.0,0.0
+694,Skinner Flat 2011 CFM,0.0,0.0
+63,So Sierra Nevada,0.0,0.0
+189,South Cuyama,0.0,0.0
+719,South Klamath Lake East,0.0,0.0
+720,South Klamath Lake West,0.0,0.0
+98,Superstition Hills,0.0,0.0
+708,Surprise Valley 2011 CFM,0.0,0.0
+695,Swain Ravine - Spenceville,0.0,0.0
+15,Table Bluff,0.0,0.0
+145,Tank Canyon,0.0,0.0
+174,Thirty Mile Bank,0.0,0.0
+887,Tin Mountain,0.0,0.0
+886,Towne Pass,0.0,0.0
+19,Trinidad (alt1),0.01,0.1
+117,Ventura-Pitas Point,0.0,0.0
+112,Verdugo,0.0,0.0
+696,Walker Spring 2011 CFM,0.0,0.0
+665,West Napa 2011 CFM,0.0,0.0
+321,West Tahoe,0.0,0.0
+44,White Mountains,0.01,0.1
+253,White Wolf,0.0,0.0
+254,White Wolf (Extension),0.0,0.0
+236,Whittier alt 1,0.0,0.0
+697,Wight Way 2011 CFM,0.0,0.0
+206,Yorba Linda,0.0,0.0
+715,Zayante-Vergeles 2011 CFM,0.0,0.0

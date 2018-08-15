@@ -1,0 +1,72 @@
+Spontaneous Only
+
+randomSeed=-3991894218804528958
+
+histQkList.size()=0
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 143.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2018; hr=0; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.7786
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 0 input observed events produced 0 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3177588204537072	(sample num over total expected num)
+	numSpontEventsSampled=8690
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	2/10/2023	mag=6.2376456	Inversion Src #58406; 4 SECTIONS BETWEEN San Andreas (Creeping Section) 2011 CFM, Subsection 17 AND San Andreas (Creeping Section) 2011 CFM, Subsection 20
+	nthRup=58392, srcIndex=58392, RupIndexInSource=0, fltSysRupIndex=58406	gen=0	parID=-1 (spontaneous)
+	11/12/2024	mag=6.0986614	Inversion Src #49651; 8 SECTIONS BETWEEN San Andreas (Creeping Section) 2011 CFM, Subsection 9 AND San Andreas (Creeping Section) 2011 CFM, Subsection 16
+	nthRup=49637, srcIndex=49637, RupIndexInSource=0, fltSysRupIndex=49651	gen=0	parID=-1 (spontaneous)
+	3/21/2026	mag=6.3054094	Inversion Src #250047; 3 SECTIONS BETWEEN Bear River fault zone, Subsection 8 AND Bear River fault zone, Subsection 10
+	nthRup=250033, srcIndex=250033, RupIndexInSource=0, fltSysRupIndex=250047	gen=1	parID=3076	parMag=4.65
+
+Looping over events took 250 secs
+
+Total num ruptures: 19212
+Num spontaneous: 8690
+Num 1st Gen: 5818
+Num 2nd Gen: 2599
+Num 3rd Gen: 1425
+Num 4th Gen: 462
+Num 5th Gen: 142
+Num 6th Gen: 51
+Num 7th Gen: 20
+Num 8th Gen: 5
+Num 9th Gen: 0
+Num 10th Gen: 0
+

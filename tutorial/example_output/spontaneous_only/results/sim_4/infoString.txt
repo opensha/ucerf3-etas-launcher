@@ -1,0 +1,74 @@
+Spontaneous Only
+
+randomSeed=-1416253875727050910
+
+histQkList.size()=0
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 143.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2018; hr=0; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.7786
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 0 input observed events produced 0 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.31684466964687835	(sample num over total expected num)
+	numSpontEventsSampled=8665
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	9/11/2019	mag=6.7262416	Inversion Src #245503; 4 SECTIONS BETWEEN Pinto Mtn, Subsection 7 AND Pinto Mtn, Subsection 10
+	nthRup=245489, srcIndex=245489, RupIndexInSource=0, fltSysRupIndex=245503	gen=1	parID=6710	parMag=2.8499999999999996
+	9/13/2019	mag=6.2521667	Inversion Src #245644; 2 SECTIONS BETWEEN Pisgah-Bullion Mtn-Mesquite Lk, Subsection 0 AND Pisgah-Bullion Mtn-Mesquite Lk, Subsection 1
+	nthRup=245630, srcIndex=245630, RupIndexInSource=0, fltSysRupIndex=245644	gen=3	parID=10302	parMag=5.950000000000001
+	11/11/2019	mag=6.195368	Inversion Src #250476; 2 SECTIONS BETWEEN Cleghorn Lake, Subsection 0 AND Cleghorn Lake, Subsection 1
+	nthRup=250462, srcIndex=250462, RupIndexInSource=0, fltSysRupIndex=250476	gen=6	parID=11304	parMag=5.25
+	3/20/2023	mag=7.087576	Inversion Src #193822; 10 SECTIONS BETWEEN San Andreas (San Bernardino N), Subsection 2 AND San Andreas (Mojave S), Subsection 8
+	nthRup=193808, srcIndex=193808, RupIndexInSource=0, fltSysRupIndex=193822	gen=2	parID=14975	parMag=4.35
+
+Looping over events took 300 secs
+
+Total num ruptures: 21737
+Num spontaneous: 8665
+Num 1st Gen: 3519
+Num 2nd Gen: 2815
+Num 3rd Gen: 3268
+Num 4th Gen: 1570
+Num 5th Gen: 791
+Num 6th Gen: 369
+Num 7th Gen: 448
+Num 8th Gen: 204
+Num 9th Gen: 66
+Num 10th Gen: 17
+

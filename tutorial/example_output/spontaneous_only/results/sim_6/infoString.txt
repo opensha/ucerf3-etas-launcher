@@ -1,0 +1,72 @@
+Spontaneous Only
+
+randomSeed=-1864634769543469412
+
+histQkList.size()=0
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 143.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2018; hr=0; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.7786
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 0 input observed events produced 0 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3168081036146052	(sample num over total expected num)
+	numSpontEventsSampled=8664
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	1/3/2023	mag=6.0023813	Inversion Src #252486; 2 SECTIONS BETWEEN Pittville 2011 CFM, Subsection 6 AND Pittville 2011 CFM, Subsection 7
+	nthRup=252472, srcIndex=252472, RupIndexInSource=0, fltSysRupIndex=252486	gen=0	parID=-1 (spontaneous)
+	2/19/2023	mag=5.9905787	Inversion Src #31657; 6 SECTIONS BETWEEN San Andreas (Parkfield), Subsection 1 AND San Andreas (Parkfield), Subsection 6
+	nthRup=31657, srcIndex=31657, RupIndexInSource=0, fltSysRupIndex=31657	gen=2	parID=12743	parMag=5.750000000000001
+	5/22/2027	mag=6.499384	Inversion Src #195251; 3 SECTIONS BETWEEN San Andreas (Mojave S), Subsection 13 AND San Andreas (Mojave S), Subsection 11
+	nthRup=195237, srcIndex=195237, RupIndexInSource=0, fltSysRupIndex=195251	gen=0	parID=-1 (spontaneous)
+
+Looping over events took 208 secs
+
+Total num ruptures: 16973
+Num spontaneous: 8664
+Num 1st Gen: 4213
+Num 2nd Gen: 1751
+Num 3rd Gen: 834
+Num 4th Gen: 344
+Num 5th Gen: 92
+Num 6th Gen: 607
+Num 7th Gen: 291
+Num 8th Gen: 77
+Num 9th Gen: 71
+Num 10th Gen: 24
+

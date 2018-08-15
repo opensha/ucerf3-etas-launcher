@@ -1,0 +1,78 @@
+Spontaneous Only
+
+randomSeed=-2938524342290927041
+
+histQkList.size()=0
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 143.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2018; hr=0; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.7786
+
+Making ETAS_PrimaryEventSampler took 1 min
+The 0 input observed events produced 0 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3191848957123602	(sample num over total expected num)
+	numSpontEventsSampled=8729
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	1/4/2018	mag=6.416465	Inversion Src #249084; 3 SECTIONS BETWEEN White Mountains, Subsection 3 AND White Mountains, Subsection 5
+	nthRup=249070, srcIndex=249070, RupIndexInSource=0, fltSysRupIndex=249084	gen=0	parID=-1 (spontaneous)
+	1/31/2018	mag=6.3285336	Inversion Src #48449; 11 SECTIONS BETWEEN San Andreas (Creeping Section) 2011 CFM, Subsection 8 AND San Andreas (Creeping Section) 2011 CFM, Subsection 18
+	nthRup=48435, srcIndex=48435, RupIndexInSource=0, fltSysRupIndex=48449	gen=0	parID=-1 (spontaneous)
+	8/14/2019	mag=6.57075	Inversion Src #99960; 3 SECTIONS BETWEEN Bartlett Springs 2011 CFM, Subsection 20 AND Bartlett Springs 2011 CFM, Subsection 22
+	nthRup=99946, srcIndex=99946, RupIndexInSource=0, fltSysRupIndex=99960	gen=0	parID=-1 (spontaneous)
+	9/13/2019	mag=6.674738	Inversion Src #100029; 4 SECTIONS BETWEEN Eaton Roughs 2011 CFM, Subsection 3 AND Eaton Roughs 2011 CFM, Subsection 0
+	nthRup=100015, srcIndex=100015, RupIndexInSource=0, fltSysRupIndex=100029	gen=1	parID=2763	parMag=6.570750099705704
+	4/4/2023	mag=6.43359	Inversion Src #250295; 2 SECTIONS BETWEEN Carson Range (Genoa), Subsection 2 AND Carson Range (Genoa), Subsection 3
+	nthRup=250281, srcIndex=250281, RupIndexInSource=0, fltSysRupIndex=250295	gen=1	parID=4510	parMag=4.65
+	7/3/2023	mag=6.499384	Inversion Src #194919; 3 SECTIONS BETWEEN San Andreas (Mojave S), Subsection 14 AND San Andreas (Mojave S), Subsection 12
+	nthRup=194905, srcIndex=194905, RupIndexInSource=0, fltSysRupIndex=194919	gen=2	parID=18157	parMag=3.45
+
+Looping over events took 142 secs
+
+Total num ruptures: 22598
+Num spontaneous: 8729
+Num 1st Gen: 5828
+Num 2nd Gen: 3611
+Num 3rd Gen: 2146
+Num 4th Gen: 1178
+Num 5th Gen: 712
+Num 6th Gen: 217
+Num 7th Gen: 138
+Num 8th Gen: 28
+Num 9th Gen: 7
+Num 10th Gen: 2
+

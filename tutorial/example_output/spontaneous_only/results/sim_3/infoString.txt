@@ -1,0 +1,74 @@
+Spontaneous Only
+
+randomSeed=-4727986971949670570
+
+histQkList.size()=0
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 143.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2018; hr=0; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.7786
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 0 input observed events produced 0 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.32115946145511054	(sample num over total expected num)
+	numSpontEventsSampled=8783
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	2/23/2018	mag=6.2033463	Inversion Src #106478; 2 SECTIONS BETWEEN Rodgers Creek - Healdsburg 2011 CFM, Subsection 5 AND Rodgers Creek - Healdsburg 2011 CFM, Subsection 6
+	nthRup=106464, srcIndex=106464, RupIndexInSource=0, fltSysRupIndex=106478	gen=1	parID=2269	parMag=2.55
+	8/2/2023	mag=6.7822127	Inversion Src #192542; 6 SECTIONS BETWEEN San Andreas (San Bernardino N), Subsection 5 AND San Andreas (San Bernardino N), Subsection 0
+	nthRup=192528, srcIndex=192528, RupIndexInSource=0, fltSysRupIndex=192542	gen=0	parID=-1 (spontaneous)
+	9/2/2026	mag=6.5446253	Inversion Src #183402; 4 SECTIONS BETWEEN Santa Ynez River, Subsection 7 AND Santa Ynez River, Subsection 10
+	nthRup=183388, srcIndex=183388, RupIndexInSource=0, fltSysRupIndex=183402	gen=1	parID=1047	parMag=5.15
+	9/2/2026	mag=6.5168195	Inversion Src #210731; 6 SECTIONS BETWEEN Santa Ynez (West), Subsection 10 AND Santa Ynez (West), Subsection 5
+	nthRup=210717, srcIndex=210717, RupIndexInSource=0, fltSysRupIndex=210731	gen=2	parID=17335	parMag=6.544625231647706
+
+Looping over events took 304 secs
+
+Total num ruptures: 20480
+Num spontaneous: 8783
+Num 1st Gen: 4322
+Num 2nd Gen: 2900
+Num 3rd Gen: 2150
+Num 4th Gen: 1197
+Num 5th Gen: 666
+Num 6th Gen: 292
+Num 7th Gen: 99
+Num 8th Gen: 52
+Num 9th Gen: 17
+Num 10th Gen: 1
+

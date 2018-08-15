@@ -1,0 +1,69 @@
+Mojave M7
+
+randomSeed=-2374297998419515035
+
+histQkList.size()=0
+includeSpontEvents=false
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 143.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2018; hr=0; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.7463
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 1 input observed events produced 1773 primary aftershocks
+
+Magnitude of Scenario: 7.0306487
+
+Expected number of primary events for Scenario: 1788.485152217564
+
+Observed number of primary events for Scenario: 1773.0
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	8/9/2018	mag=6.4433393	Inversion Src #235767; 2 SECTIONS BETWEEN Fontana (Seismicity), Subsection 0 AND Fontana (Seismicity), Subsection 1
+	nthRup=235753, srcIndex=235753, RupIndexInSource=0, fltSysRupIndex=235767	gen=1	parID=0	parMag=7.030648895033403
+
+Looping over events took 48 secs
+
+Total num ruptures: 3711
+Num spontaneous: 0
+Num 1st Gen: 1768
+Num 2nd Gen: 1082
+Num 3rd Gen: 455
+Num 4th Gen: 229
+Num 5th Gen: 79
+Num 6th Gen: 61
+Num 7th Gen: 29
+Num 8th Gen: 7
+Num 9th Gen: 1
+Num 10th Gen: 0
+

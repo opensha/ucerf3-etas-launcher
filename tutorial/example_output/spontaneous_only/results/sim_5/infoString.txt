@@ -1,0 +1,80 @@
+Spontaneous Only
+
+randomSeed=867665954408969899
+
+histQkList.size()=0
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 143.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2018; hr=0; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.7786
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 0 input observed events produced 0 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3144313115168502	(sample num over total expected num)
+	numSpontEventsSampled=8599
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	4/11/2023	mag=6.408975	Inversion Src #97073; 7 SECTIONS BETWEEN Concord 2011 CFM, Subsection 2 AND Green Valley 2011 CFM, Subsection 3
+	nthRup=97059, srcIndex=97059, RupIndexInSource=0, fltSysRupIndex=97073	gen=0	parID=-1 (spontaneous)
+	4/13/2023	mag=6.8075047	Inversion Src #97349; 13 SECTIONS BETWEEN Green Valley 2011 CFM, Subsection 3 AND Hunting Creek - Bartlett Springs connector 2011, Subsection 1
+	nthRup=97335, srcIndex=97335, RupIndexInSource=0, fltSysRupIndex=97349	gen=2	parID=12249	parMag=5.45
+	4/13/2023	mag=5.954585	Inversion Src #98415; 2 SECTIONS BETWEEN Hunting Creek - Berryessa 2011 CFM, Subsection 7 AND Hunting Creek - Berryessa 2011 CFM, Subsection 8
+	nthRup=98401, srcIndex=98401, RupIndexInSource=0, fltSysRupIndex=98415	gen=3	parID=12581	parMag=6.8075048701021945
+	4/15/2023	mag=7.1021066	Inversion Src #96470; 19 SECTIONS BETWEEN Franklin 2011 CFM, Subsection 2 AND Hayward (So) extension 2011 CFM, Subsection 0
+	nthRup=96456, srcIndex=96456, RupIndexInSource=0, fltSysRupIndex=96470	gen=1	parID=3285	parMag=6.4089749969870216
+	6/2/2023	mag=6.345836	Inversion Src #84182; 4 SECTIONS BETWEEN Calaveras (So) - Paicines extension 2011 CFM, Subsection 2 AND Calaveras (So) - Paicines extension 2011 CFM, Subsection 5
+	nthRup=84168, srcIndex=84168, RupIndexInSource=0, fltSysRupIndex=84182	gen=0	parID=-1 (spontaneous)
+	6/16/2024	mag=6.4464107	Inversion Src #220111; 3 SECTIONS BETWEEN Elsinore (Glen Ivy) rev, Subsection 0 AND Elsinore (Glen Ivy) rev, Subsection 2
+	nthRup=220097, srcIndex=220097, RupIndexInSource=0, fltSysRupIndex=220111	gen=0	parID=-1 (spontaneous)
+	10/15/2026	mag=6.628068	Inversion Src #168350; 7 SECTIONS BETWEEN Mendocino, Subsection 0 AND Mendocino, Subsection 6
+	nthRup=168336, srcIndex=168336, RupIndexInSource=0, fltSysRupIndex=168350	gen=0	parID=-1 (spontaneous)
+
+Looping over events took 403 secs
+
+Total num ruptures: 22982
+Num spontaneous: 8599
+Num 1st Gen: 5461
+Num 2nd Gen: 4529
+Num 3rd Gen: 2670
+Num 4th Gen: 1073
+Num 5th Gen: 444
+Num 6th Gen: 145
+Num 7th Gen: 52
+Num 8th Gen: 9
+Num 9th Gen: 0
+Num 10th Gen: 0
+
