@@ -1,0 +1,34 @@
+{
+  "numSimulations": 10,
+  "duration": 10.0,
+  "startYear": 2018,
+  "includeSpontaneous": true,
+  "binaryOutput": false,
+  "binaryOutputFilters": [
+    {
+      "prefix": "results_complete",
+      "descendantsOnly": false
+    },
+    {
+      "prefix": "results_m5_preserve_chain",
+      "minMag": 5.0,
+      "preserveChainBelowMag": true,
+      "descendantsOnly": false
+    }
+  ],
+  "forceRecalc": false,
+  "simulationName": "Spontaneous Only",
+  "numRetries": 3,
+  "outputDir": "$ETAS_LAUNCHER/tutorial/user_output/spontaneous_only",
+  "cacheDir": "$ETAS_LAUNCHER/inputs/cache_fm3p1_ba",
+  "fssFile": "$ETAS_LAUNCHER/inputs/2013_05_10-ucerf3p3-production-10runs_COMPOUND_SOL_FM3_1_SpatSeisU3_MEAN_BRANCH_AVG_SOL.zip",
+  "probModel": "FULL_TD",
+  "applySubSeisForSupraNucl": true,
+  "totRateScaleFactor": 1.14,
+  "gridSeisCorr": true,
+  "timeIndependentERF": false,
+  "griddedOnly": false,
+  "imposeGR": false,
+  "includeIndirectTriggering": true,
+  "gridSeisDiscr": 0.1
+}
