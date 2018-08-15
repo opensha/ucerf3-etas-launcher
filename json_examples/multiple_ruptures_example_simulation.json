@@ -1,7 +1,7 @@
 {
   "numSimulations": 50,
   "duration": 10.0,
-  "startTimeMillis": 1534287391734,
+  "startTimeMillis": 1534292133980,
   "includeSpontaneous": false,
   "binaryOutput": false,
   "binaryOutputFilters": [
@@ -22,26 +22,26 @@
   "outputDir": "/path/to/output",
   "triggerRuptures": [
     {
-      "occurrenceTimeMillis": 1534200991734,
+      "occurrenceTimeMillis": 1534205733980,
       "fssIndex": 187455,
       "mag": 6.7
     },
     {
-      "occurrenceTimeMillis": 1534227391734,
+      "occurrenceTimeMillis": 1534232133980,
       "mag": 5.3,
       "latitude": 34.213,
       "longitude": -118.537,
       "depth": 18.2
     },
     {
-      "occurrenceTimeMillis": 1534252391734,
+      "occurrenceTimeMillis": 1534257133980,
       "mag": 5.6,
       "latitude": 34.257,
       "longitude": -118.51,
       "depth": 14.0
     },
     {
-      "occurrenceTimeMillis": 1534287391734,
+      "occurrenceTimeMillis": 1534292133980,
       "mag": 6.2,
       "subSectIndexes": [
         1412

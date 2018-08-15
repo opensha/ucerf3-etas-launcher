@@ -1,9 +1,9 @@
 {
-  "numSimulations": 10000,
+  "numSimulations": 10,
   "duration": 10.0,
-  "startTimeMillis": 758809855000,
+  "startYear": 2018,
   "includeSpontaneous": false,
-  "binaryOutput": true,
+  "binaryOutput": false,
   "binaryOutputFilters": [
     {
       "prefix": "results_complete",
@@ -17,13 +17,12 @@
     }
   ],
   "forceRecalc": false,
-  "simulationName": "UCERF3 Northride Rupture",
+  "simulationName": "Mojave M7",
   "numRetries": 3,
-  "outputDir": "/path/to/output",
+  "outputDir": "$ETAS_LAUNCHER/tutorial/user_output/mojave_m7",
   "triggerRuptures": [
     {
-      "fssIndex": 187455,
-      "mag": 6.7
+      "fssIndex": 193821
     }
   ],
   "cacheDir": "$ETAS_LAUNCHER/inputs/cache_fm3p1_ba",
