@@ -35,7 +35,7 @@ export PATH=$PATH:$ETAS_LAUNCHER/sbin/
 
 ### Test your environment
 
-Once you have followed the above steps, you can test your environment with the "u3etas_env_test.sh" script. Here is my output from this command with the above lines in my .bash_profile file:
+Once you have followed the above steps, you can test your environment with the `u3etas_env_test.sh` script. Here is my output from this command with the above lines in my .bash_profile file:
 
 ```
 kevin@steel:~$ u3etas_env_test.sh 
