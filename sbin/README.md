@@ -7,7 +7,7 @@
 
 ## Run ETAS simulations: u3etas_launcher.sh
 
-USAGE: `u3etas_launcher.sh [--num-threads <threads>] </path/to/etas_config.json>`
+USAGE: `u3etas_launcher.sh [--threads <threads>] </path/to/etas_config.json>`
 
 This script is used to run UCERF3-ETAS simulations on a local machine. It takes an ETAS configuration JSON file as input, and optionally an argument specifying the number of threads to use (the number of simulations to run in parallel at a given time).
 
