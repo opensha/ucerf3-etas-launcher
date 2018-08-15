@@ -1,0 +1,78 @@
+Input Catalog With Spontaneous
+
+randomSeed=2559488453991497414
+
+histQkList.size()=10167
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 137.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2012; hr=12; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.73
+
+Making ETAS_PrimaryEventSampler took 1 min
+The 9893 input observed events produced 1407 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3231032024150469	(sample num over total expected num)
+	numSpontEventsSampled=8836
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	4/30/2012	mag=5.9905787	Inversion Src #31657; 6 SECTIONS BETWEEN San Andreas (Parkfield), Subsection 1 AND San Andreas (Parkfield), Subsection 6
+	nthRup=31657, srcIndex=31657, RupIndexInSource=0, fltSysRupIndex=31657	gen=0	parID=-1 (spontaneous)
+	5/10/2013	mag=6.3001337	Inversion Src #195250; 2 SECTIONS BETWEEN San Andreas (Mojave S), Subsection 13 AND San Andreas (Mojave S), Subsection 12
+	nthRup=195236, srcIndex=195236, RupIndexInSource=0, fltSysRupIndex=195250	gen=2	parID=21293	parMag=4.15
+	8/14/2013	mag=6.0808225	Inversion Src #216725; 2 SECTIONS BETWEEN Chino alt 1, Subsection 1 AND Chino alt 1, Subsection 0
+	nthRup=216711, srcIndex=216711, RupIndexInSource=0, fltSysRupIndex=216725	gen=4	parID=21540	parMag=2.8499999999999996
+	10/27/2013	mag=6.25417	Inversion Src #220110; 2 SECTIONS BETWEEN Elsinore (Glen Ivy) rev, Subsection 0 AND Elsinore (Glen Ivy) rev, Subsection 1
+	nthRup=220096, srcIndex=220096, RupIndexInSource=0, fltSysRupIndex=220110	gen=0	parID=-1 (spontaneous)
+	1/3/2018	mag=6.8273945	Inversion Src #228273; 14 SECTIONS BETWEEN Coronado Bank alt1, Subsection 17 AND Coronado Bank alt1, Subsection 30
+	nthRup=228259, srcIndex=228259, RupIndexInSource=0, fltSysRupIndex=228273	gen=3	parID=26235	parMag=3.15
+	9/9/2020	mag=6.3968744	Inversion Src #101489; 3 SECTIONS BETWEEN Hayward (So) 2011 CFM, Subsection 2 AND Hayward (So) 2011 CFM, Subsection 4
+	nthRup=101475, srcIndex=101475, RupIndexInSource=0, fltSysRupIndex=101489	gen=0	parID=-1 (spontaneous)
+
+Looping over events took 137 secs
+
+Total num ruptures: 23064
+Num spontaneous: 8836
+Num 1st Gen: 6561
+Num 2nd Gen: 3286
+Num 3rd Gen: 1593
+Num 4th Gen: 1582
+Num 5th Gen: 801
+Num 6th Gen: 328
+Num 7th Gen: 70
+Num 8th Gen: 6
+Num 9th Gen: 1
+Num 10th Gen: 0
+

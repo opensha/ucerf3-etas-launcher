@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+	max-width:1000px;
+	margin: auto;
+}
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+</style>
+</head>
+<body>
+<h1 id="input-catalog-with-spontaneous-results">Input Catalog With Spontaneous Results</h1>
+<table>
+<thead>
+<tr><th></th><th>Input Catalog With Spontaneous</th></tr>
+</thead>
+<tbody>
+<tr><td>Num Simulations</td><td>10</td></tr>
+<tr><td>Start Time</td><td>2012/01/01 12:00:00 UTC</td></tr>
+<tr><td>Start Time Epoch Milliseconds</td><td>1325419200000</td></tr>
+<tr><td>Duration</td><td>10 Years</td></tr>
+<tr><td>Includes Spontaneous?</td><td>true</td></tr>
+<tr><td>Trigger Ruptures</td><td><em>(none)</em></td></tr>
+<tr><td>Historical Ruptures</td><td>10167 Trigger Ruptures</td></tr>
+<tr><td></td><td>First: M7.6 at 1872/03/26 10:31:39 UTC</td></tr>
+<tr><td></td><td>Last: M3.2 at 2011/12/31 19:14:44 UTC</td></tr>
+<tr><td></td><td>Largest: M7.8 at 1906/04/18 13:12:21 UTC</td></tr>
+</tbody>
+</table>
+<h2 id="table-of-contents">Table Of Contents</h2>
+<ul>
+<li><a href="#magnitude-frequency-distribution">Magnitude Frequency Distribution</a></li>
+<li><a href="#section-participation">Section Participation</a>
+<ul>
+<li><a href="#section-participation-plots">Section Participation Plots</a></li>
+<li><a href="#supra-seismogenic-parent-sections-table">Supra-Seismogenic Parent Sections Table</a></li>
+<li><a href="#m65-parent-sections-table">M≥6.5 Parent Sections Table</a></li>
+<li><a href="#m7-parent-sections-table">M≥7 Parent Sections Table</a></li>
+</ul>
+</li>
+<li><a href="#gridded-nucleation">Gridded Nucleation</a></li>
+</ul>
+<h2 id="magnitude-frequency-distribution">Magnitude Frequency Distribution</h2>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<p><strong>Legend</strong></p>
+<ul>
+<li><strong>Mean</strong> (thick black line): mean annual rate across all 10 catalogs</li>
+<li><strong>95% Conf</strong> (light gray shaded region): binomial 95% confidence bounds on mean value</li>
+<li><strong>2.5%,97.5%</strong> (thin black lines): annual rate percentiles across all 10 catalogs</li>
+<li><strong>Median</strong> (thin blue line): median annual rate across all 10 catalogs</li>
+<li><strong>Mode</strong> (thin cyan line): modal annual rate across all 10 catalogs (scaled to annualized value)</li>
+<li><strong>10 yr Probability</strong> (thin red line): 10 year probability calculated as the fraction of catalogs with at least 1 occurrence</li>
+</ul>
+<p><img src="plots/mfd.png" alt="MFD Plot" /></p>
+<table>
+<thead>
+<tr><th>Mag</th><th>Mean</th><th>2.5 %ile</th><th>97.5 %ile</th><th>Median</th><th>Mode</th><th>10 yr Probability</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>M≥2.5</strong></td><td>2551.06</td><td>1789.3</td><td>3864.9</td><td>2337.7</td><td>2491.4</td><td>1.0</td></tr>
+<tr><td><strong>M≥2.6</strong></td><td>2020.09</td><td>1415.7</td><td>3049.6</td><td>1853.1</td><td>1968.8</td><td>1.0</td></tr>
+<tr><td><strong>M≥2.7</strong></td><td>1600.82</td><td>1131.6</td><td>2406.9</td><td>1465.2</td><td>1557.9</td><td>1.0</td></tr>
+<tr><td><strong>M≥2.8</strong></td><td>1273.12</td><td>892.2</td><td>1917.0</td><td>1169.5</td><td>1235.6</td><td>1.0</td></tr>
+<tr><td><strong>M≥2.9</strong></td><td>1009.53</td><td>708.4</td><td>1530.1</td><td>930.5</td><td>972.2</td><td>1.0</td></tr>
+<tr><td><strong>M≥3</strong></td><td>803.9</td><td>557.7</td><td>1222.6</td><td>736.7</td><td>773.7</td><td>1.0</td></tr>
+<tr><td><strong>M≥3.1</strong></td><td>638.76</td><td>444.2</td><td>962.6</td><td>590.8</td><td>618.7</td><td>1.0</td></tr>
+<tr><td><strong>M≥3.2</strong></td><td>507.25</td><td>354.2</td><td>762.6</td><td>468.9</td><td>492.5</td><td>1.0</td></tr>
+<tr><td><strong>M≥3.3</strong></td><td>402.75</td><td>280.4</td><td>610.0</td><td>370.1</td><td>389.2</td><td>1.0</td></tr>
+<tr><td><strong>M≥3.4</strong></td><td>320.71</td><td>219.9</td><td>488.2</td><td>292.5</td><td>309.0</td><td>1.0</td></tr>
+<tr><td><strong>M≥3.5</strong></td><td>254.11</td><td>173.4</td><td>385.2</td><td>231.6</td><td>245.6</td><td>1.0</td></tr>
+<tr><td><strong>M≥3.6</strong></td><td>202.92</td><td>140.0</td><td>307.0</td><td>185.6</td><td>197.3</td><td>1.0</td></tr>
+<tr><td><strong>M≥3.7</strong></td><td>160.78</td><td>111.4</td><td>249.1</td><td>147.0</td><td>154.3</td><td>1.0</td></tr>
+<tr><td><strong>M≥3.8</strong></td><td>127.43</td><td>90.2</td><td>198.3</td><td>116.1</td><td>122.2</td><td>1.0</td></tr>
+<tr><td><strong>M≥3.9</strong></td><td>101.27</td><td>72.1</td><td>156.6</td><td>93.3</td><td>98.2</td><td>1.0</td></tr>
+<tr><td><strong>M≥4</strong></td><td>80.58</td><td>59.3</td><td>127.3</td><td>73.8</td><td>78.8</td><td>1.0</td></tr>
+<tr><td><strong>M≥4.1</strong></td><td>64.25</td><td>45.9</td><td>104.6</td><td>59.0</td><td>61.3</td><td>1.0</td></tr>
+<tr><td><strong>M≥4.2</strong></td><td>51.31</td><td>37.5</td><td>84.4</td><td>47.4</td><td>48.9</td><td>1.0</td></tr>
+<tr><td><strong>M≥4.3</strong></td><td>40.94</td><td>29.8</td><td>67.8</td><td>37.8</td><td>38.1</td><td>1.0</td></tr>
+<tr><td><strong>M≥4.4</strong></td><td>32.4</td><td>23.1</td><td>52.9</td><td>29.9</td><td>30.1</td><td>1.0</td></tr>
+<tr><td><strong>M≥4.5</strong></td><td>25.76</td><td>18.1</td><td>42.3</td><td>23.5</td><td>23.8</td><td>1.0</td></tr>
+<tr><td><strong>M≥4.6</strong></td><td>20.43</td><td>14.5</td><td>33.5</td><td>19.2</td><td>19.8</td><td>1.0</td></tr>
+<tr><td><strong>M≥4.7</strong></td><td>16.52</td><td>11.0</td><td>27.2</td><td>15.6</td><td>15.9</td><td>1.0</td></tr>
+<tr><td><strong>M≥4.8</strong></td><td>13.01</td><td>8.0</td><td>21.1</td><td>12.1</td><td>12.1</td><td>1.0</td></tr>
+<tr><td><strong>M≥4.9</strong></td><td>10.39</td><td>6.6</td><td>16.7</td><td>9.8</td><td>8.9</td><td>1.0</td></tr>
+<tr><td><strong>M≥5</strong></td><td>8.58</td><td>5.2</td><td>13.5</td><td>8.0</td><td>8.4</td><td>1.0</td></tr>
+<tr><td><strong>M≥5.1</strong></td><td>6.64</td><td>3.9</td><td>10.6</td><td>6.3</td><td>6.4</td><td>1.0</td></tr>
+<tr><td><strong>M≥5.2</strong></td><td>5.17</td><td>2.7</td><td>8.6</td><td>4.9</td><td>5.0</td><td>1.0</td></tr>
+<tr><td><strong>M≥5.3</strong></td><td>4.09</td><td>2.3</td><td>6.2</td><td>3.8</td><td>3.8</td><td>1.0</td></tr>
+<tr><td><strong>M≥5.4</strong></td><td>3.22</td><td>1.9</td><td>4.6</td><td>3.0</td><td>3.0</td><td>1.0</td></tr>
+<tr><td><strong>M≥5.5</strong></td><td>2.58</td><td>1.5</td><td>3.8</td><td>2.4</td><td>2.4</td><td>1.0</td></tr>
+<tr><td><strong>M≥5.6</strong></td><td>2.03</td><td>0.9</td><td>2.9</td><td>2.0</td><td>2.4</td><td>1.0</td></tr>
+<tr><td><strong>M≥5.7</strong></td><td>1.65</td><td>0.9</td><td>2.6</td><td>1.7</td><td>1.7</td><td>1.0</td></tr>
+<tr><td><strong>M≥5.8</strong></td><td>1.26</td><td>0.6</td><td>2.2</td><td>1.3</td><td>1.3</td><td>1.0</td></tr>
+<tr><td><strong>M≥5.9</strong></td><td>0.94</td><td>0.3</td><td>1.8</td><td>1.0</td><td>1.1</td><td>1.0</td></tr>
+<tr><td><strong>M≥6</strong></td><td>0.73</td><td>0.1</td><td>1.5</td><td>0.7</td><td>0.9</td><td>1.0</td></tr>
+<tr><td><strong>M≥6.1</strong></td><td>0.62</td><td>0.0</td><td>1.3</td><td>0.7</td><td>0.7</td><td>0.9</td></tr>
+<tr><td><strong>M≥6.2</strong></td><td>0.52</td><td>0.0</td><td>1.3</td><td>0.4</td><td>0.4</td><td>0.9</td></tr>
+<tr><td><strong>M≥6.3</strong></td><td>0.42</td><td>0.0</td><td>0.9</td><td>0.4</td><td>0.4</td><td>0.9</td></tr>
+<tr><td><strong>M≥6.4</strong></td><td>0.29</td><td>0.0</td><td>0.8</td><td>0.2</td><td>0.2</td><td>0.9</td></tr>
+<tr><td><strong>M≥6.5</strong></td><td>0.21</td><td>0.0</td><td>0.6</td><td>0.1</td><td>0.1</td><td>0.9</td></tr>
+<tr><td><strong>M≥6.6</strong></td><td>0.18</td><td>0.0</td><td>0.6</td><td>0.1</td><td>0.1</td><td>0.9</td></tr>
+<tr><td><strong>M≥6.7</strong></td><td>0.14</td><td>0.0</td><td>0.4</td><td>0.1</td><td>0.1</td><td>0.9</td></tr>
+<tr><td><strong>M≥6.8</strong></td><td>0.12</td><td>0.0</td><td>0.3</td><td>0.1</td><td>0.1</td><td>0.9</td></tr>
+<tr><td><strong>M≥6.9</strong></td><td>0.09</td><td>0.0</td><td>0.2</td><td>0.1</td><td>0.1</td><td>0.8</td></tr>
+<tr><td><strong>M≥7</strong></td><td>0.09</td><td>0.0</td><td>0.2</td><td>0.1</td><td>0.1</td><td>0.8</td></tr>
+<tr><td><strong>M≥7.1</strong></td><td>0.07</td><td>0.0</td><td>0.2</td><td>0.1</td><td>0.1</td><td>0.6</td></tr>
+<tr><td><strong>M≥7.2</strong></td><td>0.03</td><td>0.0</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.3</td></tr>
+<tr><td><strong>M≥7.3</strong></td><td>0.03</td><td>0.0</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.3</td></tr>
+<tr><td><strong>M≥7.4</strong></td><td>0.01</td><td>0.0</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.1</td></tr>
+<tr><td><strong>M≥7.5</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥7.6</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥7.7</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥7.8</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥7.9</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥8</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥8.1</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥8.2</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥8.3</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥8.4</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥8.5</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥8.6</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥8.7</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥8.8</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥8.9</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥9</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+</tbody>
+</table>
+<h2 id="section-participation">Section Participation</h2>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<h3 id="section-participation-plots">Section Participation Plots</h3>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<table>
+<thead>
+<tr><th>Min Mag</th><th>Complete Catalog (including spontaneous)</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>All Supra. Seis.</strong></td><td><img src="plots/fault_participation_partic.png" alt="Participation Plot" /></td></tr>
+<tr><td><strong>M≥6.5</strong></td><td><img src="plots/fault_participation_partic_m6.5.png" alt="Participation Plot" /></td></tr>
+<tr><td><strong>M≥7</strong></td><td><img src="plots/fault_participation_partic_m7.0.png" alt="Participation Plot" /></td></tr>
+</tbody>
+</table>
+<h3 id="supra-seismogenic-parent-sections-table">Supra-Seismogenic Parent Sections Table</h3>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<p><em>First 10 of 37 with matching ruptures shown</em></p>
+<table>
+<thead>
+<tr><th>Parent Name</th><th>Total Mean Annual Rate</th><th>Total 10 Year Prob</th></tr>
+</thead>
+<tbody>
+<tr><td>Mendocino</td><td>0.05</td><td>0.4</td></tr>
+<tr><td>San Andreas (Parkfield)</td><td>0.04</td><td>0.4</td></tr>
+<tr><td>Ash Hill</td><td>0.03</td><td>0.1</td></tr>
+<tr><td>San Andreas (Mojave S)</td><td>0.03</td><td>0.3</td></tr>
+<tr><td>Brawley (Seismic Zone) alt 1</td><td>0.02</td><td>0.2</td></tr>
+<tr><td>Calaveras (Central) 2011 CFM</td><td>0.02</td><td>0.2</td></tr>
+<tr><td>Cleghorn Pass</td><td>0.02</td><td>0.1</td></tr>
+<tr><td>Hayward (So) 2011 CFM</td><td>0.02</td><td>0.2</td></tr>
+<tr><td>Imperial</td><td>0.02</td><td>0.2</td></tr>
+<tr><td>San Andreas (Creeping Section) 2011 CFM</td><td>0.02</td><td>0.2</td></tr>
+</tbody>
+</table>
+<h3 id="m65-parent-sections-table">M≥6.5 Parent Sections Table</h3>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<p><em>First 10 of 21 with matching ruptures shown</em></p>
+<table>
+<thead>
+<tr><th>Parent Name</th><th>Total Mean Annual Rate</th><th>Total 10 Year Prob</th></tr>
+</thead>
+<tbody>
+<tr><td>Brawley (Seismic Zone) alt 1</td><td>0.02</td><td>0.2</td></tr>
+<tr><td>Imperial</td><td>0.02</td><td>0.2</td></tr>
+<tr><td>Mendocino</td><td>0.02</td><td>0.2</td></tr>
+<tr><td>Ash Hill</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Cady</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Calaveras (Central) 2011 CFM</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Calaveras (So) - Paicines extension 2011 CFM</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Calaveras (So) 2011 CFM</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Calico-Hidalgo</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Cerro Prieto</td><td>0.01</td><td>0.1</td></tr>
+</tbody>
+</table>
+<h3 id="m7-parent-sections-table">M≥7 Parent Sections Table</h3>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<p><em>First 10 of 14 with matching ruptures shown</em></p>
+<table>
+<thead>
+<tr><th>Parent Name</th><th>Total Mean Annual Rate</th><th>Total 10 Year Prob</th></tr>
+</thead>
+<tbody>
+<tr><td>Brawley (Seismic Zone) alt 1</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Calaveras (Central) 2011 CFM</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Calaveras (So) - Paicines extension 2011 CFM</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Calaveras (So) 2011 CFM</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Calico-Hidalgo</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Cerro Prieto</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Hunter Mountain-Saline Valley</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Imperial</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Mendocino</td><td>0.01</td><td>0.1</td></tr>
+<tr><td>Mohawk Valley 2011 CFM</td><td>0.01</td><td>0.1</td></tr>
+</tbody>
+</table>
+<h2 id="gridded-nucleation">Gridded Nucleation</h2>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<table>
+<thead>
+<tr><th>Min Mag</th><th>Complete Catalog (including spontaneous)</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>M≥2.5</strong></td><td><img src="plots/gridded_nucleation_m2.5.png" alt="Nucleation Plot" /></td></tr>
+<tr><td><strong>M≥5</strong></td><td><img src="plots/gridded_nucleation_m5.0.png" alt="Nucleation Plot" /></td></tr>
+<tr><td><strong>M≥6</strong></td><td><img src="plots/gridded_nucleation_m6.0.png" alt="Nucleation Plot" /></td></tr>
+<tr><td><strong>M≥7</strong></td><td><img src="plots/gridded_nucleation_m7.0.png" alt="Nucleation Plot" /></td></tr>
+</tbody>
+</table>
+</body>
+</html>

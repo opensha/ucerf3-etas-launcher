@@ -1,0 +1,68 @@
+Input Catalog With Spontaneous
+
+randomSeed=3297653337474276139
+
+histQkList.size()=10167
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 137.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2012; hr=12; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.73
+
+Making ETAS_PrimaryEventSampler took 1 min
+The 9893 input observed events produced 1375 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3255531701110415	(sample num over total expected num)
+	numSpontEventsSampled=8903
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	11/5/2015	mag=6.693793	Inversion Src #168351; 8 SECTIONS BETWEEN Mendocino, Subsection 0 AND Mendocino, Subsection 7
+	nthRup=168337, srcIndex=168337, RupIndexInSource=0, fltSysRupIndex=168351	gen=0	parID=-1 (spontaneous)
+
+Looping over events took 32 secs
+
+Total num ruptures: 25613
+Num spontaneous: 8903
+Num 1st Gen: 7152
+Num 2nd Gen: 2681
+Num 3rd Gen: 1696
+Num 4th Gen: 2907
+Num 5th Gen: 1250
+Num 6th Gen: 379
+Num 7th Gen: 380
+Num 8th Gen: 176
+Num 9th Gen: 55
+Num 10th Gen: 31
+

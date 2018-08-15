@@ -1,0 +1,76 @@
+Input Catalog With Spontaneous
+
+randomSeed=-4569692071677289443
+
+histQkList.size()=10167
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 137.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2012; hr=12; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.73
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 9893 input observed events produced 1376 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3214577017237073	(sample num over total expected num)
+	numSpontEventsSampled=8791
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	5/20/2012	mag=6.4293175	Inversion Src #91822; 9 SECTIONS BETWEEN Calaveras (Central) 2011 CFM, Subsection 9 AND Hayward (So) extension 2011 CFM, Subsection 0
+	nthRup=91808, srcIndex=91808, RupIndexInSource=0, fltSysRupIndex=91822	gen=0	parID=-1 (spontaneous)
+	11/8/2013	mag=6.3945494	Inversion Src #50857; 10 SECTIONS BETWEEN San Andreas (Creeping Section) 2011 CFM, Subsection 10 AND San Andreas (Creeping Section) 2011 CFM, Subsection 19
+	nthRup=50843, srcIndex=50843, RupIndexInSource=0, fltSysRupIndex=50857	gen=0	parID=-1 (spontaneous)
+	12/26/2015	mag=6.045266	Inversion Src #251307; 3 SECTIONS BETWEEN Great Valley 03a Dunnigan Hills, Subsection 0 AND Great Valley 03a Dunnigan Hills, Subsection 2
+	nthRup=251293, srcIndex=251293, RupIndexInSource=0, fltSysRupIndex=251307	gen=3	parID=24095	parMag=2.9499999999999997
+	8/23/2019	mag=7.12833	Inversion Src #245987; 11 SECTIONS BETWEEN Calico-Hidalgo, Subsection 7 AND Calico-Hidalgo, Subsection 17
+	nthRup=245973, srcIndex=245973, RupIndexInSource=0, fltSysRupIndex=245987	gen=0	parID=-1 (spontaneous)
+	11/17/2019	mag=6.4328084	Inversion Src #214113; 4 SECTIONS BETWEEN Santa Cruz Catalina Ridge alt1, Subsection 3 AND Santa Cruz Catalina Ridge alt1, Subsection 0
+	nthRup=214099, srcIndex=214099, RupIndexInSource=0, fltSysRupIndex=214113	gen=0	parID=-1 (spontaneous)
+
+Looping over events took 351 secs
+
+Total num ruptures: 21952
+Num spontaneous: 8791
+Num 1st Gen: 8131
+Num 2nd Gen: 3198
+Num 3rd Gen: 1032
+Num 4th Gen: 566
+Num 5th Gen: 175
+Num 6th Gen: 49
+Num 7th Gen: 8
+Num 8th Gen: 1
+Num 9th Gen: 1
+Num 10th Gen: 0
+

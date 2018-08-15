@@ -1,0 +1,86 @@
+Input Catalog With Spontaneous
+
+randomSeed=-8231814348210174198
+
+histQkList.size()=10167
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 137.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2012; hr=12; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.73
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 9893 input observed events produced 1482 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3259188369313392	(sample num over total expected num)
+	numSpontEventsSampled=8913
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	7/30/2013	mag=5.8987956	Inversion Src #32858; 6 SECTIONS BETWEEN San Andreas (Parkfield), Subsection 2 AND San Andreas (Parkfield), Subsection 7
+	nthRup=32858, srcIndex=32858, RupIndexInSource=0, fltSysRupIndex=32858	gen=4	parID=21960	parMag=4.550000000000001
+	9/22/2013	mag=6.8308897	Inversion Src #238415; 18 SECTIONS BETWEEN Brawley (Seismic Zone) alt 1, Subsection 0 AND Imperial, Subsection 4
+	nthRup=238401, srcIndex=238401, RupIndexInSource=0, fltSysRupIndex=238415	gen=0	parID=-1 (spontaneous)
+	11/20/2014	mag=6.7822127	Inversion Src #192542; 6 SECTIONS BETWEEN San Andreas (San Bernardino N), Subsection 5 AND San Andreas (San Bernardino N), Subsection 0
+	nthRup=192528, srcIndex=192528, RupIndexInSource=0, fltSysRupIndex=192542	gen=5	parID=29403	parMag=4.45
+	8/22/2018	mag=6.4624553	Inversion Src #169109; 5 SECTIONS BETWEEN Mendocino, Subsection 2 AND Mendocino, Subsection 6
+	nthRup=169095, srcIndex=169095, RupIndexInSource=0, fltSysRupIndex=169109	gen=0	parID=-1 (spontaneous)
+	8/1/2019	mag=7.40049	Inversion Src #5339; 22 SECTIONS BETWEEN Hunter Mountain-Saline Valley, Subsection 12 AND Panamint Valley, Subsection 8
+	nthRup=5339, srcIndex=5339, RupIndexInSource=0, fltSysRupIndex=5339	gen=1	parID=16562	parMag=2.75
+	8/2/2019	mag=6.226073	Inversion Src #5384; 2 SECTIONS BETWEEN Ash Hill, Subsection 4 AND Ash Hill, Subsection 5
+	nthRup=5384, srcIndex=5384, RupIndexInSource=0, fltSysRupIndex=5384	gen=2	parID=36427	parMag=7.400490012663716
+	8/6/2019	mag=6.667765	Inversion Src #5383; 5 SECTIONS BETWEEN Ash Hill, Subsection 3 AND Ash Hill, Subsection 7
+	nthRup=5383, srcIndex=5383, RupIndexInSource=0, fltSysRupIndex=5383	gen=4	parID=41246	parMag=5.25
+	8/10/2019	mag=6.226073	Inversion Src #5362; 2 SECTIONS BETWEEN Ash Hill, Subsection 1 AND Ash Hill, Subsection 0
+	nthRup=5362, srcIndex=5362, RupIndexInSource=0, fltSysRupIndex=5362	gen=2	parID=36427	parMag=7.400490012663716
+	8/16/2020	mag=6.457718	Inversion Src #238056; 4 SECTIONS BETWEEN San Jacinto (Superstition Mtn), Subsection 0 AND San Jacinto (Superstition Mtn), Subsection 3
+	nthRup=238042, srcIndex=238042, RupIndexInSource=0, fltSysRupIndex=238056	gen=2	parID=36446	parMag=4.45
+	7/11/2021	mag=6.6016197	Inversion Src #246207; 4 SECTIONS BETWEEN Cady, Subsection 1 AND Cady, Subsection 4
+	nthRup=246193, srcIndex=246193, RupIndexInSource=0, fltSysRupIndex=246207	gen=2	parID=10613	parMag=3.3499999999999996
+
+Looping over events took 503 secs
+
+Total num ruptures: 38649
+Num spontaneous: 8913
+Num 1st Gen: 9350
+Num 2nd Gen: 7829
+Num 3rd Gen: 5063
+Num 4th Gen: 2461
+Num 5th Gen: 1911
+Num 6th Gen: 1734
+Num 7th Gen: 647
+Num 8th Gen: 414
+Num 9th Gen: 252
+Num 10th Gen: 55
+

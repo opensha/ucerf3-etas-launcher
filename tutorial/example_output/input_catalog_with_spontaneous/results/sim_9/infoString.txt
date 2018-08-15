@@ -1,0 +1,74 @@
+Input Catalog With Spontaneous
+
+randomSeed=556088777783553270
+
+histQkList.size()=10167
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 137.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2012; hr=12; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.73
+
+Making ETAS_PrimaryEventSampler took 1 min
+The 9893 input observed events produced 1336 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3322083062404596	(sample num over total expected num)
+	numSpontEventsSampled=9085
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	3/7/2013	mag=6.0140595	Inversion Src #31658; 7 SECTIONS BETWEEN San Andreas (Parkfield), Subsection 1 AND San Andreas (Parkfield), Subsection 7
+	nthRup=31658, srcIndex=31658, RupIndexInSource=0, fltSysRupIndex=31658	gen=0	parID=-1 (spontaneous)
+	7/29/2013	mag=6.205862	Inversion Src #219204; 2 SECTIONS BETWEEN Whittier alt 1, Subsection 7 AND Whittier alt 1, Subsection 6
+	nthRup=219190, srcIndex=219190, RupIndexInSource=0, fltSysRupIndex=219204	gen=0	parID=-1 (spontaneous)
+	1/1/2018	mag=6.1334887	Inversion Src #98381; 3 SECTIONS BETWEEN Hunting Creek - Berryessa 2011 CFM, Subsection 6 AND Hunting Creek - Berryessa 2011 CFM, Subsection 8
+	nthRup=98367, srcIndex=98367, RupIndexInSource=0, fltSysRupIndex=98381	gen=1	parID=19575	parMag=4.550000000000001
+	8/6/2020	mag=7.030978	Inversion Src #252426; 8 SECTIONS BETWEEN Mohawk Valley 2011 CFM, Subsection 0 AND Mohawk Valley 2011 CFM, Subsection 7
+	nthRup=252412, srcIndex=252412, RupIndexInSource=0, fltSysRupIndex=252426	gen=0	parID=-1 (spontaneous)
+
+Looping over events took 104 secs
+
+Total num ruptures: 22325
+Num spontaneous: 9085
+Num 1st Gen: 7186
+Num 2nd Gen: 3833
+Num 3rd Gen: 1471
+Num 4th Gen: 518
+Num 5th Gen: 188
+Num 6th Gen: 35
+Num 7th Gen: 9
+Num 8th Gen: 0
+Num 9th Gen: 0
+Num 10th Gen: 0
+

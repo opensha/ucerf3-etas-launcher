@@ -1,0 +1,68 @@
+Input Catalog With Spontaneous
+
+randomSeed=-8509840227405408871
+
+histQkList.size()=10167
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 137.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2012; hr=12; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.73
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 9893 input observed events produced 1364 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.3250778032446545	(sample num over total expected num)
+	numSpontEventsSampled=8890
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	4/27/2013	mag=5.9905787	Inversion Src #31657; 6 SECTIONS BETWEEN San Andreas (Parkfield), Subsection 1 AND San Andreas (Parkfield), Subsection 6
+	nthRup=31657, srcIndex=31657, RupIndexInSource=0, fltSysRupIndex=31657	gen=0	parID=-1 (spontaneous)
+
+Looping over events took 70 secs
+
+Total num ruptures: 17893
+Num spontaneous: 8890
+Num 1st Gen: 4979
+Num 2nd Gen: 2144
+Num 3rd Gen: 925
+Num 4th Gen: 470
+Num 5th Gen: 199
+Num 6th Gen: 207
+Num 7th Gen: 49
+Num 8th Gen: 16
+Num 9th Gen: 10
+Num 10th Gen: 2
+

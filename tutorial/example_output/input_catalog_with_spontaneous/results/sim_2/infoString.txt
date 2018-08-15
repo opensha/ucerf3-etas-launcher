@@ -1,0 +1,78 @@
+Input Catalog With Spontaneous
+
+randomSeed=-8007943488751262135
+
+histQkList.size()=10167
+includeSpontEvents=true
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 137.0
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 1/1/2012; hr=12; min=0; sec=0
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+
+Expected mean annual rate over timeSpan (per year) = 2734.73
+
+Making ETAS_PrimaryEventSampler took 2 min
+The 9893 input observed events produced 1427 primary aftershocks
+
+Spontaneous Events:
+
+	Fraction non-triggered = 0.32584570356727965	(sample num over total expected num)
+	numSpontEventsSampled=8911
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	5/4/2012	mag=6.1393147	Inversion Src #250652; 2 SECTIONS BETWEEN Cleghorn Pass, Subsection 2 AND Cleghorn Pass, Subsection 3
+	nthRup=250638, srcIndex=250638, RupIndexInSource=0, fltSysRupIndex=250652	gen=1	parID=17669	parMag=2.55
+	12/11/2012	mag=6.195368	Inversion Src #250527; 2 SECTIONS BETWEEN Cleghorn Lake, Subsection 3 AND Cleghorn Lake, Subsection 4
+	nthRup=250513, srcIndex=250513, RupIndexInSource=0, fltSysRupIndex=250527	gen=4	parID=21442	parMag=4.550000000000001
+	12/11/2012	mag=6.318009	Inversion Src #250648; 3 SECTIONS BETWEEN Cleghorn Pass, Subsection 0 AND Cleghorn Pass, Subsection 2
+	nthRup=250634, srcIndex=250634, RupIndexInSource=0, fltSysRupIndex=250648	gen=5	parID=21444	parMag=6.195368015501461
+	4/5/2014	mag=6.441044	Inversion Src #192881; 3 SECTIONS BETWEEN San Andreas (San Bernardino N), Subsection 4 AND San Andreas (San Bernardino N), Subsection 2
+	nthRup=192867, srcIndex=192867, RupIndexInSource=0, fltSysRupIndex=192881	gen=1	parID=14033	parMag=2.9499999999999997
+	5/16/2014	mag=6.5168195	Inversion Src #211080; 6 SECTIONS BETWEEN Santa Ynez (West), Subsection 5 AND Santa Ynez (West), Subsection 0
+	nthRup=211066, srcIndex=211066, RupIndexInSource=0, fltSysRupIndex=211080	gen=4	parID=23181	parMag=2.55
+	8/29/2016	mag=7.167949	Inversion Src #250430; 11 SECTIONS BETWEEN Cerro Prieto, Subsection 1 AND Cerro Prieto, Subsection 11
+	nthRup=250416, srcIndex=250416, RupIndexInSource=0, fltSysRupIndex=250430	gen=1	parID=8963	parMag=3.96
+
+Looping over events took 392 secs
+
+Total num ruptures: 26360
+Num spontaneous: 8911
+Num 1st Gen: 5532
+Num 2nd Gen: 5711
+Num 3rd Gen: 2590
+Num 4th Gen: 967
+Num 5th Gen: 1226
+Num 6th Gen: 905
+Num 7th Gen: 334
+Num 8th Gen: 125
+Num 9th Gen: 46
+Num 10th Gen: 11
+
