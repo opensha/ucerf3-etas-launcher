@@ -17,6 +17,7 @@
     }
   ],
   "forceRecalc": false,
+  "simulationName": "Spontaneous ETAS Simulation",
   "numRetries": 3,
   "outputDir": "/path/to/output",
   "cacheDir": "$ETAS_LAUNCHER/inputs/cache_fm3p1_ba",

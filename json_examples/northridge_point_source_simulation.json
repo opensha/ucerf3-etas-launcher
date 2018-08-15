@@ -17,6 +17,7 @@
     }
   ],
   "forceRecalc": false,
+  "simulationName": "Northride Point Source",
   "numRetries": 3,
   "outputDir": "/path/to/output",
   "triggerRuptures": [

@@ -17,6 +17,7 @@
     }
   ],
   "forceRecalc": false,
+  "simulationName": "Input Catalog ETAS Simulation",
   "numRetries": 3,
   "outputDir": "/path/to/output",
   "triggerCatalog": "/path/to/trigger_catalog.txt",

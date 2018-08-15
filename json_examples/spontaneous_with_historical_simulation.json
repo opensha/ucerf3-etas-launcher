@@ -17,6 +17,7 @@
     }
   ],
   "forceRecalc": false,
+  "simulationName": "Spontaneous/Historical ETAS Simulation",
   "numRetries": 3,
   "outputDir": "/path/to/output",
   "triggerCatalog": "/path/to/u3_historical_catalog.txt",

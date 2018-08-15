@@ -17,6 +17,7 @@
     }
   ],
   "forceRecalc": false,
+  "simulationName": "UCERF3 Northride Rupture",
   "numRetries": 3,
   "outputDir": "/path/to/output",
   "triggerRuptures": [
