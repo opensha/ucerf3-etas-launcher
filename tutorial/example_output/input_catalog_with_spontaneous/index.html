@@ -20,8 +20,8 @@ img {
 </thead>
 <tbody>
 <tr><td>Num Simulations</td><td>10</td></tr>
-<tr><td>Start Time</td><td>2012/01/01 12:00:00 UTC</td></tr>
-<tr><td>Start Time Epoch Milliseconds</td><td>1325419200000</td></tr>
+<tr><td>Start Time</td><td>2012/01/01 00:00:00 UTC</td></tr>
+<tr><td>Start Time Epoch Milliseconds</td><td>1325376000000</td></tr>
 <tr><td>Duration</td><td>10 Years</td></tr>
 <tr><td>Includes Spontaneous?</td><td>true</td></tr>
 <tr><td>Trigger Ruptures</td><td><em>(none)</em></td></tr>
@@ -49,11 +49,11 @@ img {
 <p><strong>Legend</strong></p>
 <ul>
 <li><strong>Mean</strong> (thick black line): mean annual rate across all 10 catalogs</li>
-<li><strong>95% Conf</strong> (light gray shaded region): binomial 95% confidence bounds on mean value</li>
 <li><strong>2.5%,97.5%</strong> (thin black lines): annual rate percentiles across all 10 catalogs</li>
 <li><strong>Median</strong> (thin blue line): median annual rate across all 10 catalogs</li>
 <li><strong>Mode</strong> (thin cyan line): modal annual rate across all 10 catalogs (scaled to annualized value)</li>
 <li><strong>10 yr Probability</strong> (thin red line): 10 year probability calculated as the fraction of catalogs with at least 1 occurrence</li>
+<li><strong>95% Conf</strong> (light red shaded region): binomial 95% confidence bounds on probability</li>
 </ul>
 <p><img src="plots/mfd.png" alt="MFD Plot" /></p>
 <table>
@@ -61,72 +61,72 @@ img {
 <tr><th>Mag</th><th>Mean</th><th>2.5 %ile</th><th>97.5 %ile</th><th>Median</th><th>Mode</th><th>10 yr Probability</th></tr>
 </thead>
 <tbody>
-<tr><td><strong>M≥2.5</strong></td><td>2551.06</td><td>1789.3</td><td>3864.9</td><td>2337.7</td><td>2491.4</td><td>1.0</td></tr>
-<tr><td><strong>M≥2.6</strong></td><td>2020.09</td><td>1415.7</td><td>3049.6</td><td>1853.1</td><td>1968.8</td><td>1.0</td></tr>
-<tr><td><strong>M≥2.7</strong></td><td>1600.82</td><td>1131.6</td><td>2406.9</td><td>1465.2</td><td>1557.9</td><td>1.0</td></tr>
-<tr><td><strong>M≥2.8</strong></td><td>1273.12</td><td>892.2</td><td>1917.0</td><td>1169.5</td><td>1235.6</td><td>1.0</td></tr>
-<tr><td><strong>M≥2.9</strong></td><td>1009.53</td><td>708.4</td><td>1530.1</td><td>930.5</td><td>972.2</td><td>1.0</td></tr>
-<tr><td><strong>M≥3</strong></td><td>803.9</td><td>557.7</td><td>1222.6</td><td>736.7</td><td>773.7</td><td>1.0</td></tr>
-<tr><td><strong>M≥3.1</strong></td><td>638.76</td><td>444.2</td><td>962.6</td><td>590.8</td><td>618.7</td><td>1.0</td></tr>
-<tr><td><strong>M≥3.2</strong></td><td>507.25</td><td>354.2</td><td>762.6</td><td>468.9</td><td>492.5</td><td>1.0</td></tr>
-<tr><td><strong>M≥3.3</strong></td><td>402.75</td><td>280.4</td><td>610.0</td><td>370.1</td><td>389.2</td><td>1.0</td></tr>
-<tr><td><strong>M≥3.4</strong></td><td>320.71</td><td>219.9</td><td>488.2</td><td>292.5</td><td>309.0</td><td>1.0</td></tr>
-<tr><td><strong>M≥3.5</strong></td><td>254.11</td><td>173.4</td><td>385.2</td><td>231.6</td><td>245.6</td><td>1.0</td></tr>
-<tr><td><strong>M≥3.6</strong></td><td>202.92</td><td>140.0</td><td>307.0</td><td>185.6</td><td>197.3</td><td>1.0</td></tr>
-<tr><td><strong>M≥3.7</strong></td><td>160.78</td><td>111.4</td><td>249.1</td><td>147.0</td><td>154.3</td><td>1.0</td></tr>
-<tr><td><strong>M≥3.8</strong></td><td>127.43</td><td>90.2</td><td>198.3</td><td>116.1</td><td>122.2</td><td>1.0</td></tr>
-<tr><td><strong>M≥3.9</strong></td><td>101.27</td><td>72.1</td><td>156.6</td><td>93.3</td><td>98.2</td><td>1.0</td></tr>
-<tr><td><strong>M≥4</strong></td><td>80.58</td><td>59.3</td><td>127.3</td><td>73.8</td><td>78.8</td><td>1.0</td></tr>
-<tr><td><strong>M≥4.1</strong></td><td>64.25</td><td>45.9</td><td>104.6</td><td>59.0</td><td>61.3</td><td>1.0</td></tr>
-<tr><td><strong>M≥4.2</strong></td><td>51.31</td><td>37.5</td><td>84.4</td><td>47.4</td><td>48.9</td><td>1.0</td></tr>
-<tr><td><strong>M≥4.3</strong></td><td>40.94</td><td>29.8</td><td>67.8</td><td>37.8</td><td>38.1</td><td>1.0</td></tr>
-<tr><td><strong>M≥4.4</strong></td><td>32.4</td><td>23.1</td><td>52.9</td><td>29.9</td><td>30.1</td><td>1.0</td></tr>
-<tr><td><strong>M≥4.5</strong></td><td>25.76</td><td>18.1</td><td>42.3</td><td>23.5</td><td>23.8</td><td>1.0</td></tr>
-<tr><td><strong>M≥4.6</strong></td><td>20.43</td><td>14.5</td><td>33.5</td><td>19.2</td><td>19.8</td><td>1.0</td></tr>
-<tr><td><strong>M≥4.7</strong></td><td>16.52</td><td>11.0</td><td>27.2</td><td>15.6</td><td>15.9</td><td>1.0</td></tr>
-<tr><td><strong>M≥4.8</strong></td><td>13.01</td><td>8.0</td><td>21.1</td><td>12.1</td><td>12.1</td><td>1.0</td></tr>
-<tr><td><strong>M≥4.9</strong></td><td>10.39</td><td>6.6</td><td>16.7</td><td>9.8</td><td>8.9</td><td>1.0</td></tr>
-<tr><td><strong>M≥5</strong></td><td>8.58</td><td>5.2</td><td>13.5</td><td>8.0</td><td>8.4</td><td>1.0</td></tr>
-<tr><td><strong>M≥5.1</strong></td><td>6.64</td><td>3.9</td><td>10.6</td><td>6.3</td><td>6.4</td><td>1.0</td></tr>
-<tr><td><strong>M≥5.2</strong></td><td>5.17</td><td>2.7</td><td>8.6</td><td>4.9</td><td>5.0</td><td>1.0</td></tr>
-<tr><td><strong>M≥5.3</strong></td><td>4.09</td><td>2.3</td><td>6.2</td><td>3.8</td><td>3.8</td><td>1.0</td></tr>
-<tr><td><strong>M≥5.4</strong></td><td>3.22</td><td>1.9</td><td>4.6</td><td>3.0</td><td>3.0</td><td>1.0</td></tr>
-<tr><td><strong>M≥5.5</strong></td><td>2.58</td><td>1.5</td><td>3.8</td><td>2.4</td><td>2.4</td><td>1.0</td></tr>
-<tr><td><strong>M≥5.6</strong></td><td>2.03</td><td>0.9</td><td>2.9</td><td>2.0</td><td>2.4</td><td>1.0</td></tr>
-<tr><td><strong>M≥5.7</strong></td><td>1.65</td><td>0.9</td><td>2.6</td><td>1.7</td><td>1.7</td><td>1.0</td></tr>
-<tr><td><strong>M≥5.8</strong></td><td>1.26</td><td>0.6</td><td>2.2</td><td>1.3</td><td>1.3</td><td>1.0</td></tr>
-<tr><td><strong>M≥5.9</strong></td><td>0.94</td><td>0.3</td><td>1.8</td><td>1.0</td><td>1.1</td><td>1.0</td></tr>
-<tr><td><strong>M≥6</strong></td><td>0.73</td><td>0.1</td><td>1.5</td><td>0.7</td><td>0.9</td><td>1.0</td></tr>
-<tr><td><strong>M≥6.1</strong></td><td>0.62</td><td>0.0</td><td>1.3</td><td>0.7</td><td>0.7</td><td>0.9</td></tr>
-<tr><td><strong>M≥6.2</strong></td><td>0.52</td><td>0.0</td><td>1.3</td><td>0.4</td><td>0.4</td><td>0.9</td></tr>
-<tr><td><strong>M≥6.3</strong></td><td>0.42</td><td>0.0</td><td>0.9</td><td>0.4</td><td>0.4</td><td>0.9</td></tr>
-<tr><td><strong>M≥6.4</strong></td><td>0.29</td><td>0.0</td><td>0.8</td><td>0.2</td><td>0.2</td><td>0.9</td></tr>
-<tr><td><strong>M≥6.5</strong></td><td>0.21</td><td>0.0</td><td>0.6</td><td>0.1</td><td>0.1</td><td>0.9</td></tr>
-<tr><td><strong>M≥6.6</strong></td><td>0.18</td><td>0.0</td><td>0.6</td><td>0.1</td><td>0.1</td><td>0.9</td></tr>
-<tr><td><strong>M≥6.7</strong></td><td>0.14</td><td>0.0</td><td>0.4</td><td>0.1</td><td>0.1</td><td>0.9</td></tr>
-<tr><td><strong>M≥6.8</strong></td><td>0.12</td><td>0.0</td><td>0.3</td><td>0.1</td><td>0.1</td><td>0.9</td></tr>
-<tr><td><strong>M≥6.9</strong></td><td>0.09</td><td>0.0</td><td>0.2</td><td>0.1</td><td>0.1</td><td>0.8</td></tr>
-<tr><td><strong>M≥7</strong></td><td>0.09</td><td>0.0</td><td>0.2</td><td>0.1</td><td>0.1</td><td>0.8</td></tr>
-<tr><td><strong>M≥7.1</strong></td><td>0.07</td><td>0.0</td><td>0.2</td><td>0.1</td><td>0.1</td><td>0.6</td></tr>
-<tr><td><strong>M≥7.2</strong></td><td>0.03</td><td>0.0</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.3</td></tr>
-<tr><td><strong>M≥7.3</strong></td><td>0.03</td><td>0.0</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.3</td></tr>
-<tr><td><strong>M≥7.4</strong></td><td>0.01</td><td>0.0</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.1</td></tr>
-<tr><td><strong>M≥7.5</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥7.6</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥7.7</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥7.8</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥7.9</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥8</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥8.1</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥8.2</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥8.3</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥8.4</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥8.5</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥8.6</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥8.7</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥8.8</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥8.9</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
-<tr><td><strong>M≥9</strong></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr>
+<tr><td><strong>M≥2.5</strong></td><td>2551.060</td><td>1789.300</td><td>3864.900</td><td>2337.700</td><td>2491.400</td><td>1.000</td></tr>
+<tr><td><strong>M≥2.6</strong></td><td>2020.090</td><td>1415.700</td><td>3049.600</td><td>1853.100</td><td>1968.800</td><td>1.000</td></tr>
+<tr><td><strong>M≥2.7</strong></td><td>1600.820</td><td>1131.600</td><td>2406.900</td><td>1465.200</td><td>1557.900</td><td>1.000</td></tr>
+<tr><td><strong>M≥2.8</strong></td><td>1273.120</td><td>892.200</td><td>1917.000</td><td>1169.500</td><td>1235.600</td><td>1.000</td></tr>
+<tr><td><strong>M≥2.9</strong></td><td>1009.530</td><td>708.400</td><td>1530.100</td><td>930.500</td><td>972.200</td><td>1.000</td></tr>
+<tr><td><strong>M≥3</strong></td><td>803.900</td><td>557.700</td><td>1222.600</td><td>736.700</td><td>773.700</td><td>1.000</td></tr>
+<tr><td><strong>M≥3.1</strong></td><td>638.760</td><td>444.200</td><td>962.600</td><td>590.800</td><td>618.700</td><td>1.000</td></tr>
+<tr><td><strong>M≥3.2</strong></td><td>507.250</td><td>354.200</td><td>762.600</td><td>468.900</td><td>492.500</td><td>1.000</td></tr>
+<tr><td><strong>M≥3.3</strong></td><td>402.750</td><td>280.400</td><td>610.000</td><td>370.100</td><td>389.200</td><td>1.000</td></tr>
+<tr><td><strong>M≥3.4</strong></td><td>320.710</td><td>219.900</td><td>488.200</td><td>292.500</td><td>309.000</td><td>1.000</td></tr>
+<tr><td><strong>M≥3.5</strong></td><td>254.110</td><td>173.400</td><td>385.200</td><td>231.600</td><td>245.600</td><td>1.000</td></tr>
+<tr><td><strong>M≥3.6</strong></td><td>202.920</td><td>140.000</td><td>307.000</td><td>185.600</td><td>197.300</td><td>1.000</td></tr>
+<tr><td><strong>M≥3.7</strong></td><td>160.780</td><td>111.400</td><td>249.100</td><td>147.000</td><td>154.300</td><td>1.000</td></tr>
+<tr><td><strong>M≥3.8</strong></td><td>127.430</td><td>90.200</td><td>198.300</td><td>116.100</td><td>122.200</td><td>1.000</td></tr>
+<tr><td><strong>M≥3.9</strong></td><td>101.270</td><td>72.100</td><td>156.600</td><td>93.300</td><td>98.200</td><td>1.000</td></tr>
+<tr><td><strong>M≥4</strong></td><td>80.580</td><td>59.300</td><td>127.300</td><td>73.800</td><td>78.800</td><td>1.000</td></tr>
+<tr><td><strong>M≥4.1</strong></td><td>64.250</td><td>45.900</td><td>104.600</td><td>59.000</td><td>61.300</td><td>1.000</td></tr>
+<tr><td><strong>M≥4.2</strong></td><td>51.310</td><td>37.500</td><td>84.400</td><td>47.400</td><td>48.900</td><td>1.000</td></tr>
+<tr><td><strong>M≥4.3</strong></td><td>40.940</td><td>29.800</td><td>67.800</td><td>37.800</td><td>38.100</td><td>1.000</td></tr>
+<tr><td><strong>M≥4.4</strong></td><td>32.400</td><td>23.100</td><td>52.900</td><td>29.900</td><td>30.100</td><td>1.000</td></tr>
+<tr><td><strong>M≥4.5</strong></td><td>25.760</td><td>18.100</td><td>42.300</td><td>23.500</td><td>23.800</td><td>1.000</td></tr>
+<tr><td><strong>M≥4.6</strong></td><td>20.430</td><td>14.500</td><td>33.500</td><td>19.200</td><td>19.800</td><td>1.000</td></tr>
+<tr><td><strong>M≥4.7</strong></td><td>16.520</td><td>11.000</td><td>27.200</td><td>15.600</td><td>15.900</td><td>1.000</td></tr>
+<tr><td><strong>M≥4.8</strong></td><td>13.010</td><td>8.000</td><td>21.100</td><td>12.100</td><td>12.100</td><td>1.000</td></tr>
+<tr><td><strong>M≥4.9</strong></td><td>10.390</td><td>6.600</td><td>16.700</td><td>9.800</td><td>8.900</td><td>1.000</td></tr>
+<tr><td><strong>M≥5</strong></td><td>8.580</td><td>5.200</td><td>13.500</td><td>8.000</td><td>8.400</td><td>1.000</td></tr>
+<tr><td><strong>M≥5.1</strong></td><td>6.640</td><td>3.900</td><td>10.600</td><td>6.300</td><td>6.400</td><td>1.000</td></tr>
+<tr><td><strong>M≥5.2</strong></td><td>5.170</td><td>2.700</td><td>8.600</td><td>4.900</td><td>5.000</td><td>1.000</td></tr>
+<tr><td><strong>M≥5.3</strong></td><td>4.090</td><td>2.300</td><td>6.200</td><td>3.800</td><td>3.800</td><td>1.000</td></tr>
+<tr><td><strong>M≥5.4</strong></td><td>3.220</td><td>1.900</td><td>4.600</td><td>3.000</td><td>3.000</td><td>1.000</td></tr>
+<tr><td><strong>M≥5.5</strong></td><td>2.580</td><td>1.500</td><td>3.800</td><td>2.400</td><td>2.400</td><td>1.000</td></tr>
+<tr><td><strong>M≥5.6</strong></td><td>2.030</td><td>0.900</td><td>2.900</td><td>2.000</td><td>2.400</td><td>1.000</td></tr>
+<tr><td><strong>M≥5.7</strong></td><td>1.650</td><td>0.900</td><td>2.600</td><td>1.700</td><td>1.700</td><td>1.000</td></tr>
+<tr><td><strong>M≥5.8</strong></td><td>1.260</td><td>0.600</td><td>2.200</td><td>1.300</td><td>1.300</td><td>1.000</td></tr>
+<tr><td><strong>M≥5.9</strong></td><td>0.940</td><td>0.300</td><td>1.800</td><td>1.000</td><td>1.100</td><td>1.000</td></tr>
+<tr><td><strong>M≥6</strong></td><td>0.730</td><td>0.100</td><td>1.500</td><td>0.700</td><td>0.900</td><td>1.000</td></tr>
+<tr><td><strong>M≥6.1</strong></td><td>0.620</td><td>0.000</td><td>1.300</td><td>0.700</td><td>0.700</td><td>0.900</td></tr>
+<tr><td><strong>M≥6.2</strong></td><td>0.520</td><td>0.000</td><td>1.300</td><td>0.400</td><td>0.400</td><td>0.900</td></tr>
+<tr><td><strong>M≥6.3</strong></td><td>0.420</td><td>0.000</td><td>0.900</td><td>0.400</td><td>0.400</td><td>0.900</td></tr>
+<tr><td><strong>M≥6.4</strong></td><td>0.290</td><td>0.000</td><td>0.800</td><td>0.200</td><td>0.200</td><td>0.900</td></tr>
+<tr><td><strong>M≥6.5</strong></td><td>0.210</td><td>0.000</td><td>0.600</td><td>0.100</td><td>0.100</td><td>0.900</td></tr>
+<tr><td><strong>M≥6.6</strong></td><td>0.180</td><td>0.000</td><td>0.600</td><td>0.100</td><td>0.100</td><td>0.900</td></tr>
+<tr><td><strong>M≥6.7</strong></td><td>0.140</td><td>0.000</td><td>0.400</td><td>0.100</td><td>0.100</td><td>0.900</td></tr>
+<tr><td><strong>M≥6.8</strong></td><td>0.120</td><td>0.000</td><td>0.300</td><td>0.100</td><td>0.100</td><td>0.900</td></tr>
+<tr><td><strong>M≥6.9</strong></td><td>0.090</td><td>0.000</td><td>0.200</td><td>0.100</td><td>0.100</td><td>0.800</td></tr>
+<tr><td><strong>M≥7</strong></td><td>0.090</td><td>0.000</td><td>0.200</td><td>0.100</td><td>0.100</td><td>0.800</td></tr>
+<tr><td><strong>M≥7.1</strong></td><td>0.070</td><td>0.000</td><td>0.200</td><td>0.100</td><td>0.100</td><td>0.600</td></tr>
+<tr><td><strong>M≥7.2</strong></td><td>0.030</td><td>0.000</td><td>0.100</td><td>0.000</td><td>0.000</td><td>0.300</td></tr>
+<tr><td><strong>M≥7.3</strong></td><td>0.030</td><td>0.000</td><td>0.100</td><td>0.000</td><td>0.000</td><td>0.300</td></tr>
+<tr><td><strong>M≥7.4</strong></td><td>0.010</td><td>0.000</td><td>0.100</td><td>0.000</td><td>0.000</td><td>0.100</td></tr>
+<tr><td><strong>M≥7.5</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥7.6</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥7.7</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥7.8</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥7.9</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥8</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥8.1</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥8.2</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥8.3</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥8.4</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥8.5</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥8.6</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥8.7</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥8.8</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥8.9</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
+<tr><td><strong>M≥9</strong></td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0.000</td></tr>
 </tbody>
 </table>
 <h2 id="section-participation">Section Participation</h2>
