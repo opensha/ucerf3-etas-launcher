@@ -10,7 +10,7 @@ This section describes calculation extents and some calculation parameters.
 |-------|-------|-------|-------|
 | **numSimulations** | yes | Number of etas simulations to perform for the given configuration, must be >0 | `"numSimulations": 10000` |
 | **duration** | yes | Simulation duration in years | `"duration": 10.0` |
-| **startYear** | no | Simulation start year (integer). Must supply this or startTimeMillis below (not both) | `"startYear": 2018` |
+| **startYear** | no | Simulation start year (integer). Must supply this or startTimeMillis below (not both). If supplied, simulations will start at midnight, January 1, UTC | `"startYear": 2018` |
 | **startTimeMillis** | no | Simulation start time in epoch milliseconds. Must supply this or startYear above (not both) | `"startTimeMillis": 1514764800000` |
 | **includeSpontaneous** | yes | If 'true', spontaneous events will be computed, if 'false', only triggered (and either trigger ruptures or a trigger catalog must be supplied) | `"includeSpontaneous": true` |
 | randomSeed | no | Can be used to reproduce a single run, only valid if numSimulations=1 | `"randomSeed": 1234567` |
