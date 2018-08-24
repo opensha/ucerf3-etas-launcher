@@ -62,7 +62,7 @@ ETAS_EnvTest DONE
 
 ## Configuring ETAS Simulations
 
-ETAS simulations are defined with [JSON](https://beginnersbook.com/2015/04/json-tutorial/) configuration files. The simplest way to get started is to modify an example in the [json_examples directory](json_examples) and to read the [file format documentation](json_examples/README.md). These files describe the simulation parameters (start time, inclusion of spontaneous ruptures, etc), optional input 'trigger' ruptures (if you are simulating the aftermath of a scenario or real event), output directory, and path to various required UCERF3 inputs and cache files (located in the [inputs directory](inputs)).
+ETAS simulations are defined with [JSON](https://beginnersbook.com/2015/04/json-tutorial/) configuration files. These files describe the simulation parameters (start time, inclusion of spontaneous ruptures, etc), optional input 'trigger' ruptures (if you are simulating the aftermath of a scenario or real event), output directory, and path to various required UCERF3 inputs and cache files (located in the [inputs directory](inputs)). When you're ready to start running your own ETAS simulations, the simplest way to get started is to modify an example in the [json_examples directory](json_examples) and to read the [file format documentation](json_examples/README.md).
 
 ## Running Single-Machine ETAS Simulations
 
@@ -89,3 +89,7 @@ To run the plot generator, use this command:
 For example, if config.json exists in the current directory and results are consoludated using a [binary output filter](json_examples/README.md#binary-output-filters) in results.bin:
 
 `u3etas_plot_generator.sh config.json results.bin`
+
+## Try it out
+
+Now that you're familiar with the commands and have your environment set up, try out a [tutorial](tutorial).
