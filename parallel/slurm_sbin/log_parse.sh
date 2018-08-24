@@ -2,7 +2,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
-JAR="$DIR/../opensha-ucerf3-all.jar"
+JAR="$DIR/../../lib/opensha-ucerf3-all.jar"
 
 java -cp ${JAR} edu.usc.kmilner.mpj.taskDispatch.MPJTaskLogStatsGen $@
 
