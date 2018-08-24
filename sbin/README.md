@@ -33,6 +33,18 @@ The `binaryOutputFilters` section must be populated in the JSON input file (see 
 
 ## Convert binary catalog files to ASCII: u3etas_ascii_writer.sh
 
-USAGE: `u3etas_ascii_writer.sh </path/to/binary_catalogs_output.json> </path/to/output-dir or zip file> [<num-catalogs-to-write>]`
+USAGE: `u3etas_ascii_writer.sh </path/to/binary_catalogs_output.bin> </path/to/output-dir or zip file> [<num-catalogs-to-write>]`
 
 This script is used to convert binary catalog files to human readable ASCII files (which are inefficient and large, but easier to process externally in other codes). It takes a binary catalog file, and either the path to a directory in which ASCII files should be written, or a path to a zip file which should be created to contain these files. If you only want to write a subset of catalogs, you can supply a third argument with the total number of catalogs to write out.
+
+## Filter out spontaneous ruptures (descendants of triggers only): u3etas_filter_descendants.sh
+
+USAGE: `u3etas_filter_descendants.sh </path/to/etas_config.json> </path/to/binary_catalogs_output.bin OR /path/to/results directory> </path/to/filtered_descendants_output.bin>`
+
+This script is used to filter out any spontaneous ruptures from catalogs, leaving only descendants of trigger ruptures (note: if a trigger catalog is supplied but treatTriggerCatalogAsSpontaneous=true, its descendants will be removed). It takes an ETAS configuration JSON file, either an input binary file or path to the results directory, and the path where the filtered output binary catalogs file should be written.
+
+## Combine binary catalog files from multiple simulations: u3etas_combine_binary.sh
+
+USAGE: `u3etas_combine_binary.sh </path/to/binary_catalogs_1.bin> </path/to/binary_catalogs_2.bin> [... </path/to/binary_catalogs_N.bin>] </path/to/combined_binary_catalogs.bin>`
+
+This script is used to combine the binary output files from multiple runs of UCERF3 ETAS. This is useful if, for example, first you ran 1000 simulations of a scenario and then you ran another 1000 later. You would use this script to combine the two simulations into a single binary file, which can be used to generate plots from all 2000 catalogs.

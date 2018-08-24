@@ -41,7 +41,7 @@ echo
 echo "Testing running java, the following output should be multiple lines ending with 'ETAS_EnvTest DONE'"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
-$DIR/u3etas_jar_wrapper.sh scratch.UCERF3.erf.ETAS.launcher.ETAS_EnvTest
+$DIR/u3etas_jar_wrapper.sh scratch.UCERF3.erf.ETAS.launcher.util.ETAS_EnvTest
 
 ret=$?
 if [[ $ret -ne 0 ]];then
