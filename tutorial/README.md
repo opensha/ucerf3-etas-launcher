@@ -12,7 +12,7 @@ This will output results in the user_output/mojave_m7 directory, with individual
 
 Then generate plots from the results:
 
-`u3etas_plot_generator.sh mojave_m7_example.json user_output/mojave_m7/results_complete.bin`
+`u3etas_plot_generator.sh mojave_m7_example.json`
 
 That places plot files in user_output/mojave_m7/plots, with an index.html and README.md file in user_output/mojave_m7.
 
@@ -28,7 +28,7 @@ This will output results in the user_output/input_catalog_with_spontaneous direc
 
 Then generate plots from the results:
 
-`u3etas_plot_generator.sh input_catalog_with_spontaneous_example.json user_output/input_catalog_with_spontaneous/results_complete.bin`
+`u3etas_plot_generator.sh input_catalog_with_spontaneous_example.json`
 
 That places plot files in user_output/input_catalog_with_spontaneous/plots, with an index.html and README.md file in user_output/spontaneous_only.
 
@@ -44,7 +44,7 @@ This will output results in the user_output/spontaneous_only directory, with ind
 
 Then generate plots from the results:
 
-`u3etas_plot_generator.sh spontaneous_only_example.json user_output/spontaneous_only/results_complete.bin`
+`u3etas_plot_generator.sh spontaneous_only_example.json`
 
 That places plot files in user_output/spontaneous_only/plots, with an index.html and README.md file in user_output/spontaneous_only.
 
