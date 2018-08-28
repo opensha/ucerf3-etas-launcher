@@ -84,11 +84,13 @@ Once you have completed a set of ETAS Simulations, you can generate standard plo
 
 To run the plot generator, use this command:
 
-`u3etas_plot_generator.sh </path/to/etas_configuration.json> </path/to/etas_output.bin or /path/to/results>`
+`u3etas_plot_generator.sh </path/to/etas_configuration.json> [</path/to/etas_output.bin or /path/to/results>]`
 
-For example, if config.json exists in the current directory and results are consoludated using a [binary output filter](json_examples/README.md#binary-output-filters) in results.bin:
+For example, if config.json exists in the current directory:
 
-`u3etas_plot_generator.sh config.json results.bin`
+`u3etas_plot_generator.sh config.json`
+
+You can also specify an optional path to either a binary catalogs file or the results directory. If omitted, it will search for catalogs (either in binary files or the results subdirectory) in the output directory.
 
 ## Try it out
 
