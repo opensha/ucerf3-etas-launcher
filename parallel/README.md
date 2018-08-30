@@ -65,7 +65,7 @@ Next, you need to create a Slurm batch script which will execute the ETAS launch
 [kmilner@hpc-login3 2018_08_30-MojaveM7]$ cp $ETAS_LAUNCHER/parallel/mpj_examples/usc_hpcc_mpj_express.slurm etas_parallel.slurm
 ```
 
-Read through the "INPUT PARAMETERS" section of this Slurm script, updating variables as needed. On USC HPC, you should only need to update the path to the etas configuration file, as well as the slurm node count and job limits. For this demo, lets run 5 node simulations with 2 hour max runtime:
+Read through the "INPUT PARAMETERS" section of this Slurm script, updating variables as needed. On USC HPC, you should only need to update the path to the etas configuration file, as well as the Slurm node count and job limits. For this demo, lets run on 5 compute nodes with 2 hour max runtime:
 
 ```
 #!/bin/bash
