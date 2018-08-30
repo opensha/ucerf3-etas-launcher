@@ -3,6 +3,7 @@
   "duration": 10.0,
   "startYear": 2018,
   "includeSpontaneous": false,
+  "randomSeed": 123456789,
   "binaryOutput": false,
   "binaryOutputFilters": [
     {
