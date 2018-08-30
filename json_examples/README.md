@@ -11,7 +11,7 @@ This section describes calculation extents and some calculation parameters.
 | **numSimulations** | yes | Number of etas simulations to perform for the given configuration, must be >0 | `"numSimulations": 10000` |
 | **duration** | yes | Simulation duration in years | `"duration": 10.0` |
 | **startYear** | no | Simulation start year (integer). Must supply this or startTimeMillis below (not both). If supplied, simulations will start at midnight, January 1, UTC | `"startYear": 2018` |
-| **startTimeMillis** | no | Simulation start time in epoch milliseconds. Must supply this or startYear above (not both) | `"startTimeMillis": 1514764800000` |
+| **startTimeMillis** | no | Simulation start time in epoch milliseconds. Must supply this or startYear above (not both). [Try this website](https://www.epochconverter.com/) to convert a date to its epoch representation (making sure to use the "Timestamp in milliseconds" field)  | `"startTimeMillis": 1514764800000` |
 | **includeSpontaneous** | yes | If 'true', spontaneous events will be computed, if 'false', only triggered (and either trigger ruptures or a trigger catalog must be supplied) | `"includeSpontaneous": true` |
 | randomSeed | no | Can be used to reproduce a single run, only valid if numSimulations=1 | `"randomSeed": 1234567` |
 | binaryOutput | yes | If yes, catalogs will be converted to binary format when each simulation completes to save space. Recommended for large simulation counts (>100) | `"binaryOutput": true` |
@@ -19,7 +19,7 @@ This section describes calculation extents and some calculation parameters.
 | forceRecalc | no | If true, all simulations will be recalculated even if they finished in an earlier run (with the same output directory). | `"forceRecalc": false` |
 | **simulationName** | no | Simulation name. If omitted, one will be automatically generated (but won't be very descriptive). Will show up in output plots. | `"simulationName": "Mojave M7, no spontaneous"` |
 | numRetries | no | Number of times to try a simulation before exiting if errors are encountered. Setting >1 will help to recover from things like filesystem issues during a large simulation. | `"numRetries": 3` |
-| **outputDir** | yes | Path to output directory where all results will be written | `"outputDir": "/path/to/etas_output"` |
+| **outputDir** | yes | Path to output directory where all results will be written. Path should be absolute and can contain system environmental variables | `"outputDir": "/path/to/etas_output"` or `"outputDir": "${ETAS_SIM_DIR}/my_simulation"` |
 
 ## Input Ruptures ##
 
@@ -112,7 +112,7 @@ These paths must be updated for each system, or if you want to use different fau
 | **probModel** | yes | UCERF3 probability model, one of FULL_TD, NO_ERT, or POISSON | `"probModel": "FULL_TD"` |
 | applySubSeisForSupraNucl | yes | This tells whether to correct gridded seismicity rates soas not to be less than the expected rate of aftershocks from supraseismogenic events | `"applySubSeisForSupraNucl": true` |
 | totRateScaleFactor | yes | The amount by which the total region MFD is multiplied by. Should use 1.14 for UCERF3-TD fault based | `"totRateScaleFactor": 1.14` |
-| gridSeisCorr | Apply the gridded seismicity correction file in cacheDir to rates of gridded seismicity nodes | `"gridSeisCorr": true` |
+| gridSeisCorr | yes | Apply the gridded seismicity correction file in cacheDir to rates of gridded seismicity nodes | `"gridSeisCorr": true` |
 | timeIndependentERF | yes | If true, disables elastic rebound time-dependence in the ERF. Can lead to runaway sequences that never end | `"timeIndependentERF": false` |
 | griddedOnly | yes | If true, gridded only (no faults) ETAS simulations will be preformed | `"griddedOnly": false` |
 | imposeGR | yes | This tells whether to impose Gutenberg-Richter in sampling ETAS aftershocks | `"imposeGR": false` |
