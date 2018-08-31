@@ -195,7 +195,27 @@ You can also watch the output of the log parser with the `watch_logparse.sh` com
 When the job completes, it will no longer be listed in the output of the `squeue -u $USER` command. This means that either it completed successfully, ended in error, or ran out of time and aborted. For the latter case, you can follow these steps again to resubmit and the job will pick up where it left off. If it completed sucessfully, then you will see the final binary output files. I usually like to look at the end of the STDOUT file for the jab to make sure that everything looks good:
 
 ```
-TODO: output here
+[kmilner@hpc-login3 2018_08_30-MojaveM7]$ tail -n 20 etas_parallel.slurm.o1437787
+[14:42:41.924 (hpc4219.hpcc.usc.edu) Process 0]: async post-batch extimates: rate: 2.26 tasks/s, time for running: 5.30 s
+[14:42:41.924 DispatcherThread]: checking if we're all done...
+[14:42:41.924 DispatcherThread]: DONE!
+[14:42:41.924 (hpc4221.hpcc.usc.edu) Process 2]: DONE!
+[14:42:41.925 (hpc4221.hpcc.usc.edu) Process 2]: waiting for other processes with Barrier()
+[14:42:41.926 (hpc4222.hpcc.usc.edu) Process 3]: Process 3 DONE!
+[14:42:41.927 (hpc4221.hpcc.usc.edu) Process 2]: Process 2 DONE!
+[14:42:41.927 (hpc4223.hpcc.usc.edu) Process 4]: Process 4 DONE!
+[14:42:41.927 (hpc4220.hpcc.usc.edu) Process 1]: Process 1 DONE!
+[14:42:42.430 (hpc4219.hpcc.usc.edu) Process 0]: done running async post-batch hook for process 2. running=12, queued=0, finished=988
+[14:42:42.672 (hpc4219.hpcc.usc.edu) Process 0]: Process 0 DONE!
+exit code: 0
+Halting MPJ daemons
+[hpc4219] MPJ Daemon stopped 
+[hpc4220] MPJ Daemon stopped 
+[hpc4221] MPJ Daemon stopped 
+[hpc4222] MPJ Daemon stopped 
+[hpc4223] MPJ Daemon stopped 
+run succeeded or normal error, exiting. exit code: 0
+Fri Aug 31 14:42:50 PDT 2018
 ```
 
 If everything looks good, transfer the output files back to your computer to plot the results as with the serial job. You should not run the ETAS plot generator tool on the login node of HPC resources (it is a shared resource and will not make them happy), and you shouldn't run it on a compute node either as it won't be able to reach the opensha server in order to generate maps.
