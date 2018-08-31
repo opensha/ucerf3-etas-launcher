@@ -105,6 +105,8 @@ Submitted batch job 1437787
            1437787      scec etas_par  kmilner PD       0:00      5 (Priority)
 ```
 
+The first command outputs the job ID number. The STDOUT of the job will be stored in `etas_parallel.slurm.o<job-id>`, in this case `etas_parallel.slurm.o1437787`. If you run into problems, read over this file for clues as to what went wrong.
+
 The second command (`squeue -u $USER`) checks the status of all of your running jobs. You can replace `$USER` with your username if it's easier for you. In this case, the job is not yet running as the state ('ST') is PD which means that the job is pending. A list of all Slurm job state codes can be found [here](https://slurm.schedmd.com/squeue.html#lbAG). Once your job has started running, it will look something like this:
 
 ```
@@ -178,19 +180,19 @@ results dir item count: 71
 Exception count: 0
 ```
 
-Simulations are sent to each compute node in batches whose size is dependent on the number of simulations left, the number of calculation threads, and the MIN_DISPATCH/MAX_DISPATCHT parameters in your Slurm script. The `500/1000 (50.00 %) dispatched (500 left)` line shows that 500 of the 1000 simulations have been sent off to the compute nodes for processing. The `0/1000 (0.00 %) completed (1000 left)` line indicates that no batches have completed. This tool only tracks completed batches, so even if some of the simulations within a batch have completed, they will not be counted until the whole batch for that node is complete.
+Simulations are sent to each compute node in batches whose size is dependent on the number of simulations left, the number of calculation threads, and the MIN_DISPATCH/MAX_DISPATCH parameters in your Slurm script. The `500/1000 (50.00 %) dispatched (500 left)` line shows that 500 of the 1000 simulations have been sent off to the compute nodes for processing. The `0/1000 (0.00 %) completed (1000 left)` line indicates that no batches have completed. This tool only tracks completed batches, so even if some of the simulations within a batch have completed, they will not be counted until the whole batch for that node is complete.
 
-If you call this command from within your main simulation directory, then you will also see a line for "results dir item count". That will tell you how many subdirectories of "results" currently exist, which in this case is the number of either completed or in process simulations.
+If you call this command from within your main simulation directory, you will also see a line for "results dir item count". That will tell you how many subdirectories of "results" currently exist, which in this case is the number of either completed or in process simulations.
 
-The "Exception count: " line will tell you if any java exceptions have been thrown, which indicates problems. Sometimes the exceptions are at the start during launching of the job, and it will retry and launch successfully. If you see exceptions later on, then there is a bigger problem and the simulation will abort. Read over the job STDOUT file for clues as to what went wrong.
+The "Exception count: " line will tell you if any java exceptions have been thrown, which indicate problems. Sometimes the exceptions are at the start during launching of the job, and it will retry and launch successfully. If you see exceptions later on, then there is a bigger problem and the simulation will abort. Read over the job STDOUT file for clues as to what went wrong.
 
-You will also see time estimates until the simulation completes. As no batches have yet finished, the time estimates at the end of the output are minimums, if all currently running simulations were to finish instantaneously. Once at least one batch has completed, the estimates will update and become more accurate.
+You will also see time estimates until the simulation completes. In my exmple no batches have finished, so the time estimates at the end of the output are minimums: estimates if all currently running simulations were to finish instantaneously. Once at least one batch has completed, the estimates will update and become more accurate.
 
 You can also watch the output of the log parser with the `watch_logparse.sh` command, which will update every minute.
 
 ### When the job completes
 
-When the job completes, it will no longer be listed by the `squeue -u $USER` command. This means that either it completed successfully, ended in error, or ran out of time and aborted. For the latter case, you can follow these steps again to resubmit and the job will pick up where it left off. If it completed sucessfully, then you will see the final binary output files. I usually like to look at the end of the STDOUT file for the jab to make sure that everything looks good:
+When the job completes, it will no longer be listed in the output of the `squeue -u $USER` command. This means that either it completed successfully, ended in error, or ran out of time and aborted. For the latter case, you can follow these steps again to resubmit and the job will pick up where it left off. If it completed sucessfully, then you will see the final binary output files. I usually like to look at the end of the STDOUT file for the jab to make sure that everything looks good:
 
 ```
 TODO: output here
