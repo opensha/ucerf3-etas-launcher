@@ -14,6 +14,7 @@ Many UCERF3-ETAS simulations are often required in order to sufficiently sample 
 * You have access to a parallel filesystem with a large (hundreds of gigabytes for large simulations) disk quota. This directory must be visible on all compute nodes
   * On USC HPC, this is `/home/scec-00/<your-username>` or `/home/scec-02/<your-username>`
 * You know how to edit text files on a command line using vim, emacs, or similar
+* You know how to transfer files between computers using scp, sftp, and/or rsync
 
 ## Slurm helper scripts
 
@@ -98,10 +99,10 @@ You are now ready to submit the Slurm simulation to the job scheduler. Use the `
 
 ```
 [kmilner@hpc-login3 2018_08_30-MojaveM7]$ slurm_submit.sh etas_parallel.slurm 
-Submitted batch job 1434824
+Submitted batch job 1437787
 [kmilner@hpc-login3 2018_08_30-MojaveM7]$ squeue -u $USER
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-           1434824      scec etas_par  kmilner PD       0:00      5 (Priority)
+           1437787      scec etas_par  kmilner PD       0:00      5 (Priority)
 ```
 
 The second command (`squeue -u $USER`) checks the status of all of your running jobs. You can replace `$USER` with your username if it's easier for you. In this case, the job is not yet running as the state ('ST') is PD which means that the job is pending. A list of all Slurm job state codes can be found [here](https://slurm.schedmd.com/squeue.html#lbAG). Once your job has started running, it will look something like this:
@@ -109,7 +110,7 @@ The second command (`squeue -u $USER`) checks the status of all of your running 
 ```
 [kmilner@hpc-login3 2018_08_30-MojaveM7]$ squeue -u $USER
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-           1434824      scec supra_pl  kmilner  R      5:31      5 hpc[4191-4195]
+           1437787      scec supra_pl  kmilner  R      5:31      5 hpc[4191-4195]
 ```
 
 In this example, the job has been running for 5 minutes and 31 seconds. Depending on if other people are using the system (in this case the SCEC queue), it may start immediately or take a long time. For the SCEC queue at USC, the `scec_queue_check.py` script will let you know how many nodes are currently in use (out of a total of 38):
@@ -120,3 +121,79 @@ In this example, the job has been running for 5 minutes and 31 seconds. Dependin
 user: kmilner,	running: 6 (36 nodes),	queued: 14
 Total nodes in use: 36
 ```
+
+## Monitoring job progress
+
+Once submitted, you must wait for you job to start. This can be nearly instantaneous or take hours to days, depending on what else is running/queued in the queue. Monitor the job with the `squeue -u $USER` command demonstrated in the previous section. Once the job is in the 'R' state (it has begun execution), you can monitor it's process with some of the tools in the [slurm_sbin](slurm_sbin) directory. These tools can either take the job ID number (which is printed out to the console when you submit the job, or can be found with `squeue -u $USER`), or if omitted will use the lowest ID number of any of your jobs in the 'R' state (that is, detect the first ID number of a running job). As mentioned previously, all of this assumes that you sumitted your job with the `slurm_submit.sh` command and these tools will only work if this is the case.
+
+### Watching the job STDOUT
+
+The first step is to make sure that the job launched sucessfully. This can be done by watching the STDOUT of the job (that is, what the  job would have printed to the console if run serially). Do this with the `stdout_job_tail.sh` command. This will launch a linux "watch" command which will refresh the end of the job's STDOUT every 2 seconds.
+
+Try it out: `stdout_job_tail.sh`  OR `stdout_job_tail.sh <job-id>`
+
+At first you should see messages from MPJ about launching daemons. This part sometimes fails at first, but will retry a number of times to attempt to launch the simulation. Once you see lines similar to `[13:10:32.169 (hpc4222.hpcc.usc.edu) Process 3]: <some message here>` in the output, your job has launched sucessfully.
+
+### Parsing the STDOUT file for job progress
+
+Now that the simulation is running, you can parse the job STDOUT file for information on how many simulations have been dispatched to each of the compute nodes, how many have completed, and eventually some time estimates. Do this with the `log_parse_running.sh` command:
+
+```
+[kmilner@hpc-login3 2018_08_30-MojaveM7]$ log_parse_running.sh 1437787
+Job STDOUT: /auto/scec-02/kmilner/ucerf3/etas_sim/2018_08_30-MojaveM7/etas_parallel.slurm.o1437787
+Done parsing log
+
+Process 0 (hpc4219.hpcc.usc.edu):	lastContact: 3.39 m	(3.73 m)	batches: 0/1	tasks: 000/100	avg: N/A	RUNNING: 100
+Process 1 (hpc4220.hpcc.usc.edu):	lastContact: 0.00 ms	(20.72 s)	batches: 0/1	tasks: 000/100	avg: N/A	RUNNING: 100
+Process 2 (hpc4221.hpcc.usc.edu):	lastContact: 3.67 s	(24.39 s)	batches: 0/1	tasks: 000/100	avg: N/A	RUNNING: 100
+Process 3 (hpc4222.hpcc.usc.edu):	lastContact: 3.37 m	(3.72 m)	batches: 0/1	tasks: 000/100	avg: N/A	RUNNING: 100
+Process 4 (hpc4223.hpcc.usc.edu):	lastContact: 1.28 s	(22.00 s)	batches: 0/1	tasks: 000/100	avg: N/A	RUNNING: 100
+
+Longest current time without contact: Process 0 (hpc4219.hpcc.usc.edu): 3.39 m (3.73 m)
+Most recent contact from current date: Process 1 (hpc4220.hpcc.usc.edu): 20.72 s
+
+500/1000 (50.00 %) dispatched (500 left)
+0/1000 (0.00 %) completed (1000 left)
+500 in process on 5/5 nodes, batch sizes [100 100]
+Calc durations (note: threading effects ignored):
+	Range: [\u221e d -\u221e ms]
+	Average: N/A
+	Total: N/A
+Batch durations:
+	Range: [\u221e d -\u221e ms]
+	Average: N/A
+	Total: N/A
+
+DONE? false
+
+Current duration: 4.79 m (5.13 m)
+Total rate: 0.00 task/d
+
+None done, estimates if all currently dispatched completed now:
+	Total rate: <1.62 tasks/s
+	Time left: >5.13 m
+	Tot duration: >10.27 m
+
+results dir item count: 71
+Exception count: 0
+```
+
+Simulations are sent to each compute node in batches whose size is dependent on the number of simulations left, the number of calculation threads, and the MIN_DISPATCH/MAX_DISPATCHT parameters in your Slurm script. The `500/1000 (50.00 %) dispatched (500 left)` line shows that 500 of the 1000 simulations have been sent off to the compute nodes for processing. The `0/1000 (0.00 %) completed (1000 left)` line indicates that no batches have completed. This tool only tracks completed batches, so even if some of the simulations within a batch have completed, they will not be counted until the whole batch for that node is complete.
+
+If you call this command from within your main simulation directory, then you will also see a line for "results dir item count". That will tell you how many subdirectories of "results" currently exist, which in this case is the number of either completed or in process simulations.
+
+The "Exception count: " line will tell you if any java exceptions have been thrown, which indicates problems. Sometimes the exceptions are at the start during launching of the job, and it will retry and launch successfully. If you see exceptions later on, then there is a bigger problem and the simulation will abort. Read over the job STDOUT file for clues as to what went wrong.
+
+You will also see time estimates until the simulation completes. As no batches have yet finished, the time estimates at the end of the output are minimums, if all currently running simulations were to finish instantaneously. Once at least one batch has completed, the estimates will update and become more accurate.
+
+You can also watch the output of the log parser with the `watch_logparse.sh` command, which will update every minute.
+
+### When the job completes
+
+When the job completes, it will no longer be listed by the `squeue -u $USER` command. This means that either it completed successfully, ended in error, or ran out of time and aborted. For the latter case, you can follow these steps again to resubmit and the job will pick up where it left off. If it completed sucessfully, then you will see the final binary output files. I usually like to look at the end of the STDOUT file for the jab to make sure that everything looks good:
+
+```
+TODO: output here
+```
+
+If everything looks good, transfer the output files back to your computer to plot the results as with the serial job. You should not run the ETAS plot generator tool on the login node of HPC resources (it is a shared resource and will not make them happy), and you shouldn't run it on a compute node either as it won't be able to reach the opensha server in order to generate maps.
