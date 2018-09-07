@@ -26,7 +26,7 @@ ETAS_CONF_JSON=/path/to/etas_conf.json
 MEM_GIGS=60
 
 # number of etas threads. should be approximately MEM_GIGS/5, and no more than the total number of threads available
-THREADS=12
+THREADS=8
 
 # MPJ_HOME directory. on USC HPC, it's fine to just use mine
 # you can also fetch this directory via Git by cloning https://github.com/kevinmilner/mpj-express.git
