@@ -15,7 +15,7 @@ Many UCERF3-ETAS simulations are often required in order to sufficiently sample 
 * All commands below assume that you are in a terminal and have SSH'd into the HPC resource
 * You have access to a parallel filesystem with a large (hundreds of gigabytes for large simulations) disk quota. This directory must be visible on all compute nodes
   * On USC HPC, this is `/home/scec-00/<your-username>` or `/home/scec-02/<your-username>`
-* You know how to edit text files on a command line using vim, emacs, or similar
+* You know how to edit text files on a command line using vim, emacs, nano, or similar
 * You know how to transfer files between computers using scp, sftp, and/or rsync
 
 ## Slurm helper scripts
