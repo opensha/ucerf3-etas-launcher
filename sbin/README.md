@@ -48,3 +48,23 @@ This script is used to filter out any spontaneous ruptures from catalogs, leavin
 USAGE: `u3etas_combine_binary.sh </path/to/binary_catalogs_1.bin> </path/to/binary_catalogs_2.bin> [... </path/to/binary_catalogs_N.bin>] </path/to/combined_binary_catalogs.bin>`
 
 This script is used to combine the binary output files from multiple runs of UCERF3 ETAS. This is useful if, for example, first you ran 1000 simulations of a scenario and then you ran another 1000 later. You would use this script to combine the two simulations into a single binary file, which can be used to generate plots from all 2000 catalogs.
+
+## Search for subsections by name or location: u3etas_section_search.sh
+
+USAGE: `u3etas_section_search.sh [--latitude <lat> --longitude <lon> [--radius <radius>]] [--name <section-name>] </path/to/fault_sustem_solution.zip>`
+
+This script allows you to search for UCERF3 subsections by location or by name. This can be useful to find subsection indexes which are near a recent earthquake, in order to build a trigger rupture.
+
+For example, search for all sections within 20km of 34, -118:
+
+`u3etas_section_search.sh --latitude 34 --longitude -118 --radius 20 $ETAS_LAUNCHER/inputs/2013_05_10-ucerf3p3-production-10runs_COMPOUND_SOL_FM3_1_SpatSeisU3_MEAN_BRANCH_AVG_SOL.zip`
+
+## Search for ruptures by location and magnitude range: u3etas_rupture_search.sh
+
+USAGE: `u3etas_rupture_search.sh --latitude <lat> --longitude <lon> --radius 50 --min-mag <min-mag> --max-mag <max-mag> </path/to/fault_sustem_solution.zip>`
+
+This script allows you to search for UCERF3 supraseismogenic ruptures by location and magnitude range. It will print out the ID number (which can be used to define a trigger rupture in the ETAS JSON file), as well as other properties for all matching ruptures.
+
+For example, search for all ruptures M7-7.1 within 20km of 34, -118:
+
+`u3etas_rupture_search.sh --latitude 34 --longitude -118 --radius 20 --min-mag 7 --max-mag 7.1 $ETAS_LAUNCHER/inputs/2013_05_10-ucerf3p3-production-10runs_COMPOUND_SOL_FM3_1_SpatSeisU3_MEAN_BRANCH_AVG_SOL.zip`
