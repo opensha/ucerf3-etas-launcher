@@ -22,7 +22,7 @@ Many UCERF3-ETAS simulations are often required in order to sufficiently sample 
 
 The [slurm_sbin](slurm_sbin) subdirectory contains many helper scripts which will make submitting and monitoring ETAS simulations much easier on HPC resources. You should add this directory to your PATH. Here is an example on USC HPCC, along with the other UCERF3-ETAS environmental variables:
 
-Put this in your .bash_profile script (replacing paths with your own paths):
+After logging into the server (in this case, hpc-login3.usc.edu), put this in your .bashrc script (replacing paths with your own paths):
 ```
 export ETAS_LAUNCHER=/home/scec-02/kmilner/ucerf3/ucerf3-etas-launcher
 export ETAS_SIM_DIR=/home/scec-02/kmilner/ucerf3/etas_sim
@@ -129,7 +129,7 @@ Total nodes in use: 36
 
 ## Monitoring job progress
 
-Once submitted, you must wait for you job to start. This can be nearly instantaneous or take hours to days, depending on what else is running/queued in the queue. Monitor the job with the `squeue -u $USER` command demonstrated in the previous section. Once the job is in the 'R' state (it has begun execution), you can monitor it's process with some of the tools in the [slurm_sbin](slurm_sbin) directory. These tools can either take the job ID number (which is printed out to the console when you submit the job, or can be found with `squeue -u $USER`), or if omitted will use the lowest ID number of any of your jobs in the 'R' state (that is, detect the first ID number of a running job). As mentioned previously, all of this assumes that you sumitted your job with the `slurm_submit.sh` command and these tools will only work if this is the case.
+Once submitted, you must wait for you job to start. This can be nearly instantaneous or take hours to days, depending on what else is running/queued in the queue. Monitor the job with the `squeue -u $USER` command demonstrated in the previous section. Once the job is in the 'R' state (it has begun execution), you can monitor it's process with some of the tools in the [slurm_sbin](slurm_sbin) directory. These tools can either take the job ID number (which is printed out to the console when you submit the job, or can be found with `squeue -u $USER`), or if omitted will use the lowest ID number of any of your jobs in the 'R' state (that is, detect the first ID number of a running job). As mentioned previously, all of this assumes that you sumitted your job with the `slurm_submit.sh` command and these tools will only work if this is the case. If something goes wrong, you can kill a job with the `scancel <job-id>` command, or you can cancel all submitted jobs with the `scancel_me.sh` script.
 
 ### Watching the job STDOUT
 
