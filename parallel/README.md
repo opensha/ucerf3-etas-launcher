@@ -4,7 +4,7 @@
 
 Many UCERF3-ETAS simulations are often required in order to sufficiently sample the probabilities of rare events. This is often intractable on a single machine in a reasonable timeframe, so we run simulations on many machines in parallel. This requires access to HPC resources, some additional libraries, and knowledge if submitting and managing batch jobs in a parallel environment. The following graphic illustrates the workflow of distributing a large ETAS simulation across multiple compute nodes, breaking the complete set of ETAS simulations into batches which are distributed to nodes for computation.
 
-![Overview image](etas_mpj_batch_graphic.png)
+![Overview image](etas_mpj_batch_graphic.svg)
 
 ## Assumptions/prerequisites
 
