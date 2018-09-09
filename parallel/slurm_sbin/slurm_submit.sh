@@ -5,4 +5,13 @@ if [[ ! -e $1 ]];then
 	exit 2
 fi
 
-sbatch -o ${1}.o%j -e ${1}.e%j $1
+DIR=`dirname ${1}`
+SCRIPT=`basename ${1}`
+
+if [[ ! -d $DIR ]];then
+	echo "$DIR doesn't exist"
+	exit 2
+fi
+cd $DIR
+
+sbatch -o ${SCRIPT}.o%j -e ${SCRIPT}.e%j $SCRIPT
