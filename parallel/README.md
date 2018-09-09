@@ -27,6 +27,7 @@ Put this in your .bash_profile script (replacing paths with your own paths):
 export ETAS_LAUNCHER=/home/scec-02/kmilner/ucerf3/ucerf3-etas-launcher
 export ETAS_SIM_DIR=/home/scec-02/kmilner/ucerf3/etas_sim
 export PATH=$ETAS_LAUNCHER/parallel/slurm_sbin/:$ETAS_LAUNCHER/sbin/:$PATH
+export MPJ_HOME=/home/scec-00/kmilner/mpj-current
 ```
 
 Verify that it works by logging out of the system, logging back in, and typing `echo $ETAS_LAUNCHER`. You should see your ETAS Launcher path:
