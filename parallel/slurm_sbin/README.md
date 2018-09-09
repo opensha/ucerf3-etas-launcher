@@ -11,7 +11,7 @@ Many of these scripts assume that the parallel job was submitted with `slurm_sub
 | locate_job_stdout.sh | `[<job-id>]` | Same as above, but for STDOUT |
 | **log_parse.sh** | `[<job-stdout-file>]` | Parses the STDOUT file for a parallel ETAS job with statistics on completed batches and runtime estimates |
 | **log_parse_running.sh** | `[<job-id>]` | Parses the STDOUT file of a currently running ETAS job with statistics on completed batches and runtime estimates. Optionally takes a job ID, else uses `detect_first_running.sh` to find an ID |
-| scancel_me.sh | *(none)* | Cancels all running SLURM jobs for the current user |
+| scancel_me.sh | *(none)* | Cancels all submitted (running or queued) SLURM jobs for the current user |
 | **scec_queue_check.py** | `[<queue-name>]` | Prints out information on all running jobs in the given queue (defaults to "scec" queue) including counts of nodes in use across all users. Useful to quickly see if there are nodes available for a job |
 | slurm_interactive.sh | `[<minutes> [<queue-name>]]` | Launches an interactive single node SLURM job. Defaults to 60 minutes and the main queue, but can be overriden with command line arguments |
 | **slurm_submit.sh** | `<file-name>` | Submits the given SLURM batch script, and instructs SLURM to direct STDOUT to <file-name>.o<job-id> and STDOUT to <file-name>.e<job-id>. Other scripts assume this convention for STDOUT and STDERR files |
