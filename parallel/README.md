@@ -221,3 +221,11 @@ Fri Aug 31 14:42:50 PDT 2018
 ```
 
 If everything looks good, transfer the output files back to your computer to plot the results as with the serial job. You should not run the ETAS plot generator tool on the login node of HPC resources (it is a shared resource and will not make them happy), and you shouldn't run it on a compute node either as it won't be able to reach the opensha server in order to generate maps.
+
+## Alternate approaches
+
+If you don't have access to a cluster environment, or want to use another technology to distribute the simulation across multiple machines, you can use the `u3etas_combine_binary.sh` script to combine the output of multiple binary output files into one master file for processing:
+
+`USAGE: u3etas_combine_binary.sh </path/to/binary_catalogs_1.bin> </path/to/binary_catalogs_2.bin> [... </path/to/binary_catalogs_N.bin>] </path/to/combined_binary_catalogs.bin>`
+
+In the simplest case, you could run the serial `u3etas_launcher.sh`  script manually on multiple machines. When each is done, copy all of the resultant binary files to a single machine, and then use the `u3etas_combine_binary.sh` script to generate a consolidated binary output file which will allow you to generate output plots for the entire set of simulations.
