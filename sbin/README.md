@@ -68,3 +68,13 @@ This script allows you to search for UCERF3 supraseismogenic ruptures by locatio
 For example, search for all ruptures M7-7.1 within 20km of 34, -118:
 
 `u3etas_rupture_search.sh --latitude 34 --longitude -118 --radius 20 --min-mag 7 --max-mag 7.1 $ETAS_LAUNCHER/inputs/2013_05_10-ucerf3p3-production-10runs_COMPOUND_SOL_FM3_1_SpatSeisU3_MEAN_BRANCH_AVG_SOL.zip`
+
+## Compute comparison UCERF3-TD or UCERF3-TI catalogs: u3etas_td_comparison_launcher.sh
+
+USAGE: `u3etas_td_comparison_launcher.sh --fss-file </path/to/fault_sustem_solution.zip> --duration <duration-years> [--start-year <year> --cov <COV option --time-independent>] </path/to/output_dir>`
+
+This script allows you to compute UCERF3-TD or UCERF3-TI catalogs. Output will be in the UCERF3-ETAS ASCII format, with some ETAS specific fields populated with default values (generation fiexed to zero, etc). Hypocenter locations are randomly sampled from the rupture surface. If the optional `--time-independent` option is supplied, the UCERF3-TI model is used and the output catalog starts on January 1, 1970. Otherwise, the current year is used unless `--start-year` is supplied. The optional `--cov` option allows you to specify a different magnitude-dependent aperiodicity branch from the UCERF3-TD logic tree: LOW_VALUES, MID_VALUES, or HIGH_VALUES.
+
+For example, for a 100 year UCERF3 simulation starting in 2014, written to /tmp/u3td_output:
+
+`u3etas_td_comparison_launcher.sh --fss-file $ETAS_LAUNCHER/inputs/2013_05_10-ucerf3p3-production-10runs_COMPOUND_SOL_FM3_1_SpatSeisU3_MEAN_BRANCH_AVG_SOL.zip --duration 100 --start-year 2012 /tmp/u3td_output`
