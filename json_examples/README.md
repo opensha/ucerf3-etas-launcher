@@ -112,7 +112,7 @@ These paths must be updated for each system, or if you want to use different fau
 | **probModel** | yes | UCERF3 probability model, one of FULL_TD, NO_ERT, or POISSON | `"probModel": "FULL_TD"` |
 | applySubSeisForSupraNucl | yes | This tells whether to correct gridded seismicity rates soas not to be less than the expected rate of aftershocks from supraseismogenic events | `"applySubSeisForSupraNucl": true` |
 | totRateScaleFactor | yes | The amount by which the total region MFD is multiplied by. Should use 1.14 for UCERF3-TD fault based | `"totRateScaleFactor": 1.14` |
-| gridSeisCorr | yes | Apply the gridded seismicity correction file in cacheDir to rates of gridded seismicity nodes | `"gridSeisCorr": true` |
+| gridSeisCorr | yes | Apply the gridded seismicity correction file in cacheDir to rates of gridded seismicity nodes. Should be false when girddedOnly is true. | `"gridSeisCorr": true` |
 | timeIndependentERF | yes | If true, disables elastic rebound time-dependence in the ERF. Can lead to runaway sequences that never end | `"timeIndependentERF": false` |
 | griddedOnly | yes | If true, gridded only (no faults) ETAS simulations will be preformed | `"griddedOnly": false` |
 | imposeGR | yes | This tells whether to impose Gutenberg-Richter in sampling ETAS aftershocks | `"imposeGR": false` |
