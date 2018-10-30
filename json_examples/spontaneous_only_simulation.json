@@ -30,5 +30,6 @@
   "griddedOnly": false,
   "imposeGR": false,
   "includeIndirectTriggering": true,
-  "gridSeisDiscr": 0.1
+  "gridSeisDiscr": 0.1,
+  "catalogCompletenessModel": "RELAXED"
 }
