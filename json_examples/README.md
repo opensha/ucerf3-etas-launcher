@@ -117,7 +117,8 @@ These paths must be updated for each system, or if you want to use different fau
 | griddedOnly | yes | If true, gridded only (no faults) ETAS simulations will be preformed | `"griddedOnly": false` |
 | imposeGR | yes | This tells whether to impose Gutenberg-Richter in sampling ETAS aftershocks | `"imposeGR": false` |
 | includeIndirectTriggering | yes | Include secondary, tertiary, etc events | `"includeIndirectTriggering": true` |
-| gridSeisDiscr | yes | lat lon discretization of gridded seismicity (degrees) | `"gridSeisDiscr": 0.1` |
+| gridSeisDiscr | yes | lat lon discretization of gridded seismicity (degrees), should always be 0.1 for now | `"gridSeisDiscr": 0.1` |
+| catalogCompletenessModel | yes | Time-dependent catalog completness model which will be used to filter a historical catalog, and control the rate of spontaneous ruptures (children from missing events in that catalog). Acceptable values are "STRICT" (table L9 from UCERF3-TI Appendix L) or "RELAXED" (much less restrictive option in order to include more historical data in ETAS simulations but at the cost of under-estimating spontaneous rates in some regions) | `"catalogCompletenessModel": "RELAXED"` |
 
 ## Binary Output Filters
 
