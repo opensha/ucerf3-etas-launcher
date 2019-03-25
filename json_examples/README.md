@@ -119,6 +119,9 @@ These paths must be updated for each system, or if you want to use different fau
 | includeIndirectTriggering | yes | Include secondary, tertiary, etc events | `"includeIndirectTriggering": true` |
 | gridSeisDiscr | yes | lat lon discretization of gridded seismicity (degrees), should always be 0.1 for now | `"gridSeisDiscr": 0.1` |
 | catalogCompletenessModel | yes | Time-dependent catalog completness model which will be used to filter a historical catalog, and control the rate of spontaneous ruptures (children from missing events in that catalog). Acceptable values are "STRICT" (table L9 from UCERF3-TI Appendix L) or "RELAXED" (much less restrictive option in order to include more historical data in ETAS simulations but at the cost of under-estimating spontaneous rates in some regions) | `"catalogCompletenessModel": "RELAXED"` |
+| etas_p | no | The ETAS p value in the temporal decay: `(t+c)^-p`. Default is 1.07, allowable range is `[1 1.4]` | `"etas_p": 1.07` |
+| etas_c | no | The ETAS c value in the temporal decay, units of days: `(t+c)^-p`. Default is 0.00650145, allowable range is `[0.00036525 0.115419]` | `"etas_c": 0.00650145` |
+| etas_log10_k | no | The ETAS productivity parameter k in Log10 units. Default is -2.54668, allowable range is `[-3.42136 -2.00261]` | `"etas_log10_k": -2.54668` |
 
 ## Binary Output Filters
 
