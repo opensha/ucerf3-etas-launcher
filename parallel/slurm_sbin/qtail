@@ -1,0 +1,15 @@
+#!/bin/bash
+
+squeue -u $USER
+FILE=`locate_job_stdout.sh`
+if [[ $? -eq 0 ]];then
+	echo
+	echo
+
+	LINE=`tput lines`
+	let LINE=LINE-10
+	COLS=`tput cols`
+	
+	fold -w $COLS -s $FILE | tail -n $LINE
+	echo
+fi
