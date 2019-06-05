@@ -21,3 +21,9 @@ echo "Job STDOUT: $FILE"
 $DIR/log_parse.sh $FILE
 echo -n "Exception count: "
 grep -c xception $FILE
+ERRORS=`grep -c "fatal error" $FILE`
+if [[ $ERRORS -gt 0 ]];then
+	echo
+	echo "WARNING!!! $ERRORS fatal JVM errors!"
+fi
+
