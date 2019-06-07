@@ -23,10 +23,10 @@ ETAS_CONF_JSON=/path/to/etas_conf.json
 ## JAVA/MPJ PARAMETERS ##
 
 # maxmimum memory in gigabytes. should be close to, but not over, total memory available
-MEM_GIGS=60
+MEM_GIGS=55
 
 # number of etas threads. should be approximately MEM_GIGS/5, and no more than the total number of threads available
-THREADS=12
+THREADS=10
 
 # MPJ_HOME directory. on USC HPC, it's fine to just use mine
 # you can also fetch this directory via Git by cloning https://github.com/kevinmilner/mpj-express.git
