@@ -24,6 +24,9 @@
   "triggerRuptures": [
     {
       "mag": 7.1,
+      "latitude": 35.766,
+      "longitude": -117.60500000000002,
+      "depth": 17.0,
       "ruptureSurfaces": [
         {
           "dip": 90.0,
