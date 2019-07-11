@@ -38,7 +38,7 @@ JSON array for specifying trigger ruptures (0 or more). There are 3 types of tri
 
 #### Point Source Rupture
 
-This represents a point source rupture, without any finite fault surface or fault sections to reset (for elastic rebound probabilities)
+This represents a point source rupture, without any finite fault surface (though you can still list fault sections to reset for elastic rebound probabilities)
 
  **Name** | **Required?** | **Description** | **Example** |
 |-------|-------|-------|-------|
@@ -47,6 +47,7 @@ This represents a point source rupture, without any finite fault surface or faul
 | latitude | yes | Latitude for point source rupture in decimal degrees | `"latitude": 34.213` |
 | longitude | yes | Longitude for point source rupture in decimal degrees | `"longitude": -118.537` |
 | depth | yes | Depth for point source rupture in kilometers (positive) | `"depth": 18.2` |
+| subSectResetIndexes | no | JSON array of integer UCERF3 subsection indexes to rest in an elastic rebound sense | `"subSectResetIndexes": [ 1412,1413 ]` |
 
 #### UCERF3 Fault System Rupture Set Rupture
 
@@ -67,6 +68,31 @@ This represents a rupture built from UCERF3 fault subsections, and requires alre
 | occurrenceTimeMillis | no | Rupture occurrence time in epoch milliseconds. If omitted, the rupture is assumed to occur at simulation start time | `"occurrenceTimeMillis": 1532665006760` |
 | mag | yes | Rupture magnitude | `"mag": 5.3` |
 | subSectIndexes | yes | JSON array of integer UCERF3 subsection indexes that comprise the rupture | `"subSectIndexes": [ 1412,1413 ]` |
+
+#### Simple Fault Rupture
+
+This represents a rupture constructed with [simple fault geometry](http://opensha.org/glossary-simpleFault): stike, dip, upper & lower depths, and fault trace. Multiple rupture planes are allowed, and you can optionally supply a list of UCERF3 subsection indices to reset (for elastic rebound properties)
+
+ **Name** | **Required?** | **Description** | **Example** |
+|-------|-------|-------|-------|
+| occurrenceTimeMillis | no | Rupture occurrence time in epoch milliseconds. If omitted, the rupture is assumed to occur at simulation start time | `"occurrenceTimeMillis": 1532665006760` |
+| mag | yes | Rupture magnitude | `"mag": 5.3` |
+| latitude | no | Hypocenter latitude in decimal degrees (used only for metadata & plots) | `"latitude": 34.213` |
+| longitude | no | Hypocenter longitude in decimal degrees (used only for metadata & plots) | `"longitude": -118.537` |
+| depth | no | Hypocentral depth in kilometers (positive, used only for metadata & plots) | `"depth": 18.2` |
+| ruptureSurfaces | yes | JSON array of Simple Fault Data rupture surfaces (see below) | see example below |
+| subSectResetIndexes | no | JSON array of integer UCERF3 subsection indexes to rest in an elastic rebound sense | `"subSectResetIndexes": [ 1412,1413 ]` |
+
+##### Simple Fault Data JSON Speicification
+
+Simple fault geometry (in the `ruptureSurfaces` JSON object) is specified as an array of the following properties (one entry for each fault plane):
+
+ **Name** | **Required?** | **Description** | **Example** |
+|-------|-------|-------|-------|
+| dip | yes | Fault dip (degrees) | `"dip": 90` |
+| upperDepth | yes | Fault upper depth (kilometers) | `"upperDepth": 0` |
+| lowerDepth | yes | Fault lower depth (kilometers) | `"lowerDepth": 12` |
+| trace | yes | JSON array of objects containing `latitude`, `longitude`, and `depth` | see example below |
 
 #### Trigger Ruptures Example
 
@@ -92,7 +118,37 @@ Here is an example specifying 3 trigger ruptures, one of each type. The first on
       "subSectIndexes": [
         1412
       ]
-    }
+    },
+    {
+      "occurrenceTimeMillis": 1562383193040,
+      "mag": 7.1,
+      "latitude": 35.7695,
+      "longitude": -117.59933329999998,
+      "depth": 8.0,
+      "ruptureSurfaces": [
+        {
+          "dip": 85.0,
+          "upperDepth": 0.0,
+          "lowerDepth": 12.0,
+          "trace": [
+            {
+              "latitude": 35.92284279864912,
+              "longitude": -117.75376500872244,
+              "depth": 0.0
+            },
+            {
+              "latitude": 35.773629374775204,
+              "longitude": -117.593478163178,
+              "depth": 0.0
+            },
+            {
+              "latitude": 35.576615540127804,
+              "longitude": -117.38310820766546,
+              "depth": 0.0
+            }
+          ]
+        }
+      ]
   ]
 ```
 
