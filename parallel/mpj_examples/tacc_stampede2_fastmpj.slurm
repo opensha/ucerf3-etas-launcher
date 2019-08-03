@@ -44,6 +44,12 @@ MAX_DISPATCH=500
 ##   DO NOT EDIT BELOW  ##
 ##########################
 
+NEW_JAR="`dirname ${ETAS_CONF_JSON}`/`basename $JAR_FILE`"
+cp $JAR_FILE $NEW_JAR
+if [[ -e $NEW_JAR ]];then
+	JAR_FILE=$NEW_JAR
+fi
+
 PBS_NODEFILE="/tmp/${USER}-hostfile-${SLURM_JOBID}"
 echo "creating PBS_NODEFILE: $PBS_NODEFILE"
 scontrol show hostnames $SLURM_NODELIST > $PBS_NODEFILE
