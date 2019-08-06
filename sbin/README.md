@@ -23,6 +23,31 @@ If you don't have internet access, or the opensha.usc.edu map server is down, pa
 
 Plots will be stored in the "plots" subdirectory, and both markdown (`README.md`) and HTML (`index.html`) will be written to the output directory specified in the JSON configuration file.
 
+## Configure ETAS simulations with a ComCat event ID: u3etas_comcat_event_config_builder.sh
+
+USAGE: `u3etas_comcat_event_config_builder.sh [options] --num-simulations <num> --event-id <event-id>`
+
+This script is used to generate JSON configuration files which are specific to a ComCat event. The only required arguments are the number of simulations (`--num-simulations <num>`) and the ComCat event ID (`--event-id <event-id>`, e.g. `--event-id ci38457511`). If `--output-dir <path>` has not been supplied, it assumes the the `$ETAS_SIM_DIR` environmental variable has been set and creates a sub-directory of `$ETAS_SIM_DIR`. Commonly used options are summarized below, run the command without any arguments to see details on all options.
+
+* Use `--days-before <days>`, `--hours-before <hours>`, `--days-after <days>`, `--hours-after <hours>`, and/or `--end-now` to include other ComCat events before and/or after the specified event. All events within a certain radius of the mainshock will be included. That radius is the Wells & Coppersmith (1994) radius by default, but can be overridden with `--radius <radius>` in kilometers. Also considers the optional `--min-mag <mag>`, `--min-depth <depth>`, and `--max-depth <depth>` arguments.
+* Use `--finite-surf-shakemap` to attempt to pull a finite surface from ShakeMap for the primary event. Optionally also supply `finite-surf-shakemap-min-mag <min-mag>` to fetch ShakeMap surfaces for all other events above a given magnitude if available.
+* Use `--finite-surf-inversion` to attempt to pull a finite surface from the slip inverson. Note that this surface may be very large and include areas with little or no inverted slip, use `--finite-surf-inversion-min-slip <min-slip>` in meters to specify a minimum amount of slip on each pach for it to be included. Optionally also supply `finite-surf-inversion-min-mag <min-mag>` to fetch inverted surfaces for all other events above a given magnitude if available.
+* Specify your own custom, planar finite surface with `--finite-surf-dip <dip>`, `--finite-surf-strike <strike>`, `--finite-surf-length-along <length>`, `--finite-surf-length-before <length>`, `--finite-surf-upper-depth <depth>`, and `--finite-surf-lower-depth <depth>`. Length along is how far in the along-strike direction the surface extends from the hypocenter, and before is how far in the opposite-strike direction it extends.
+* Specify any UCERF3 fault surfaces to reset (elastic rebound) with `--reset-sects <id1,id2,...,idN>`. You can also construct a finite-surface for the primary rupture from these sections with the `--finite-surf-from-sections` option.
+* Specify the simulation duration with `--duration-years <duration>`
+* Include spontaneous ruptures with `--include-spontaneous`
+* If you wish to configure a SLURM job submission script using one of the preset sites, use the `--hpc-site <name>` argument with either `USC_HPC` or `TACC_STAMPEDE2`. Specify the number of nodes needed with `--nodes <num>` and the number of wall clock time hours with `--hours <hours>`
+
+### Examples
+
+Here's an example for ShakeMap surfaces of the 2019 M7.1 Ridgecrest earthquake, configured for submission at the USC HPC center, including 7 days of prior events and starting the moment after the mainshock:
+
+`u3etas_comcat_event_config_builder.sh --event-id ci38457511 --num-simulations 100000 --days-before 7 --finite-surf-shakemap --finite-surf-shakemap-min-mag 5 --hpc-site USC_HPC --nodes 36 --hours 24 --queue scec`
+
+Here's an example for a custom drawn surface of the 2019 M7.1 Ridecrest earthquake, including 7 days of prior events and starting 28 days after the mainshock:
+
+`u3etas_comcat_event_config_builder.sh --event-id ci38457511 --num-simulations 100000 --days-before 7 --days-after 28 --finite-surf-dip 85 --finite-surf-strike 139 --finite-surf-length-along 29 --finite-surf-length-before 22 --finite-surf-upper-depth 0 --finite-surf-lower-depth 12`
+
 ## Build binary catalog files: u3etas_binary_writer.sh
 
 USAGE: `u3etas_binary_writer.sh </path/to/etas_config.json> [</path/to/results>]`
