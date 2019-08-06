@@ -208,3 +208,96 @@ They should be entered as a JSON array, with one array entry for each output fil
     }
   ]
 ```
+
+## Metadata (optional)
+
+These JSON fields are metadata only and optional. They will be populated automatically by the command line configuration generation tools.
+
+ **Name** | **Required?** | **Description** | **Example** |
+|-------|-------|-------|-------|
+| configCommand | no | If a command line tool was used to generate this configuration file, the command used will be included here | `"configCommand": "u3etas_comcat_event_config_builder.sh --event-id ci38457511 --num-simulations 100000 --days-before 7 --finite-surf-shakemap --finite-surf-shakemap-min-mag 5"` |
+| configTime | no | Time that this configuration file was generated (in epoch milliseconds) | `"configTime": 1565117235077` |
+| comcatMetadata | no | ComCat metadata, used to generate ComCat comparison plots which compare the simulated aftershock distribution with actual event data from ComCat | see below |
+
+### ComCat Metadata
+
+These fields will be used to generate comparison plots between simulated aftershock distributions and actual event data from ComCat. While this JSON object itself is optional, fields with "yes" in the "Required?" column are required if the object is supplied.
+
+ **Name** | **Required?** | **Description** | **Example** |
+|-------|-------|-------|-------|
+| region | yes | ComCat region specification | see examples below |
+| eventID | no | Primary ComCat event ID | `"eventID": "ci38457511"` |
+| minDepth | yes | Minimum depth to fetch ComCat events in kilometers | `"minDepth": -10.0` |
+| maxDepth | yes | Maximum depth to fetch ComCat events in kilometers | `"maxDepth": 24.0` |
+| minMag | yes | Minimum magnitude event to fetch from ComCat | `"minMag": 2.5` |
+| startTime | no | Start time (epoch milliseconds) for the ComCat query used to populate trigger events | `"startTime": 1562383193040` |
+| endTime | no | End time (epoch milliseconds) for the ComCat query used to populate trigger events | `"endTime": 1562383193041` |
+| magComplete | no | Magnitude of completeness to be used for comparison plots with real data. Default is modalMag+0.5 | `"magComplete": 4` |
+
+### ComCat Metadata Examples
+
+This example defines the ComCat region as a circle, with center latitude and longitude supplied, as well as the radius in kilometers:
+
+```
+  "comcatMetadata": {
+    "region": {
+      "centerLatitude": 35.7695,
+      "centerLongitude": -117.59933329999998,
+      "radius": 47.75292736576897
+    },
+    "eventID": "ci38457511",
+    "minDepth": -10.0,
+    "maxDepth": 24.0,
+    "minMag": 2.5,
+    "startTime": 1562383193040,
+    "endTime": 1562383193041
+  }
+```
+
+This example defines the ComCat region as a rectangle:
+
+```
+  "comcatMetadata": {
+    "region": {
+      "minLatitude": 35,
+      "maxLatitude": 36,
+      "minLongitude": -118,
+      "maxLongitude": -117
+    },
+    "eventID": "ci38457511",
+    "minDepth": -10.0,
+    "maxDepth": 24.0,
+    "minMag": 2.5,
+    "startTime": 1562383193040,
+    "endTime": 1562383193041
+  }
+```
+
+This example defines the ComCat region as a polygon, in this case just supplying three points for a triangular region:
+
+```
+  "comcatMetadata": {
+    "region": {
+      "border": [
+        {
+          "latitude": 36,
+          "longitude": -118
+        },
+        {
+          "latitude": 36,
+          "longitude": -116.7
+        },
+        {
+          "latitude": 34,
+          "longitude": -117.3
+        }
+      ]
+    },
+    "eventID": "ci38457511",
+    "minDepth": -10.0,
+    "maxDepth": 24.0,
+    "minMag": 2.5,
+    "startTime": 1562383193040,
+    "endTime": 1562383193041
+  }
+```
