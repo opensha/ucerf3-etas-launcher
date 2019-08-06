@@ -2,6 +2,8 @@
 
 This directory contains example JSON UCERF3-ETAS configuration files. Users will probably want to start with one of the supplied examples, and update them as needed. Documentation for each field is below, with those fields most likely to require updating in highlighted in bold.
 
+If you are running aftershock simulations of a real event, you can use the [u3etas_comcat_event_config_builder.sh](../sbin#configure-etas-simulations-with-a-comcat-event-id-u3etas_comcat_event_config_buildersh) tool to generate a configuration file for you from ComCat.
+
 ## Calculation Paramters
 
 This section describes calculation extents and some calculation parameters.
