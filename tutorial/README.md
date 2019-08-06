@@ -2,6 +2,26 @@
 
 This directory contains ETAS configuration JSON scripts which are configured to run quickly (only 10 simulations each) and output results in the "user_output" subdirectory.
 
+## 2019 M7.1 Ridgecrest automatic configuration from ComCat
+
+This example builds a configuration file from ComCat using the [u3etas_comcat_event_config_builder.sh](../sbin#configure-etas-simulations-with-a-comcat-event-id-u3etas_comcat_event_config_buildersh) tool. First generate the JSON configuration file:
+
+`u3etas_comcat_event_config_builder.sh --event-id ci38457511 --num-simulations 10 --days-before 7 --finite-surf-shakemap --finite-surf-shakemap-min-mag 5 --output-dir user_output/comcat-ridgecrest-m7.1-example --random-seed 123456789`
+
+That generates the configuration file (`user_output/comcat-ridgecrest-m7.1-example/config.json`), and various input plots (in `user_output/comcat-ridgecrest-m7.1-example/config_input_plots/`, example available [here](example_output/comcat-ridgecrest-m7.1-example/config_input_plots)).
+
+Now run the simulations:
+
+`u3etas_launcher.sh user_output/comcat-ridgecrest-m7.1-example/config.json`
+
+Then generate plots from the results:
+
+`u3etas_plot_generator.sh user_output/comcat-ridgecrest-m7.1-example/config.json`
+
+That places plot files in user_output/comcat-ridgecrest-m7.1-example/plots, with an index.html and README.md file in user_output/comcat-ridgecrest-m7.1-example.
+
+You can view example output of these commands [here](example_output/comcat-ridgecrest-m7.1-example).
+
 ## Mojave M7
 
 This is an example running simulations of an aftershock sequence following a M7 on the SAF Mojave. First run the simulations (will take 5-10 minutes):
