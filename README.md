@@ -64,6 +64,8 @@ ETAS_EnvTest DONE
 
 ETAS simulations are defined with [JSON](https://beginnersbook.com/2015/04/json-tutorial/) configuration files. These files describe the simulation parameters (start time, inclusion of spontaneous ruptures, etc), optional input 'trigger' ruptures (if you are simulating the aftermath of a scenario or real event), output directory, and path to various required UCERF3 inputs and cache files (located in the [inputs directory](inputs)). When you're ready to start running your own ETAS simulations, the simplest way to get started is to modify an example in the [json_examples directory](json_examples) and to read the [file format documentation](json_examples/README.md).
 
+If you are running aftershock simulations of a real event, you can use the [u3etas_comcat_event_config_builder.sh](./sbin#configure-etas-simulations-with-a-comcat-event-id-u3etas_comcat_event_config_buildersh) tool to generate a configuration file for you from ComCat.
+
 ## Running Single-Machine ETAS Simulations
 
 Once you have defined a [JSON ETAS configuration file](json_examples), you can use the scripts in the [sbin directory](sbin). More detailed information on these scripts is available in the [README](sbin/README.md). Commands shown below assume that you have added the sbin direcotory to your PATH.
