@@ -1,0 +1,2800 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+	border-collapse: collapse
+}
+table, th, td {
+	border: 1px solid black
+}
+body {
+	max-width:1000px;
+	margin: auto;
+}
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+</style>
+</head>
+<body>
+<h1 id="etas-configuration-for-comcat-m71-ci38457511-shakemap-surfaces">ETAS Configuration for ComCat M7.1 (ci38457511), ShakeMap Surfaces</h1>
+<table>
+<thead>
+<tr><th></th><th>ComCat M7.1 (ci38457511), ShakeMap Surfaces</th></tr>
+</thead>
+<tbody>
+<tr><td>Num Simulations</td><td>10</td></tr>
+<tr><td>Start Time</td><td>2019/07/06 03:19:54 UTC</td></tr>
+<tr><td>Start Time Epoch Milliseconds</td><td>1562383194040</td></tr>
+<tr><td>Duration</td><td>10 Years</td></tr>
+<tr><td>Includes Spontaneous?</td><td>false</td></tr>
+<tr><td>Trigger Ruptures</td><td>227 Trigger Ruptures</td></tr>
+<tr><td></td><td>First: M3.98 at 2019/07/04 17:02:55 UTC</td></tr>
+<tr><td></td><td>Last: M7.1 at 2019/07/06 03:19:53 UTC</td></tr>
+<tr><td></td><td>Largest: M7.1 at 2019/07/06 03:19:53 UTC</td></tr>
+<tr><td>Historical Ruptures</td><td><em>(none)</em></td></tr>
+</tbody>
+</table>
+<h2 id="table-of-contents">Table Of Contents</h2>
+<ul>
+<li><a href="#trigger-rupture-fault-map">Trigger Rupture Fault Map</a></li>
+<li><a href="#trigger-rupture-depth-map">Trigger Rupture Depth Map</a></li>
+<li><a href="#fault-distances-to-triggers">Fault Distances To Triggers</a></li>
+<li><a href="#possible-finite-rupture-subsection-mappings">Possible Finite Rupture Subsection Mappings</a></li>
+<li><a href="#json-input-file">JSON Input File</a></li>
+</ul>
+<h2 id="trigger-rupture-fault-map">Trigger Rupture Fault Map</h2>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<p><img src="./trigger_rup_fault_map.png" alt="Map" /></p>
+<h2 id="trigger-rupture-depth-map">Trigger Rupture Depth Map</h2>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<p><img src="./trigger_rup_depth_map.png" alt="Map" /></p>
+<h2 id="fault-distances-to-triggers">Fault Distances To Triggers</h2>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<table>
+<thead>
+<tr><th>Section Name</th><th>Strike, Dip, Rake</th><th># Hypos In Poly</th><th>Max Mag w/ Hypo In Poly</th><th># Surfs In Poly</th><th>Max Mag w/ Surf In Poly</th><th>Min Dist To Any (km)</th><th>Min Poly Dist To Any (km)</th><th>Min Dist To Largest (km)</th><th>Min Poly Dist To Largest (km)</th><th>Min Hypo Dist To Largest (km)</th><th>Min Hypo Poly Dist To Largest (km)</th></tr>
+</thead>
+<tbody>
+<tr><td>Airport Lake</td><td>359, 50, -90</td><td>90</td><td>7.1</td><td>90</td><td>7.1</td><td>0.036</td><td>0.000</td><td>0.036</td><td>0.000</td><td>5.612</td><td>0.000</td></tr>
+<tr><td>Little Lake</td><td>327, 90, 180</td><td>16</td><td>3.85</td><td>17</td><td>7.1</td><td>2.321</td><td>0.000</td><td>11.284</td><td>0.000</td><td>13.471</td><td>1.469</td></tr>
+<tr><td>Garlock (Central)</td><td>71, 90, 0</td><td>2</td><td>3.21</td><td>3</td><td>7.1</td><td>5.600</td><td>0.000</td><td>5.600</td><td>0.000</td><td>22.766</td><td>10.797</td></tr>
+<tr><td>So Sierra Nevada</td><td>2, 50, -90</td><td>1</td><td>2.75</td><td>1</td><td>2.75</td><td>1.410</td><td>0.000</td><td>4.248</td><td>4.233</td><td>16.191</td><td>15.188</td></tr>
+<tr><td>Tank Canyon</td><td>189, 50, -90</td><td>0</td><td></td><td>0</td><td></td><td>9.015</td><td>9.011</td><td>9.015</td><td>9.011</td><td>17.039</td><td>16.895</td></tr>
+<tr><td>Blackwater</td><td>323, 90, 180</td><td>0</td><td></td><td>0</td><td></td><td>14.394</td><td>8.726</td><td>14.394</td><td>8.726</td><td>29.622</td><td>27.613</td></tr>
+<tr><td>Scodie Lineament</td><td>221, 68, 0</td><td>0</td><td></td><td>0</td><td></td><td>16.722</td><td>15.781</td><td>28.750</td><td>27.702</td><td>36.559</td><td>32.668</td></tr>
+</tbody>
+</table>
+<h2 id="possible-finite-rupture-subsection-mappings">Possible Finite Rupture Subsection Mappings</h2>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<p>This gives any possible finite rupture surface subsection mappings. In the plot below, potentially suggested subsections are outlined in green, and all subsections for which any of this rupture is within the fault polygon are in gray. Suggested sections are those for which the area of the input rupture within the polygon is at least 50.0 % of the sub section area</p>
+<p>Overlapping polygons are removed according to the mean distance of the actual subsection surface, with the polygons of closer sections masking out the polygons of further sections</p>
+<p><img src="./finite_rup_subsection_mappings.png" alt="Map" /></p>
+<table>
+<thead>
+<tr><th>Section Index</th><th>Section Name</th><th>Suggested Match?</th><th>Section Area</th><th>Rup Area in Raw Poly</th><th>Rup Area in No-Overlap Poly</th><th>Area Fraction</th><th>Sect Distance To Rup</th><th>Hypocenter in Polygon?</th></tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>Airport Lake, Subsection 0</td><td><em>yes</em></td><td>120.19</td><td>322.07</td><td>322.07</td><td>2.68</td><td>mean=6.09 [0.29 11.59] [km]</td><td><em>yes</em></td></tr>
+<tr><td>1</td><td>Airport Lake, Subsection 1</td><td><em>yes</em></td><td>120.19</td><td>240.09</td><td>240.09</td><td>2</td><td>mean=3.08 [0.11 8.65] [km]</td><td>no</td></tr>
+<tr><td>2</td><td>Airport Lake, Subsection 2</td><td><em>yes</em></td><td>120.19</td><td>60.48</td><td>60.48</td><td>0.5</td><td>mean=3.32 [0.31 8.48] [km]</td><td>no</td></tr>
+<tr><td>605</td><td>Garlock (Central), Subsection 11</td><td><em>yes</em></td><td>61.94</td><td>81.32</td><td>81.32</td><td>1.31</td><td>mean=6.51 [5.6 8.05] [km]</td><td>no</td></tr>
+<tr><td>606</td><td>Garlock (Central), Subsection 12</td><td>no</td><td>61.94</td><td>24.4</td><td>24.4</td><td>0.39</td><td>mean=6.51 [5.6 8.06] [km]</td><td>no</td></tr>
+<tr><td>1130</td><td>Little Lake, Subsection 5</td><td>no</td><td>73.13</td><td>26.97</td><td>0</td><td>0</td><td>mean=11.55 [11.29 12.16] [km]</td><td>no</td></tr>
+</tbody>
+</table>
+<h2 id="json-input-file">JSON Input File</h2>
+<p><em><a href="#table-of-contents">(top)</a></em></p>
+<pre><code>{
+  &quot;numSimulations&quot;: 10,
+  &quot;duration&quot;: 10.0,
+  &quot;startTimeMillis&quot;: 1562383194040,
+  &quot;includeSpontaneous&quot;: false,
+  &quot;randomSeed&quot;: 123456789,
+  &quot;binaryOutput&quot;: false,
+  &quot;binaryOutputFilters&quot;: [
+    {
+      &quot;prefix&quot;: &quot;results_complete&quot;,
+      &quot;descendantsOnly&quot;: false
+    },
+    {
+      &quot;prefix&quot;: &quot;results_m5_preserve_chain&quot;,
+      &quot;minMag&quot;: 5.0,
+      &quot;preserveChainBelowMag&quot;: true,
+      &quot;descendantsOnly&quot;: false
+    }
+  ],
+  &quot;forceRecalc&quot;: false,
+  &quot;simulationName&quot;: &quot;ComCat M7.1 (ci38457511), ShakeMap Surfaces&quot;,
+  &quot;numRetries&quot;: 3,
+  &quot;outputDir&quot;: &quot;/home/kevin/git/ucerf3-etas-launcher/tutorial/user_output/comcat-ridgecrest-m7.1-example&quot;,
+  &quot;triggerRuptures&quot;: [
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562259775360,
+      &quot;comcatEventID&quot;: &quot;ci38443095&quot;,
+      &quot;mag&quot;: 3.98,
+      &quot;latitude&quot;: 35.707,
+      &quot;longitude&quot;: -117.50583329999999,
+      &quot;depth&quot;: 10.28
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562261629000,
+      &quot;comcatEventID&quot;: &quot;ci38443183&quot;,
+      &quot;mag&quot;: 6.4,
+      &quot;latitude&quot;: 35.7053333,
+      &quot;longitude&quot;: -117.5038333,
+      &quot;depth&quot;: 10.5,
+      &quot;ruptureSurfaces&quot;: [
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.6051534466,
+              &quot;longitude&quot;: -117.5905380735,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6173144101,
+              &quot;longitude&quot;: -117.57249634649999,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6173135736,
+              &quot;longitude&quot;: -117.5726723708,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.61731357360001,
+              &quot;longitude&quot;: -117.5726723708,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.6173144101,
+              &quot;longitude&quot;: -117.57249634649999,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.6051534466,
+              &quot;longitude&quot;: -117.5905380735,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.6051534466,
+              &quot;longitude&quot;: -117.5905380735,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.6338128629,
+              &quot;longitude&quot;: -117.54831678310002,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6413274733,
+              &quot;longitude&quot;: -117.5393878708,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.664283512,
+              &quot;longitude&quot;: -117.51611643970001,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.664283512000004,
+              &quot;longitude&quot;: -117.51611643970001,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.641327473299995,
+              &quot;longitude&quot;: -117.5393878708,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.63381286290001,
+              &quot;longitude&quot;: -117.54831678310002,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.6338128629,
+              &quot;longitude&quot;: -117.54831678310002,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.6322100797,
+              &quot;longitude&quot;: -117.55305954249998,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6196274701,
+              &quot;longitude&quot;: -117.56969626549999,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6196274701,
+              &quot;longitude&quot;: -117.56969626549999,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.6322100797,
+              &quot;longitude&quot;: -117.55305954249998,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.6322100797,
+              &quot;longitude&quot;: -117.55305954249998,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562261701660,
+      &quot;comcatEventID&quot;: &quot;ci38443191&quot;,
+      &quot;mag&quot;: 4.49,
+      &quot;latitude&quot;: 35.644,
+      &quot;longitude&quot;: -117.56716670000002,
+      &quot;depth&quot;: 4.64
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562261845670,
+      &quot;comcatEventID&quot;: &quot;ci37218996&quot;,
+      &quot;mag&quot;: 3.0,
+      &quot;latitude&quot;: 35.6785,
+      &quot;longitude&quot;: -117.45250000000001,
+      &quot;depth&quot;: 15.76
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562261875590,
+      &quot;comcatEventID&quot;: &quot;ci38443199&quot;,
+      &quot;mag&quot;: 3.91,
+      &quot;latitude&quot;: 35.7421667,
+      &quot;longitude&quot;: -117.5531667,
+      &quot;depth&quot;: 4.15
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562261927500,
+      &quot;comcatEventID&quot;: &quot;us70004a0n&quot;,
+      &quot;mag&quot;: 3.5,
+      &quot;latitude&quot;: 35.6215,
+      &quot;longitude&quot;: -117.5782,
+      &quot;depth&quot;: 9.7
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562261975380,
+      &quot;comcatEventID&quot;: &quot;us70004a0p&quot;,
+      &quot;mag&quot;: 3.7,
+      &quot;latitude&quot;: 35.6842,
+      &quot;longitude&quot;: -117.4995,
+      &quot;depth&quot;: 10.2
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262002250,
+      &quot;comcatEventID&quot;: &quot;ci38443223&quot;,
+      &quot;mag&quot;: 3.8,
+      &quot;latitude&quot;: 35.7253333,
+      &quot;longitude&quot;: -117.57083329999999,
+      &quot;depth&quot;: 6.63
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262018520,
+      &quot;comcatEventID&quot;: &quot;ci38443231&quot;,
+      &quot;mag&quot;: 4.13,
+      &quot;latitude&quot;: 35.707,
+      &quot;longitude&quot;: -117.5101667,
+      &quot;depth&quot;: 8.66
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262080850,
+      &quot;comcatEventID&quot;: &quot;ci37421957&quot;,
+      &quot;mag&quot;: 3.3,
+      &quot;latitude&quot;: 35.7266667,
+      &quot;longitude&quot;: -117.5288333,
+      &quot;depth&quot;: 1.97
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262174130,
+      &quot;comcatEventID&quot;: &quot;ci38443239&quot;,
+      &quot;mag&quot;: 3.22,
+      &quot;latitude&quot;: 35.7301667,
+      &quot;longitude&quot;: -117.55866669999999,
+      &quot;depth&quot;: 7.84
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262209200,
+      &quot;comcatEventID&quot;: &quot;us70004a0z&quot;,
+      &quot;mag&quot;: 3.6,
+      &quot;latitude&quot;: 35.6783,
+      &quot;longitude&quot;: -117.5488,
+      &quot;depth&quot;: 5.15
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262264020,
+      &quot;comcatEventID&quot;: &quot;ci37421981&quot;,
+      &quot;mag&quot;: 2.77,
+      &quot;latitude&quot;: 35.7478333,
+      &quot;longitude&quot;: -117.54000000000002,
+      &quot;depth&quot;: 9.4
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262272820,
+      &quot;comcatEventID&quot;: &quot;ci38443255&quot;,
+      &quot;mag&quot;: 3.86,
+      &quot;latitude&quot;: 35.6875,
+      &quot;longitude&quot;: -117.5071667,
+      &quot;depth&quot;: 1.54
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262363730,
+      &quot;comcatEventID&quot;: &quot;ci38443263&quot;,
+      &quot;mag&quot;: 3.39,
+      &quot;latitude&quot;: 35.6414986,
+      &quot;longitude&quot;: -117.6100006,
+      &quot;depth&quot;: 10.16
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262410080,
+      &quot;comcatEventID&quot;: &quot;ci38443271&quot;,
+      &quot;mag&quot;: 3.38,
+      &quot;latitude&quot;: 35.63916780000001,
+      &quot;longitude&quot;: -117.6186676,
+      &quot;depth&quot;: 7.61
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262437570,
+      &quot;comcatEventID&quot;: &quot;ci38443279&quot;,
+      &quot;mag&quot;: 3.59,
+      &quot;latitude&quot;: 35.7443352,
+      &quot;longitude&quot;: -117.54966740000002,
+      &quot;depth&quot;: 1.49
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262706450,
+      &quot;comcatEventID&quot;: &quot;ci38443287&quot;,
+      &quot;mag&quot;: 3.39,
+      &quot;latitude&quot;: 35.690834,
+      &quot;longitude&quot;: -117.53916930000001,
+      &quot;depth&quot;: 0.16
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562262761530,
+      &quot;comcatEventID&quot;: &quot;ci38443295&quot;,
+      &quot;mag&quot;: 2.94,
+      &quot;latitude&quot;: 35.7188333,
+      &quot;longitude&quot;: -117.5401667,
+      &quot;depth&quot;: 1.44
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263051430,
+      &quot;comcatEventID&quot;: &quot;ci38443311&quot;,
+      &quot;mag&quot;: 2.91,
+      &quot;latitude&quot;: 35.661,
+      &quot;longitude&quot;: -117.52500000000002,
+      &quot;depth&quot;: 1.44
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263082620,
+      &quot;comcatEventID&quot;: &quot;ci38443319&quot;,
+      &quot;mag&quot;: 3.29,
+      &quot;latitude&quot;: 35.7008324,
+      &quot;longitude&quot;: -117.5169983,
+      &quot;depth&quot;: 2.77
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263240220,
+      &quot;comcatEventID&quot;: &quot;ci38443335&quot;,
+      &quot;mag&quot;: 2.67,
+      &quot;latitude&quot;: 35.63,
+      &quot;longitude&quot;: -117.5688333,
+      &quot;depth&quot;: 1.0
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263282243,
+      &quot;comcatEventID&quot;: &quot;us70004a1k&quot;,
+      &quot;mag&quot;: 3.5,
+      &quot;latitude&quot;: 35.702,
+      &quot;longitude&quot;: -117.53610000000002,
+      &quot;depth&quot;: 10.0
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263374030,
+      &quot;comcatEventID&quot;: &quot;ci38443351&quot;,
+      &quot;mag&quot;: 2.67,
+      &quot;latitude&quot;: 35.611,
+      &quot;longitude&quot;: -117.5921667,
+      &quot;depth&quot;: 1.33
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263398440,
+      &quot;comcatEventID&quot;: &quot;ci38443359&quot;,
+      &quot;mag&quot;: 3.02,
+      &quot;latitude&quot;: 35.7481651,
+      &quot;longitude&quot;: -117.54183200000001,
+      &quot;depth&quot;: 2.26
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263541530,
+      &quot;comcatEventID&quot;: &quot;ci38443375&quot;,
+      &quot;mag&quot;: 2.75,
+      &quot;latitude&quot;: 35.7135,
+      &quot;longitude&quot;: -117.5318333,
+      &quot;depth&quot;: 0.33
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263576110,
+      &quot;comcatEventID&quot;: &quot;ci38443383&quot;,
+      &quot;mag&quot;: 3.78,
+      &quot;latitude&quot;: 35.6599998,
+      &quot;longitude&quot;: -117.52783199999999,
+      &quot;depth&quot;: 1.18
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263629180,
+      &quot;comcatEventID&quot;: &quot;ci38443391&quot;,
+      &quot;mag&quot;: 3.5,
+      &quot;latitude&quot;: 35.5998344,
+      &quot;longitude&quot;: -117.6226654,
+      &quot;depth&quot;: 0.0
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263832740,
+      &quot;comcatEventID&quot;: &quot;ci38443415&quot;,
+      &quot;mag&quot;: 3.46,
+      &quot;latitude&quot;: 35.6593323,
+      &quot;longitude&quot;: -117.53816990000001,
+      &quot;depth&quot;: 8.47
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263882750,
+      &quot;comcatEventID&quot;: &quot;ci38443423&quot;,
+      &quot;mag&quot;: 2.79,
+      &quot;latitude&quot;: 35.603666700000005,
+      &quot;longitude&quot;: -117.60866670000001,
+      &quot;depth&quot;: 2.04
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562263972040,
+      &quot;comcatEventID&quot;: &quot;ci38443431&quot;,
+      &quot;mag&quot;: 3.44,
+      &quot;latitude&quot;: 35.6723333,
+      &quot;longitude&quot;: -117.561,
+      &quot;depth&quot;: 6.91
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562264031370,
+      &quot;comcatEventID&quot;: &quot;ci38443439&quot;,
+      &quot;mag&quot;: 3.5,
+      &quot;latitude&quot;: 35.7048333,
+      &quot;longitude&quot;: -117.4808333,
+      &quot;depth&quot;: 8.5
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562264104860,
+      &quot;comcatEventID&quot;: &quot;us70004a28&quot;,
+      &quot;mag&quot;: 3.2,
+      &quot;latitude&quot;: 35.61,
+      &quot;longitude&quot;: -117.602,
+      &quot;depth&quot;: 1.8
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562264193510,
+      &quot;comcatEventID&quot;: &quot;ci38443463&quot;,
+      &quot;mag&quot;: 3.04,
+      &quot;latitude&quot;: 35.7233315,
+      &quot;longitude&quot;: -117.5403366,
+      &quot;depth&quot;: 1.22
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562264235140,
+      &quot;comcatEventID&quot;: &quot;ci38443471&quot;,
+      &quot;mag&quot;: 2.85,
+      &quot;latitude&quot;: 35.7171667,
+      &quot;longitude&quot;: -117.54566669999998,
+      &quot;depth&quot;: 1.43
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562264325740,
+      &quot;comcatEventID&quot;: &quot;ci38443487&quot;,
+      &quot;mag&quot;: 3.28,
+      &quot;latitude&quot;: 35.6375008,
+      &quot;longitude&quot;: -117.6143341,
+      &quot;depth&quot;: 5.97
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562264485340,
+      &quot;comcatEventID&quot;: &quot;ci38443495&quot;,
+      &quot;mag&quot;: 2.61,
+      &quot;latitude&quot;: 35.6793333,
+      &quot;longitude&quot;: -117.5173333,
+      &quot;depth&quot;: 1.99
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562264763680,
+      &quot;comcatEventID&quot;: &quot;ci38443519&quot;,
+      &quot;mag&quot;: 3.12,
+      &quot;latitude&quot;: 35.6646652,
+      &quot;longitude&quot;: -117.5261688,
+      &quot;depth&quot;: 1.2
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562264846710,
+      &quot;comcatEventID&quot;: &quot;ci38443527&quot;,
+      &quot;mag&quot;: 3.29,
+      &quot;latitude&quot;: 35.6738319,
+      &quot;longitude&quot;: -117.51750180000002,
+      &quot;depth&quot;: 1.57
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562264879440,
+      &quot;comcatEventID&quot;: &quot;ci38443535&quot;,
+      &quot;mag&quot;: 4.23,
+      &quot;latitude&quot;: 35.745,
+      &quot;longitude&quot;: -117.55216669999999,
+      &quot;depth&quot;: 6.64
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562264923610,
+      &quot;comcatEventID&quot;: &quot;ci38443543&quot;,
+      &quot;mag&quot;: 3.85,
+      &quot;latitude&quot;: 35.6661667,
+      &quot;longitude&quot;: -117.5723333,
+      &quot;depth&quot;: 4.05
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562265344040,
+      &quot;comcatEventID&quot;: &quot;ci38443575&quot;,
+      &quot;mag&quot;: 2.5,
+      &quot;latitude&quot;: 35.7215,
+      &quot;longitude&quot;: -117.56550000000001,
+      &quot;depth&quot;: 0.16
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562265451500,
+      &quot;comcatEventID&quot;: &quot;ci38443591&quot;,
+      &quot;mag&quot;: 2.64,
+      &quot;latitude&quot;: 35.72,
+      &quot;longitude&quot;: -117.5723333,
+      &quot;depth&quot;: 1.34
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562265525650,
+      &quot;comcatEventID&quot;: &quot;ci38443599&quot;,
+      &quot;mag&quot;: 2.69,
+      &quot;latitude&quot;: 35.7046661,
+      &quot;longitude&quot;: -117.49666600000002,
+      &quot;depth&quot;: 3.96
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562265584440,
+      &quot;comcatEventID&quot;: &quot;ci38443607&quot;,
+      &quot;mag&quot;: 4.59,
+      &quot;latitude&quot;: 35.6013333,
+      &quot;longitude&quot;: -117.59700000000001,
+      &quot;depth&quot;: 2.81
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562265674300,
+      &quot;comcatEventID&quot;: &quot;ci38443615&quot;,
+      &quot;mag&quot;: 3.24,
+      &quot;latitude&quot;: 35.6751671,
+      &quot;longitude&quot;: -117.5148315,
+      &quot;depth&quot;: 1.73
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562265865000,
+      &quot;comcatEventID&quot;: &quot;ci38443631&quot;,
+      &quot;mag&quot;: 3.09,
+      &quot;latitude&quot;: 35.719,
+      &quot;longitude&quot;: -117.55866669999999,
+      &quot;depth&quot;: 2.06
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266026590,
+      &quot;comcatEventID&quot;: &quot;ci38443647&quot;,
+      &quot;mag&quot;: 4.34,
+      &quot;latitude&quot;: 35.6758333,
+      &quot;longitude&quot;: -117.48533330000001,
+      &quot;depth&quot;: 8.53
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266207160,
+      &quot;comcatEventID&quot;: &quot;ci38443663&quot;,
+      &quot;mag&quot;: 2.73,
+      &quot;latitude&quot;: 35.641,
+      &quot;longitude&quot;: -117.56266670000001,
+      &quot;depth&quot;: 8.95
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266216010,
+      &quot;comcatEventID&quot;: &quot;ci38443671&quot;,
+      &quot;mag&quot;: 3.55,
+      &quot;latitude&quot;: 35.6764984,
+      &quot;longitude&quot;: -117.5,
+      &quot;depth&quot;: 0.91
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266333530,
+      &quot;comcatEventID&quot;: &quot;ci38443679&quot;,
+      &quot;mag&quot;: 2.78,
+      &quot;latitude&quot;: 35.6543333,
+      &quot;longitude&quot;: -117.53983330000001,
+      &quot;depth&quot;: 0.88
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266376130,
+      &quot;comcatEventID&quot;: &quot;ci38443687&quot;,
+      &quot;mag&quot;: 2.93,
+      &quot;latitude&quot;: 35.741,
+      &quot;longitude&quot;: -117.561,
+      &quot;depth&quot;: 0.23
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266407460,
+      &quot;comcatEventID&quot;: &quot;ci38443695&quot;,
+      &quot;mag&quot;: 3.34,
+      &quot;latitude&quot;: 35.7276649,
+      &quot;longitude&quot;: -117.56416320000001,
+      &quot;depth&quot;: 1.62
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266453990,
+      &quot;comcatEventID&quot;: &quot;ci38443703&quot;,
+      &quot;mag&quot;: 4.07,
+      &quot;latitude&quot;: 35.5975,
+      &quot;longitude&quot;: -117.5996667,
+      &quot;depth&quot;: 5.33
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266527790,
+      &quot;comcatEventID&quot;: &quot;ci38443711&quot;,
+      &quot;mag&quot;: 3.07,
+      &quot;latitude&quot;: 35.6738333,
+      &quot;longitude&quot;: -117.4893333,
+      &quot;depth&quot;: 9.23
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266566420,
+      &quot;comcatEventID&quot;: &quot;ci38443719&quot;,
+      &quot;mag&quot;: 4.58,
+      &quot;latitude&quot;: 35.716,
+      &quot;longitude&quot;: -117.56000000000002,
+      &quot;depth&quot;: 1.92
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266582030,
+      &quot;comcatEventID&quot;: &quot;ci37420717&quot;,
+      &quot;mag&quot;: 4.21,
+      &quot;latitude&quot;: 35.7086667,
+      &quot;longitude&quot;: -117.55416669999998,
+      &quot;depth&quot;: 1.16
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266687790,
+      &quot;comcatEventID&quot;: &quot;ci38443727&quot;,
+      &quot;mag&quot;: 2.85,
+      &quot;latitude&quot;: 35.7266667,
+      &quot;longitude&quot;: -117.56516670000002,
+      &quot;depth&quot;: 0.09
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266809510,
+      &quot;comcatEventID&quot;: &quot;ci38443751&quot;,
+      &quot;mag&quot;: 3.21,
+      &quot;latitude&quot;: 35.7099991,
+      &quot;longitude&quot;: -117.55616759999998,
+      &quot;depth&quot;: 0.1
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266869997,
+      &quot;comcatEventID&quot;: &quot;us70004a4p&quot;,
+      &quot;mag&quot;: 3.0,
+      &quot;latitude&quot;: 35.7867,
+      &quot;longitude&quot;: -117.5478,
+      &quot;depth&quot;: 5.0
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562266944640,
+      &quot;comcatEventID&quot;: &quot;ci38443775&quot;,
+      &quot;mag&quot;: 2.56,
+      &quot;latitude&quot;: 35.645,
+      &quot;longitude&quot;: -117.5373333,
+      &quot;depth&quot;: 0.01
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562267419790,
+      &quot;comcatEventID&quot;: &quot;ci38443823&quot;,
+      &quot;mag&quot;: 3.26,
+      &quot;latitude&quot;: 35.6938324,
+      &quot;longitude&quot;: -117.49449920000002,
+      &quot;depth&quot;: 0.97
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562267699490,
+      &quot;comcatEventID&quot;: &quot;ci38443831&quot;,
+      &quot;mag&quot;: 3.0,
+      &quot;latitude&quot;: 35.652668,
+      &quot;longitude&quot;: -117.5393295,
+      &quot;depth&quot;: 1.65
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562267766200,
+      &quot;comcatEventID&quot;: &quot;ci38443839&quot;,
+      &quot;mag&quot;: 2.5,
+      &quot;latitude&quot;: 35.721,
+      &quot;longitude&quot;: -117.56650000000002,
+      &quot;depth&quot;: 0.12
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562267871400,
+      &quot;comcatEventID&quot;: &quot;ci38443855&quot;,
+      &quot;mag&quot;: 3.23,
+      &quot;latitude&quot;: 35.6911659,
+      &quot;longitude&quot;: -117.51216889999999,
+      &quot;depth&quot;: 1.03
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562268051750,
+      &quot;comcatEventID&quot;: &quot;ci38443863&quot;,
+      &quot;mag&quot;: 2.8,
+      &quot;latitude&quot;: 35.6389999,
+      &quot;longitude&quot;: -117.5526657,
+      &quot;depth&quot;: 1.11
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562268092090,
+      &quot;comcatEventID&quot;: &quot;ci38443871&quot;,
+      &quot;mag&quot;: 4.5,
+      &quot;latitude&quot;: 35.6715,
+      &quot;longitude&quot;: -117.4788333,
+      &quot;depth&quot;: 5.16
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562268380340,
+      &quot;comcatEventID&quot;: &quot;ci38443879&quot;,
+      &quot;mag&quot;: 2.69,
+      &quot;latitude&quot;: 35.7086667,
+      &quot;longitude&quot;: -117.48333330000001,
+      &quot;depth&quot;: 1.39
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562268438340,
+      &quot;comcatEventID&quot;: &quot;ci38443895&quot;,
+      &quot;mag&quot;: 2.81,
+      &quot;latitude&quot;: 35.6696667,
+      &quot;longitude&quot;: -117.47999999999999,
+      &quot;depth&quot;: 6.24
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562269189760,
+      &quot;comcatEventID&quot;: &quot;ci38443983&quot;,
+      &quot;mag&quot;: 2.63,
+      &quot;latitude&quot;: 35.683,
+      &quot;longitude&quot;: -117.5195,
+      &quot;depth&quot;: 5.84
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562269229180,
+      &quot;comcatEventID&quot;: &quot;ci38443991&quot;,
+      &quot;mag&quot;: 2.65,
+      &quot;latitude&quot;: 35.6556667,
+      &quot;longitude&quot;: -117.5158333,
+      &quot;depth&quot;: 1.76
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562269744960,
+      &quot;comcatEventID&quot;: &quot;ci38444047&quot;,
+      &quot;mag&quot;: 3.18,
+      &quot;latitude&quot;: 35.6828346,
+      &quot;longitude&quot;: -117.49183650000002,
+      &quot;depth&quot;: 0.0
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562269876850,
+      &quot;comcatEventID&quot;: &quot;ci38444063&quot;,
+      &quot;mag&quot;: 3.34,
+      &quot;latitude&quot;: 35.7094994,
+      &quot;longitude&quot;: -117.55666349999998,
+      &quot;depth&quot;: 0.34
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562269933070,
+      &quot;comcatEventID&quot;: &quot;ci38444071&quot;,
+      &quot;mag&quot;: 3.02,
+      &quot;latitude&quot;: 35.6086655,
+      &quot;longitude&quot;: -117.590332,
+      &quot;depth&quot;: 4.83
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562270160500,
+      &quot;comcatEventID&quot;: &quot;ci38444103&quot;,
+      &quot;mag&quot;: 4.16,
+      &quot;latitude&quot;: 35.6623333,
+      &quot;longitude&quot;: -117.524,
+      &quot;depth&quot;: 1.49
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562270280220,
+      &quot;comcatEventID&quot;: &quot;ci38444119&quot;,
+      &quot;mag&quot;: 2.65,
+      &quot;latitude&quot;: 35.7131667,
+      &quot;longitude&quot;: -117.5561667,
+      &quot;depth&quot;: 0.16
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562270492930,
+      &quot;comcatEventID&quot;: &quot;ci38444135&quot;,
+      &quot;mag&quot;: 2.5,
+      &quot;latitude&quot;: 35.678,
+      &quot;longitude&quot;: -117.589,
+      &quot;depth&quot;: 7.89
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562270655500,
+      &quot;comcatEventID&quot;: &quot;ci38444143&quot;,
+      &quot;mag&quot;: 2.56,
+      &quot;latitude&quot;: 35.7048333,
+      &quot;longitude&quot;: -117.48683330000001,
+      &quot;depth&quot;: 1.23
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562270768270,
+      &quot;comcatEventID&quot;: &quot;ci38444159&quot;,
+      &quot;mag&quot;: 3.38,
+      &quot;latitude&quot;: 35.6980019,
+      &quot;longitude&quot;: -117.4881668,
+      &quot;depth&quot;: 8.77
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562271091460,
+      &quot;comcatEventID&quot;: &quot;ci38444191&quot;,
+      &quot;mag&quot;: 2.61,
+      &quot;latitude&quot;: 35.683,
+      &quot;longitude&quot;: -117.50483330000002,
+      &quot;depth&quot;: 1.69
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562271290340,
+      &quot;comcatEventID&quot;: &quot;ci38444215&quot;,
+      &quot;mag&quot;: 3.99,
+      &quot;latitude&quot;: 35.6991667,
+      &quot;longitude&quot;: -117.5125,
+      &quot;depth&quot;: 5.75
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562271456830,
+      &quot;comcatEventID&quot;: &quot;ci38444231&quot;,
+      &quot;mag&quot;: 3.06,
+      &quot;latitude&quot;: 35.699501,
+      &quot;longitude&quot;: -117.4838333,
+      &quot;depth&quot;: 1.03
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562271789990,
+      &quot;comcatEventID&quot;: &quot;ci38444263&quot;,
+      &quot;mag&quot;: 3.4,
+      &quot;latitude&quot;: 35.6403351,
+      &quot;longitude&quot;: -117.5996704,
+      &quot;depth&quot;: 9.92
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562271838650,
+      &quot;comcatEventID&quot;: &quot;ci38444271&quot;,
+      &quot;mag&quot;: 2.53,
+      &quot;latitude&quot;: 35.6583333,
+      &quot;longitude&quot;: -117.56233329999999,
+      &quot;depth&quot;: 4.39
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562272472100,
+      &quot;comcatEventID&quot;: &quot;ci38444311&quot;,
+      &quot;mag&quot;: 2.61,
+      &quot;latitude&quot;: 35.640667,
+      &quot;longitude&quot;: -117.5833359,
+      &quot;depth&quot;: 8.68
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562273126620,
+      &quot;comcatEventID&quot;: &quot;ci38444407&quot;,
+      &quot;mag&quot;: 3.09,
+      &quot;latitude&quot;: 35.7008324,
+      &quot;longitude&quot;: -117.47766879999999,
+      &quot;depth&quot;: 0.04
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562273724820,
+      &quot;comcatEventID&quot;: &quot;ci38444487&quot;,
+      &quot;mag&quot;: 3.37,
+      &quot;latitude&quot;: 35.7088318,
+      &quot;longitude&quot;: -117.4771652,
+      &quot;depth&quot;: 0.2
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562273832360,
+      &quot;comcatEventID&quot;: &quot;ci38444503&quot;,
+      &quot;mag&quot;: 2.54,
+      &quot;latitude&quot;: 35.6585,
+      &quot;longitude&quot;: -117.53199999999998,
+      &quot;depth&quot;: 8.73
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562274175860,
+      &quot;comcatEventID&quot;: &quot;ci38444543&quot;,
+      &quot;mag&quot;: 3.56,
+      &quot;latitude&quot;: 35.689666700000004,
+      &quot;longitude&quot;: -117.4853363,
+      &quot;depth&quot;: 7.08
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562274428600,
+      &quot;comcatEventID&quot;: &quot;ci38444559&quot;,
+      &quot;mag&quot;: 2.52,
+      &quot;latitude&quot;: 35.5995,
+      &quot;longitude&quot;: -117.59783330000002,
+      &quot;depth&quot;: 4.74
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562275395050,
+      &quot;comcatEventID&quot;: &quot;ci38444687&quot;,
+      &quot;mag&quot;: 2.8,
+      &quot;latitude&quot;: 35.6951667,
+      &quot;longitude&quot;: -117.4893333,
+      &quot;depth&quot;: 1.65
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562275595090,
+      &quot;comcatEventID&quot;: &quot;ci38444719&quot;,
+      &quot;mag&quot;: 3.0,
+      &quot;latitude&quot;: 35.67666630000001,
+      &quot;longitude&quot;: -117.52749630000001,
+      &quot;depth&quot;: 7.39
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562275966060,
+      &quot;comcatEventID&quot;: &quot;ci38444783&quot;,
+      &quot;mag&quot;: 2.62,
+      &quot;latitude&quot;: 35.725,
+      &quot;longitude&quot;: -117.56916670000001,
+      &quot;depth&quot;: 2.03
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562276014350,
+      &quot;comcatEventID&quot;: &quot;ci38444791&quot;,
+      &quot;mag&quot;: 3.08,
+      &quot;latitude&quot;: 35.6155014,
+      &quot;longitude&quot;: -117.5893326,
+      &quot;depth&quot;: 5.43
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562276433450,
+      &quot;comcatEventID&quot;: &quot;ci38444823&quot;,
+      &quot;mag&quot;: 3.42,
+      &quot;latitude&quot;: 35.6691666,
+      &quot;longitude&quot;: -117.518837,
+      &quot;depth&quot;: 2.04
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562276519830,
+      &quot;comcatEventID&quot;: &quot;ci38444847&quot;,
+      &quot;mag&quot;: 2.74,
+      &quot;latitude&quot;: 35.7193333,
+      &quot;longitude&quot;: -117.53216670000002,
+      &quot;depth&quot;: 2.19
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562276794030,
+      &quot;comcatEventID&quot;: &quot;ci38444895&quot;,
+      &quot;mag&quot;: 2.5,
+      &quot;latitude&quot;: 35.7011667,
+      &quot;longitude&quot;: -117.47866669999999,
+      &quot;depth&quot;: 0.93
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562276824410,
+      &quot;comcatEventID&quot;: &quot;ci38444903&quot;,
+      &quot;mag&quot;: 3.25,
+      &quot;latitude&quot;: 35.6321678,
+      &quot;longitude&quot;: -117.60717010000002,
+      &quot;depth&quot;: 9.0
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562277755090,
+      &quot;comcatEventID&quot;: &quot;ci38445015&quot;,
+      &quot;mag&quot;: 3.35,
+      &quot;latitude&quot;: 35.6775017,
+      &quot;longitude&quot;: -117.5148315,
+      &quot;depth&quot;: 2.85
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562277922533,
+      &quot;comcatEventID&quot;: &quot;us70004ach&quot;,
+      &quot;mag&quot;: 3.3,
+      &quot;latitude&quot;: 35.7232,
+      &quot;longitude&quot;: -117.4508,
+      &quot;depth&quot;: 9.45
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562278328280,
+      &quot;comcatEventID&quot;: &quot;ci38445087&quot;,
+      &quot;mag&quot;: 4.47,
+      &quot;latitude&quot;: 35.7443333,
+      &quot;longitude&quot;: -117.56633329999998,
+      &quot;depth&quot;: 1.97
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562279346560,
+      &quot;comcatEventID&quot;: &quot;ci38445183&quot;,
+      &quot;mag&quot;: 2.51,
+      &quot;latitude&quot;: 35.7038333,
+      &quot;longitude&quot;: -117.49499999999999,
+      &quot;depth&quot;: 9.8
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562279407880,
+      &quot;comcatEventID&quot;: &quot;ci38445199&quot;,
+      &quot;mag&quot;: 2.62,
+      &quot;latitude&quot;: 35.7008333,
+      &quot;longitude&quot;: -117.4893333,
+      &quot;depth&quot;: 1.85
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562280141650,
+      &quot;comcatEventID&quot;: &quot;ci38445295&quot;,
+      &quot;mag&quot;: 3.2,
+      &quot;latitude&quot;: 35.7211685,
+      &quot;longitude&quot;: -117.52400210000002,
+      &quot;depth&quot;: 2.21
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562281630780,
+      &quot;comcatEventID&quot;: &quot;ci38445463&quot;,
+      &quot;mag&quot;: 2.59,
+      &quot;latitude&quot;: 35.7041667,
+      &quot;longitude&quot;: -117.4886667,
+      &quot;depth&quot;: 1.92
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562281960410,
+      &quot;comcatEventID&quot;: &quot;ci38445495&quot;,
+      &quot;mag&quot;: 3.49,
+      &quot;latitude&quot;: 35.6711655,
+      &quot;longitude&quot;: -117.47166440000001,
+      &quot;depth&quot;: 7.11
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562281984910,
+      &quot;comcatEventID&quot;: &quot;ci38445503&quot;,
+      &quot;mag&quot;: 3.06,
+      &quot;latitude&quot;: 35.7470016,
+      &quot;longitude&quot;: -117.5784988,
+      &quot;depth&quot;: 2.13
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562283240630,
+      &quot;comcatEventID&quot;: &quot;ci37420973&quot;,
+      &quot;mag&quot;: 3.82,
+      &quot;latitude&quot;: 35.6623333,
+      &quot;longitude&quot;: -117.5245,
+      &quot;depth&quot;: 2.61
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562283242380,
+      &quot;comcatEventID&quot;: &quot;ci38445703&quot;,
+      &quot;mag&quot;: 4.04,
+      &quot;latitude&quot;: 35.6011667,
+      &quot;longitude&quot;: -117.61066670000001,
+      &quot;depth&quot;: 4.75
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562283753710,
+      &quot;comcatEventID&quot;: &quot;ci38445751&quot;,
+      &quot;mag&quot;: 3.72,
+      &quot;latitude&quot;: 35.7470016,
+      &quot;longitude&quot;: -117.5681686,
+      &quot;depth&quot;: 2.42
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562284476440,
+      &quot;comcatEventID&quot;: &quot;ci38445839&quot;,
+      &quot;mag&quot;: 3.33,
+      &quot;latitude&quot;: 35.6571655,
+      &quot;longitude&quot;: -117.52183530000002,
+      &quot;depth&quot;: 1.67
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562285645640,
+      &quot;comcatEventID&quot;: &quot;ci38445935&quot;,
+      &quot;mag&quot;: 2.76,
+      &quot;latitude&quot;: 35.6458333,
+      &quot;longitude&quot;: -117.54716670000002,
+      &quot;depth&quot;: 0.29
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562285881410,
+      &quot;comcatEventID&quot;: &quot;ci38445975&quot;,
+      &quot;mag&quot;: 4.04,
+      &quot;latitude&quot;: 35.7718333,
+      &quot;longitude&quot;: -117.61783330000002,
+      &quot;depth&quot;: 2.59
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562286529030,
+      &quot;comcatEventID&quot;: &quot;ci38446031&quot;,
+      &quot;mag&quot;: 2.8,
+      &quot;latitude&quot;: 35.7215,
+      &quot;longitude&quot;: -117.5465,
+      &quot;depth&quot;: 7.03
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562286726670,
+      &quot;comcatEventID&quot;: &quot;ci38446071&quot;,
+      &quot;mag&quot;: 4.02,
+      &quot;latitude&quot;: 35.7033333,
+      &quot;longitude&quot;: -117.4828333,
+      &quot;depth&quot;: 1.0
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562286799610,
+      &quot;comcatEventID&quot;: &quot;ci38446079&quot;,
+      &quot;mag&quot;: 2.66,
+      &quot;latitude&quot;: 35.7436676,
+      &quot;longitude&quot;: -117.55566409999999,
+      &quot;depth&quot;: 5.42
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562287539420,
+      &quot;comcatEventID&quot;: &quot;ci38446159&quot;,
+      &quot;mag&quot;: 3.95,
+      &quot;latitude&quot;: 35.6910019,
+      &quot;longitude&quot;: -117.50966640000001,
+      &quot;depth&quot;: 3.68
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562287780920,
+      &quot;comcatEventID&quot;: &quot;ci38446175&quot;,
+      &quot;mag&quot;: 2.52,
+      &quot;latitude&quot;: 35.7096667,
+      &quot;longitude&quot;: -117.47866669999999,
+      &quot;depth&quot;: 1.91
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562288933460,
+      &quot;comcatEventID&quot;: &quot;ci38446343&quot;,
+      &quot;mag&quot;: 2.99,
+      &quot;latitude&quot;: 35.7254982,
+      &quot;longitude&quot;: -117.55117030000001,
+      &quot;depth&quot;: 1.29
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562289493410,
+      &quot;comcatEventID&quot;: &quot;ci38446391&quot;,
+      &quot;mag&quot;: 3.12,
+      &quot;latitude&quot;: 35.6580009,
+      &quot;longitude&quot;: -117.52216339999998,
+      &quot;depth&quot;: 1.38
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562291154030,
+      &quot;comcatEventID&quot;: &quot;ci38446527&quot;,
+      &quot;mag&quot;: 2.55,
+      &quot;latitude&quot;: 35.5946655,
+      &quot;longitude&quot;: -117.5978317,
+      &quot;depth&quot;: 4.1
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562291887280,
+      &quot;comcatEventID&quot;: &quot;ci38446615&quot;,
+      &quot;mag&quot;: 2.68,
+      &quot;latitude&quot;: 35.7118333,
+      &quot;longitude&quot;: -117.46816670000001,
+      &quot;depth&quot;: 0.68
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562292100910,
+      &quot;comcatEventID&quot;: &quot;ci38446639&quot;,
+      &quot;mag&quot;: 3.21,
+      &quot;latitude&quot;: 35.7734985,
+      &quot;longitude&quot;: -117.6149979,
+      &quot;depth&quot;: 0.22
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562292119010,
+      &quot;comcatEventID&quot;: &quot;ci38446647&quot;,
+      &quot;mag&quot;: 3.98,
+      &quot;latitude&quot;: 35.6401667,
+      &quot;longitude&quot;: -117.5461667,
+      &quot;depth&quot;: 11.3
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562292319160,
+      &quot;comcatEventID&quot;: &quot;ci38446671&quot;,
+      &quot;mag&quot;: 3.34,
+      &quot;latitude&quot;: 35.6558342,
+      &quot;longitude&quot;: -117.5234985,
+      &quot;depth&quot;: 1.57
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562292831940,
+      &quot;comcatEventID&quot;: &quot;ci38446767&quot;,
+      &quot;mag&quot;: 2.65,
+      &quot;latitude&quot;: 35.6405,
+      &quot;longitude&quot;: -117.55783329999998,
+      &quot;depth&quot;: 10.3
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562293181860,
+      &quot;comcatEventID&quot;: &quot;ci38446807&quot;,
+      &quot;mag&quot;: 3.25,
+      &quot;latitude&quot;: 35.7746658,
+      &quot;longitude&quot;: -117.6169968,
+      &quot;depth&quot;: 2.35
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562293435650,
+      &quot;comcatEventID&quot;: &quot;ci38446831&quot;,
+      &quot;mag&quot;: 2.8,
+      &quot;latitude&quot;: 35.7128333,
+      &quot;longitude&quot;: -117.4743333,
+      &quot;depth&quot;: 0.81
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562295589610,
+      &quot;comcatEventID&quot;: &quot;ci38447047&quot;,
+      &quot;mag&quot;: 2.81,
+      &quot;latitude&quot;: 35.661,
+      &quot;longitude&quot;: -117.519,
+      &quot;depth&quot;: 0.21
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562295673270,
+      &quot;comcatEventID&quot;: &quot;ci38447055&quot;,
+      &quot;mag&quot;: 2.72,
+      &quot;latitude&quot;: 35.744,
+      &quot;longitude&quot;: -117.5648333,
+      &quot;depth&quot;: 5.49
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562296518720,
+      &quot;comcatEventID&quot;: &quot;ci38447143&quot;,
+      &quot;mag&quot;: 3.27,
+      &quot;latitude&quot;: 35.6286659,
+      &quot;longitude&quot;: -117.5633316,
+      &quot;depth&quot;: 3.95
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562296793710,
+      &quot;comcatEventID&quot;: &quot;ci38447191&quot;,
+      &quot;mag&quot;: 3.32,
+      &quot;latitude&quot;: 35.6426659,
+      &quot;longitude&quot;: -117.529335,
+      &quot;depth&quot;: 0.61
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562296893030,
+      &quot;comcatEventID&quot;: &quot;ci38447207&quot;,
+      &quot;mag&quot;: 2.53,
+      &quot;latitude&quot;: 35.7783333,
+      &quot;longitude&quot;: -117.6173333,
+      &quot;depth&quot;: 1.76
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562297120610,
+      &quot;comcatEventID&quot;: &quot;ci38447231&quot;,
+      &quot;mag&quot;: 2.54,
+      &quot;latitude&quot;: 35.6911667,
+      &quot;longitude&quot;: -117.5123333,
+      &quot;depth&quot;: 4.17
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562298372730,
+      &quot;comcatEventID&quot;: &quot;ci38447383&quot;,
+      &quot;mag&quot;: 2.56,
+      &quot;latitude&quot;: 35.698,
+      &quot;longitude&quot;: -117.48033330000001,
+      &quot;depth&quot;: 1.34
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562298414390,
+      &quot;comcatEventID&quot;: &quot;ci38447391&quot;,
+      &quot;mag&quot;: 3.07,
+      &quot;latitude&quot;: 35.6823349,
+      &quot;longitude&quot;: -117.5,
+      &quot;depth&quot;: 0.59
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562298613940,
+      &quot;comcatEventID&quot;: &quot;ci38447407&quot;,
+      &quot;mag&quot;: 2.52,
+      &quot;latitude&quot;: 35.7093333,
+      &quot;longitude&quot;: -117.4758333,
+      &quot;depth&quot;: 0.41
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562299898470,
+      &quot;comcatEventID&quot;: &quot;ci38447591&quot;,
+      &quot;mag&quot;: 3.53,
+      &quot;latitude&quot;: 35.7226677,
+      &quot;longitude&quot;: -117.55300139999999,
+      &quot;depth&quot;: 1.02
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562299981170,
+      &quot;comcatEventID&quot;: &quot;ci38447599&quot;,
+      &quot;mag&quot;: 2.62,
+      &quot;latitude&quot;: 35.6773333,
+      &quot;longitude&quot;: -117.551,
+      &quot;depth&quot;: 7.07
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562300085340,
+      &quot;comcatEventID&quot;: &quot;ci38447623&quot;,
+      &quot;mag&quot;: 3.48,
+      &quot;latitude&quot;: 35.6983337,
+      &quot;longitude&quot;: -117.481163,
+      &quot;depth&quot;: 1.26
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562301184910,
+      &quot;comcatEventID&quot;: &quot;ci38447727&quot;,
+      &quot;mag&quot;: 2.54,
+      &quot;latitude&quot;: 35.6588333,
+      &quot;longitude&quot;: -117.51783330000002,
+      &quot;depth&quot;: 2.08
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562302565260,
+      &quot;comcatEventID&quot;: &quot;ci38447911&quot;,
+      &quot;mag&quot;: 2.52,
+      &quot;latitude&quot;: 35.6596667,
+      &quot;longitude&quot;: -117.54183330000001,
+      &quot;depth&quot;: 7.89
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562302899770,
+      &quot;comcatEventID&quot;: &quot;ci38447927&quot;,
+      &quot;mag&quot;: 2.61,
+      &quot;latitude&quot;: 35.5718333,
+      &quot;longitude&quot;: -117.6181667,
+      &quot;depth&quot;: 4.86
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562303437620,
+      &quot;comcatEventID&quot;: &quot;ci38447999&quot;,
+      &quot;mag&quot;: 3.19,
+      &quot;latitude&quot;: 35.7073326,
+      &quot;longitude&quot;: -117.47533420000002,
+      &quot;depth&quot;: 6.11
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562303905370,
+      &quot;comcatEventID&quot;: &quot;ci38448031&quot;,
+      &quot;mag&quot;: 3.45,
+      &quot;latitude&quot;: 35.7700005,
+      &quot;longitude&quot;: -117.61250310000001,
+      &quot;depth&quot;: 2.34
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562304556070,
+      &quot;comcatEventID&quot;: &quot;ci38448071&quot;,
+      &quot;mag&quot;: 2.64,
+      &quot;latitude&quot;: 35.636,
+      &quot;longitude&quot;: -117.58783330000001,
+      &quot;depth&quot;: 6.71
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562305212140,
+      &quot;comcatEventID&quot;: &quot;ci38448143&quot;,
+      &quot;mag&quot;: 2.82,
+      &quot;latitude&quot;: 35.6776667,
+      &quot;longitude&quot;: -117.51066670000002,
+      &quot;depth&quot;: 2.02
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562305958100,
+      &quot;comcatEventID&quot;: &quot;ci38448183&quot;,
+      &quot;mag&quot;: 2.5,
+      &quot;latitude&quot;: 35.70283330000001,
+      &quot;longitude&quot;: -117.4845,
+      &quot;depth&quot;: 0.25
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562306963130,
+      &quot;comcatEventID&quot;: &quot;ci38448295&quot;,
+      &quot;mag&quot;: 3.65,
+      &quot;latitude&quot;: 35.6223335,
+      &quot;longitude&quot;: -117.57333369999999,
+      &quot;depth&quot;: 6.19
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562308842510,
+      &quot;comcatEventID&quot;: &quot;ci38448487&quot;,
+      &quot;mag&quot;: 3.2,
+      &quot;latitude&quot;: 35.7036667,
+      &quot;longitude&quot;: -117.50849909999998,
+      &quot;depth&quot;: 2.33
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562309940440,
+      &quot;comcatEventID&quot;: &quot;ci38448591&quot;,
+      &quot;mag&quot;: 2.64,
+      &quot;latitude&quot;: 35.7166667,
+      &quot;longitude&quot;: -117.54133330000002,
+      &quot;depth&quot;: 0.35
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562309973610,
+      &quot;comcatEventID&quot;: &quot;ci38448599&quot;,
+      &quot;mag&quot;: 2.58,
+      &quot;latitude&quot;: 35.6706667,
+      &quot;longitude&quot;: -117.4831667,
+      &quot;depth&quot;: 6.7
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562310142290,
+      &quot;comcatEventID&quot;: &quot;ci38448631&quot;,
+      &quot;mag&quot;: 3.17,
+      &quot;latitude&quot;: 35.7268333,
+      &quot;longitude&quot;: -117.56416320000001,
+      &quot;depth&quot;: 1.54
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562311657020,
+      &quot;comcatEventID&quot;: &quot;ci38448791&quot;,
+      &quot;mag&quot;: 3.72,
+      &quot;latitude&quot;: 35.75,
+      &quot;longitude&quot;: -117.56416320000001,
+      &quot;depth&quot;: 3.38
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562312353540,
+      &quot;comcatEventID&quot;: &quot;ci38448863&quot;,
+      &quot;mag&quot;: 3.46,
+      &quot;latitude&quot;: 35.68600080000001,
+      &quot;longitude&quot;: -117.4801636,
+      &quot;depth&quot;: 9.49
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562313643330,
+      &quot;comcatEventID&quot;: &quot;ci38449015&quot;,
+      &quot;mag&quot;: 2.9,
+      &quot;latitude&quot;: 35.7501667,
+      &quot;longitude&quot;: -117.56216670000002,
+      &quot;depth&quot;: 7.07
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562314864840,
+      &quot;comcatEventID&quot;: &quot;ci38449191&quot;,
+      &quot;mag&quot;: 3.46,
+      &quot;latitude&quot;: 35.6011658,
+      &quot;longitude&quot;: -117.6039963,
+      &quot;depth&quot;: 4.2
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562316409740,
+      &quot;comcatEventID&quot;: &quot;ci38449335&quot;,
+      &quot;mag&quot;: 3.09,
+      &quot;latitude&quot;: 35.6926651,
+      &quot;longitude&quot;: -117.49099730000002,
+      &quot;depth&quot;: 7.04
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562316842500,
+      &quot;comcatEventID&quot;: &quot;ci38449351&quot;,
+      &quot;mag&quot;: 3.55,
+      &quot;latitude&quot;: 35.7039986,
+      &quot;longitude&quot;: -117.50250240000001,
+      &quot;depth&quot;: 7.27
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562317880610,
+      &quot;comcatEventID&quot;: &quot;ci38449503&quot;,
+      &quot;mag&quot;: 2.9,
+      &quot;latitude&quot;: 35.6663333,
+      &quot;longitude&quot;: -117.52766670000001,
+      &quot;depth&quot;: 6.61
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562319989260,
+      &quot;comcatEventID&quot;: &quot;ci38449719&quot;,
+      &quot;mag&quot;: 3.51,
+      &quot;latitude&quot;: 35.6479988,
+      &quot;longitude&quot;: -117.54533390000002,
+      &quot;depth&quot;: 3.76
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562321794490,
+      &quot;comcatEventID&quot;: &quot;ci38449919&quot;,
+      &quot;mag&quot;: 3.1,
+      &quot;latitude&quot;: 35.663166,
+      &quot;longitude&quot;: -117.50299840000001,
+      &quot;depth&quot;: 6.09
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562322437720,
+      &quot;comcatEventID&quot;: &quot;ci38449999&quot;,
+      &quot;mag&quot;: 2.53,
+      &quot;latitude&quot;: 35.7246667,
+      &quot;longitude&quot;: -117.5358333,
+      &quot;depth&quot;: 6.6
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562322796080,
+      &quot;comcatEventID&quot;: &quot;ci38450047&quot;,
+      &quot;mag&quot;: 2.75,
+      &quot;latitude&quot;: 35.68050000000001,
+      &quot;longitude&quot;: -117.4775,
+      &quot;depth&quot;: 0.83
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562324246570,
+      &quot;comcatEventID&quot;: &quot;ci38450215&quot;,
+      &quot;mag&quot;: 2.89,
+      &quot;latitude&quot;: 35.7433333,
+      &quot;longitude&quot;: -117.54933329999999,
+      &quot;depth&quot;: 10.81
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562324378860,
+      &quot;comcatEventID&quot;: &quot;ci38450223&quot;,
+      &quot;mag&quot;: 3.54,
+      &quot;latitude&quot;: 35.6041679,
+      &quot;longitude&quot;: -117.5926666,
+      &quot;depth&quot;: 1.97
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562324873040,
+      &quot;comcatEventID&quot;: &quot;ci38450263&quot;,
+      &quot;mag&quot;: 5.36,
+      &quot;latitude&quot;: 35.7603333,
+      &quot;longitude&quot;: -117.57500000000002,
+      &quot;depth&quot;: 6.95
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562325009580,
+      &quot;comcatEventID&quot;: &quot;ci38450271&quot;,
+      &quot;mag&quot;: 3.44,
+      &quot;latitude&quot;: 35.746666,
+      &quot;longitude&quot;: -117.59333039999999,
+      &quot;depth&quot;: 6.49
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562325091820,
+      &quot;comcatEventID&quot;: &quot;ci38450279&quot;,
+      &quot;mag&quot;: 2.96,
+      &quot;latitude&quot;: 35.7498333,
+      &quot;longitude&quot;: -117.56949999999999,
+      &quot;depth&quot;: 4.28
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562325139080,
+      &quot;comcatEventID&quot;: &quot;ci38450287&quot;,
+      &quot;mag&quot;: 2.93,
+      &quot;latitude&quot;: 35.7505,
+      &quot;longitude&quot;: -117.5688333,
+      &quot;depth&quot;: 3.62
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562325439580,
+      &quot;comcatEventID&quot;: &quot;ci38450295&quot;,
+      &quot;mag&quot;: 2.55,
+      &quot;latitude&quot;: 35.777,
+      &quot;longitude&quot;: -117.56699999999998,
+      &quot;depth&quot;: 4.93
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562325624920,
+      &quot;comcatEventID&quot;: &quot;ci38450319&quot;,
+      &quot;mag&quot;: 2.56,
+      &quot;latitude&quot;: 35.7588333,
+      &quot;longitude&quot;: -117.57466670000001,
+      &quot;depth&quot;: 7.08
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562325908730,
+      &quot;comcatEventID&quot;: &quot;ci38450367&quot;,
+      &quot;mag&quot;: 2.6,
+      &quot;latitude&quot;: 35.6436667,
+      &quot;longitude&quot;: -117.5891667,
+      &quot;depth&quot;: 8.26
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562326154790,
+      &quot;comcatEventID&quot;: &quot;ci38450415&quot;,
+      &quot;mag&quot;: 3.05,
+      &quot;latitude&quot;: 35.7718315,
+      &quot;longitude&quot;: -117.5686646,
+      &quot;depth&quot;: 3.75
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562326291390,
+      &quot;comcatEventID&quot;: &quot;ci38450447&quot;,
+      &quot;mag&quot;: 2.52,
+      &quot;latitude&quot;: 35.758,
+      &quot;longitude&quot;: -117.58216670000002,
+      &quot;depth&quot;: 7.12
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562326563920,
+      &quot;comcatEventID&quot;: &quot;ci38450511&quot;,
+      &quot;mag&quot;: 3.19,
+      &quot;latitude&quot;: 35.7631667,
+      &quot;longitude&quot;: -117.5838333,
+      &quot;depth&quot;: 7.91
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562327510810,
+      &quot;comcatEventID&quot;: &quot;ci38450631&quot;,
+      &quot;mag&quot;: 2.72,
+      &quot;latitude&quot;: 35.6008333,
+      &quot;longitude&quot;: -117.60383329999999,
+      &quot;depth&quot;: 4.64
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562327929210,
+      &quot;comcatEventID&quot;: &quot;ci38450663&quot;,
+      &quot;mag&quot;: 2.88,
+      &quot;latitude&quot;: 35.648,
+      &quot;longitude&quot;: -117.585,
+      &quot;depth&quot;: 6.77
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562329437990,
+      &quot;comcatEventID&quot;: &quot;ci38450935&quot;,
+      &quot;mag&quot;: 3.26,
+      &quot;latitude&quot;: 35.7228317,
+      &quot;longitude&quot;: -117.52850340000002,
+      &quot;depth&quot;: 3.14
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562330310020,
+      &quot;comcatEventID&quot;: &quot;ci38451079&quot;,
+      &quot;mag&quot;: 4.09,
+      &quot;latitude&quot;: 35.7716667,
+      &quot;longitude&quot;: -117.57066670000002,
+      &quot;depth&quot;: 6.82
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562331000450,
+      &quot;comcatEventID&quot;: &quot;ci38451175&quot;,
+      &quot;mag&quot;: 2.65,
+      &quot;latitude&quot;: 35.758,
+      &quot;longitude&quot;: -117.57366670000002,
+      &quot;depth&quot;: 6.92
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562331304830,
+      &quot;comcatEventID&quot;: &quot;ci38451239&quot;,
+      &quot;mag&quot;: 3.65,
+      &quot;latitude&quot;: 35.7508316,
+      &quot;longitude&quot;: -117.5633316,
+      &quot;depth&quot;: 6.9
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562332343380,
+      &quot;comcatEventID&quot;: &quot;ci38451383&quot;,
+      &quot;mag&quot;: 2.75,
+      &quot;latitude&quot;: 35.7586667,
+      &quot;longitude&quot;: -117.5676667,
+      &quot;depth&quot;: 5.07
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562334063040,
+      &quot;comcatEventID&quot;: &quot;ci38451623&quot;,
+      &quot;mag&quot;: 2.75,
+      &quot;latitude&quot;: 35.7051667,
+      &quot;longitude&quot;: -117.5111667,
+      &quot;depth&quot;: 6.82
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562334453490,
+      &quot;comcatEventID&quot;: &quot;ci38451671&quot;,
+      &quot;mag&quot;: 2.61,
+      &quot;latitude&quot;: 35.7465,
+      &quot;longitude&quot;: -117.5656667,
+      &quot;depth&quot;: 3.19
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562334941070,
+      &quot;comcatEventID&quot;: &quot;ci38451727&quot;,
+      &quot;mag&quot;: 2.63,
+      &quot;latitude&quot;: 35.7153333,
+      &quot;longitude&quot;: -117.5081667,
+      &quot;depth&quot;: 9.68
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562335307420,
+      &quot;comcatEventID&quot;: &quot;ci38451775&quot;,
+      &quot;mag&quot;: 2.53,
+      &quot;latitude&quot;: 35.7918333,
+      &quot;longitude&quot;: -117.61550000000001,
+      &quot;depth&quot;: 1.03
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562337573410,
+      &quot;comcatEventID&quot;: &quot;ci38452095&quot;,
+      &quot;mag&quot;: 3.94,
+      &quot;latitude&quot;: 35.7428322,
+      &quot;longitude&quot;: -117.56749730000001,
+      &quot;depth&quot;: 2.33
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562337629890,
+      &quot;comcatEventID&quot;: &quot;ci38452103&quot;,
+      &quot;mag&quot;: 3.21,
+      &quot;latitude&quot;: 35.5613327,
+      &quot;longitude&quot;: -117.6133347,
+      &quot;depth&quot;: 3.28
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562338809210,
+      &quot;comcatEventID&quot;: &quot;ci38452247&quot;,
+      &quot;mag&quot;: 2.78,
+      &quot;latitude&quot;: 35.6818333,
+      &quot;longitude&quot;: -117.59733329999999,
+      &quot;depth&quot;: 0.27
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562339017620,
+      &quot;comcatEventID&quot;: &quot;ci38452271&quot;,
+      &quot;mag&quot;: 2.76,
+      &quot;latitude&quot;: 35.663000000000004,
+      &quot;longitude&quot;: -117.5275,
+      &quot;depth&quot;: 2.81
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562339537840,
+      &quot;comcatEventID&quot;: &quot;ci38452367&quot;,
+      &quot;mag&quot;: 2.57,
+      &quot;latitude&quot;: 35.7438316,
+      &quot;longitude&quot;: -117.5596695,
+      &quot;depth&quot;: 1.17
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562339943630,
+      &quot;comcatEventID&quot;: &quot;ci38452431&quot;,
+      &quot;mag&quot;: 2.55,
+      &quot;latitude&quot;: 35.7223333,
+      &quot;longitude&quot;: -117.551,
+      &quot;depth&quot;: 0.33
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562341563870,
+      &quot;comcatEventID&quot;: &quot;ci38452607&quot;,
+      &quot;mag&quot;: 2.98,
+      &quot;latitude&quot;: 35.6993332,
+      &quot;longitude&quot;: -117.48300170000002,
+      &quot;depth&quot;: 1.21
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562346156530,
+      &quot;comcatEventID&quot;: &quot;ci38453279&quot;,
+      &quot;mag&quot;: 3.84,
+      &quot;latitude&quot;: 35.6175003,
+      &quot;longitude&quot;: -117.5821686,
+      &quot;depth&quot;: 9.91
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562349432530,
+      &quot;comcatEventID&quot;: &quot;ci38453711&quot;,
+      &quot;mag&quot;: 2.51,
+      &quot;latitude&quot;: 35.7163333,
+      &quot;longitude&quot;: -117.47483329999999,
+      &quot;depth&quot;: 1.51
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562349596220,
+      &quot;comcatEventID&quot;: &quot;ci38453719&quot;,
+      &quot;mag&quot;: 3.42,
+      &quot;latitude&quot;: 35.7924995,
+      &quot;longitude&quot;: -117.6153336,
+      &quot;depth&quot;: 3.33
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562350192590,
+      &quot;comcatEventID&quot;: &quot;ci38453815&quot;,
+      &quot;mag&quot;: 2.71,
+      &quot;latitude&quot;: 35.6693333,
+      &quot;longitude&quot;: -117.5243333,
+      &quot;depth&quot;: 2.25
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562352030950,
+      &quot;comcatEventID&quot;: &quot;ci38454007&quot;,
+      &quot;mag&quot;: 2.6,
+      &quot;latitude&quot;: 35.7251667,
+      &quot;longitude&quot;: -117.56066670000001,
+      &quot;depth&quot;: 2.79
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562356776960,
+      &quot;comcatEventID&quot;: &quot;ci38454567&quot;,
+      &quot;mag&quot;: 2.74,
+      &quot;latitude&quot;: 35.7391667,
+      &quot;longitude&quot;: -117.5648333,
+      &quot;depth&quot;: 2.68
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562359878730,
+      &quot;comcatEventID&quot;: &quot;ci38454919&quot;,
+      &quot;mag&quot;: 2.74,
+      &quot;latitude&quot;: 35.6678333,
+      &quot;longitude&quot;: -117.51833329999998,
+      &quot;depth&quot;: 4.44
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562359898360,
+      &quot;comcatEventID&quot;: &quot;ci38454927&quot;,
+      &quot;mag&quot;: 2.64,
+      &quot;latitude&quot;: 35.6696667,
+      &quot;longitude&quot;: -117.51499999999999,
+      &quot;depth&quot;: 2.7
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562361217630,
+      &quot;comcatEventID&quot;: &quot;ci38455103&quot;,
+      &quot;mag&quot;: 2.82,
+      &quot;latitude&quot;: 35.7436667,
+      &quot;longitude&quot;: -117.551,
+      &quot;depth&quot;: 6.78
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562361451180,
+      &quot;comcatEventID&quot;: &quot;ci38455135&quot;,
+      &quot;mag&quot;: 2.83,
+      &quot;latitude&quot;: 35.717,
+      &quot;longitude&quot;: -117.52466670000001,
+      &quot;depth&quot;: 4.96
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562362226100,
+      &quot;comcatEventID&quot;: &quot;ci38455199&quot;,
+      &quot;mag&quot;: 2.77,
+      &quot;latitude&quot;: 35.6113333,
+      &quot;longitude&quot;: -117.59233330000002,
+      &quot;depth&quot;: 7.55
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562364310410,
+      &quot;comcatEventID&quot;: &quot;ci38455447&quot;,
+      &quot;mag&quot;: 2.83,
+      &quot;latitude&quot;: 35.6968333,
+      &quot;longitude&quot;: -117.51066670000002,
+      &quot;depth&quot;: 2.59
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562364448340,
+      &quot;comcatEventID&quot;: &quot;ci38455463&quot;,
+      &quot;mag&quot;: 2.8,
+      &quot;latitude&quot;: 35.6841667,
+      &quot;longitude&quot;: -117.49983330000002,
+      &quot;depth&quot;: 6.8
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562364622690,
+      &quot;comcatEventID&quot;: &quot;ci38455487&quot;,
+      &quot;mag&quot;: 2.57,
+      &quot;latitude&quot;: 35.7351667,
+      &quot;longitude&quot;: -117.5451667,
+      &quot;depth&quot;: 4.51
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562366303380,
+      &quot;comcatEventID&quot;: &quot;ci38455679&quot;,
+      &quot;mag&quot;: 3.03,
+      &quot;latitude&quot;: 35.7750015,
+      &quot;longitude&quot;: -117.6006699,
+      &quot;depth&quot;: 2.38
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562367667890,
+      &quot;comcatEventID&quot;: &quot;ci38455855&quot;,
+      &quot;mag&quot;: 2.51,
+      &quot;latitude&quot;: 35.683,
+      &quot;longitude&quot;: -117.50616670000001,
+      &quot;depth&quot;: 0.73
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562368051440,
+      &quot;comcatEventID&quot;: &quot;ci38455903&quot;,
+      &quot;mag&quot;: 2.63,
+      &quot;latitude&quot;: 35.7975,
+      &quot;longitude&quot;: -117.611,
+      &quot;depth&quot;: 4.21
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562371859260,
+      &quot;comcatEventID&quot;: &quot;ci38456327&quot;,
+      &quot;mag&quot;: 2.58,
+      &quot;latitude&quot;: 35.7625,
+      &quot;longitude&quot;: -117.5686667,
+      &quot;depth&quot;: 4.19
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562371982560,
+      &quot;comcatEventID&quot;: &quot;ci38456351&quot;,
+      &quot;mag&quot;: 3.46,
+      &quot;latitude&quot;: 35.7248344,
+      &quot;longitude&quot;: -117.55516819999998,
+      &quot;depth&quot;: 2.11
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562372032500,
+      &quot;comcatEventID&quot;: &quot;ci38456359&quot;,
+      &quot;mag&quot;: 2.78,
+      &quot;latitude&quot;: 35.7443333,
+      &quot;longitude&quot;: -117.5468333,
+      &quot;depth&quot;: 10.57
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562372081700,
+      &quot;comcatEventID&quot;: &quot;ci38456367&quot;,
+      &quot;mag&quot;: 2.8,
+      &quot;latitude&quot;: 35.771,
+      &quot;longitude&quot;: -117.60016669999999,
+      &quot;depth&quot;: 2.52
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562372139190,
+      &quot;comcatEventID&quot;: &quot;ci38456375&quot;,
+      &quot;mag&quot;: 2.97,
+      &quot;latitude&quot;: 35.7733345,
+      &quot;longitude&quot;: -117.60250090000001,
+      &quot;depth&quot;: 2.91
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562372337740,
+      &quot;comcatEventID&quot;: &quot;ci38456391&quot;,
+      &quot;mag&quot;: 2.68,
+      &quot;latitude&quot;: 35.7708333,
+      &quot;longitude&quot;: -117.6183333,
+      &quot;depth&quot;: 2.46
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562372410300,
+      &quot;comcatEventID&quot;: &quot;ci38456407&quot;,
+      &quot;mag&quot;: 2.75,
+      &quot;latitude&quot;: 35.88850000000001,
+      &quot;longitude&quot;: -117.9086667,
+      &quot;depth&quot;: 1.93
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562374285720,
+      &quot;comcatEventID&quot;: &quot;ci38456615&quot;,
+      &quot;mag&quot;: 3.63,
+      &quot;latitude&quot;: 35.7471657,
+      &quot;longitude&quot;: -117.58049770000001,
+      &quot;depth&quot;: 4.9
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562374285720,
+      &quot;comcatEventID&quot;: &quot;us70004bkq&quot;,
+      &quot;mag&quot;: 3.8,
+      &quot;latitude&quot;: 35.7472,
+      &quot;longitude&quot;: -117.5805,
+      &quot;depth&quot;: 4.9
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562374313780,
+      &quot;comcatEventID&quot;: &quot;ci38456623&quot;,
+      &quot;mag&quot;: 3.01,
+      &quot;latitude&quot;: 35.68650050000001,
+      &quot;longitude&quot;: -117.4781647,
+      &quot;depth&quot;: 6.98
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562378010760,
+      &quot;comcatEventID&quot;: &quot;ci38457015&quot;,
+      &quot;mag&quot;: 2.8,
+      &quot;latitude&quot;: 35.716,
+      &quot;longitude&quot;: -117.53350000000002,
+      &quot;depth&quot;: 4.66
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562379072280,
+      &quot;comcatEventID&quot;: &quot;ci38457103&quot;,
+      &quot;mag&quot;: 2.53,
+      &quot;latitude&quot;: 35.6246667,
+      &quot;longitude&quot;: -117.59700000000001,
+      &quot;depth&quot;: 7.04
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562380934090,
+      &quot;comcatEventID&quot;: &quot;ci38457263&quot;,
+      &quot;mag&quot;: 2.63,
+      &quot;latitude&quot;: 35.5985,
+      &quot;longitude&quot;: -117.5873333,
+      &quot;depth&quot;: 4.32
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562381713060,
+      &quot;comcatEventID&quot;: &quot;ci38457343&quot;,
+      &quot;mag&quot;: 2.81,
+      &quot;latitude&quot;: 35.7715,
+      &quot;longitude&quot;: -117.6006667,
+      &quot;depth&quot;: 2.2
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562382992480,
+      &quot;comcatEventID&quot;: &quot;ci38457487&quot;,
+      &quot;mag&quot;: 4.97,
+      &quot;latitude&quot;: 35.7253333,
+      &quot;longitude&quot;: -117.55350000000001,
+      &quot;depth&quot;: 0.88
+    },
+    {
+      &quot;occurrenceTimeMillis&quot;: 1562383193040,
+      &quot;comcatEventID&quot;: &quot;ci38457511&quot;,
+      &quot;mag&quot;: 7.1,
+      &quot;latitude&quot;: 35.7695,
+      &quot;longitude&quot;: -117.59933329999998,
+      &quot;depth&quot;: 8.0,
+      &quot;ruptureSurfaces&quot;: [
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.5741994328,
+              &quot;longitude&quot;: -117.3707820945,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.5927834531,
+              &quot;longitude&quot;: -117.3980967662,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6086552686,
+              &quot;longitude&quot;: -117.4139780258,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6267094027,
+              &quot;longitude&quot;: -117.43324028070002,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6351681094,
+              &quot;longitude&quot;: -117.4477484172,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.635168109400006,
+              &quot;longitude&quot;: -117.4477484172,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.626709402699994,
+              &quot;longitude&quot;: -117.43324028070002,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.6086552686,
+              &quot;longitude&quot;: -117.4139780258,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.5927834531,
+              &quot;longitude&quot;: -117.3980967662,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.5741994328,
+              &quot;longitude&quot;: -117.3707820945,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.5741994328,
+              &quot;longitude&quot;: -117.3707820945,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.647137561,
+              &quot;longitude&quot;: -117.4768565955,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.673709514,
+              &quot;longitude&quot;: -117.5140293653,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6880708728,
+              &quot;longitude&quot;: -117.5367830318,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6993482891,
+              &quot;longitude&quot;: -117.5525668245,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.704447509,
+              &quot;longitude&quot;: -117.55821244250001,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7161200315,
+              &quot;longitude&quot;: -117.5672718341,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7330783349,
+              &quot;longitude&quot;: -117.58086191600002,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7354491409,
+              &quot;longitude&quot;: -117.58267516459999,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7354491409,
+              &quot;longitude&quot;: -117.58267516459999,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.7330783349,
+              &quot;longitude&quot;: -117.58086191600002,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.71612003150001,
+              &quot;longitude&quot;: -117.5672718341,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.704447509,
+              &quot;longitude&quot;: -117.55821244250001,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.6993482891,
+              &quot;longitude&quot;: -117.5525668245,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.688070872800004,
+              &quot;longitude&quot;: -117.5367830318,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.67370951400001,
+              &quot;longitude&quot;: -117.5140293653,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.647137561,
+              &quot;longitude&quot;: -117.4768565955,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.647137561,
+              &quot;longitude&quot;: -117.4768565955,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.7418554538,
+              &quot;longitude&quot;: -117.5827218422,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7509546198,
+              &quot;longitude&quot;: -117.5935664401,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7646489192,
+              &quot;longitude&quot;: -117.60040573370001,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7697604433,
+              &quot;longitude&quot;: -117.6031393515,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7752470078,
+              &quot;longitude&quot;: -117.60407924519998,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7834586784,
+              &quot;longitude&quot;: -117.60908341670002,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7933139887,
+              &quot;longitude&quot;: -117.6147752736,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.8055577086,
+              &quot;longitude&quot;: -117.6186895241,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.8154125005,
+              &quot;longitude&quot;: -117.6243841784,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.8216122107,
+              &quot;longitude&quot;: -117.6289276417,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.8321616032,
+              &quot;longitude&quot;: -117.641598301,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.83216160320001,
+              &quot;longitude&quot;: -117.641598301,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.8216122107,
+              &quot;longitude&quot;: -117.6289276417,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.8154125005,
+              &quot;longitude&quot;: -117.6243841784,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.805557708600006,
+              &quot;longitude&quot;: -117.6186895241,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.79331398870001,
+              &quot;longitude&quot;: -117.6147752736,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.7834586784,
+              &quot;longitude&quot;: -117.60908341670002,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.775247007800004,
+              &quot;longitude&quot;: -117.60407924519998,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.7697604433,
+              &quot;longitude&quot;: -117.6031393515,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.7646489192,
+              &quot;longitude&quot;: -117.60040573370001,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.7509546198,
+              &quot;longitude&quot;: -117.5935664401,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.7418554538,
+              &quot;longitude&quot;: -117.5827218422,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.7418554538,
+              &quot;longitude&quot;: -117.5827218422,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.7384369101,
+              &quot;longitude&quot;: -117.57034875190001,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7177223566,
+              &quot;longitude&quot;: -117.53720628230002,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.71772235660001,
+              &quot;longitude&quot;: -117.53720628230002,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.738436910100006,
+              &quot;longitude&quot;: -117.57034875190001,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.7384369101,
+              &quot;longitude&quot;: -117.57034875190001,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.7177223566,
+              &quot;longitude&quot;: -117.53720628230002,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.713000104,
+              &quot;longitude&quot;: -117.5288702531,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.71300010400001,
+              &quot;longitude&quot;: -117.5288702531,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.71772235660001,
+              &quot;longitude&quot;: -117.53720628230002,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.7177223566,
+              &quot;longitude&quot;: -117.53720628230002,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.8359812017,
+              &quot;longitude&quot;: -117.64612477370001,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.8556005117,
+              &quot;longitude&quot;: -117.67326487160001,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.866886145,
+              &quot;longitude&quot;: -117.6843790855,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.877966777,
+              &quot;longitude&quot;: -117.6990931394,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.8848651931,
+              &quot;longitude&quot;: -117.70882546279998,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.884865193100005,
+              &quot;longitude&quot;: -117.70882546279998,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.877966777,
+              &quot;longitude&quot;: -117.6990931394,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.86688614500001,
+              &quot;longitude&quot;: -117.6843790855,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.8556005117,
+              &quot;longitude&quot;: -117.67326487160001,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.8359812017,
+              &quot;longitude&quot;: -117.64612477370001,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.8359812017,
+              &quot;longitude&quot;: -117.64612477370001,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.6351681094,
+              &quot;longitude&quot;: -117.4477484172,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6389256615,
+              &quot;longitude&quot;: -117.4569297655,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.638925661500004,
+              &quot;longitude&quot;: -117.4569297655,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.635168109400006,
+              &quot;longitude&quot;: -117.4477484172,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.6351681094,
+              &quot;longitude&quot;: -117.4477484172,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.647137561,
+              &quot;longitude&quot;: -117.4768565955,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.6380730813,
+              &quot;longitude&quot;: -117.4587892553,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.63807308130001,
+              &quot;longitude&quot;: -117.4587892553,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.647137561,
+              &quot;longitude&quot;: -117.4768565955,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.647137561,
+              &quot;longitude&quot;: -117.4768565955,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.8848651931,
+              &quot;longitude&quot;: -117.70882546279998,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.8987339619,
+              &quot;longitude&quot;: -117.7196478662,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.9077349249,
+              &quot;longitude&quot;: -117.7360785775,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.9077349249,
+              &quot;longitude&quot;: -117.7360785775,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.898733961900014,
+              &quot;longitude&quot;: -117.7196478662,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.884865193100005,
+              &quot;longitude&quot;: -117.70882546279998,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.8848651931,
+              &quot;longitude&quot;: -117.70882546279998,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.8546704445,
+              &quot;longitude&quot;: -117.67197777680002,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.8319985864,
+              &quot;longitude&quot;: -117.6536593135,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.8109309566,
+              &quot;longitude&quot;: -117.6423698921,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.8109309566,
+              &quot;longitude&quot;: -117.6423698921,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.8319985864,
+              &quot;longitude&quot;: -117.6536593135,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.8546704445,
+              &quot;longitude&quot;: -117.67197777680002,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.8546704445,
+              &quot;longitude&quot;: -117.67197777680002,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        },
+        {
+          &quot;outline&quot;: [
+            {
+              &quot;latitude&quot;: 35.808357073,
+              &quot;longitude&quot;: -117.6398788604,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.7969461225,
+              &quot;longitude&quot;: -117.62320338910001,
+              &quot;depth&quot;: 0.0
+            },
+            {
+              &quot;latitude&quot;: 35.79694612250001,
+              &quot;longitude&quot;: -117.62320338910001,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.808357073,
+              &quot;longitude&quot;: -117.6398788604,
+              &quot;depth&quot;: 15.0
+            },
+            {
+              &quot;latitude&quot;: 35.808357073,
+              &quot;longitude&quot;: -117.6398788604,
+              &quot;depth&quot;: 0.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  &quot;cacheDir&quot;: &quot;${ETAS_LAUNCHER}/inputs/cache_fm3p1_ba&quot;,
+  &quot;fssFile&quot;: &quot;${ETAS_LAUNCHER}/inputs/2013_05_10-ucerf3p3-production-10runs_COMPOUND_SOL_FM3_1_SpatSeisU3_MEAN_BRANCH_AVG_SOL.zip&quot;,
+  &quot;probModel&quot;: &quot;FULL_TD&quot;,
+  &quot;applySubSeisForSupraNucl&quot;: true,
+  &quot;totRateScaleFactor&quot;: 1.14,
+  &quot;gridSeisCorr&quot;: true,
+  &quot;timeIndependentERF&quot;: false,
+  &quot;griddedOnly&quot;: false,
+  &quot;imposeGR&quot;: false,
+  &quot;includeIndirectTriggering&quot;: true,
+  &quot;gridSeisDiscr&quot;: 0.1,
+  &quot;catalogCompletenessModel&quot;: &quot;RELAXED&quot;,
+  &quot;configCommand&quot;: &quot;u3etas_comcat_event_config_builder.sh --event-id ci38457511 --num-simulations 10 --days-before 7 --finite-surf-shakemap --finite-surf-shakemap-min-mag 5 --output-dir user_output/comcat-ridgecrest-m7.1-example --random-seed 123456789&quot;,
+  &quot;configTime&quot;: 1565132191614,
+  &quot;comcatMetadata&quot;: {
+    &quot;region&quot;: {
+      &quot;border&quot;: [
+        {
+          &quot;latitude&quot;: 35.15123745324938,
+          &quot;longitude&quot;: -117.46198765392752
+        },
+        {
+          &quot;latitude&quot;: 35.170513097218205,
+          &quot;longitude&quot;: -117.55046477274733
+        },
+        {
+          &quot;latitude&quot;: 35.201997575622634,
+          &quot;longitude&quot;: -117.63356287896195
+        },
+        {
+          &quot;latitude&quot;: 35.24474776584818,
+          &quot;longitude&quot;: -117.70878534540662
+        },
+        {
+          &quot;latitude&quot;: 35.29030244291857,
+          &quot;longitude&quot;: -117.7650027179687
+        },
+        {
+          &quot;latitude&quot;: 35.28979894832488,
+          &quot;longitude&quot;: -117.7657059692625
+        },
+        {
+          &quot;latitude&quot;: 35.599352334844,
+          &quot;longitude&quot;: -118.10406638799292
+        },
+        {
+          &quot;latitude&quot;: 35.59991798729306,
+          &quot;longitude&quot;: -118.1032787187642
+        },
+        {
+          &quot;latitude&quot;: 35.59991798729306,
+          &quot;longitude&quot;: -118.10327871876426
+        },
+        {
+          &quot;latitude&quot;: 35.6081394160588,
+          &quot;longitude&quot;: -118.11346457171017
+        },
+        {
+          &quot;latitude&quot;: 35.66926981044508,
+          &quot;longitude&quot;: -118.1666275188854
+        },
+        {
+          &quot;latitude&quot;: 35.73695892585081,
+          &quot;longitude&quot;: -118.20599267135113
+        },
+        {
+          &quot;latitude&quot;: 35.80916411728616,
+          &quot;longitude&quot;: -118.23033589945786
+        },
+        {
+          &quot;latitude&quot;: 35.8837008101987,
+          &quot;longitude&quot;: -118.23887921717626
+        },
+        {
+          &quot;latitude&quot;: 35.95830771861983,
+          &quot;longitude&quot;: -118.2313189434723
+        },
+        {
+          &quot;latitude&quot;: 36.030715089420035,
+          &quot;longitude&quot;: -118.20784020820832
+        },
+        {
+          &quot;latitude&quot;: 36.09871396695588,
+          &quot;longitude&quot;: -118.16911673663371
+        },
+        {
+          &quot;latitude&quot;: 36.16022434972565,
+          &quot;longitude&quot;: -118.11629525880562
+        },
+        {
+          &quot;latitude&quot;: 36.21336005220017,
+          &quot;longitude&quot;: -118.05096440373305
+        },
+        {
+          &quot;latitude&quot;: 36.25648810437343,
+          &quot;longitude&quot;: -117.97510853634732
+        },
+        {
+          &quot;latitude&quot;: 36.28828062939993,
+          &quot;longitude&quot;: -117.8910476483114
+        },
+        {
+          &quot;latitude&quot;: 36.307757341513756,
+          &quot;longitude&quot;: -117.8013650783672
+        },
+        {
+          &quot;latitude&quot;: 36.31431710102649,
+          &quot;longitude&quot;: -117.70882546279998
+        },
+        {
+          &quot;latitude&quot;: 36.307757341513756,
+          &quot;longitude&quot;: -117.61628584723277
+        },
+        {
+          &quot;latitude&quot;: 36.28828062939993,
+          &quot;longitude&quot;: -117.52660327728856
+        },
+        {
+          &quot;latitude&quot;: 36.25648810437343,
+          &quot;longitude&quot;: -117.44254238925264
+        },
+        {
+          &quot;latitude&quot;: 36.21336005220017,
+          &quot;longitude&quot;: -117.36668652186691
+        },
+        {
+          &quot;latitude&quot;: 36.16849978031224,
+          &quot;longitude&quot;: -117.31153038795429
+        },
+        {
+          &quot;latitude&quot;: 36.1690738860583,
+          &quot;longitude&quot;: -117.3107309475365
+        },
+        {
+          &quot;latitude&quot;: 35.857302712860964,
+          &quot;longitude&quot;: -116.9730504737608
+        },
+        {
+          &quot;latitude&quot;: 35.85679179423907,
+          &quot;longitude&quot;: -116.9737640944955
+        },
+        {
+          &quot;latitude&quot;: 35.849566414597014,
+          &quot;longitude&quot;: -116.96491461360324
+        },
+        {
+          &quot;latitude&quot;: 35.78805819220281,
+          &quot;longitude&quot;: -116.9122967694479
+        },
+        {
+          &quot;latitude&quot;: 35.72006106557635,
+          &quot;longitude&quot;: -116.87372034968973
+        },
+        {
+          &quot;latitude&quot;: 35.64765482528862,
+          &quot;longitude&quot;: -116.85032807444419
+        },
+        {
+          &quot;latitude&quot;: 35.57304829206068,
+          &quot;longitude&quot;: -116.8427916482061
+        },
+        {
+          &quot;latitude&quot;: 35.49851117585832,
+          &quot;longitude&quot;: -116.8512961557198
+        },
+        {
+          &quot;latitude&quot;: 35.42630481575459,
+          &quot;longitude&quot;: -116.87553976530553
+        },
+        {
+          &quot;latitude&quot;: 35.35861392859174,
+          &quot;longitude&quot;: -116.91474809853695
+        },
+        {
+          &quot;latitude&quot;: 35.29748137319737,
+          &quot;longitude&quot;: -116.96770221389164
+        },
+        {
+          &quot;latitude&quot;: 35.24474776584818,
+          &quot;longitude&quot;: -117.03277884359336
+        },
+        {
+          &quot;latitude&quot;: 35.201997575622634,
+          &quot;longitude&quot;: -117.10800131003803
+        },
+        {
+          &quot;latitude&quot;: 35.170513097218205,
+          &quot;longitude&quot;: -117.19109941625265
+        },
+        {
+          &quot;latitude&quot;: 35.15123745324938,
+          &quot;longitude&quot;: -117.27957653507247
+        },
+        {
+          &quot;latitude&quot;: 35.14474752487352,
+          &quot;longitude&quot;: -117.3707820945
+        }
+      ]
+    },
+    &quot;eventID&quot;: &quot;ci38457511&quot;,
+    &quot;minDepth&quot;: -10.0,
+    &quot;maxDepth&quot;: 24.0,
+    &quot;minMag&quot;: 2.5,
+    &quot;startTime&quot;: 1561778393040,
+    &quot;endTime&quot;: 1562383193041
+  }
+}
+</code></pre>
+</body>
+</html>

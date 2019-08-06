@@ -1,0 +1,40 @@
+Section Name,"Strike, Dip, Rake",Hypocenter In Polygon?,Surface In Polygon?,Minimum Surface Distance (km),Minimum Surface Poly Distance (km),Minimum Hypo Distance (km),Minimum Hypo Poly Distance (km)
+San Andreas (San Bernardino N),"122, 90, 180",false,true,0.000,0.000,N/A,N/A
+San Andreas (Mojave S),"116, 90, 180",false,true,0.000,0.000,N/A,N/A
+Cucamonga,"257, 45, 90",false,true,0.313,0.000,N/A,N/A
+Cleghorn,"96, 90, 0",false,true,2.598,0.000,N/A,N/A
+San Jacinto (San Bernardino),"138, 90, 180",false,true,2.987,0.000,N/A,N/A
+San Jacinto (Lytle Creek connector),"135, 90, 180",false,true,4.621,0.000,N/A,N/A
+San Gabriel (Extension),"276, 61, 180",false,false,1.751,1.197,N/A,N/A
+Fontana (Seismicity),"223, 80, 0",false,false,8.948,8.024,N/A,N/A
+North Frontal  (West),"77, 49, 90",false,false,12.386,7.173,N/A,N/A
+San Andreas (North Branch Mill Creek),"108, 76, 180",false,false,12.617,12.385,N/A,N/A
+Clamshell-Sawpit,"244, 50, 90",false,false,12.917,12.886,N/A,N/A
+Sierra Madre,"288, 53, 90",false,false,16.583,16.547,N/A,N/A
+San Andreas (San Bernardino S),"114, 90, 180",false,false,17.658,17.447,N/A,N/A
+San Jose,"244, 74, 30",false,false,23.338,21.565,N/A,N/A
+San Jacinto (San Jacinto Valley) rev,"133, 90, 180",false,false,27.567,26.296,N/A,N/A
+San Gabriel,"296, 61, 90",false,false,29.361,29.317,N/A,N/A
+Raymond,"258, 79, 60",false,false,31.329,26.804,N/A,N/A
+Verdugo,"298, 55, 90",false,false,33.178,33.150,N/A,N/A
+Sierra Madre (San Fernando),"272, 45, 90",false,false,34.307,34.308,N/A,N/A
+Puente Hills,"290, 25, 90",false,false,34.859,34.859,N/A,N/A
+San Gorgonio Pass,"282, 60, 90",false,false,36.203,35.752,N/A,N/A
+Chino alt 1,"146, 50, 150",false,false,36.418,35.681,N/A,N/A
+Elysian Park (Upper),"285, 50, 90",false,false,37.703,37.655,N/A,N/A
+Richfield,"263, 28, 90",false,false,38.393,38.392,N/A,N/A
+Whittier alt 1,"294, 70, 150",false,false,43.670,42.186,N/A,N/A
+Hollywood,"260, 70, 30",false,false,44.076,43.875,N/A,N/A
+Peralta Hills,"273, 50, 90",false,false,44.799,44.783,N/A,N/A
+Yorba Linda,"63, 90, 90",false,false,45.054,38.303,N/A,N/A
+Helendale-So Lockhart,"322, 90, 180",false,false,45.124,33.185,N/A,N/A
+San Jacinto (Stepovers Combined),"139, 90, 180",false,false,45.525,45.419,N/A,N/A
+Elysian Park (Lower CFM),"303, 22, 90",false,false,46.799,46.772,N/A,N/A
+Elsinore (Glen Ivy) rev,"128, 90, 180",false,false,48.559,37.156,N/A,N/A
+San Vicente,"277, 66, 90",false,false,52.185,52.039,N/A,N/A
+Compton,"296, 20, 90",false,false,54.742,54.680,N/A,N/A
+Anaheim,"315, 71, 90",false,false,61.616,59.026,N/A,N/A
+Newport-Inglewood alt 1,"315, 88, 180",false,false,69.335,59.082,N/A,N/A
+Lenwood-Lockhart-Old Woman Springs,"307, 90, 180",false,false,72.029,60.095,N/A,N/A
+Gravel Hills-Harper Lk,"319, 90, 180",false,false,82.481,70.608,N/A,N/A
+Palos Verdes,"308, 90, 180",false,false,84.902,74.083,N/A,N/A

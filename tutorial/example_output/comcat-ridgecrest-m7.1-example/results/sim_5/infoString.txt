@@ -1,0 +1,1426 @@
+ComCat M7.1 (ci38457511), ShakeMap Surfaces
+
+randomSeed=-9194790502923956193
+
+histQkList.size()=0
+includeSpontEvents=false
+includeIndirectTriggering=true
+
+ERF Adjustable Paramteres:
+
+	Solution Input File = null
+	Apply Aftershock Filter = false
+	Aleatory Mag-Area StdDev = 0.0
+	Background Seismicity = Include
+	Treat Background Seismicity As = Point Sources
+	Use Quad Surfaces (otherwise gridded) = false
+	Fault Grid Spacing = 1.0
+	Probability Model = UCERF3 BPT
+	Aperiodicity = 0.5,0.4,0.3,0.2
+	Historic Open Interval = 144.5089358519026
+	BPT Averaging Type = AveRI and AveNormTimeSince
+
+ERF StartTime: 7/6/2019; hr=3; min=19; sec=54
+
+ERF TimeSpan Duration: 10.0 years
+
+ETAS Paramteres:
+
+	k - ETAS Productivity = 0.004292394757465163
+	p - ETAS Temporal Decay = 1.07
+	c - ETAS Min Time = 0.00650145
+	q - ETAS Distance Decay = 1.96
+	d - ETAS Min Distance = 0.79
+	U3ETAS Probability Model = FullTD
+	Impose GR Sampling = false
+	Apply Gridded Seis Correction = true
+	Apply SubSeis Rates to Supra Nucleation = true
+	TotalRateScaleFactor = 1.14
+	Statewide Completeness Model = RELAXED
+
+Expected mean annual rate over timeSpan (per year) = 2734.7888
+
+Making ETAS_PrimaryEventSampler took 1 min
+The 227 input observed events produced 2404 primary aftershocks
+
+Magnitude of Scenario: 3.98
+
+Expected number of primary events for Scenario: 0.7627878629982949
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 6.4
+
+Expected number of primary events for Scenario: 201.13459674934958
+
+Observed number of primary events for Scenario: 200.0
+
+Magnitude of Scenario: 4.49
+
+Expected number of primary events for Scenario: 2.474739746516644
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.0
+
+Expected number of primary events for Scenario: 0.08009664765734051
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.91
+
+Expected number of primary events for Scenario: 0.6510764256714553
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.5
+
+Expected number of primary events for Scenario: 0.2533159692347042
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.7
+
+Expected number of primary events for Scenario: 0.4015048559924369
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.8
+
+Expected number of primary events for Scenario: 0.5054831125055264
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 4.13
+
+Expected number of primary events for Scenario: 1.0807276157132446
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.3
+
+Expected number of primary events for Scenario: 0.1598648667189461
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.22
+
+Expected number of primary events for Scenario: 0.13298666841280676
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.6
+
+Expected number of primary events for Scenario: 0.3190280158261704
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.77
+
+Expected number of primary events for Scenario: 0.04719122131095358
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.86
+
+Expected number of primary events for Scenario: 0.5805858116969682
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.39
+
+Expected number of primary events for Scenario: 0.19675246024365858
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.38
+
+Expected number of primary events for Scenario: 0.19228596734153744
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.59
+
+Expected number of primary events for Scenario: 0.31186300443281445
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.39
+
+Expected number of primary events for Scenario: 0.19684443574114222
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.94
+
+Expected number of primary events for Scenario: 0.06984829539125902
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.91
+
+Expected number of primary events for Scenario: 0.06521206889213595
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.29
+
+Expected number of primary events for Scenario: 0.15643953781243872
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.67
+
+Expected number of primary events for Scenario: 0.0375353352579835
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.5
+
+Expected number of primary events for Scenario: 0.25378463361325604
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.67
+
+Expected number of primary events for Scenario: 0.03754222480525386
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.02
+
+Expected number of primary events for Scenario: 0.08404938788805831
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.75
+
+Expected number of primary events for Scenario: 0.045146064101767885
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.78
+
+Expected number of primary events for Scenario: 0.4837717803072264
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.5
+
+Expected number of primary events for Scenario: 0.253905561579256
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.46
+
+Expected number of primary events for Scenario: 0.23162949271048422
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.79
+
+Expected number of primary events for Scenario: 0.049524918476404674
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.44
+
+Expected number of primary events for Scenario: 0.22124690589572676
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.5
+
+Expected number of primary events for Scenario: 0.25404621715533987
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.2
+
+Expected number of primary events for Scenario: 0.12733762930242343
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.04
+
+Expected number of primary events for Scenario: 0.08810689628288668
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.85
+
+Expected number of primary events for Scenario: 0.05688986075506383
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.28
+
+Expected number of primary events for Scenario: 0.15314020930066807
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.61
+
+Expected number of primary events for Scenario: 0.03274802376984564
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.12
+
+Expected number of primary events for Scenario: 0.10601139626820676
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.29
+
+Expected number of primary events for Scenario: 0.15682040697942745
+
+Observed number of primary events for Scenario: 2.0
+
+Magnitude of Scenario: 4.23
+
+Expected number of primary events for Scenario: 1.3659106892149049
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.85
+
+Expected number of primary events for Scenario: 0.5694412627810423
+
+Observed number of primary events for Scenario: 2.0
+
+Magnitude of Scenario: 2.5
+
+Expected number of primary events for Scenario: 0.02545088332666819
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.64
+
+Expected number of primary events for Scenario: 0.03513726009461924
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.69
+
+Expected number of primary events for Scenario: 0.039428730955894914
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 4.59
+
+Expected number of primary events for Scenario: 3.1321923244829497
+
+Observed number of primary events for Scenario: 7.0
+
+Magnitude of Scenario: 3.24
+
+Expected number of primary events for Scenario: 0.13992744350316663
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.09
+
+Expected number of primary events for Scenario: 0.09908744678680824
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 4.34
+
+Expected number of primary events for Scenario: 1.7624501492568747
+
+Observed number of primary events for Scenario: 3.0
+
+Magnitude of Scenario: 2.73
+
+Expected number of primary events for Scenario: 0.04327396854247728
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.55
+
+Expected number of primary events for Scenario: 0.28591182291027956
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.78
+
+Expected number of primary events for Scenario: 0.04856279972230607
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.93
+
+Expected number of primary events for Scenario: 0.06860088014483554
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.34
+
+Expected number of primary events for Scenario: 0.17633917050241177
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 4.07
+
+Expected number of primary events for Scenario: 0.947059308938421
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.07
+
+Expected number of primary events for Scenario: 0.09471575310966171
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 4.58
+
+Expected number of primary events for Scenario: 3.0651081482282536
+
+Observed number of primary events for Scenario: 6.0
+
+Magnitude of Scenario: 4.21
+
+Expected number of primary events for Scenario: 1.307541059245292
+
+Observed number of primary events for Scenario: 2.0
+
+Magnitude of Scenario: 2.85
+
+Expected number of primary events for Scenario: 0.05708473006605347
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.21
+
+Expected number of primary events for Scenario: 0.1307959765302821
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.0
+
+Expected number of primary events for Scenario: 0.08065501924098588
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.56
+
+Expected number of primary events for Scenario: 0.02928714923137957
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.26
+
+Expected number of primary events for Scenario: 0.1468820203175785
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.0
+
+Expected number of primary events for Scenario: 0.08074967021560783
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.5
+
+Expected number of primary events for Scenario: 0.025537704909560165
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.23
+
+Expected number of primary events for Scenario: 0.13716608166632685
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.8
+
+Expected number of primary events for Scenario: 0.05097509735927258
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 4.5
+
+Expected number of primary events for Scenario: 2.5549534246297188
+
+Observed number of primary events for Scenario: 2.0
+
+Magnitude of Scenario: 2.69
+
+Expected number of primary events for Scenario: 0.03958779470922448
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.81
+
+Expected number of primary events for Scenario: 0.05219119479559129
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.63
+
+Expected number of primary events for Scenario: 0.03451947738747552
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.65
+
+Expected number of primary events for Scenario: 0.03614837560678308
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.18
+
+Expected number of primary events for Scenario: 0.12257757598870303
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.34
+
+Expected number of primary events for Scenario: 0.17721220987422032
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.02
+
+Expected number of primary events for Scenario: 0.08482597935903773
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 4.16
+
+Expected number of primary events for Scenario: 1.1713093407097845
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.65
+
+Expected number of primary events for Scenario: 0.036203190134482005
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.5
+
+Expected number of primary events for Scenario: 0.02563779615259209
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.56
+
+Expected number of primary events for Scenario: 0.029443073412730066
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.38
+
+Expected number of primary events for Scenario: 0.19456032719215077
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.61
+
+Expected number of primary events for Scenario: 0.03305662751567589
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.99
+
+Expected number of primary events for Scenario: 0.7932032781835032
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.06
+
+Expected number of primary events for Scenario: 0.09321592176682346
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.4
+
+Expected number of primary events for Scenario: 0.20403366717145627
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.53
+
+Expected number of primary events for Scenario: 0.02752534737607415
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.61
+
+Expected number of primary events for Scenario: 0.033123569484432104
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.09
+
+Expected number of primary events for Scenario: 0.10012835926477255
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.37
+
+Expected number of primary events for Scenario: 0.1909602194222198
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.54
+
+Expected number of primary events for Scenario: 0.02824961047172689
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.56
+
+Expected number of primary events for Scenario: 0.29596139085431994
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.52
+
+Expected number of primary events for Scenario: 0.02700220593445267
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.8
+
+Expected number of primary events for Scenario: 0.05152645481687485
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.0
+
+Expected number of primary events for Scenario: 0.0816886107931976
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.62
+
+Expected number of primary events for Scenario: 0.0340726169097521
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.08
+
+Expected number of primary events for Scenario: 0.0982736995992475
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.42
+
+Expected number of primary events for Scenario: 0.2151364361770461
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.74
+
+Expected number of primary events for Scenario: 0.04495428707704166
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.5
+
+Expected number of primary events for Scenario: 0.025879315680744835
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.25
+
+Expected number of primary events for Scenario: 0.1455368405904963
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.35
+
+Expected number of primary events for Scenario: 0.18348176063529145
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.3
+
+Expected number of primary events for Scenario: 0.1635704926523285
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 4.47
+
+Expected number of primary events for Scenario: 2.420901838870872
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.51
+
+Expected number of primary events for Scenario: 0.026586707634436723
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.62
+
+Expected number of primary events for Scenario: 0.034253594100082566
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.2
+
+Expected number of primary events for Scenario: 0.1303783613839015
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.59
+
+Expected number of primary events for Scenario: 0.032079596447473116
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.49
+
+Expected number of primary events for Scenario: 0.2549513160372688
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.06
+
+Expected number of primary events for Scenario: 0.09472710352039058
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.82
+
+Expected number of primary events for Scenario: 0.5461986022069508
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 4.04
+
+Expected number of primary events for Scenario: 0.9064666125716273
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.72
+
+Expected number of primary events for Scenario: 0.43422168560654345
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.33
+
+Expected number of primary events for Scenario: 0.1771017177146176
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.76
+
+Expected number of primary events for Scenario: 0.04775920338765838
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 4.04
+
+Expected number of primary events for Scenario: 0.9103877488853865
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.8
+
+Expected number of primary events for Scenario: 0.052443714008320035
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 4.02
+
+Expected number of primary events for Scenario: 0.870635822980366
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.66
+
+Expected number of primary events for Scenario: 0.03800925946510063
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.95
+
+Expected number of primary events for Scenario: 0.7420407636713484
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.52
+
+Expected number of primary events for Scenario: 0.027580638504005935
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.99
+
+Expected number of primary events for Scenario: 0.08155535792617372
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.12
+
+Expected number of primary events for Scenario: 0.11012044684858197
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.55
+
+Expected number of primary events for Scenario: 0.029724422231364067
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.68
+
+Expected number of primary events for Scenario: 0.04014854659244276
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.21
+
+Expected number of primary events for Scenario: 0.1360920307898003
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.98
+
+Expected number of primary events for Scenario: 0.8013947806624905
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.34
+
+Expected number of primary events for Scenario: 0.1836535976644358
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.65
+
+Expected number of primary events for Scenario: 0.03753121625889087
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.25
+
+Expected number of primary events for Scenario: 0.14950720253300806
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.8
+
+Expected number of primary events for Scenario: 0.05307110795146558
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.81
+
+Expected number of primary events for Scenario: 0.05451831704768808
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.72
+
+Expected number of primary events for Scenario: 0.044320904100151
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.27
+
+Expected number of primary events for Scenario: 0.15749999298533215
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.32
+
+Expected number of primary events for Scenario: 0.1768073709324758
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.53
+
+Expected number of primary events for Scenario: 0.028680050948578326
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.54
+
+Expected number of primary events for Scenario: 0.029360436997845497
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.56
+
+Expected number of primary events for Scenario: 0.03081591151974154
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.07
+
+Expected number of primary events for Scenario: 0.09972612351652073
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.52
+
+Expected number of primary events for Scenario: 0.028117170819998462
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.53
+
+Expected number of primary events for Scenario: 0.288421218297612
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.62
+
+Expected number of primary events for Scenario: 0.03548915595635597
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.48
+
+Expected number of primary events for Scenario: 0.257147316089852
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.54
+
+Expected number of primary events for Scenario: 0.02958688351811827
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.52
+
+Expected number of primary events for Scenario: 0.028331302592059494
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.61
+
+Expected number of primary events for Scenario: 0.03487804610322461
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.19
+
+Expected number of primary events for Scenario: 0.13274361129961207
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.45
+
+Expected number of primary events for Scenario: 0.2417782654075093
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.64
+
+Expected number of primary events for Scenario: 0.03749577674232752
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.82
+
+Expected number of primary events for Scenario: 0.05682722050409181
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.5
+
+Expected number of primary events for Scenario: 0.027240461522936934
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.65
+
+Expected number of primary events for Scenario: 0.3855761826483732
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.2
+
+Expected number of primary events for Scenario: 0.13734544822617725
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.64
+
+Expected number of primary events for Scenario: 0.03791647142449841
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.58
+
+Expected number of primary events for Scenario: 0.03302621101264633
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.17
+
+Expected number of primary events for Scenario: 0.12853333130109224
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.72
+
+Expected number of primary events for Scenario: 0.45755216589582076
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.46
+
+Expected number of primary events for Scenario: 0.25182856814241
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.9
+
+Expected number of primary events for Scenario: 0.06955863382301124
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.46
+
+Expected number of primary events for Scenario: 0.2532506516485833
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.09
+
+Expected number of primary events for Scenario: 0.10841660361931005
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.55
+
+Expected number of primary events for Scenario: 0.31299287690344674
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.9
+
+Expected number of primary events for Scenario: 0.07024208039785196
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.51
+
+Expected number of primary events for Scenario: 0.28761025191431905
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.1
+
+Expected number of primary events for Scenario: 0.11239511851751353
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.53
+
+Expected number of primary events for Scenario: 0.03030067665087451
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.75
+
+Expected number of primary events for Scenario: 0.050332438454035226
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.89
+
+Expected number of primary events for Scenario: 0.06973831009799965
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.54
+
+Expected number of primary events for Scenario: 0.31161709888111666
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 5.36
+
+Expected number of primary events for Scenario: 20.615022476253685
+
+Observed number of primary events for Scenario: 21.0
+
+Magnitude of Scenario: 3.44
+
+Expected number of primary events for Scenario: 0.24793623384092822
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.96
+
+Expected number of primary events for Scenario: 0.08211721922720323
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.93
+
+Expected number of primary events for Scenario: 0.0766458141171579
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.55
+
+Expected number of primary events for Scenario: 0.03197673034065468
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.56
+
+Expected number of primary events for Scenario: 0.032737690048394476
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.6
+
+Expected number of primary events for Scenario: 0.03592335658742786
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.05
+
+Expected number of primary events for Scenario: 0.10131254828188369
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.52
+
+Expected number of primary events for Scenario: 0.029910431520141445
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.19
+
+Expected number of primary events for Scenario: 0.14000444202842818
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.72
+
+Expected number of primary events for Scenario: 0.04756215962851396
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.88
+
+Expected number of primary events for Scenario: 0.06882747804602335
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.26
+
+Expected number of primary events for Scenario: 0.16580396962793462
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 4.09
+
+Expected number of primary events for Scenario: 1.1237656909728184
+
+Observed number of primary events for Scenario: 2.0
+
+Magnitude of Scenario: 2.65
+
+Expected number of primary events for Scenario: 0.040883027851521786
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.65
+
+Expected number of primary events for Scenario: 0.40919348311313475
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.75
+
+Expected number of primary events for Scenario: 0.051672586033479045
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.75
+
+Expected number of primary events for Scenario: 0.05194217475946087
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.61
+
+Expected number of primary events for Scenario: 0.03767412978891477
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.63
+
+Expected number of primary events for Scenario: 0.03950952620867085
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.53
+
+Expected number of primary events for Scenario: 0.03141959968687454
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.94
+
+Expected number of primary events for Scenario: 0.8135144019805376
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 3.21
+
+Expected number of primary events for Scenario: 0.15151161597125776
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.78
+
+Expected number of primary events for Scenario: 0.056513435988274116
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.76
+
+Expected number of primary events for Scenario: 0.05400791690229773
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.57
+
+Expected number of primary events for Scenario: 0.03493222728205014
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.55
+
+Expected number of primary events for Scenario: 0.033406563250819636
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.98
+
+Expected number of primary events for Scenario: 0.09042782106744286
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.84
+
+Expected number of primary events for Scenario: 0.6665160488654874
+
+Observed number of primary events for Scenario: 3.0
+
+Magnitude of Scenario: 2.51
+
+Expected number of primary events for Scenario: 0.03160105621165744
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.42
+
+Expected number of primary events for Scenario: 0.2570451173608911
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.71
+
+Expected number of primary events for Scenario: 0.05025071421779293
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.6
+
+Expected number of primary events for Scenario: 0.039332823845846736
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.74
+
+Expected number of primary events for Scenario: 0.05559831264124198
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.74
+
+Expected number of primary events for Scenario: 0.05659088434038676
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.64
+
+Expected number of primary events for Scenario: 0.04495706951632295
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.82
+
+Expected number of primary events for Scenario: 0.06860461724527729
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.83
+
+Expected number of primary events for Scenario: 0.07030767882001929
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.77
+
+Expected number of primary events for Scenario: 0.061546534576558135
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.83
+
+Expected number of primary events for Scenario: 0.07169841217441963
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.8
+
+Expected number of primary events for Scenario: 0.06698054095294087
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.57
+
+Expected number of primary events for Scenario: 0.03949188781329453
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.03
+
+Expected number of primary events for Scenario: 0.1153866888660385
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.51
+
+Expected number of primary events for Scenario: 0.0352473041336562
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.63
+
+Expected number of primary events for Scenario: 0.046622289059172005
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.58
+
+Expected number of primary events for Scenario: 0.0431826381762113
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.46
+
+Expected number of primary events for Scenario: 0.3280425480552359
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.78
+
+Expected number of primary events for Scenario: 0.06857778111380222
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.8
+
+Expected number of primary events for Scenario: 0.07185118167149884
+
+Observed number of primary events for Scenario: 1.0
+
+Magnitude of Scenario: 2.97
+
+Expected number of primary events for Scenario: 0.10634764017945128
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.68
+
+Expected number of primary events for Scenario: 0.05467056664717835
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.75
+
+Expected number of primary events for Scenario: 0.06428839447904836
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.63
+
+Expected number of primary events for Scenario: 0.49981350086842785
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.8
+
+Expected number of primary events for Scenario: 0.739278341654209
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 3.01
+
+Expected number of primary events for Scenario: 0.11994502836366729
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.8
+
+Expected number of primary events for Scenario: 0.0790132221197919
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.53
+
+Expected number of primary events for Scenario: 0.0435766870615185
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.63
+
+Expected number of primary events for Scenario: 0.058522481426833826
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 2.81
+
+Expected number of primary events for Scenario: 0.09221580433239802
+
+Observed number of primary events for Scenario: 0.0
+
+Magnitude of Scenario: 4.97
+
+Expected number of primary events for Scenario: 15.007115986210298
+
+Observed number of primary events for Scenario: 14.0
+
+Magnitude of Scenario: 7.1
+
+Expected number of primary events for Scenario: 2097.717203365952
+
+Observed number of primary events for Scenario: 2111.0
+
+Fault system ruptures triggered (date	mag	name	nthRup,src,rupInSrc,fltSysRup):
+	7/6/2019	mag=6.161	Inversion Src #1381; 2 SECTIONS BETWEEN Garlock (Central), Subsection 11 AND Garlock (Central), Subsection 12
+	nthRup=1381, srcIndex=1381, RupIndexInSource=0, fltSysRupIndex=1381	gen=1	parID=226	parMag=7.1
+
+Looping over events took 32 secs
+
+Total num ruptures: 4937
+Num spontaneous: 0
+Num 1st Gen: 2401
+Num 2nd Gen: 1367
+Num 3rd Gen: 751
+Num 4th Gen: 246
+Num 5th Gen: 70
+Num 6th Gen: 79
+Num 7th Gen: 19
+Num 8th Gen: 4
+Num 9th Gen: 0
+Num 10th Gen: 0
+
