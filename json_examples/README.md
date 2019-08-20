@@ -36,7 +36,7 @@ Input ruptures are all optional, though at least one must be supplied if include
 
 ### Trigger Ruptures
 
-JSON array for specifying trigger ruptures (0 or more). There are 3 types of trigger ruptures, and can be mixed in the array.
+JSON array for specifying trigger ruptures (0 or more). There are 5 types of trigger ruptures, and can be mixed in the array.
 
 #### Point Source Rupture
 
@@ -96,6 +96,42 @@ Simple fault geometry (in the `ruptureSurfaces` JSON object) is specified as an 
 | lowerDepth | yes | Fault lower depth (kilometers) | `"lowerDepth": 12` |
 | trace | yes | JSON array of objects containing `latitude`, `longitude`, and `depth` | see example below |
 
+#### Edge Rupture
+
+This represents a rupture consistent with the ShakeMap [Edge Rupture](https://usgs.github.io/shakemap/manual4_0/tg_input_formats.html#rupture-specification) definition. An edge rupture defines the outline of a rupture surface, with the following rules (copied from the ShakeMap V4 manual):
+
+* Vertices must start on the top edge of the rupture.
+* The top and bottom edges must contain the same number of vertices.
+* The first and last points must be identical to close the polygon, and this means that there must always be an odd number of vertices.
+* The top edge of the rupture must always be above the bottom edge.
+
+In cross section, a single-segment multiple-quadrilateral rupture might look schematically like this:
+
+```
+   _.-P1-._
+P0'        'P2---P3
+|                  \
+P7---P6----P5-------P4
+```
+
+ **Name** | **Required?** | **Description** | **Example** |
+|-------|-------|-------|-------|
+| occurrenceTimeMillis | no | Rupture occurrence time in epoch milliseconds. If omitted, the rupture is assumed to occur at simulation start time | `"occurrenceTimeMillis": 1532665006760` |
+| mag | yes | Rupture magnitude | `"mag": 5.3` |
+| latitude | no | Hypocenter latitude in decimal degrees (used only for metadata & plots) | `"latitude": 34.213` |
+| longitude | no | Hypocenter longitude in decimal degrees (used only for metadata & plots) | `"longitude": -118.537` |
+| depth | no | Hypocentral depth in kilometers (positive, used only for metadata & plots) | `"depth": 18.2` |
+| ruptureSurfaces | yes | JSON array of surface outlines (see below) | see example below |
+| subSectResetIndexes | no | JSON array of integer UCERF3 subsection indexes to rest in an elastic rebound sense | `"subSectResetIndexes": [ 1412,1413 ]` |
+
+##### Edge Rupture Data JSON Speicification
+
+Edge Rupture geometry (in the `ruptureSurfaces` JSON object) is specified as an array of the following properties (one entry for each fault plane):
+
+ **Name** | **Required?** | **Description** | **Example** |
+|-------|-------|-------|-------|
+| outline | yes | JSON array of objects containing `latitude`, `longitude`, and `depth` | see example below |
+
 #### Trigger Ruptures Example
 
 Here is an example specifying 3 trigger ruptures, one of each type. The first one is a UCERF3 Fault System Rupture set rupture, followed by a Point Source Rupture, then finally a UCERF3 Section Based Rupture
@@ -151,6 +187,56 @@ Here is an example specifying 3 trigger ruptures, one of each type. The first on
           ]
         }
       ]
+    },
+    {
+      "occurrenceTimeMillis": 1562261629000,
+      "comcatEventID": "ci38443183",
+      "mag": 6.4,
+      "latitude": 35.7053333,
+      "longitude": -117.5038333,
+      "depth": 10.5,
+      "ruptureSurfaces": [
+        {
+          "outline": [
+            {
+              "latitude": 35.6051534466,
+              "longitude": -117.5905380735,
+              "depth": 0.0
+            },
+            {
+              "latitude": 35.6173144101,
+              "longitude": -117.57249634649999,
+              "depth": 0.0
+            },
+            {
+              "latitude": 35.6173135736,
+              "longitude": -117.5726723708,
+              "depth": 0.0
+            },
+            {
+              "latitude": 35.61731357360001,
+              "longitude": -117.5726723708,
+              "depth": 15.0
+            },
+            {
+              "latitude": 35.6173144101,
+              "longitude": -117.57249634649999,
+              "depth": 15.0
+            },
+            {
+              "latitude": 35.6051534466,
+              "longitude": -117.5905380735,
+              "depth": 15.0
+            },
+            {
+              "latitude": 35.6051534466,
+              "longitude": -117.5905380735,
+              "depth": 0.0
+            }
+          ]
+        }
+      ]
+    }
   ]
 ```
 
