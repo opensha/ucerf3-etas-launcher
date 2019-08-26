@@ -1,12 +1,12 @@
 {
-  "plotStartTime": 1566277893063,
-  "plotEndTime": 1566277898682,
+  "plotStartTime": 1566347219641,
+  "plotEndTime": 1566347224975,
   "simulationsProcessed": 10,
   "dataFile": {
     "path": "mojave_m7/results_complete.bin"
   },
-  "launcherGitHash": "015d30b107e4a83c1a18b26f5bff14eef9ea3e65",
-  "launcherGitTime": 1566277186000,
+  "launcherGitHash": "b0fd74af37cb86b5c5a1e496b3852415963325c5",
+  "launcherGitTime": 1566346036000,
   "plots": [
     {
       "className": "scratch.UCERF3.erf.ETAS.analysis.ETAS_MFD_Plot",

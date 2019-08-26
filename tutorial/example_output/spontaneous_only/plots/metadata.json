@@ -1,12 +1,12 @@
 {
-  "plotStartTime": 1566277899365,
-  "plotEndTime": 1566277900443,
+  "plotStartTime": 1566347225541,
+  "plotEndTime": 1566347226543,
   "simulationsProcessed": 10,
   "dataFile": {
     "path": "spontaneous_only/results_complete.bin"
   },
-  "launcherGitHash": "015d30b107e4a83c1a18b26f5bff14eef9ea3e65",
-  "launcherGitTime": 1566277186000,
+  "launcherGitHash": "b0fd74af37cb86b5c5a1e496b3852415963325c5",
+  "launcherGitTime": 1566346036000,
   "plots": [
     {
       "className": "scratch.UCERF3.erf.ETAS.analysis.ETAS_MFD_Plot",
