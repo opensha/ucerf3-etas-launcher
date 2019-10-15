@@ -2,7 +2,7 @@
 
 UCERF3-ETAS simulations are defined with [JSON](https://beginnersbook.com/2015/04/json-tutorial/) configuration files. These files describe the simulation parameters (start time, inclusion of spontaneous ruptures, etc), optional input 'trigger' ruptures (if you are simulating the aftermath of a scenario or real event), output directory, and path to various required UCERF3 inputs and cache files (located in the [inputs directory](inputs)).
 
-While cumbersome, you can create configuration files from scratch or modify an example in the [json_examples directory](json_examples) after reading the [file format documentation](json_examples/README.md). A simpler approach is often to use the scripts defined below which generate JSON configuration files for either scenario ruptures, spontaneous simulations, or ComCat events.
+While cumbersome, you can create configuration files from scratch or modify an example in the [json_examples directory](json_examples) after reading the [file format documentation](json_examples/README.md). A simpler approach is often to use the scripts defined below which generate JSON configuration files for either [ComCat events](#configuring-simulations-for-comcat-events) or [scenario ruptures/spontaneous simulations](#configuring-simulations-for-scenarios-or-spontaneous-events).
 
 ## Configuring simulations for ComCat events
 
