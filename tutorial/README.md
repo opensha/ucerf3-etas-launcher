@@ -4,7 +4,7 @@ This directory contains ETAS configuration JSON scripts which are configured to 
 
 ## 2019 M7.1 Ridgecrest automatic configuration from ComCat
 
-This example builds a configuration file from ComCat using the [u3etas_comcat_event_config_builder.sh](../sbin#configure-etas-simulations-with-a-comcat-event-id-u3etas_comcat_event_config_buildersh) tool. First generate the JSON configuration file:
+This example builds a configuration file from ComCat using the [u3etas_comcat_event_config_builder.sh](../doc/configuring_simulations.md#configuring-simulations-for-comcat-events) tool. First generate the JSON configuration file:
 
 `u3etas_comcat_event_config_builder.sh --event-id ci38457511 --num-simulations 10 --days-before 7 --finite-surf-shakemap --finite-surf-shakemap-min-mag 5 --output-dir user_output/comcat-ridgecrest-m7.1-example --random-seed 123456789`
 

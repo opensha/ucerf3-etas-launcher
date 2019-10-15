@@ -1,8 +1,8 @@
 # Configuring UCERF3-ETAS Simulations
 
-UCERF3-ETAS simulations are defined with [JSON](https://beginnersbook.com/2015/04/json-tutorial/) configuration files. These files describe the simulation parameters (start time, inclusion of spontaneous ruptures, etc), optional input 'trigger' ruptures (if you are simulating the aftermath of a scenario or real event), output directory, and path to various required UCERF3 inputs and cache files (located in the [inputs directory](inputs)).
+UCERF3-ETAS simulations are defined with [JSON](https://beginnersbook.com/2015/04/json-tutorial/) configuration files. These files describe the simulation parameters (start time, inclusion of spontaneous ruptures, etc), optional input 'trigger' ruptures (if you are simulating the aftermath of a scenario or real event), output directory, and path to various required UCERF3 inputs and cache files (located in the [inputs directory](../inputs)).
 
-While cumbersome, you can create configuration files from scratch or modify an example in the [json_examples directory](json_examples) after reading the [file format documentation](json_examples/README.md). A simpler approach is often to use the scripts defined below which generate JSON configuration files for either [ComCat events](#configuring-simulations-for-comcat-events) or [scenario ruptures/spontaneous simulations](#configuring-simulations-for-scenarios-or-spontaneous-events).
+While cumbersome, you can create configuration files from scratch or modify an example in the [json_examples directory](../json_examples) after reading the [file format documentation](json_configuration_format.md). A simpler approach is often to use the scripts defined below which generate JSON configuration files for either [ComCat events](#configuring-simulations-for-comcat-events) or [scenario ruptures/spontaneous simulations](#configuring-simulations-for-scenarios-or-spontaneous-events).
 
 ## Configuring simulations for ComCat events
 
@@ -14,9 +14,17 @@ Note that accessing ComCat occasionally failes, and retrying immediate usually w
 
 ### Including fore/aftershocks from ComCat
 
-Use `--days-before <days>`, `--hours-before <hours>`, `--days-after <days>`, `--hours-after <hours>`, and/or `--end-now` to include other ComCat events before and/or after the specified event. All events within a certain radius of the mainshock will be included. That radius is the Wells & Coppersmith (1994) radius by default, but can be overridden with `--radius <radius>` in kilometers. Also considers the optional `--min-mag <mag>`, `--min-depth <depth>`, and `--max-depth <depth>` arguments.
+Use `--days-before <days>`, `--hours-before <hours>`, `--days-after <days>`, `--hours-after <hours>`, and/or `--end-now` to include other ComCat events before and/or after the specified event. See the section below for details on the region in which events will be included.
 
 If you include aftershocks, the simulations will start immediately following the aftershock data period supplied, otherwise they will start immediately following the mainshock.
+
+### Specifying ComCat regions for data fetching and post-simulation comparisons
+
+The ComCat region is used for fetching fore/aftershocks (see above), and also for comparison plots after simulations complete which compare actual aftershock data from ComCat to simulation predictions. By default, the region is circular about the mainshock hypocenter. The circular radius is determined from Wells & Coppersmich (1994), but can be overridden with `--radius <radius>` in kilometers. If a finite surface reprsentation is used for the mainshock, a sausage region with that radius will be used instead.
+
+You can also supply a custom region with the `--region lat1,lon1[,lat2,lon2]` argument. If only one location is supplied, then a circular region is built and you must also supply the --radius argument. Otherwise, if two locations and the --radius option is supplied, a sausage region is drawn around the line defined, otherwise a rectangular region is defined between the two points.
+
+You can also specify the minimimum magnitude with `--min-mag <mag>`, and depth range with `--min-depth <depth>` and `--max-depth <depth>`. The default minimum depth is -10 km (that is, above the earth's surface), and the default maximum depth is the greater of 24 km (the maximum UCERF3-ETAS simulated depth) and twice the hypocentral depth.
 
 ### Inluding finite surfaces from ShakeMap
 
@@ -94,7 +102,7 @@ Thse options are common to both configuration scripts:
 
 ## HPC Options
 
-These scripts can also automatically generate SLURM job submission files for use on clusters. Read the [documentation here](parallel/) for more information. SLURM scripts are modified from the [examples here](parallel/mpj_examples/).
+These scripts can also automatically generate SLURM job submission files for use on clusters. Read the [documentation here](../parallel/) for more information. SLURM scripts are modified from the [examples here](../parallel/mpj_examples/).
 
 | **Name** | **Default Value** | **Description** | **Example** |
 |-------|-------|-------|-------|
