@@ -21,6 +21,7 @@ Then define the following environmental variables in your login script (outside 
     * You may also want to add `$ETAS_LAUNCHER/sbin` to your PATH for easy access to ETAS launcher/processing scripts
   * `ETAS_MEM_GB`: maximum amount of memory to assign to ETAS calculations in gigabytes (integer value, e.g. set to 10 for 10 GB). ETAS simulations require a lot of memory (about 5 GB per calculation thread), set as high as possible with a small buffer for other OS software. I typically set it to system memory minus 2 GB
   * `ETAS_THREADS`: the number of threads to spawn during ETAS calculations. Setting it globally here is optional, otherwise it can either be specified on the command line when running ETAS calculations via the `--threads <threads>` argument or it will be determined on-the-fly from the total amount of memory available
+  * `ETAS_SIM_DIR`: directory where you plan to store ETAS simulations. This is optional but highly recommended, as it will allow you to use relative paths in configuration files and easily copy simulations between systems for processing
   
 ### .bash_profile example
 
@@ -30,6 +31,7 @@ Here is an example `~/.bash_profile` script defining these variables. This assum
 export ETAS_MEM_GB=14
 export ETAS_LAUNCHER=/home/kevin/git/ucerf3-etas-launcher
 export ETAS_THREADS=3
+export ETAS_SIM_DIR=/home/kevin/ucerf3-etas-simulations
 export PATH=$PATH:$ETAS_LAUNCHER/sbin/
 ```
 
@@ -64,11 +66,11 @@ ETAS_EnvTest DONE
 
 UCERF3-ETAS simulations are defined with [JSON](https://beginnersbook.com/2015/04/json-tutorial/) configuration files. These files describe the simulation parameters (start time, inclusion of spontaneous ruptures, etc), optional input 'trigger' ruptures (if you are simulating the aftermath of a scenario or real event), output directory, and path to various required UCERF3 inputs and cache files (located in the [inputs directory](inputs)).
 
-While cumbersome, you can create configuration files from scratch or modify an example in the [json_examples directory](json_examples) after reading the [file format documentation](json_examples/README.md). A simpler approach is often to use [helper scripts defined here](doc/CONFIGURING_SIMULATIONS.md) which generate JSON configuration files for either [ComCat events](doc/CONFIGURING_SIMULATIONS.md#configuring-simulations-for-comcat-events) or [scenario ruptures/spontaneous simulations](doc/CONFIGURING_SIMULATIONS.md#configuring-simulations-for-scenarios-or-spontaneous-events).
+While cumbersome, you can create configuration files from scratch or modify an example in the [json_examples directory](json_examples) after reading the [file format documentation](doc/json_configuration_format.md). A simpler approach is often to use [helper scripts defined here](doc/configuring_simulations.md) which generate JSON configuration files for either [ComCat events](doc/configuring_simulations.md#configuring-simulations-for-comcat-events) or [scenario ruptures/spontaneous simulations](doc/configuring_simulations.md#configuring-simulations-for-scenarios-or-spontaneous-events).
 
 ## Running Single-Machine ETAS Simulations
 
-Once you have defined a [JSON ETAS configuration file](json_examples), you can use the scripts in the [sbin directory](sbin). More detailed information on these scripts is available in the [README](sbin/README.md). Commands shown below assume that you have added the sbin direcotory to your PATH.
+Once you have defined a [JSON ETAS configuration file](json_examples), you can use the scripts in the [sbin directory](sbin). More detailed information on these scripts is available in the [README](doc/scripts.md). Commands shown below assume that you have added the sbin direcotory to your PATH.
 
 To run a set of ETAS simulations on a single machine (but possibly with multiple threads), use the `u3etas_launcher.sh` command:
 
@@ -78,7 +80,7 @@ For example, to run ETAS simulations for a JSON file in the current directory na
 
 `u3etas_launcher.sh --threads 3 config.json`
 
-Output files for each catalog will be written in the "results" subdirectory of the simulation output directory (which is defined in the JSON configuration file). If [binary output filters](json_examples/README.md#binary-output-filters) are configured in the JSON file, then results will be consolidated as they complete into one or more binary files in the top level simulation output directory.
+Output files for each catalog will be written in the "results" subdirectory of the simulation output directory (which is defined in the JSON configuration file). If [binary output filters](doc/json_configuration_format.md#binary-output-filters) are configured in the JSON file, then results will be consolidated as they complete into one or more binary files in the top level simulation output directory.
 
 ## Plotting Simulation Output
 
