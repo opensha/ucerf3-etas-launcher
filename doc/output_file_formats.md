@@ -25,7 +25,7 @@ The format is an extension to the typical 10-column earthquake catalog format (t
 | Gen | Generation of this rupture, e.g. `0` for a spontaneous rupture or `1` for a primary aftershock of an input event or spontaneous rupture |
 | OrigTime | Origin time in epoch milliseconds, e.g. `1571174849123` |
 | distToParent | Distance between this rupture and it's parent in kilometers, or NaN for spontaneous ruptures, e.g. `NaN` |
-| nthERFIndex | Internal integer index, e.g. `1234` |
+| nthERFIndex | Internal model integer index, e.g. `1234` |
 | FSS_ID | Supra-seismogenic rupture ID in the UCERF3 Fault System Solution, or -1 if it is a point source rupture, e.g. `1234` |
 | GridNodeIndex| Index in the UCERF3 California gridded region, or -1 if it is a supra-seismogenic fault-based rupture, e.g. `1234` |
 | ETAS_k | ETAS `k` value for this rupture in linear units, useful is aleatory `k` variability is enabled, e.g. `0.00284` |
@@ -49,3 +49,38 @@ Here is a snipped of the first few lines of one such catalog:
 
 Most large UCERF3-ETAS simulations are stored in a binary format for storage and I/O efficiency. That binary format is described below, with **all values stored in the big-endian binary representations**.
 
+### History of binary formats
+
+Note that multiple file format versions exist. The 'Version' flag at the start of each catalog indicates the file format version. Fields that are version-dependent list the applicable version number(s) in the 'Versions' column below, and are omitted in other versions.
+
+| **Version** | **Date** | **Description** |
+|-------|-------|-------|
+| 1 | circa 2016 | Initial binary file version |
+| 2 | 10/15/2019 | Added new `ETAS 'k'` value for each rupture to track `k` in simulations with aleatory productivity variability enabled |
+
+### Single catalog binary format
+
+Each catalog begins with the folowing 2 values:
+
+| **Name** | **Type** | **Versions** | **Description** |
+|-------|-------|-------|-------|
+| Version | 2-byte short integer | *ALL* | File format version number |
+| Num Ruptures | 4-byte integer | *ALL* | Total number of ruptures in this catalog |
+
+Then, the following fields are written for each rupture.
+
+| **Name** | **Type** | **Versions** | **Description** |
+|-------|-------|-------|-------|
+| ID | 4-byte integer | *ALL* | Unique ID number for this rupture |
+| Parent ID | 4-byte integer | *ALL* | ID number of this rupture's parent, or -1 if it is a spontaneous rupture  |
+| Generation | 2-byte short integer | *ALL* | Generation of this rupture, e.g. `0` for a spontaneous rupture or `1` for a primary aftershock of an input event or spontaneous rupture |
+| Origin Time | 8-byte long integer | *ALL* | Origin time in epoch milliseconds, e.g. `1571174849123` |
+| Latitude | 8-byte double precision | *ALL* | Hypocenter latitude |
+| Longitude | 8-byte double precision | *ALL* | Hypocenter longitude |
+| Depth | 8-byte double precision | *ALL* | Hypocenter depth in kilometers |
+| Magnitude | 8-byte double precision | *ALL* | Rupture magnitude |
+| Distance To Parent | 8-byte double precision | *ALL* | Distance between this rupture and it's parent in kilometers, or NaN for spontaneous ruptures |
+| Nth ERF Index | 4-byte integer | *ALL* | Internal model index |
+| FSS Index | 4-byte integer | *ALL* | Supra-seismogenic rupture ID in the UCERF3 Fault System Solution, or -1 if it is a point source rupture, e.g. `1234` |
+| Grod Mpde Index | 4-byte integer | *ALL* | Index in the UCERF3 California gridded region, or -1 if it is a supra-seismogenic fault-based rupture, e.g. `1234` |
+| ETAS 'k' | 8-byte double precision | **2+** | ETAS `k` value for this rupture in linear units, useful is aleatory `k` variability is enabled, e.g. `0.00284` |
