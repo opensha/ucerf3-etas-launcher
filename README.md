@@ -62,9 +62,9 @@ ETAS_EnvTest DONE
 
 ## Configuring ETAS Simulations
 
-ETAS simulations are defined with [JSON](https://beginnersbook.com/2015/04/json-tutorial/) configuration files. These files describe the simulation parameters (start time, inclusion of spontaneous ruptures, etc), optional input 'trigger' ruptures (if you are simulating the aftermath of a scenario or real event), output directory, and path to various required UCERF3 inputs and cache files (located in the [inputs directory](inputs)). When you're ready to start running your own ETAS simulations, the simplest way to get started is to modify an example in the [json_examples directory](json_examples) and to read the [file format documentation](json_examples/README.md).
+UCERF3-ETAS simulations are defined with [JSON](https://beginnersbook.com/2015/04/json-tutorial/) configuration files. These files describe the simulation parameters (start time, inclusion of spontaneous ruptures, etc), optional input 'trigger' ruptures (if you are simulating the aftermath of a scenario or real event), output directory, and path to various required UCERF3 inputs and cache files (located in the [inputs directory](inputs)).
 
-If you are running aftershock simulations of a real event, you can use the [u3etas_comcat_event_config_builder.sh](./sbin#configure-etas-simulations-with-a-comcat-event-id-u3etas_comcat_event_config_buildersh) tool to generate a configuration file for you from ComCat.
+While cumbersome, you can create configuration files from scratch or modify an example in the [json_examples directory](json_examples) after reading the [file format documentation](json_examples/README.md). A simpler approach is often to use [helper scripts defined here](CONFIGURING_SIMULATIONS.md) which generate JSON configuration files for either [ComCat events](CONFIGURING_SIMULATIONS.md#configuring-simulations-for-comcat-events) or [scenario ruptures/spontaneous simulations](CONFIGURING_SIMULATIONS.md#configuring-simulations-for-scenarios-or-spontaneous-events).
 
 ## Running Single-Machine ETAS Simulations
 
