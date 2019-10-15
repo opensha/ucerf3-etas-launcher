@@ -49,6 +49,8 @@ Here is a snipped of the first few lines of one such catalog:
 
 Most large UCERF3-ETAS simulations are stored in a binary format for storage and I/O efficiency. That binary format is described below, with **all values stored in the big-endian binary representations**.
 
+If this format is too complicated for you, you may wish to convert to ASCII with the [u3etas_ascii_writer.sh script](scripts.md#convert-binary-catalog-files-to-ascii-u3etas_ascii_writersh).
+
 ### History of binary formats
 
 Note that multiple file format versions exist. The 'Version' flag at the start of each catalog indicates the file format version. Fields that are version-dependent list the applicable version number(s) in the 'Versions' column below, and are omitted in other versions.
@@ -84,3 +86,13 @@ Then, the following fields are written for each rupture.
 | FSS Index | 4-byte integer | *ALL* | Supra-seismogenic rupture ID in the UCERF3 Fault System Solution, or -1 if it is a point source rupture, e.g. `1234` |
 | Grod Mpde Index | 4-byte integer | *ALL* | Index in the UCERF3 California gridded region, or -1 if it is a supra-seismogenic fault-based rupture, e.g. `1234` |
 | ETAS 'k' | 8-byte double precision | **2+** | ETAS `k` value for this rupture in linear units, useful is aleatory `k` variability is enabled, e.g. `0.00284` |
+
+### Multiple catalogs binary format
+
+Multiple catalogs can be stored in a single binary file (e.g. *results_complete.bin*). The first item in the binary file is:
+
+| **Name** | **Type** | **Versions** | **Description** |
+|-------|-------|-------|-------|
+| Num Catalogs | 4-byte integer | *ALL* | Total number of catalogs |
+
+Then the [single catalog binary format](#single-catalog-binary-format) follows once for each of those catalogs.
