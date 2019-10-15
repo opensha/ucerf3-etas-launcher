@@ -87,6 +87,7 @@ Thse options are common to both configuration scripts:
 | `--scale-factor <scale>` | (prob-model dependent) | Total rate scale factor. Default is determined from probability model | `--scale-factor 1.14` |
 | `--gridded-only` | (disabled) | Flag for gridded only (no-faults) ETAS. Will also change the default probability model to POISSON | `--gridded-only` |
 | `--etas-k` | `-2.367` | ETAS productivity parameter parameter, k, in Log10 units of (days)^(p-1) | `--etas-k -2.367` |
+| `--etas-k-cov` | `0` | COV of ETAS productivity parameter parameter, k | `--etas-k-cov 1.16` |
 | `--etas-p` | `1.07` | ETAS temporal decay paramter, p | `--etas-p 1.07` |
 | `--etas-c` | `0.0065` | ETAS minimum time paramter, c, in days | `--etas-c 0.0065` |
 | `--impose-gr` | (disabled) | If supplied, imposeGR will be set to true | `--impose-gr` |
