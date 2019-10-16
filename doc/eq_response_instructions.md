@@ -10,6 +10,8 @@ If you're responding to an event, it's likely that you haven't updated UCERF3-ET
 
 Then, if you haven't already, define the ETAS_SIM_DIR environmental variable on all machines that you will use (the same way that you defined ETAS_LAUNCHER when you installed UCERF3-ETAS-Launcher). This should point to the directory where you want to store ETAS simulations, and allows you to use the same config.json file on multiple machines (e.g. to run simulations on a cluster, the copy back output and plot results on your local machine).
 
+If you're working on USC HPC, ETAS_SIM_DIR should point to somewhere on either `/home/scec-00/<username>` or `/home/scec-00/<username>`, e.g. `/home/scec-00/<username>/ucerf3/etas_sim`.
+
 ## Step 2: determine ComCat event ID
 
 You'll need the ComCat event ID for the event, which you can determine from the URL on the USGS event page. For example, for the 2019 Ridgecrest M7.1, the full URL is `https://earthquake.usgs.gov/earthquakes/eventpage/ci38457511/executive` and the event ID is `ci38457511`.
@@ -20,7 +22,7 @@ Use the `u3etas_comcat_event_config_builder.sh` script to pull the event informa
 
 By default, only the given event will be included and the simulations will start immediately after the event. You can include foreshocks and aftershocks with `--days-before <days>`, `--hours-before <hours>`, `--days-after <days>`, `--hours-after <hours>`, and/or `--end-now` (the latter fetches all aftershocks up until the current moment and starts simulations at that time).
 
-There are a few ways to describe finite fault surfaces. ShakeMap surfaces are currently supplied, use `--finite-surf-shakemap` if such a surface exists. You can also specify custom surfaces (e.g. drawn through seismicity) by following instructions [here](configuring_simulations.md#building-your-own-custom-surface).
+There are a few ways to describe finite fault surfaces. ShakeMap surfaces are currently recommended if available, use `--finite-surf-shakemap` if such a surface exists. You can also specify custom surfaces (e.g. drawn through seismicity) by following instructions [here](configuring_simulations.md#building-your-own-custom-surface).
 
 You'll probably want to run simulations on USC HPC, so include [those options](configuring_simulations.md#hpc-options) as well.
 
@@ -34,10 +36,10 @@ This command will generate the `config.json` and `etas_sim_mpj.slurm` files refe
 
 Run simulations on a single machine with `etas_launcher.sh config.json`, or [follow these instructions](../parallel/README.md#submitting-the-slurm-parallel-etas-job) to submit them on a cluster.
 
-If you're using a cluster, you'll then want to follow the instructions to [monitor job progress](../parallel/README.md#monitoring-job-progress) and then copy output files back to your local machine.
+If you're using a cluster, you'll then want to follow the instructions to [monitor job progress](../parallel/README.md#monitoring-job-progress).
 
 ## Step 5: plot results
 
 When the job is complete, or at least some simulations have finished, you can plot the results with `u3etas_plot_generator.sh config.json`. This will generate many plots (in the 'plots' subdirectory) as well as an HTML index that can be opened in a web browser.
 
-If you ran the simulations on a cluster, first copy the output back to your machine (either results_complete.bin or results_complete_partial.bin if the simulation is still in progress). Don't try to run the plot generator code on the head node of a HPC center (they won't like it, it'll be crazy slow, and will probably get killed).
+If you ran the simulations on a cluster, you can either copy them back to your local machine to process (either results_complete.bin or results_complete_partial.bin if the simulation is still in progress), or use another SCEC machine. Don't try to run the plot generator code on the head node of a HPC center (they won't like it, it'll be crazy slow, and will probably get killed). If you want to plot results on a SCEC machine, try opensha.usc.edu (you should be able to login with the same credentials that you use on www.scec.org).
