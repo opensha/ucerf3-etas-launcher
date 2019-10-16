@@ -1,17 +1,17 @@
 {
-  "plotStartTime": 1566347225541,
-  "plotEndTime": 1566347226543,
+  "plotStartTime": 1571257672404,
+  "plotEndTime": 1571257678361,
   "simulationsProcessed": 10,
   "dataFile": {
     "path": "spontaneous_only/results_complete.bin"
   },
-  "launcherGitHash": "b0fd74af37cb86b5c5a1e496b3852415963325c5",
-  "launcherGitTime": 1566346036000,
+  "launcherGitHash": "3347936ff83c07695414d6ffe804046b1ed5195c",
+  "launcherGitTime": 1571254385000,
   "plots": [
     {
       "className": "scratch.UCERF3.erf.ETAS.analysis.ETAS_MFD_Plot",
-      "version": 1,
-      "time": 1565131400285,
+      "version": 2,
+      "time": 1571257672404,
       "markdown": [
         "## Magnitude Frequency Distribution",
         "*[(top)](#table-of-contents)*",

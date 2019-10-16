@@ -1,17 +1,17 @@
 {
-  "plotStartTime": 1566347219641,
-  "plotEndTime": 1566347224975,
+  "plotStartTime": 1571257665140,
+  "plotEndTime": 1571257671520,
   "simulationsProcessed": 10,
   "dataFile": {
     "path": "mojave_m7/results_complete.bin"
   },
-  "launcherGitHash": "b0fd74af37cb86b5c5a1e496b3852415963325c5",
-  "launcherGitTime": 1566346036000,
+  "launcherGitHash": "3347936ff83c07695414d6ffe804046b1ed5195c",
+  "launcherGitTime": 1571254385000,
   "plots": [
     {
       "className": "scratch.UCERF3.erf.ETAS.analysis.ETAS_MFD_Plot",
-      "version": 1,
-      "time": 1565131295743,
+      "version": 2,
+      "time": 1571257665140,
       "markdown": [
         "## Probabilities Summary Table",
         "*[(top)](#table-of-contents)*",
