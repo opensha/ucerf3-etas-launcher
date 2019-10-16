@@ -30,7 +30,7 @@ Here's an example for 100,000 Ridgecrest simulations, starting immediately after
 
 `u3etas_comcat_event_config_builder.sh --event-id ci38457511 --num-simulations 100000 --days-before 7 --finite-surf-shakemap --finite-surf-shakemap-min-mag 5 --hpc-site USC_HPC --nodes 36 --hours 24 --queue scec`
 
-This command will generate the `config.json` and `etas_sim_mpj.slurm` files referenced below.
+This command will generate the `config.json` and `etas_sim_mpj.slurm` files referenced below. It will also generate some diagnostic plots showing the input events in relation to UCERF fault sections in the `config_input_plots` subdirectory, which can be useful to see if you should reset the elastic rebound clock on any UCERF3 subsections (with the `--reset-sects <id1,id2,...,idN>` flag). Example output for the Ridgecrest M7.1 is [available here](../tutorial/example_output/comcat-ridgecrest-m7.1-example/config_input_plots).
 
 ## Step 4: run the simulations
 
