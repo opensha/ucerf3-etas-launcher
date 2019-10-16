@@ -24,7 +24,7 @@ By default, only the given event will be included and the simulations will start
 
 There are a few ways to describe finite fault surfaces. ShakeMap surfaces are currently recommended if available, use `--finite-surf-shakemap` if such a surface exists. You can also specify custom surfaces (e.g. drawn through seismicity) by following instructions [here](configuring_simulations.md#building-your-own-custom-surface).
 
-You'll probably want to run simulations on USC HPC, so include [those options](configuring_simulations.md#hpc-options) as well.
+You'll probably want to run simulations on USC HPC, so include [those options](configuring_simulations.md#hpc-options) as well. The SCEC queue at USC HPC has 38 nodes. You can see how many of them are currently in use with the `scec_queue_check.py` command, then use at most 38 minus the reported number of nodes in use.
 
 Here's an example for 100,000 Ridgecrest simulations, starting immediately after the M7.1 (including seismicity 7 days before), using ShakeMap surfaces for all M>=5's, and configured to run on 36 nodes for up to 24 hours on the SCEC queue at USC HPC:
 
