@@ -644,7 +644,7 @@ These are map plots of individual catalogs from the simulations, selected as the
 
 These plots compare simulated sequences with data from ComCat. All plots only consider events with hypocenters inside the ComCat region defined in the JSON input file.
 
-Last updated at 2019/10/16 20:28:04 UTC, 102.7 d after the simulation start time
+Last updated at 2019/10/16 20:49:54 UTC, 102.7 d after the simulation start time
 
 ### ComCat Magnitude-Number Distributions
 *[(top)](#table-of-contents)*

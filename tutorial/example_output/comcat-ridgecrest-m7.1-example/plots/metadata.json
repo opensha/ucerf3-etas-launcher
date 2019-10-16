@@ -1,6 +1,6 @@
 {
-  "plotStartTime": 1571257679352,
-  "plotEndTime": 1571257704168,
+  "plotStartTime": 1571258989041,
+  "plotEndTime": 1571259012942,
   "simulationsProcessed": 10,
   "dataFile": {
     "path": "comcat-ridgecrest-m7.1-example/results_complete.bin"
@@ -628,14 +628,14 @@
     {
       "className": "scratch.UCERF3.erf.ETAS.analysis.ETAS_ComcatComparePlot",
       "version": 15,
-      "time": 1571257679352,
+      "time": 1571258989041,
       "markdown": [
         "## ComCat Data Comparisons",
         "*[(top)](#table-of-contents)*",
         "",
         "These plots compare simulated sequences with data from ComCat. All plots only consider events with hypocenters inside the ComCat region defined in the JSON input file.",
         "",
-        "Last updated at 2019/10/16 20:28:04 UTC, 102.7 d after the simulation start time",
+        "Last updated at 2019/10/16 20:49:54 UTC, 102.7 d after the simulation start time",
         "",
         "### ComCat Magnitude-Number Distributions",
         "*[(top)](#table-of-contents)*",
