@@ -1,6 +1,6 @@
 # UCERF3-ETAS post-event response instructions
 
-These instructions are intenteded to help those who have already configured and run UCERF3-ETAS to respond to a recent event.
+These instructions are intenteded to help those who have already configured and run UCERF3-ETAS to respond to a recent event. If you need to reconfigure UCERF3-ETAS-Launcher from scratch, first follow the instructions [here](../README.md).
 
 ## Step 1: pull latest UCERF3-ETAS launcher updates and define ETAS_SIM_DIR
 
