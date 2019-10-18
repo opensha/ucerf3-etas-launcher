@@ -138,6 +138,7 @@ Thse options are common to both configuration scripts:
 | `--fault-model <FM>` | `FM3_1` | Fault model, one of `FM3_1` or `FM3_2` | `--fault-model FM3_1` |
 | `--include-spontaneous` | (disabled) | If supplied, spontaneous ruptures will be enabled | `--include-spontaneous` |
 | `--historical-catalog` | (disabled) | If supplied, historical catalog will be included | `--include-spontaneous` |
+| `--historical-catalog-as-spontaneous` | (disabled) | If supplied, aftershocks which descend from the historical catalog (enabled with --historical-catalog) will be treated identically to spontaneous ruptures for the purposes of output plots and tables | `--historical-catalog-as-spontaneous` |
 | `--duration-years <duration>` | `10` | Simulation duration (years) | `--duration-years 10` |
 | `--prob-model <name>` | `FULL_TD` | UCERF3-ETAS Probability Model, one of `FULL_TD`, `NO_ERT`, or `POISSON` | `--prob-model FULL_TD` |
 | `--scale-factor <scale>` | (prob-model dependent) | Total rate scale factor. Default is determined from probability model | `--scale-factor 1.14` |
