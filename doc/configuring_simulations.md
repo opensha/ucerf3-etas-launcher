@@ -8,7 +8,7 @@ While cumbersome, you can create configuration files from scratch or modify an e
 
 USAGE: `u3etas_comcat_event_config_builder.sh [options] --num-simulations <num> --event-id <event-id>`
 
-This script is used to generate JSON configuration files which are specific to a ComCat event. The only required arguments are the number of simulations (`--num-simulations <num>`) and the ComCat event ID (`--event-id <event-id>`, e.g. `--event-id ci38457511`). If `--output-dir <path>` has not been supplied, it assumes the the `$ETAS_SIM_DIR` environmental variable has been set and creates a sub-directory of `$ETAS_SIM_DIR`. Commonly used options specific to ComCat events are summarized below, but all of the [common](#common-options) and [HPC](#hpc-options) also apply. You can also run the command without any arguments to see details on all options.
+This script is used to generate JSON configuration files which are specific to a ComCat event. The only required arguments are the number of simulations (`--num-simulations <num>`) and the ComCat event ID (`--event-id <event-id>`, e.g. `--event-id ci38457511`). If `--output-dir <path>` has not been supplied, it assumes the the `$ETAS_SIM_DIR` environmental variable has been set and creates a sub-directory of `$ETAS_SIM_DIR`. Commonly used options specific to ComCat events are summarized below, but all of the [common](#common-options) and [HPC](#hpc-options) also apply. You can also run the command without any arguments to see details on all options. The order of finite fault surfaces matters, and options given first have highest priority. So if, for example, you want to prefer ShakeMap over Inverted Surfaces, give the ShakeMap option first.
 
 Note that accessing ComCat occasionally failes, and retrying immediate usually works. Input plots of the spatial distribution of input ruptures, distances to UCERF3 fault sections and polygons will be written to the `config_input_plots` subdirectory of the output directory.
 
@@ -26,13 +26,13 @@ You can also supply a custom region with the `--region lat1,lon1[,lat2,lon2]` ar
 
 You can also specify the minimimum magnitude with `--min-mag <mag>`, and depth range with `--min-depth <depth>` and `--max-depth <depth>`. The default minimum depth is -10 km (that is, above the earth's surface), and the default maximum depth is the greater of 24 km (the maximum UCERF3-ETAS simulated depth) and twice the hypocentral depth.
 
-### Inluding finite surfaces from ShakeMap
+### Including finite surfaces from ShakeMap
 
 Use `--finite-surf-shakemap` to attempt to pull a finite surface from ShakeMap for the primary event. You can optionally also supply `finite-surf-shakemap-min-mag <min-mag>` to fetch ShakeMap surfaces for all other events above a given magnitude if available. If multiple ShakeMap versions are available in ComCat, the most preffered version will be used unless `--finite-surf-shakemap-version <version-number` is suppplied. You can also use simple planar fault drawn through the extents of the ShakeMap surface with the `--finite-surf-shakemap-planar-extents` flag.
 
 ### Including inverted finite surfaces from ComCat
 
-Use `--finite-surf-inversion` to attempt to pull a finite surface from the slip inverson. Note that this surface may be very large and include areas with little or no inverted slip, which can be mitigated by also supplying `--finite-surf-inversion-min-slip <min-slip>` in meters to specify a minimum amount of slip on each pach for it to be included. Optionally also supply `finite-surf-inversion-min-mag <min-mag>` to fetch inverted surfaces for all other events above a given magnitude if available.
+Use `--finite-surf-inversion` to attempt to pull a finite surface from the slip inverson. Note that this surface may be very large and include areas with little or no inverted slip, which can be mitigated by also supplying `--finite-surf-inversion-min-slip <min-slip>` in meters to specify a minimum amount of slip on each patch for it to be included. Optionally also supply `finite-surf-inversion-min-mag <min-mag>` to fetch inverted surfaces for all other events above a given magnitude if available.
 
 ### Building your own custom surface
 
@@ -46,11 +46,11 @@ By default, all lines in the KML file are used, but you can use only a specific 
 
 ### Reset UCERF3 Fault Sections
 
-Specify any UCERF3 fault surfaces to reset (in an elastic rebound sense) with `--reset-sects <id1,id2,...,idN>`. You can also construct a finite-surface for the primary rupture from these sections with the `--finite-surf-from-sections` option.
+Specify any UCERF3 fault surfaces to reset (in an elastic rebound sense) for the mainshock with `--reset-sects <id1,id2,...,idN>`. You can also construct a finite-surface for the primary rupture from these sections with the `--finite-surf-from-sections` option. This can also be done for other events with `--reset-sects <event-id>:<id1,id2,...,idN>`.
 
 ### Use custom mainshock ETAS parameters or magnitude
 
-You can override the ETAS k, p, and c parameters for the mainshock only with the `--mainshock-etas-k <value>` (Log10 units), `--mainshock-etas-p <value>`, and `--mainshock-etas-c <value` options. You can also override the magnitude of the mainshock with `--mod-mag <mag>` or for other events with `--mod-mag <event-id:mag>`, e.g. `--mod-mag ci38443183:6.48`.  You can repeat the `--mod-mag <event-id:mag>` argument multiple times to specify magnitudes for multiple ruptures.
+You can override the ETAS k, p, and c parameters for the mainshock only with the `--event-etas-k <value>` (Log10 units), `--event-etas-p <value>`, and `--event-etas-c <value>` options. You can also override the magnitude of the mainshock with `--mod-mag <mag>`. You can also override these values for any events with the format `--argument <event-id>:<value>`, e.g. `--mod-mag ci38443183:6.48` or `--etas-event-k ci38443183:-2.5`.  You can repeat these options multiple times to specify values for multiple ruptures.
 
 ### Other options
 
@@ -65,6 +65,54 @@ Here's an example for ShakeMap surfaces of the 2019 M7.1 Ridgecrest earthquake, 
 Here's an example for a custom drawn surface of the 2019 M7.1 Ridecrest earthquake, including 7 days of prior events and starting 28 days after the mainshock:
 
 `u3etas_comcat_event_config_builder.sh --event-id ci38457511 --num-simulations 100000 --days-before 7 --days-after 28 --finite-surf-dip 85 --finite-surf-strike 139 --finite-surf-length-along 29 --finite-surf-length-before 22 --finite-surf-upper-depth 0 --finite-surf-lower-depth 12`
+
+## Configuring simulations for ComCat regions and time windows
+
+USAGE: `u3etas_comcat_config_builder.sh [options] --num-simulations <num> --event-id <event-id>`
+
+You can also specify a region and time window to fetch ComCat events, instead of focusing on a single event (and its after/foreshocks). This could be useful for swarms, or other sequences which don't fit the mainshock/aftershock paradigm. It can also be used for spontaneous simulations with a historical catalog, where you want to add ComCat events between the end of the historical catalog and the simulation start time.
+
+The script shares many options with the script for [ComCat events](#configuring-simulations-for-comcat-events), with some differences which are outlined below.
+
+### Specifying ComCat data start time
+
+You must always specify the start time used to fetch ComCat data. This can be done a number of different ways:
+
+* `--start-time <time>`: Start fetching ComCat data at the given time in epoch milliseconds
+* `--start-date <date>`: Start fetching ComCat data at the given date in the format 'yyyy-MM-dd' (e.g. 2019-01-01) or 'yyyy-MM-ddTHH:mm:ss' (e.g. 2019-01-01T01:23:45). All dates and times in UTC
+* `--start-at <event-id>`: Start fetching ComCat data at the time of the given ComCat event
+* `--start-days-before <days>`: Start fetching ComCat data this many days before the end time
+* `--start-after-historical`: Flag to start fetching ComCat data immediately following the end of the UCERF3 historical catalog (at 2012-04-24T19:44:19)
+
+### Specifying ComCat data end time
+
+You must always also specify the end time used to fetch ComCat data. The simulation start time will be 1 second after the ComCat data end time. This can be done a number of different ways:
+
+* `--end-time <time>`: End fetching ComCat data at the given time in epoch milliseconds
+* `--end-date <date>`: End fetching ComCat data at the given date in the format 'yyyy-MM-dd' (e.g. 2019-01-01) or 'yyyy-MM-ddTHH:mm:ss' (e.g. 2019-01-01T01:23:45). All dates and times in UTC
+* `--end-after <event-id>`: End fetching ComCat data immediately after the time of the given ComCat event
+* `--end-days-after <days>`: End fetching ComCat data this many days after the start time
+* `--end-now`: Flag to end fetching ComCat data at the current time
+
+### Specifying the ComCat region
+
+You can use the optional `--region <lat1,lon1[,lat2,lon2]` to specify a ComCat data region, otherwise the entire California UCERF3 model region will be used. If only one location is supplied, then a circular region is built and you must also supply the `--radius <radius>` argument (in kilometers). Otherwise, a rectangular region is defined between the two points.
+
+### Specifying finite fault surfaces
+
+You can use the [ShakeMap](#including-finite-surfaces-from-shakemap) surfaces option, `--finite-surf-shakemap`, to look for ShakeMaps. By deafult, it will look for ShakeMaps for all ruptures with M>=5, but that can be overridden with `--finite-surf-shakemap-min-mag <mag>`. Same for [Inverted Surfaces](#including-inverted-finite-surfaces-from-comcat) with the `--finite-surf-inversion` and `--finite-surf-inversion-min-mag` options, and [surfaces from UCERF3 subsections](#reset-ucerf3-fault-sections) with the `--finite-surf-from-sections` flag and `--reset-sects <event-id>:<id1,id2,...,idN>` options.
+
+As with the ComCat event builder, the order of finite fault surfaces matters, and options given first have highest priority. So if you want to prefer ShakeMap over Inverted Surfaces, give the ShakeMap option first.
+
+### Examples
+
+Here's an example to fetch events between 2 moderate magnitude Northern California events in October, 2019, for a custom region:
+
+`u3etas_comcat_config_builder.sh --start-at nc73291880 --end-after nc73292360 --region 38.5,-122.75,36.25,-120.5 --num-simulations 100000 --hpc-site USC_HPC --nodes 36 --hours 24 --queue scec`
+
+Here's an example for simulating spontaneous and historical events starting at the current moment, filling in events from ComCat (with ShakeMap surfaces for M>=6's) between the end of the UCERF3 historical catalog and the present moment:
+
+`u3etas_comcat_config_builder.sh --start-after-historical --end-now --historical-catalog --include-spontaneous --num-simulations 10000 --finite-surf-shakemap --finite-surf-shakemap-min-mag 6 --hpc-site USC_HPC --nodes 36 --hours 24 --queue scec`
 
 ## Configuring simulations for scenarios or spontaneous events
 
