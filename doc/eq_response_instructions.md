@@ -26,6 +26,8 @@ There are a few ways to describe finite fault surfaces. ShakeMap surfaces are cu
 
 You'll probably want to run simulations on USC HPC, so include [those options](configuring_simulations.md#hpc-options) as well. The SCEC queue at USC HPC has 38 nodes. You can see how many of them are currently in use with the `scec_queue_check.py` command, then use at most 38 minus the reported number of nodes in use.
 
+NOTE: If you're configuring the simulation on a HPC login node and you see an error message like `Error occurred during initialization of VM. Could not reserve enough space for <some value> object heap`, then you'll need to set the `ETAS_MEM_GB` to a suitable level for a shared login node. 4 GB should suffice for this purpose, so execute this command first: `export ETAS_MEM_GB=4` and try again.
+
 Here's an example for 100,000 Ridgecrest simulations, starting immediately after the M7.1 (including seismicity 7 days before), using ShakeMap surfaces for all M>=5's, and configured to run on 36 nodes for up to 24 hours on the SCEC queue at USC HPC:
 
 `u3etas_comcat_event_config_builder.sh --event-id ci38457511 --num-simulations 100000 --days-before 7 --finite-surf-shakemap --finite-surf-shakemap-min-mag 5 --hpc-site USC_HPC --nodes 36 --hours 24 --queue scec`
