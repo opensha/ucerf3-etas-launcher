@@ -39,7 +39,7 @@ This script is used to generate JSON configuration files which are specific to a
 
 ## Build binary catalog files: u3etas_binary_metadata_writer.sh
 
-USAGE: `u3etas_binary_metadata_writer.sh [--max-num <num>] [--csv-file <file>] </path/to/results.bin>`
+USAGE: `u3etas_binary_metadata_writer.sh [--max-num <num>] [--tail] [--csv-file <file>] </path/to/results.bin>`
 
 This script is used to print (or write to a CSV file with the `--csv-file <file>`) header metadata information for each catalog in a binary catalogs file. Limit output to the first *N* records with `--max-num <N>`.
 
