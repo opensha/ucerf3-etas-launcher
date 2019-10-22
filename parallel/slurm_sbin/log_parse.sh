@@ -6,14 +6,16 @@ JAR="$DIR/../../lib/opensha-ucerf3-all.jar"
 
 java -cp ${JAR} edu.usc.kmilner.mpj.taskDispatch.MPJTaskLogStatsGen $@
 
-if [[ -e results ]];then
+RESULTS=`dirname ${@: -1}`
+RESULTS="$RESULTS/results"
+if [[ -e $RESULTS ]];then
 	# we're in an ETAS dir
 	echo
 	echo -n "results dir item count: "
-	ls results/ | wc -l
+	ls $RESULTS/ | wc -l
 	
-	ZIPS=`find results/ -name "*.zip" 2> /dev/null | grep -c zip`
+	ZIPS=`find $RESULTS/ -maxdepth 1 -name "*.zip" 2> /dev/null | grep -c zip`
 	if [[ $ZIPS -gt 0 ]];then
-		echo "zip files: $ZIPS"
+		echo "results top level zip files: $ZIPS"
 	fi
 fi
