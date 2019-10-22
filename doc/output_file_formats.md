@@ -30,6 +30,8 @@ The format is an extension to the typical 10-column earthquake catalog format (t
 | GridNodeIndex| Index in the UCERF3 California gridded region, or -1 if it is a supra-seismogenic fault-based rupture, e.g. `1234` |
 | ETAS_k | ETAS `k` value for this rupture in linear units, useful is aleatory `k` variability is enabled, e.g. `0.00284` |
 
+There may also be other metadata lines which start with a `%`, either at the beginning or end of the file. Be sure to filter those out if not needed.
+
 Here is a snipped of the first few lines of one such catalog:
 
 ```
@@ -59,14 +61,28 @@ Note that multiple file format versions exist. The 'Version' flag at the start o
 |-------|-------|-------|
 | 1 | circa 2016 | Initial binary file version |
 | 2 | 10/15/2019 | Added new `ETAS 'k'` value for each rupture to track `k` in simulations with aleatory productivity variability enabled |
+| 3 | 10/21/2019 | Added metadata at the start of each catalog |
 
 ### Single catalog binary format
 
-Each catalog begins with the folowing 2 values:
+Each catalog begins with the folowing values:
 
 | **Name** | **Type** | **Versions** | **Description** |
 |-------|-------|-------|-------|
 | Version | 2-byte short integer | *ALL* | File format version number |
+| Total (original) number of ruptures | 4-byte integer | **3+** | Total number of ruptures simulated, which may be greater than the number present in the catalog (due to filtering) |
+| Random seed | 8-byte long integer | **3+** | Random seed used to generate the catalog |
+| Catalog index | 4-byte integer | **3+** | Index of this catalog in the cast of a multi-catalog simulation, or -1 for a single catalog simulation |
+| Historical rupture start ID | 4-byte integer | **3+** | First ID of historical ruptures, if included, else -1. Those ruptures are not listed in the file below, but could be the parent to ruptures below |
+| Historical rupture end ID | 4-byte integer | **3+** | Last ID of historical ruptures, if included, else -1. Those ruptures are not listed in the file below, but could be the parent to ruptures below |
+| Trigger rupture start ID | 4-byte integer | **3+** | First ID of trigger ruptures, if included, else -1. Those ruptures are not listed in the file below, but could be the parent to ruptures below |
+| Trigger rupture end ID | 4-byte integer | **3+** | Last ID of trigger ruptures, if included, else -1. Those ruptures are not listed in the file below, but could be the parent to ruptures below |
+| Simulation start time | 8-byte long integer | **3+** | Time that the simulation began in epoch milliseconds |
+| Simulation end time | 8-byte long integer | **3+** | Time that the simulation completed in epoch milliseconds |
+| Total number spontaneous ruptures | 4-byte integer | **3+** | Number of spontanous ruptures in this catalog. This quantity is updated to reflect the new value for filtered catalogs |
+| Total number supraseismogenic ruptures | 4-byte integer | **3+** | Number of supraseismogenic ruptures in this catalog (fssIndex>=0). This quantity is updated to reflect the new value for filtered catalogs |
+| Minimum magnitude | 8-byte double precision | **3+** | Minimum magnitude for this catalog. Note that for the case of filtered catalogs, this is the filter magnitude and there may be some ruptures below this level if preserveChain=true |
+| Maximum magnitude | 8-byte double precision | **3+** | Maximum magnitude in this catalog. This quantity is updated to reflect the new value for filtered catalogs |
 | Num Ruptures | 4-byte integer | *ALL* | Total number of ruptures in this catalog |
 
 Then, the following fields are written for each rupture.
@@ -76,15 +92,15 @@ Then, the following fields are written for each rupture.
 | ID | 4-byte integer | *ALL* | Unique ID number for this rupture |
 | Parent ID | 4-byte integer | *ALL* | ID number of this rupture's parent, or -1 if it is a spontaneous rupture  |
 | Generation | 2-byte short integer | *ALL* | Generation of this rupture, e.g. `0` for a spontaneous rupture or `1` for a primary aftershock of an input event or spontaneous rupture |
-| Origin Time | 8-byte long integer | *ALL* | Origin time in epoch milliseconds, e.g. `1571174849123` |
+| Origin time | 8-byte long integer | *ALL* | Origin time in epoch milliseconds, e.g. `1571174849123` |
 | Latitude | 8-byte double precision | *ALL* | Hypocenter latitude |
 | Longitude | 8-byte double precision | *ALL* | Hypocenter longitude |
 | Depth | 8-byte double precision | *ALL* | Hypocenter depth in kilometers |
 | Magnitude | 8-byte double precision | *ALL* | Rupture magnitude |
-| Distance To Parent | 8-byte double precision | *ALL* | Distance between this rupture and it's parent in kilometers, or NaN for spontaneous ruptures |
-| Nth ERF Index | 4-byte integer | *ALL* | Internal model index |
-| FSS Index | 4-byte integer | *ALL* | Supra-seismogenic rupture ID in the UCERF3 Fault System Solution, or -1 if it is a point source rupture, e.g. `1234` |
-| Grod Mpde Index | 4-byte integer | *ALL* | Index in the UCERF3 California gridded region, or -1 if it is a supra-seismogenic fault-based rupture, e.g. `1234` |
+| Distance to parent | 8-byte double precision | *ALL* | Distance between this rupture and it's parent in kilometers, or NaN for spontaneous ruptures |
+| Nth ERF index | 4-byte integer | *ALL* | Internal model index |
+| FSS index | 4-byte integer | *ALL* | Supra-seismogenic rupture ID in the UCERF3 Fault System Solution, or -1 if it is a point source rupture, e.g. `1234` |
+| Grod node index | 4-byte integer | *ALL* | Index in the UCERF3 California gridded region, or -1 if it is a supra-seismogenic fault-based rupture, e.g. `1234` |
 | ETAS 'k' | 8-byte double precision | **2+** | ETAS `k` value for this rupture in linear units, useful is aleatory `k` variability is enabled, e.g. `0.00284` |
 
 ### Multiple catalogs binary format
@@ -93,6 +109,6 @@ Multiple catalogs can be stored in a single binary file (e.g. *results_complete.
 
 | **Name** | **Type** | **Versions** | **Description** |
 |-------|-------|-------|-------|
-| Num Catalogs | 4-byte integer | *ALL* | Total number of catalogs |
+| Num catalogs | 4-byte integer | *ALL* | Total number of catalogs |
 
 Then the [single catalog binary format](#single-catalog-binary-format) follows once for each of those catalogs.

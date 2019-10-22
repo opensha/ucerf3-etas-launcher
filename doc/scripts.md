@@ -37,6 +37,12 @@ USAGE: `u3etas_comcat_event_config_builder.sh [options] --num-simulations <num> 
 
 This script is used to generate JSON configuration files which are specific to a ComCat event. The only required arguments are the number of simulations (`--num-simulations <num>`) and the ComCat event ID (`--event-id <event-id>`, e.g. `--event-id ci38457511`). There are many command line options, see [complete documentation here](../CONFIGURING_SIMULATIONS.md#configuring-simulations-for-comcat-events).
 
+## Build binary catalog files: u3etas_binary_metadata_writer.sh
+
+USAGE: `u3etas_binary_metadata_writer.sh [--max-num <num>] [--csv-file <file>] </path/to/results.bin>`
+
+This script is used to print (or write to a CSV file with the `--csv-file <file>`) header metadata information for each catalog in a binary catalogs file. Limit output to the first *N* records with `--max-num <N>`.
+
 ## Build binary catalog files: u3etas_binary_writer.sh
 
 USAGE: `u3etas_binary_writer.sh </path/to/etas_config.json> [</path/to/results>]`

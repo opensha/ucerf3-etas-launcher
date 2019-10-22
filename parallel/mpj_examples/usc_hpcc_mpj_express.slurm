@@ -40,6 +40,12 @@ JAR_FILE=${ETAS_LAUNCHER}/lib/opensha-ucerf3-all.jar
 MIN_DISPATCH=$THREADS
 MAX_DISPATCH=100
 
+# this allows for catalogs to be written locally on each compute node in a temporary directory, then only copied back onto shared storage after they complete. this reduces I/O load, but makes it harder to track progress of individual simulations. comment this out to disable this option
+TEMP_OPTION="--temp-dir $TMPDIR"
+
+# this automatically deletes subdirectories of the results directory once a catalog has been sucessfully written to the master binary file. comment out to disable
+CLEAN_OPTION="--clean"
+
 ##########################
 ## END INPUT PARAMETERS ##
 ##   DO NOT EDIT BELOW  ##
@@ -60,7 +66,7 @@ export PATH=$PATH:$MPJ_HOME/bin
 
 date
 echo "RUNNING MPJ"
-mpjrun_errdetect_wrapper.sh $PBS_NODEFILE -dev hybdev -Djava.library.path=$MPJ_HOME/lib -Xmx${MEM_GIGS}G -cp $JAR_FILE scratch.UCERF3.erf.ETAS.launcher.MPJ_ETAS_Launcher --min-dispatch $MIN_DISPATCH --max-dispatch $MAX_DISPATCH --threads $THREADS --end-time `scontrol show job $SLURM_JOB_ID | egrep --only-matching 'EndTime=[^ ]+' | cut -c 9-` $ETAS_CONF_JSON
+mpjrun_errdetect_wrapper.sh $PBS_NODEFILE -dev hybdev -Djava.library.path=$MPJ_HOME/lib -Xmx${MEM_GIGS}G -cp $JAR_FILE scratch.UCERF3.erf.ETAS.launcher.MPJ_ETAS_Launcher --min-dispatch $MIN_DISPATCH --max-dispatch $MAX_DISPATCH --threads $THREADS $TEMP_OPTION $CLEAN_OPTION --end-time `scontrol show job $SLURM_JOB_ID | egrep --only-matching 'EndTime=[^ ]+' | cut -c 9-` $ETAS_CONF_JSON
 ret=$?
 date
 
