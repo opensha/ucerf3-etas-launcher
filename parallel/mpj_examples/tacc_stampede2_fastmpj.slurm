@@ -39,6 +39,15 @@ JAR_FILE=${ETAS_LAUNCHER}/lib/opensha-ucerf3-all.jar
 MIN_DISPATCH=$THREADS
 MAX_DISPATCH=500
 
+# this allows for catalogs to be written locally on each compute node in a temporary directory, then only copied back onto shared storage after they complete. this reduces I/O load, but makes it harder to track progress of individual simulations. comment this out to disable this option
+TEMP_OPTION="--temp-dir /tmp/etas-results-tmp"
+
+# this allows for the results directory to be hosted on a different filesystem, in this case the $SCRATCH filesystem. this will prevent many files from being written to $WORK, as well as reducing I/O load
+SCRATCH_OPTION="--scratch-dir $SCRATCH/etas-results-tmp"
+
+# this automatically deletes subdirectories of the results directory once a catalog has been sucessfully written to the master binary file. comment out to disable
+CLEAN_OPTION="--clean"
+
 ##########################
 ## END INPUT PARAMETERS ##
 ##   DO NOT EDIT BELOW  ##
@@ -87,7 +96,7 @@ JVM_MEM_MB=26624
 
 date
 echo "RUNNING FMPJ"
-fmpjrun_errdetect_wrapper.sh -machinefile $PBS_NODEFILE -np $NP -dev niodev -Djava.library.path=$FMPJ_HOME/lib -Xmx${MEM_GIGS}G -cp $JAR_FILE -class scratch.UCERF3.erf.ETAS.launcher.MPJ_ETAS_Launcher --min-dispatch $MIN_DISPATCH --max-dispatch $MAX_DISPATCH --threads $THREADS --end-time `scontrol show job $SLURM_JOB_ID | egrep --only-matching 'EndTime=[^ ]+' | cut -c 9-` $ETAS_CONF_JSON
+fmpjrun_errdetect_wrapper.sh -machinefile $PBS_NODEFILE -np $NP -dev niodev -Djava.library.path=$FMPJ_HOME/lib -Xmx${MEM_GIGS}G -cp $JAR_FILE -class scratch.UCERF3.erf.ETAS.launcher.MPJ_ETAS_Launcher --min-dispatch $MIN_DISPATCH --max-dispatch $MAX_DISPATCH --threads $THREADS $TEMP_OPTION $SCRATCH_OPTION $CLEAN_OPTION --end-time `scontrol show job $SLURM_JOB_ID | egrep --only-matching 'EndTime=[^ ]+' | cut -c 9-` $ETAS_CONF_JSON
 ret=$?
 date
 
