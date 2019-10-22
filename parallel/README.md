@@ -27,6 +27,7 @@ After logging into the server (in this case, hpc-login3.usc.edu), put this in yo
 export ETAS_LAUNCHER=/home/scec-02/kmilner/ucerf3/ucerf3-etas-launcher
 export ETAS_SIM_DIR=/home/scec-02/kmilner/ucerf3/etas_sim
 export PATH=$ETAS_LAUNCHER/parallel/slurm_sbin/:$ETAS_LAUNCHER/sbin/:$PATH
+export ETAS_MEM_GB=4 # this will be overridden in batch scripts for parallel jobs, set low enough so that the regular U3ETAS scripts can run on the login node to configure jobs
 export MPJ_HOME=/home/scec-00/kmilner/mpj-current
 ```
 
