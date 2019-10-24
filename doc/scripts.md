@@ -37,6 +37,12 @@ USAGE: `u3etas_comcat_event_config_builder.sh [options] --num-simulations <num> 
 
 This script is used to generate JSON configuration files which are specific to a ComCat event. The only required arguments are the number of simulations (`--num-simulations <num>`) and the ComCat event ID (`--event-id <event-id>`, e.g. `--event-id ci38457511`). There are many command line options, see [complete documentation here](../CONFIGURING_SIMULATIONS.md#configuring-simulations-for-comcat-events).
 
+## Fetch ComCat aftershocks for plot generation: u3etas_comcat_catalog_fetcher.sh
+
+USAGE: `u3etas_comcat_catalog_fetcher.sh <config.json> [<output-dir or output-file>]`
+
+This script is used to fetch aftershock data from ComCat for a specific UCERF3-ETAS simulation whose JSON file has the ComCat metadata field popuplated. The output file can be passed into `u3etas_plot_generator.sh` with the `--comcat-catalog <catalog.txt>` option in order to use a previously generated catalog. This is most useful when trying to plot simulation results on a compute node which cannot access ComCat directly, allowing you to fetch the catalog first on the login node.
+
 ## Build binary catalog files: u3etas_binary_metadata_writer.sh
 
 USAGE: `u3etas_binary_metadata_writer.sh [--max-num <num>] [--tail] [--csv-file <file>] </path/to/results.bin>`
