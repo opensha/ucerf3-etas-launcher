@@ -134,11 +134,13 @@ Once submitted, you must wait for you job to start. This can be nearly instantan
 
 ### Watching the job STDOUT
 
-The first step is to make sure that the job launched sucessfully. This can be done by watching the STDOUT of the job (that is, what the  job would have printed to the console if run serially). Do this with the `stdout_job_tail.sh` command. This will launch a linux "watch" command which will refresh the end of the job's STDOUT every 2 seconds.
+The first step is to make sure that the job launched sucessfully. This can be done by watching the STDOUT of the job (that is, what the  job would have printed to the console if run serially). Do this with the `wqtail` command. This will launch a linux "watch" command which will show the output of `squeue -u $USER`, and then when a job is running, refresh the end of the job's STDOUT every 2 seconds.
 
-Try it out: `stdout_job_tail.sh`  OR `stdout_job_tail.sh <job-id>`
+Try it out: `wqtail`  OR `stdout_job_tail.sh <job-id>`
 
 At first you should see messages from MPJ about launching daemons. This part sometimes fails at first, but will retry a number of times to attempt to launch the simulation. Once you see lines similar to `[13:10:32.169 (hpc4222.hpcc.usc.edu) Process 3]: <some message here>` in the output, your job has launched sucessfully.
+
+If no job is listed when you type `squeue -u $USER` or `wqtail`, then either the job wasn't submitted correctly, or it already ran and failed quickly/instantly. You can investigate failed jobs by reading the STDOUT of the job, which will be in a file named `<job-name>.slurm.o<job-ID>`, e.g. `etas_sim_mpj.slurm.o4893717`. Reading that file might help you troubleshoot any errors.
 
 ### Parsing the STDOUT file for job progress
 
