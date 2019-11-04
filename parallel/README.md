@@ -41,6 +41,8 @@ Verify that it works by logging out of the system, logging back in, and typing `
 
 ## Configuring a parallel ETAS script
 
+NOTE: If you're configuring a simulation using one of the [helper scripts](../doc/configuring_simulations.md), you should use the `--hpc-site <site-name>` argmuent to automatically build the parallel ETAS script for you rather than following theses instructions. See decriptions of those options [here](../doc/configuring_simulations.md#hpc-options), then skip to the next section.
+
 We'll use the Mojave M7 example from the [tutorial](../tutorial/). First create a directory on your large shared filesystem for this simulation. I like to include the current date in my directories in order to keep things straight later on (and quickly locate recent simulations):
 
 ```
