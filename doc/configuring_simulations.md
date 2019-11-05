@@ -46,7 +46,7 @@ By default, all lines in the KML file are used, but you can use only a specific 
 
 ### Reset UCERF3 Fault Sections
 
-Specify any UCERF3 fault surfaces to reset (in an elastic rebound sense) for the mainshock with `--reset-sects <id1,id2,...,idN>`. You can also construct a finite-surface for the primary rupture from these sections with the `--finite-surf-from-sections` option. This can also be done for other events with `--reset-sects <event-id>:<id1,id2,...,idN>`.
+Specify any UCERF3 fault surfaces to reset (in an elastic rebound sense) with `--reset-sects <id1,id2,...,idN>`. By default they will be reset at the origin time of the mainshock (the event that you defined with the `--event-id <event-id>` argument), but you can also specify different event IDs for sections with the format `--reset-sects <event-id>:<id1,id2,...,idN>`. You can also construct a finite-surface from these sections with the `--finite-surf-from-sections` option.
 
 ### Use custom mainshock ETAS parameters or magnitude
 
