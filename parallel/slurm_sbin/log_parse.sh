@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 JAR="$DIR/../../lib/opensha-ucerf3-all.jar"
 
-java -cp ${JAR} edu.usc.kmilner.mpj.taskDispatch.MPJTaskLogStatsGen $@
+java -Xmx500M -cp ${JAR} edu.usc.kmilner.mpj.taskDispatch.MPJTaskLogStatsGen $@
 
 RESULTS=`dirname ${@: -1}`
 RESULTS="$RESULTS/results"
