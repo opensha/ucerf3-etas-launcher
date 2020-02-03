@@ -89,6 +89,7 @@ You must always specify the start time used to fetch ComCat data. This can be do
 You must always also specify the end time used to fetch ComCat data. The simulation start time will be 1 second after the ComCat data end time. This can be done a number of different ways:
 
 * `--end-time <time>`: End fetching ComCat data at the given time in epoch milliseconds
+* `--end-year <year>`: End fetching ComCat data at the given year
 * `--end-date <date>`: End fetching ComCat data at the given date in the format 'yyyy-MM-dd' (e.g. 2019-01-01) or 'yyyy-MM-ddTHH:mm:ss' (e.g. 2019-01-01T01:23:45). All dates and times in UTC
 * `--end-after <event-id>`: End fetching ComCat data immediately after the time of the given ComCat event
 * `--end-days-after <days>`: End fetching ComCat data this many days after the start time
