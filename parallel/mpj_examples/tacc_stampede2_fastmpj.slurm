@@ -26,7 +26,7 @@ ETAS_CONF_JSON=/path/to/etas_config.json
 MEM_GIGS=160
 
 # number of etas threads. should be approximately MEM_GIGS/5, and no more than the total number of threads available
-THREADS=20
+THREADS=18
 
 # FMPJ_HOME directory, fine to use mine
 FMPJ_HOME=/home1/00950/kevinm/FastMPJ
