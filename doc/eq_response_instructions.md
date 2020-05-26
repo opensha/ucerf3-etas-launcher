@@ -10,7 +10,7 @@ If you're responding to an event, it's likely that you haven't updated UCERF3-ET
 
 Then, if you haven't already, define the ETAS_SIM_DIR environmental variable on all machines that you will use (the same way that you defined ETAS_LAUNCHER when you installed UCERF3-ETAS-Launcher). This should point to the directory where you want to store ETAS simulations, and allows you to use the same config.json file on multiple machines (e.g. to run simulations on a cluster, the copy back output and plot results on your local machine).
 
-If you're working on USC HPC, ETAS_SIM_DIR should point to somewhere on either `/home/scec-00/<username>` or `/home/scec-00/<username>`, e.g. `/home/scec-00/<username>/ucerf3/etas_sim`.
+If you're working on USC HPC, ETAS_SIM_DIR should point to somewhere on either `/home/scec-00/<username>` or `/home/scec-02/<username>`, e.g. `/home/scec-00/<username>/ucerf3/etas_sim`.
 
 ## Step 2: determine ComCat event ID
 
@@ -26,7 +26,7 @@ There are a few ways to describe finite fault surfaces. ShakeMap surfaces are cu
 
 You'll probably want to run simulations on USC HPC, so include [those options](configuring_simulations.md#hpc-options) as well. The SCEC queue at USC HPC has 38 nodes. You can see how many of them are currently in use with the `scec_queue_check.py` command, then use at most 38 minus the reported number of nodes in use.
 
-NOTE: If you're configuring the simulation on a HPC login node and you see an error message like `Error occurred during initialization of VM. Could not reserve enough space for <some value> object heap`, then you'll need to set the `ETAS_MEM_GB` to a suitable level for a shared login node. 4 GB should suffice for this purpose, so execute this command first: `export ETAS_MEM_GB=4` and try again.
+NOTE: If you're configuring the simulation on a HPC login node and you see an error message like `Error occurred during initialization of VM. Could not reserve enough space for <some value> object heap`, then you'll need to set the `ETAS_MEM_GB` to a suitable level for a shared login node. 2 GB should suffice for this purpose on USC HPC or TACC Stamped2, so execute this command first: `export ETAS_MEM_GB=4` and try again. TACC Frontera has stict memory limits on the login nodes, try `export ETAS_MEM_GB=0.5` on that system.
 
 Here's an example for 100,000 Ridgecrest simulations, starting immediately after the M7.1 (including seismicity 7 days before), using ShakeMap surfaces for all M>=5's, and configured to run on 36 nodes for up to 24 hours on the SCEC queue at USC HPC:
 

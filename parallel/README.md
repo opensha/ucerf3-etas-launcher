@@ -2,7 +2,7 @@
 
 ## Overview
 
-Many UCERF3-ETAS simulations are often required in order to sufficiently sample the probabilities of rare events. This is often intractable on a single machine in a reasonable timeframe, so we run simulations on many machines in parallel. This requires access to HPC resources, some additional libraries, and knowledge if submitting and managing batch jobs in a parallel environment. The following graphic illustrates the workflow of distributing a large ETAS simulation across multiple compute nodes, breaking the complete set of ETAS simulations into batches which are distributed to nodes for computation.
+Many UCERF3-ETAS simulations are often required in order to sufficiently sample the probabilities of rare events. This is often intractable on a single machine in a reasonable timeframe, so we run simulations on many machines in parallel. This requires access to HPC resources, some additional libraries, and knowledge of submitting and managing batch jobs in a parallel environment. The following graphic illustrates the workflow of distributing a large ETAS simulation across multiple compute nodes, breaking the complete set of ETAS simulations into batches which are distributed to nodes for computation.
 
 ![Overview image](etas_mpj_batch_graphic.svg)
 
@@ -11,12 +11,13 @@ Many UCERF3-ETAS simulations are often required in order to sufficiently sample 
 * You have access to a linux cluster running the [Slurm workload manager](https://slurm.schedmd.com/)
 * You have completed the main UCERF3-ETAS Launcher installation instructions on this HPC resource and are familiar with running ETAS simulations on a single computer
 * You have installed, configured, and tested either MPJ Express or FastMPJ
-  * These have already been configured at [USC HPC](https://hpcc.usc.edu/) and [TACC Stampede2](https://portal.tacc.utexas.edu/user-guides/stampede2)
+  * These have already been configured at [USC HPC](https://hpcc.usc.edu/), [TACC Stampede2](https://www.tacc.utexas.edu/systems/stampede2), and [TACC Frontera](https://www.tacc.utexas.edu/systems/frontera)
 * All commands below assume that you are in a terminal and have SSH'd into the HPC resource
 * You have access to a parallel filesystem with a large (hundreds of gigabytes for large simulations) disk quota. This directory must be visible on all compute nodes
-  * On USC HPC, this is `/home/scec-00/<your-username>` or `/home/scec-02/<your-username>`
+  * On USC HPC, this is typically `/home/scec-00/<your-username>` or `/home/scec-02/<your-username>`
+  * On TACC Stampede2 or Frontera, this is in `$SCRATCH`
 * You know how to edit text files on a command line using vim, emacs, nano, or similar
-* You know how to transfer files between computers using scp, sftp, and/or rsync
+* You know how to transfer files between computers using globus, scp, sftp, and/or rsync
 
 ## Slurm helper scripts
 
@@ -27,7 +28,7 @@ After logging into the server (in this case, hpc-login3.usc.edu), put this in yo
 export ETAS_LAUNCHER=/home/scec-02/kmilner/ucerf3/ucerf3-etas-launcher
 export ETAS_SIM_DIR=/home/scec-02/kmilner/ucerf3/etas_sim
 export PATH=$ETAS_LAUNCHER/parallel/slurm_sbin/:$ETAS_LAUNCHER/sbin/:$PATH
-export ETAS_MEM_GB=4 # this will be overridden in batch scripts for parallel jobs, set low enough so that the regular U3ETAS scripts can run on the login node to configure jobs
+export ETAS_MEM_GB=2 # this will be overridden in batch scripts for parallel jobs, set low enough so that the regular U3ETAS scripts can run on the login node to configure jobs
 export MPJ_HOME=/home/scec-00/kmilner/mpj-current
 ```
 

@@ -14,4 +14,9 @@ if [[ ! -d $DIR ]];then
 fi
 cd $DIR
 
-sbatch -o ${SCRIPT}.o%j -e ${SCRIPT}.e%j $SCRIPT
+ACCT_ARG=""
+if [[ ! -z SLRUM_ACCT ]];then
+	ACCT_ARG='-A $SLURM_ACCT'
+fi
+
+sbatch $ACCT_ARG -o ${SCRIPT}.o%j -e ${SCRIPT}.e%j $SCRIPT
