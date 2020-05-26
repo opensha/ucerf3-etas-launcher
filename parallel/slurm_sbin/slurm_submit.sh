@@ -16,7 +16,7 @@ cd $DIR
 
 ACCT_ARG=""
 if [[ ! -z SLRUM_ACCT ]];then
-	ACCT_ARG='-A $SLURM_ACCT'
+	ACCT_ARG="-A $SLURM_ACCT"
 fi
 
 sbatch $ACCT_ARG -o ${SCRIPT}.o%j -e ${SCRIPT}.e%j $SCRIPT
