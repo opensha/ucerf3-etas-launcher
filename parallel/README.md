@@ -102,7 +102,9 @@ ETAS_CONF_JSON=/home/scec-02/kmilner/ucerf3/etas_sim/2018_08_30-MojaveM7/config.
 
 ## Submitting the Slurm parallel ETAS job
 
-You are now ready to submit the Slurm simulation to the job scheduler. Use the `slurm_submit.sh` command from my [helper scripts](slurm_sbin/slurm_submit.sh), as it will place the job command line output (STDOUT/STDERR) in the correct places in order to easily monitor job progress later on.
+You are now ready to submit the Slurm simulation to the job scheduler. Use the `slurm_submit.sh` command from my [helper scripts](slurm_sbin/slurm_submit.sh), as it will place the job command line output (STDOUT/STDERR) in the correct places in order to easily monitor job progress later on. If you chose to submit manually with the `sbatch` command, then many of the 'Monitoring job progress' steps will not work.
+
+*NOTE: If you need to specify a certain account to charge, set that with the `SLURM_ACCT` environmental variable first (e.g., `export SLURM_ACCT=EAR20005`)*
 
 ```
 [kmilner@hpc-login3 2018_08_30-MojaveM7]$ slurm_submit.sh etas_parallel.slurm 
