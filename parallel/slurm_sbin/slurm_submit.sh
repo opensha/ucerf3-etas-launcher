@@ -15,7 +15,7 @@ fi
 cd $DIR
 
 ACCT_ARG=""
-if [[ ! -z SLRUM_ACCT ]];then
+if [[ ! -z $SLRUM_ACCT ]];then
 	ACCT_ARG="-A $SLURM_ACCT"
 fi
 
