@@ -29,5 +29,5 @@ fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../"
 
-java $MEM_ARG -cp $DIR/lib/opensha-ucerf3-all.jar $@
+java -Djava.awt.headless=true $MEM_ARG -cp $DIR/lib/opensha-ucerf3-all.jar $@
 exit $?
