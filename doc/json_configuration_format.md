@@ -265,6 +265,7 @@ These paths must be updated for each system, or if you want to use different fau
 | etas_c | no | The ETAS c value in the temporal decay, units of days: `(t+c)^-p`. Default is 0.00650145, allowable range is `[0.00036525 0.115419]` | `"etas_c": 0.00650145` |
 | etas_log10_k | no | The ETAS productivity parameter k in Log10 units. Default is -2.54668, allowable range is `[-3.42136 -2.00261]` | `"etas_log10_k": -2.54668` |
 | etas_k_cov | no | The COV of the ETAS productivity parameter k. Default is 0 which disables aleatory k variability, allowable range is `[0 2]` | `"etas_k_cov": 1.16` |
+| maxPointSourceMag | no | Maximum magnitude for point source ruptures. Random finite rupture surfaces will be assigned above this threshold. Allowable range is `[5 10], current default is 10 (disabled)` | `"maxPointSourceMag": 6` |
 
 ## Binary Output Filters
 

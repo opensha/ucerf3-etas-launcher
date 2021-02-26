@@ -149,6 +149,7 @@ Thse options are common to both configuration scripts:
 | `--etas-p` | `1.07` | ETAS temporal decay paramter, p | `--etas-p 1.07` |
 | `--etas-c` | `0.0065` | ETAS minimum time paramter, c, in days | `--etas-c 0.0065` |
 | `--impose-gr` | (disabled) | If supplied, imposeGR will be set to true | `--impose-gr` |
+| `--max-point-src-mag` | `10` (disabled) | Maximum magnitude for point source ruptures. Random finite rupture surfaces will be assigned above this threshold | `--max-point-src-mag 6` |
 
 ## HPC Options
 
