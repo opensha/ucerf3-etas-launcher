@@ -1,3 +1,5 @@
 tutorial/*.bin
 tutorial/user_output/**
 !tutorial/user_output/README.md 
+opensha/git
+opensha/*.jar
