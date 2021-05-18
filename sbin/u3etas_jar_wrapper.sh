@@ -28,7 +28,7 @@ fi
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../"
 
 # check for updates
-$DIR/opensha/check_dl_update_build.sh
+$DIR/sbin/u3etas_opensha_update.sh
 
 java -Djava.awt.headless=true $MEM_ARG -cp $DIR/opensha/opensha-all.jar $@
 exit $?
