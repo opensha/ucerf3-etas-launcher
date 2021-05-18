@@ -11,11 +11,11 @@ UCERF3-ETAS Launcher binaries, documentation, and scripts
 
 ### Recommended
 
-UCERF3-ETAS Launcher will attempt to build the upstream [OpenSHA](https://github.com/opensha/opensha) project which contains all of the code for the UCERF3-ETAS model, and automatically pull in new updates to that code. In order for this to work, the following recommended requirements must also be met:
+UCERF3-ETAS Launcher will attempt to build the `etas-launcher-stable` branch of the upstream [OpenSHA](https://github.com/opensha/opensha/tree/etas-launcher-stable) project that contains all of the code for the UCERF3-ETAS model, and automatically pull in new updates to that code. In order for this to work, the following recommended requirements must also be met:
 
-* Java Development Kit (JDK, as opposed to just a Java Runtime Environment) 11 or above and in your path
+* Java Development Kit (JDK, as opposed to just a Java Runtime Environment) 11 or above in your path
 * A recent version of [Git](https://git-scm.com/downloads)
-    - Git is included in the macOS [developer tools](https://developer.apple.com/xcode/).
+    - Git is included in the macOS [developer tools](https://developer.apple.com/xcode/)
 
 If these recommended prerequisites are not met, we will instead periodically downlod the latest pre-built version of the OpenSHA library. You can control how often this happens by setting the `ETAS_JAR_UPDATE_DAYS` environmental variable to the number of days you wish to wait between updates.
 
@@ -47,7 +47,7 @@ export PATH=$PATH:$ETAS_LAUNCHER/sbin/
 
 ### Test your environment
 
-Once you have followed the above steps, you can test your environment with the `u3etas_env_test.sh` script. Here is my output from this command with the above lines in my .bash_profile file:
+Once you have followed the above steps, you can test your environment with the `u3etas_env_test.sh` script. This will also attempt to fetch and build the OpenSHA project, a required dependency. Here is my output from this command with the above lines in my .bash_profile file:
 
 ```
 kevin@steel:~$ u3etas_env_test.sh 
@@ -58,16 +58,46 @@ Testing environmental variables...
 	/home/kevin/git/ucerf3-etas-launcher exists!
 
 Looking for java in PATH
-	found java: /usr/lib/jvm/java-8-openjdk-amd64//jre/bin/java
-	checking java version wtih 'java -version', ensure that the version is Java 8 (1.8) or above (will print below)
-openjdk version "1.8.0_181"
-OpenJDK Runtime Environment (build 1.8.0_181-8u181-b13-0ubuntu0.16.04.1-b13)
-OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
+	found java: /usr/lib/jvm/default-java/bin/java
+	checking java version wtih 'java -version', ensure that the version is Java 11 or above (will print below)
+openjdk version "11.0.10" 2021-01-19
+OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.10+9)
+OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.10+9, mixed mode)
+	detected Java 11
 
 Testing running java, the following output should be multiple lines ending with 'ETAS_EnvTest DONE'
 Using global ETAS_MEM_GB=14
+creating /home/kevin/git/ucerf3-etas-launcher/sbin/../opensha
+Checking for updates to OpenSHA. You can disable these checks by setting the environmental variable ETAS_JAR_DISABLE_UPDATE=1
+We need to download and/or build OpenSHA. The preferred method is to checkout the OpenSHA project from GitHub and build it. Checking if we have java compilers available (must have version 11 or greater):
+javac 11.0.10
+	Checking if we have git installed:
+git version 2.25.1
+javac and git are available and building is preferred for smart update checking, but you can optionally download (and routinely re-download) nightly builds instead.
+	Would you like to use nightly builds instead? [y/N] N
+Need to check out OpenSHA from GitHub (this may take a little while and only needs to happen once)
+Cloning into 'opensha'...
+remote: Enumerating objects: 16029, done.
+remote: Counting objects: 100% (97/97), done.
+remote: Compressing objects: 100% (79/79), done.
+remote: Total 16029 (delta 29), reused 67 (delta 13), pack-reused 15932
+Receiving objects: 100% (16029/16029), 165.21 MiB | 32.88 MiB/s, done.
+Resolving deltas: 100% (6812/6812), done.
+Updating files: 100% (4737/4737), done.
+Branch 'etas-launcher-stable' set up to track remote branch 'etas-launcher-stable' from 'origin'.
+Switched to a new branch 'etas-launcher-stable'
+Building OpenSHA jar with Gradle in /home/kevin/git/ucerf3-etas-launcher/opensha/git/opensha
+
+> Task :compileJava
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+BUILD SUCCESSFUL in 18s
+3 actionable tasks: 3 executed
 Running ETAS_EnvTest java class
-	Maximum available memory to java (after overhead): 12743 MB
+        Maximum available memory to java (after overhead): 12743 MB
 	$ETAS_LAUNCHER defined? true, Value: /home/kevin/git/ucerf3-etas-launcher
 ETAS_EnvTest DONE
 ```
