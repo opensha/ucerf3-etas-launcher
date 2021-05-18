@@ -34,21 +34,21 @@ if [[ ! -e ./git && ! -e $DIR/$JAR ]];then
 	RET=$?
 	if [[ $RET -eq 0 ]];then
 		# check for git
-		echo "Checking if we have git installed:"
+		echo "	Checking if we have git installed:"
 		git --version
 		RET=$?
 		if [[ $RET -ne 0 ]];then
-			echo "Did not find git"
+			echo "	Did not find git"
 		fi
 	else
-		echo "Did not find java compilers"
+		echo "	Did not find java compilers"
 	fi
 	if [[ $RET -ne 0 ]];then
 		echo "We will instead download a nightly build and update every $UPDAYS days. Change update frequency by setting ETAS_JAR_UPDATE_DAYS.";
 		DOWNLOAD=1
 	else
 		echo "javac and git are available and building is preferred for smart update checking, but you can optionally download (and routinely re-download) nightly builds instead."
-		read -r -p "    Would you like to use nightly builds instead? [y/N] " response
+		read -r -p "	Would you like to use nightly builds instead? [y/N] " response
 		case "$response" in
 			[yY][eE][sS]|[yY]) 
 				DOWNLOAD=1
@@ -60,11 +60,11 @@ if [[ ! -e ./git && ! -e $DIR/$JAR ]];then
 	fi
 elif [[ -e $DIR/$JAR && ! -e .git ]];then
 	if [[ $(find "$DIR/$JAR" -mtime +$UPDAYS -print) ]]; then
-		echo "    $DIR/$JAR may be out of date (>$UPDAYS days old)"
+		echo "	$DIR/$JAR may be out of date (>$UPDAYS days old)"
 		cd $DIR
 		UP_TO_DATE=0
 		if [[ -e build-version.githash ]];then
-			echo "    fetching hash of current remote version..."
+			echo "	fetching hash of current remote version..."
 			wget --quiet -O build-version.githash.tmp $HASH_URL
 			CUR_HASH=`cat build-version.githash`
 			REMOTE_HASH=`cat build-version.githash.tmp`
@@ -80,7 +80,7 @@ elif [[ -e $DIR/$JAR && ! -e .git ]];then
 			rm build-version.githash.tmp
 		fi
 		if [[ $UP_TO_DATE -ne 1 ]];then
-			read -r -p "     $JAR is out of date ($UPDAYS days old), do you wish to download a new version? [Y/n] " response
+			read -r -p "	$JAR is out of date ($UPDAYS days old), do you wish to download a new version? [Y/n] " response
 			case "$response" in
 				[nN][oO]|[nN]) 
 					DOWNLOAD=0
@@ -99,9 +99,9 @@ if [[ $DOWNLOAD -ne 1 && -e $DIR/git/opensha ]];then
 	cd $DIR/git/opensha
 	CUR_BRANCH=`git rev-parse --abbrev-ref HEAD`
 	echo "Checking for git updates in `pwd`"
-	echo "On branch: $CUR_BRANCH"
+	echo "	On branch: $CUR_BRANCH"
 	if [[ $CUR_BRANCH != $GIT_BRANCH ]];then
-		echo "Switching to branch: $GIT_BRANCH"
+		echo "	Switching to branch: $GIT_BRANCH"
 		git fetch
 		git checkout $GIT_BRANCH
 	fi
@@ -158,7 +158,7 @@ if [[ $REBUILD -eq 1 ]];then
 		echo "$LOCAL" > "$DIR/build-version.githash"
 	else
 		echo "Build failed. Make sure that you have java development kit 11 or higher installed and set as your default JDK, and examine any other error messages above."
-		read -r -p "     Would you like to download nighly build instead? [Y/n] " response
+		read -r -p "	Would you like to download nighly build instead? [Y/n] " response
 		case "$response" in
 			[nN][oO]|[nN]) 
 				DOWNLOAD=0
