@@ -1,5 +1,4 @@
 tutorial/*.bin
 tutorial/user_output/**
 !tutorial/user_output/README.md 
-opensha/**
-!opensha/check_dl_update_build.sh
+opensha

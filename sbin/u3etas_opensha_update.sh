@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # this directory
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../opensha"
 
+if [[ ! -e $DIR ]];then
+	echo "creating $DIR"
+	mkdir $DIR
+fi
 cd $DIR
 
 JAR="opensha-all.jar"
