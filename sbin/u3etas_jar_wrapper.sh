@@ -1,8 +1,6 @@
 #!/bin/bash
 
-set -o errexit
-
-# this is a utility script for jaunching a java process with the USCERF3-ETAS jar file in the classpath
+# this is a utility script for jaunching a java process with the UCERF3-ETAS jar file in the classpath
 # it will be called by other scripts
 
 # maxmimum memory. should be close to, but not over, total memory available

@@ -4,14 +4,24 @@ UCERF3-ETAS Launcher binaries, documentation, and scripts
 
 ## Prerequisites
 
-* Java (either JRE or JDK) 8 or above in your path: https://java.com/en/download/
+* Java (JDK strongly recommended) 11 or above in your path, 64-bit: [AdoptOpenJDK](https://adoptopenjdk.net/) or [OpenJDK](https://jdk.java.net/)
   * confirm by typing `java -version` in a terminal
 * Unix-like environment (Linux, Mac OS X, possibly Cygwin though untested)
 * Basic command line skills (changing directories, defining environmental variables, editing text files, running scripts)
 
+### Recommended
+
+UCERF3-ETAS Launcher will attempt to build the upstream [OpenSHA](https://github.com/opensha/opensha) project which contains all of the code for the UCERF3-ETAS model, and automatically pull in new updates to that code. In order for this to work, the following recommended requirements must also be met:
+
+* Java Development Kit (JDK, as opposed to just a Java Runtime Environment) 11 or above and in your path
+* A recent version of [Git](https://git-scm.com/downloads)
+    - Git is included in the macOS [developer tools](https://developer.apple.com/xcode/).
+
+If these recommended prerequisites are not met, we will instead periodically downlod the latest pre-built version of the OpenSHA library. You can control how often this happens by setting the `ETAS_JAR_UPDATE_DAYS` environmental variable to the number of days you wish to wait between updates.
+
 ## Setup
 
-First, clone this entire repository from GitHub or download it as a zip file. Here's the command to do it in a terminal:
+First, clone this entire repository from GitHub (preferred) or download it as a zip file. Here's the command to do it in a terminal:
 
 `git clone https://github.com/opensha/ucerf3-etas-launcher.git`
 
