@@ -114,7 +114,7 @@ if [[ $DOWNLOAD -ne 1 && -e $DIR/git/opensha ]];then
 		exit 1
 	fi
 	REMOTE=$(git rev-parse "$UPSTREAM")
-	BASE=$(git merge-base @ "$UPSTREAM")
+	BASE=$(git merge-base HEAD "$UPSTREAM")
 	if [ $LOCAL = $REMOTE ]; then
 		echo "Up-to-date"
 		if [[ ! -e build/libs/opensha-all.jar ]];then
