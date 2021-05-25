@@ -22,7 +22,7 @@ else
 	TARGET_MEM_MB=`expr $TOT_MEM_MB \* 8 / 10`
 	MEM_GIGS=`expr $TARGET_MEM_MB / 1024`
 	echo "     will use up to $MEM_GIGS GB of memory"
-	MEM_ARG="-Xmx{MEM_GIGS}G"
+	MEM_ARG="-Xmx${MEM_GIGS}G"
 fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../"
