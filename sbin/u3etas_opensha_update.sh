@@ -107,7 +107,12 @@ if [[ $DOWNLOAD -ne 1 && -e $DIR/git/opensha ]];then
 	fi
 	git remote update
 	UPSTREAM='@{u}'
-	LOCAL=$(git rev-parse @)
+	LOCAL=$(git rev-parse HEAD)
+	if [[ $? -ne 0 ]];then
+		echo "WARNING: could not detect git revision, you might have an outdated git client, or the opensha repository in `pwd` is corrupt."
+		echo "Skipping update";
+		exit 1
+	fi
 	REMOTE=$(git rev-parse "$UPSTREAM")
 	BASE=$(git merge-base @ "$UPSTREAM")
 	if [ $LOCAL = $REMOTE ]; then
@@ -154,8 +159,12 @@ if [[ $REBUILD -eq 1 ]];then
 	RET=$?
 	if [[ $RET -eq 0 && -e build/libs/$JAR ]];then
 		cp build/libs/$JAR $DIR/$JAR
-		LOCAL=$(git rev-parse @)
-		echo "$LOCAL" > "$DIR/build-version.githash"
+		LOCAL=$(git rev-parse HEAD)
+		if [[ $? -ne 0 ]];then
+			echo "WARNING: couldn't detect git revision, your git client may be out of date?"
+		else
+			echo "$LOCAL" > "$DIR/build-version.githash"
+		fi
 	else
 		echo "Build failed. Make sure that you have java development kit 11 or higher installed and set as your default JDK, and examine any other error messages above."
 		read -r -p "	Would you like to download nighly build instead? [Y/n] " response
