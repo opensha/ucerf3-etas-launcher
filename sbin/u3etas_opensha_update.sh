@@ -58,7 +58,7 @@ if [[ ! -e ./git && ! -e $DIR/$JAR ]];then
 				;;
 		esac
 	fi
-elif [[ -e $DIR/$JAR && ! -e .git ]];then
+elif [[ -e $DIR/$JAR && ! -e $DIR/git/opensha ]];then
 	if [[ $(find "$DIR/$JAR" -mtime +$UPDAYS -print) ]]; then
 		echo "	$DIR/$JAR may be out of date (>$UPDAYS days old)"
 		cd $DIR
@@ -117,15 +117,47 @@ if [[ $DOWNLOAD -ne 1 && -e $DIR/git/opensha ]];then
 	BASE=$(git merge-base HEAD "$UPSTREAM")
 	if [ $LOCAL = $REMOTE ]; then
 		echo "Up-to-date"
-		if [[ ! -e build/libs/opensha-all.jar ]];then
+		if [[ -e build/libs/opensha-all.jar ]];then
+			# see if we previously skipped a rebuild
+			if [[ -e $DIR/build-version.githash && $(find "$DIR/$JAR" -mtime +$UPDAYS -print) ]]; then
+				CUR_HASH=`cat $DIR/build-version.githash`
+				if [ $LOCAL != $CUR_HASH ];then
+					echo "  $DIR/$JAR is >$UPDAYS days old, and we skipped a previous build (build hash=$CUR_HASH, git hash=$LOCAL)"
+					read -r -p "    Would you like to rebuild now? [Y/n] " response
+					case "$response" in
+						][oO]|[nN])
+							echo "Skipping jar rebuild, will prompt again in $UPDAYS days or next time the upstream repository is updated. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
+							touch $DIR/$JAR
+							;;
+						*)
+							REBUILD=1
+							;;
+						esac
+				fi
+			fi
+		else
 			echo "No jar exists, will rebuild..."
 			REBUILD=1
 		fi
 	elif [ $LOCAL = $BASE ]; then
+		echo "The internal OpenSHA repository (branch: $GIT_BRANCH) is out of date and needs to be updated/rebuilt."
 		echo "Pulling latest updates..."
 		git pull
-		echo "Jar needs to be updated, will rebuild..."
-		REBUILD=1
+		if [[ -e $DIR/$JAR ]];then
+			read -r -p "    Would you like to rebuild now? [Y/n] " response
+	                case "$response" in
+				][oO]|[nN])
+					echo "Skipping jar rebuild, will prompt again in $UPDAYS days or next time the upstream repository is updated. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
+					touch $DIR/$JAR
+					;;
+				*)
+					REBUILD=1
+					;;
+				esac
+		else
+			echo "Jar doesn't exist (first time), will build."
+			REBUILD=1
+		fi
 	else
 		echo "ERROR: The opensha repository in `pwd` is corrupt or has been manually updated."
 		echo "Please back up any changes you made, then remove `pwd` and run this script again."
