@@ -30,8 +30,13 @@ echo "Looking for java in PATH"
 java_path=$(which java)
 if [[ -x "$java_path" ]]; then
 	echo "	found java: $java_path"
-	echo "	checking java version wtih 'java -version', ensure that the version is Java 8 (1.8) or above (will print below)"
+	echo "	checking java version wtih 'java -version', ensure that the version is Java 11 or above (will print below)"
 	java -version
+	JAVA_VERSION=`java -version 2>&1 | head -1 | cut -d'"' -f2 | sed '/^1\./s///' | cut -d'.' -f1`
+	echo "	detected Java $JAVA_VERSION"
+	if [[ $JAVA_VERSION -lt 11 ]];then
+		echo "	WARNING: Java version $JAVA_VERSION detected, we require 11 or greater"
+	fi
 else
 	echo "	java not found in PATH! Fix and try again"
 	exit 2

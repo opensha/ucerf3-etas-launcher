@@ -39,7 +39,7 @@ MEM_GIGS=160
 THREADS=56
 
 # path to the opensha-ucerf3 jar file
-JAR_FILE=${ETAS_LAUNCHER}/lib/opensha-ucerf3-all.jar
+JAR_FILE=${ETAS_LAUNCHER}/opensha/opensha-all.jar
 
 ##########################
 ## END INPUT PARAMETERS ##
