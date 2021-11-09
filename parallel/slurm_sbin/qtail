@@ -1,15 +1,29 @@
 #!/bin/bash
 
-squeue -u $USER
+JOBS=`squeue -u $USER`
+JOB_LINES=`echo "$JOBS" | grep -c .`
 FILE=`locate_job_stdout.sh 2> /dev/null`
 if [[ $? -eq 0 ]];then
-	echo
-	echo
-	
 	LINE=`tput lines`
-	let LINE=LINE-10
+	CONS_LINES=LINE
+	let LINE=LINE-6
+	let LINE=LINE-JOB_LINES
+
+	if [[ $LINE -le 0 ]];then
+		let NEW_JOB_LINES=CONS_LINES-5
+		echo "$JOBS" | tail -n $NEW_JOB_LINES
+		let LINE=CONS_LINES-11
+	else
+		echo "$JOBS"
+	fi
+	echo
+	echo
 	COLS=`tput cols`
 	
+	echo -n "=== $FILE ===" | head -c $COLS
+	echo
 	fold -w $COLS -s $FILE | tail -n $LINE
 	echo
+else
+	echo "$JOBS"
 fi
