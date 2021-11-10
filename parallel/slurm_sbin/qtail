@@ -5,14 +5,17 @@ JOB_LINES=`echo "$JOBS" | grep -c .`
 FILE=`locate_job_stdout.sh 2> /dev/null`
 if [[ $? -eq 0 ]];then
 	LINE=`tput lines`
-	CONS_LINES=LINE
+	CONS_LINES="$LINE"
+	BUFFER=16
+	MIN_TAIL_LINES=10
 	let LINE=LINE-6
 	let LINE=LINE-JOB_LINES
 
-	if [[ $LINE -le 0 ]];then
-		let NEW_JOB_LINES=CONS_LINES-5
+	if [[ $LINE -lt $MIN_TAIL_LINES ]];then
+		let NEW_JOB_LINES=CONS_LINES-BUFFER
+		let NEW_JOB_LINES=NEW_JOB_LINES-MIN_TAIL_LINES
 		echo "$JOBS" | tail -n $NEW_JOB_LINES
-		let LINE=CONS_LINES-11
+		let LINE=$MIN_TAIL_LINES
 	else
 		echo "$JOBS"
 	fi
