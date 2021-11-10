@@ -20,7 +20,6 @@ if [[ $? -eq 0 ]];then
 		echo "$JOBS"
 	fi
 	echo
-	echo
 	COLS=`tput cols`
 	
 	PRINT_FILE=$FILE
@@ -31,7 +30,8 @@ if [[ $? -eq 0 ]];then
 		PRINT_FILE=`echo -n $PRINT_FILE | tail -c $FILE_COLS`
 		PRINT_FILE="... $PRINT_FILE"
 	fi
-	echo -n "=== $PRINT_FILE ===" | tail -c $COLS
+	echo -n "==> $PRINT_FILE <==" | tail -c $COLS
+	echo
 	echo
 	fold -w $COLS -s $FILE | tail -n $LINE
 	echo
