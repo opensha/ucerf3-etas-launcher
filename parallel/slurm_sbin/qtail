@@ -20,7 +20,15 @@ if [[ $? -eq 0 ]];then
 	echo
 	COLS=`tput cols`
 	
-	echo -n "=== $FILE ===" | head -c $COLS
+	PRINT_FILE=$FILE
+	let FILE_AVAIL_COLS=COLS-8
+	FILE_COLS=`echo -n "$FILE" | wc -c`
+	if [[ $FILE_COLS -gt $FILE_AVAIL_COLS ]];then
+		let FILE_COLS=FILE_AVAIL_COLS-4
+		PRINT_FILE=`echo -n $PRINT_FILE | tail -c $FILE_COLS`
+		PRINT_FILE="... $PRINT_FILE"
+	fi
+	echo -n "=== $PRINT_FILE ===" | tail -c $COLS
 	echo
 	fold -w $COLS -s $FILE | tail -n $LINE
 	echo
