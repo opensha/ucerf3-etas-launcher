@@ -33,7 +33,7 @@ if [[ $? -eq 0 ]];then
 	echo -n "==> $PRINT_FILE <==" | tail -c $COLS
 	echo
 	echo
-	fold -w $COLS -s $FILE | tail -n $LINE
+	tail -n $LINE $FILE | fold -w $COLS -s | tail -n $LINE
 	echo
 else
 	echo "$JOBS"
