@@ -14,6 +14,11 @@ else
 	ID=$1
 fi
 
+if [[ ! $ID -gt 0 ]];then
+	echo "Job ID not supplied or not found: $ID"
+	exit 1
+fi
+
 DIR=`squeue -h -j $ID -o %Z`
 
 if [[ ! -e $DIR ]];then
@@ -22,6 +27,11 @@ if [[ ! -e $DIR ]];then
 fi
 
 OUT=`find $DIR -maxdepth 1 -name "*.o${ID}"`
+
+if [[ ! -e $OUT ]];then
+	# try another format
+	OUT=`find $DIR -maxdepth 1 -name "*${ID}.out"`
+fi
 
 if [[ ! -e $OUT ]];then
 	echo "Output not found for $ID in $DIR: $OUT"
