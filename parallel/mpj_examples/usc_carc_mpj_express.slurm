@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -t 24:00:00
-#SBATCH -N 18
+#SBATCH --ntasks=18 --cpus-per-task=20
 #SBATCH -p scec
 #SBATCH --mem 0
 
@@ -23,7 +23,7 @@ ETAS_CONF_JSON=/path/to/etas_conf.json
 ## JAVA/MPJ PARAMETERS ##
 
 # maxmimum memory in gigabytes. should be close to, but not over, total memory available
-MEM_GIGS=55
+MEM_GIGS=50
 
 # number of etas threads. should be approximately MEM_GIGS/5, and no more than the total number of threads available
 THREADS=10
@@ -44,7 +44,7 @@ MAX_DISPATCH=100
 TEMP_OPTION="--temp-dir $TMPDIR"
 
 # this allows for catalogs to be written to temporary scratch storage and symbolically linked back. only final consolidated binary files will be written to the primary output directory
-SCRATCH_OPTION="--scratch-dir /scratch2/kmilner/etas_scratch"
+SCRATCH_OPTION="--scratch-dir /scratch2/$USER/etas_scratch"
 
 # this automatically deletes subdirectories of the results directory once a catalog has been sucessfully written to the master binary file. comment out to disable
 CLEAN_OPTION="--clean"

@@ -10,12 +10,12 @@ fi
 cd $DIR
 
 JAR="opensha-all.jar"
-JAR_URL="http://opensha.usc.edu/apps/opensha/etas_launcher/$JAR"
-HASH_URL="http://opensha.usc.edu/apps/opensha/etas_launcher/build-version.githash"
+JAR_URL="https://data.opensha.org/apps/opensha/etas_launcher/$JAR"
+HASH_URL="https://data.opensha.org/apps/opensha/etas_launcher/build-version.githash"
 GIT_BRANCH="${ETAS_GIT_BRANCH:-etas-launcher-stable}"
 
 if [[ -e $JAR && $ETAS_JAR_DISABLE_UPDATE -eq 1 ]];then
-	# jar file already exists, and we have disabled update jecks
+	# jar file already exists, and we have disabled update checks
 	exit 0;
 fi
 

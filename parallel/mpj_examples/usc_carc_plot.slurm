@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH -t 3:00:00
-#SBATCH -N 1
+#SBATCH --ntasks=1 --cpus-per-task=20
 #SBATCH -p scec
 #SBATCH --mem 0
 
@@ -24,8 +24,8 @@ ETAS_CONF_JSON=/path/to/etas_config.json
 # this file is generated with the 'u3etas_comcat_catalog_fetcher.sh <config.json>' command
 #COMCAT_CATALOG=/path/to/comcat-events.txt
 
-# no maps option - uncomment this to skip any map generation which requires access to a servlet on opensha.usc.edu. this option should be enabled if your compute nodes cannot reach the outside world (e.g. for USC HPC), or if the opensha server is down or otherwise inaccessible
-NO_MAPS_OPTION="--no-maps"
+# no maps option - uncomment this to skip any map generation which requires access to a servlet on opensha.usc.edu. this option should be enabled if your compute nodes cannot reach the outside world, or if the opensha server is down or otherwise inaccessible
+#NO_MAPS_OPTION="--no-maps"
 
 # uncomment this if you want to force it to regenerate all plots on subsequent reruns of this script
 #FORCE_UPDATE_OPTION="--force-update"
@@ -33,7 +33,7 @@ NO_MAPS_OPTION="--no-maps"
 ## JAVA PARAMETERS ##
 
 # maxmimum memory in gigabytes. should be close to, but not over, total memory available
-MEM_GIGS=55
+MEM_GIGS=50
 
 # number of processing threads to handle plots, can be up to 20
 THREADS=20
