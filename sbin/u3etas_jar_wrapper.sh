@@ -1,9 +1,7 @@
 #!/bin/bash
 
-set -o errexit
-
-# this is a utility script for jaunching a java process with the USCERF3-ETAS jar file in the classpath
-# will be called by other scripts
+# this is a utility script for jaunching a java process with the UCERF3-ETAS jar file in the classpath
+# it will be called by other scripts
 
 # maxmimum memory. should be close to, but not over, total memory available
 # can set externally with ETAS_MEM_GB environmental variable
@@ -24,10 +22,13 @@ else
 	TARGET_MEM_MB=`expr $TOT_MEM_MB \* 8 / 10`
 	MEM_GIGS=`expr $TARGET_MEM_MB / 1024`
 	echo "     will use up to $MEM_GIGS GB of memory"
-	MEM_ARG="-Xmx{MEM_GIGS}G"
+	MEM_ARG="-Xmx${MEM_GIGS}G"
 fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../"
 
-java -Djava.awt.headless=true $MEM_ARG -cp $DIR/lib/opensha-ucerf3-all.jar $@
+# check for updates
+$DIR/sbin/u3etas_opensha_update.sh
+
+java -Djava.awt.headless=true $MEM_ARG -cp $DIR/opensha/opensha-all.jar $@
 exit $?

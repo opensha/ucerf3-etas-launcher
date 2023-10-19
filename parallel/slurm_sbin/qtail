@@ -1,15 +1,40 @@
 #!/bin/bash
 
-squeue -u $USER
-FILE=`locate_job_stdout.sh 2> /dev/null`
+JOBS=`squeue -u $USER`
+JOB_LINES=`echo "$JOBS" | grep -c .`
+FILE=`locate_job_stdout.sh $@ 2> /dev/null`
 if [[ $? -eq 0 ]];then
-	echo
-	echo
-	
 	LINE=`tput lines`
-	let LINE=LINE-10
+	CONS_LINES="$LINE"
+	BUFFER=6
+	MIN_TAIL_LINES=10
+	let LINE=LINE-6
+	let LINE=LINE-JOB_LINES
+
+	if [[ $LINE -lt $MIN_TAIL_LINES ]];then
+		let NEW_JOB_LINES=CONS_LINES-BUFFER
+		let NEW_JOB_LINES=NEW_JOB_LINES-MIN_TAIL_LINES
+		echo "$JOBS" | tail -n $NEW_JOB_LINES
+		let LINE=$MIN_TAIL_LINES
+	else
+		echo "$JOBS"
+	fi
+	echo
 	COLS=`tput cols`
 	
-	fold -w $COLS -s $FILE | tail -n $LINE
+	PRINT_FILE=$FILE
+	let FILE_AVAIL_COLS=COLS-8
+	FILE_COLS=`echo -n "$FILE" | wc -c`
+	if [[ $FILE_COLS -gt $FILE_AVAIL_COLS ]];then
+		let FILE_COLS=FILE_AVAIL_COLS-4
+		PRINT_FILE=`echo -n $PRINT_FILE | tail -c $FILE_COLS`
+		PRINT_FILE="... $PRINT_FILE"
+	fi
+	echo -n "==> $PRINT_FILE <==" | tail -c $COLS
 	echo
+	echo
+	tail -n $LINE $FILE | fold -w $COLS -s | tail -n $LINE
+	echo
+else
+	echo "$JOBS"
 fi

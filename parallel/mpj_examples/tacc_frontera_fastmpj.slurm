@@ -32,7 +32,7 @@ THREADS=20
 FMPJ_HOME=/home1/00950/kevinm/FastMPJ
 
 # path to the opensha-ucerf3 jar file
-JAR_FILE=${ETAS_LAUNCHER}/lib/opensha-ucerf3-all.jar
+JAR_FILE=${ETAS_LAUNCHER}/opensha/opensha-all.jar
 
 # simulations are sent out in batches to each compute node. these paramters control the size of those batches
 # smaller max size will allow for better checking of progress with watch_logparse.sh, but more wasted time at the end of batches waiting on a single calculation to finish
