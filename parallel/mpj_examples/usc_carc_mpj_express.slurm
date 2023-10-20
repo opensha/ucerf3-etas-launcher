@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #SBATCH -t 24:00:00
-#SBATCH --ntasks=18 --cpus-per-task=20
+#SBATCH -N 18
+#SBATCH --cpus-per-task=20
 #SBATCH -p scec
 #SBATCH --mem 0
 
@@ -12,8 +13,9 @@
 # the above '#SBATCH' lines are requred, and are supposed to start with a '#'. They must be at the beginning of the file
 # the '-t hh:mm:ss' argument is the wall clock time of the job
 # the '-N 18' argument specifies the number of nodes required, in this case 18
-# the 'p scec' argument specifies the queue, this line can be removed if you want the default queue
-# the '--mem 0' argument fixes some USC HPC weirdness and shouldn't be removed
+# the '--cpus-per-task=20' argument specifies that we need access to all 20 cores on each node
+# the 'p scec' argument specifies the queue, this line can be removed if you want the default queue (e.g., on discovery instead of endeavour)
+# the '--mem 0' argument specifies that we want access to all available memory on the compute nodes
 
 ## ETAS PARAMETERS ##
 
@@ -28,7 +30,7 @@ MEM_GIGS=50
 # number of etas threads. should be approximately MEM_GIGS/5, and no more than the total number of threads available
 THREADS=10
 
-# MPJ_HOME directory. on USC HPC, it's fine to just use mine
+# MPJ_HOME directory. on USC CARC, it's fine to just use mine
 # you can also fetch this directory via Git by cloning https://github.com/kevinmilner/mpj-express.git
 MPJ_HOME=/project/scec_608/kmilner/mpj/mpj-current
 
