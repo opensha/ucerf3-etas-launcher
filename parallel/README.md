@@ -239,7 +239,7 @@ run succeeded or normal error, exiting. exit code: 0
 Fri Aug 31 14:42:50 PDT 2018
 ```
 
-If everything looks good, transfer the output files back to your computer to plot the results as with the serial job. You should not run the ETAS plot generator tool on the login node of HPC resources (it is a shared resource and will not make them happy); if your HPC system allows egress to outside servers, you can run ita compute node.
+If everything looks good, transfer the output files back to your computer to plot the results as with the serial job. You should not run the ETAS plot generator tool on the login node of HPC resources (it is a shared resource and will not make them happy); if your HPC system allows egress to outside servers, you can run it on a compute node.
 
 ## Alternate approaches
 
