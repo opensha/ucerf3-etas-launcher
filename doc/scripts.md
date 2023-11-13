@@ -45,9 +45,11 @@ This script is used to fetch aftershock data from ComCat for a specific UCERF3-E
 
 ## Build binary catalog files: u3etas_binary_metadata_writer.sh
 
-USAGE: `u3etas_binary_metadata_writer.sh [--max-num <num>] [--tail] [--csv-file <file>] </path/to/results.bin>`
+USAGE: `u3etas_binary_metadata_writer.sh [--max-num <num>] [--tail] [--hash-only] [--deep-hash] [--csv-file <file>] </path/to/results.bin>`
 
-This script is used to print (or write to a CSV file with the `--csv-file <file>`) header metadata information for each catalog in a binary catalogs file. Limit output to the first *N* records with `--max-num <N>`.
+This script is used to print and hash (or write to a CSV file with the `--csv-file <file>`) header metadata information for each catalog in a binary catalogs file. Limit output to the first *N* records with `--max-num <N>`.
+
+Computed hashes are based on metadata information, unless `--deep-hash` is supplied in which case the entire catalog will be read and hashed. If you're only interested in full simulation hash information and want to suppress output, supply the `--hash-only` flag.
 
 ## Build binary catalog files: u3etas_binary_writer.sh
 
