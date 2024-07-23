@@ -1,5 +1,19 @@
 #!/bin/bash
 
+DEFAULTS=0
+while getopts d name
+do
+	case $name in
+	d)    DEFAULTS=1;;
+	?)   printf "Usage: %s: [-d]\n" $0
+		exit 2;;
+	esac
+done
+
+if [[ $DEFAULTS -eq 1 ]];then
+	echo "Forcing all default options due to -d flag"
+fi
+
 # this directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )/../opensha"
 
@@ -46,7 +60,7 @@ if [[ ! -e ./git && ! -e $DIR/$JAR ]];then
 	if [[ $RET -ne 0 ]];then
 		echo "We will instead download a nightly build and update every $UPDAYS days. Change update frequency by setting ETAS_JAR_UPDATE_DAYS.";
 		DOWNLOAD=1
-	else
+	elif [[ $DEFAULTS -ne 1 ]];then
 		echo "javac and git are available and building is preferred for smart update checking, but you can optionally download (and routinely re-download) nightly builds instead."
 		read -r -p "	Would you like to use nightly builds instead? [y/N] " response
 		case "$response" in
@@ -80,17 +94,22 @@ elif [[ -e $DIR/$JAR && ! -e $DIR/git/opensha ]];then
 			rm build-version.githash.tmp
 		fi
 		if [[ $UP_TO_DATE -ne 1 ]];then
-			read -r -p "	$JAR is out of date ($UPDAYS days old), do you wish to download a new version? [Y/n] " response
-			case "$response" in
-				[nN][oO]|[nN]) 
-					DOWNLOAD=0
-					echo "Skipping jar download, will check again in $UPDAYS days. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
-					touch $DIR/$JAR
-					;;
-				*)
-					DOWNLOAD=1
-					;;
-			esac
+			if [[ $DEFAULTS -eq 1 ]];then
+				echo "Will download new jar file"
+				DOWNLOAD=1
+			else
+				read -r -p "	$JAR is out of date ($UPDAYS days old), do you wish to download a new version? [Y/n] " response
+				case "$response" in
+					[nN][oO]|[nN]) 
+						DOWNLOAD=0
+						echo "Skipping jar download, will check again in $UPDAYS days. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
+						touch $DIR/$JAR
+						;;
+					*)
+						DOWNLOAD=1
+						;;
+				esac
+			fi
 		fi
 	fi
 fi
@@ -123,16 +142,21 @@ if [[ $DOWNLOAD -ne 1 && -e $DIR/git/opensha ]];then
 				CUR_HASH=`cat $DIR/build-version.githash`
 				if [ $LOCAL != $CUR_HASH ];then
 					echo "  $DIR/$JAR is >$UPDAYS days old, and we skipped a previous build (build hash=$CUR_HASH, git hash=$LOCAL)"
-					read -r -p "    Would you like to rebuild now? [Y/n] " response
-					case "$response" in
-						][oO]|[nN])
-							echo "Skipping jar rebuild, will prompt again in $UPDAYS days or next time the upstream repository is updated. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
-							touch $DIR/$JAR
-							;;
-						*)
-							REBUILD=1
-							;;
+					if [[ $DEFAULTS -eq 1 ]];then
+						echo "Will rebuild"
+						REBUILD=1
+					else
+						read -r -p "    Would you like to rebuild now? [Y/n] " response
+						case "$response" in
+							][oO]|[nN])
+								echo "Skipping jar rebuild, will prompt again in $UPDAYS days or next time the upstream repository is updated. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
+								touch $DIR/$JAR
+								;;
+							*)
+								REBUILD=1
+								;;
 						esac
+					fi
 				fi
 			fi
 		else
@@ -143,7 +167,10 @@ if [[ $DOWNLOAD -ne 1 && -e $DIR/git/opensha ]];then
 		echo "The internal OpenSHA repository (branch: $GIT_BRANCH) is out of date and needs to be updated/rebuilt."
 		echo "Pulling latest updates..."
 		git pull
-		if [[ -e $DIR/$JAR ]];then
+		if [[ $DEFAULTS -eq 1 ]];then
+			echo "Will rebuild"
+			REBUILD=1
+		elif [[ -e $DIR/$JAR ]];then
 			read -r -p "    Would you like to rebuild now? [Y/n] " response
 	                case "$response" in
 				][oO]|[nN])
@@ -199,15 +226,20 @@ if [[ $REBUILD -eq 1 ]];then
 		fi
 	else
 		echo "Build failed. Make sure that you have java development kit 11 or higher installed and set as your default JDK, and examine any other error messages above."
-		read -r -p "	Would you like to download nighly build instead? [Y/n] " response
-		case "$response" in
-			[nN][oO]|[nN]) 
-				DOWNLOAD=0
-				;;
-			*)
-				DOWNLOAD=1
-				;;
-		esac
+		if [[ $DEFAULTS -eq 1 ]];then
+			echo "Will download nightly build instead"
+			DOWNLOAD=1
+		else
+			read -r -p "	Would you like to download nighly build instead? [Y/n] " response
+			case "$response" in
+				[nN][oO]|[nN]) 
+					DOWNLOAD=0
+					;;
+				*)
+					DOWNLOAD=1
+					;;
+			esac
+		fi
 	fi
 fi
 
