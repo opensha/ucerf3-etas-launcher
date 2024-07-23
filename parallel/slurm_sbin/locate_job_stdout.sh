@@ -19,23 +19,28 @@ if [[ ! $ID -gt 0 ]];then
 	exit 1
 fi
 
-DIR=`squeue -h -j $ID -o %Z`
+# try to get it directly
+OUT=`scontrol show jobID $ID | grep StdOut | cut -d "=" -f2-` 2> /dev/null
 
-if [[ ! -e $DIR ]];then
-	echo "Dir for job $ID doesn't exist: $DIR"
-	exit 1
-fi
-
-OUT=`find $DIR -maxdepth 1 -name "*.o${ID}"`
-
-if [[ ! -e $OUT ]];then
-	# try another format
-	OUT=`find $DIR -maxdepth 1 -name "*${ID}.out"`
-fi
-
-if [[ ! -e $OUT ]];then
-	echo "Output not found for $ID in $DIR: $OUT"
-	exit 1
+if [[ -e $OUT ]];then
+	DIR=`squeue -h -j $ID -o %Z`
+	
+	if [[ ! -e $DIR ]];then
+		echo "Dir for job $ID doesn't exist: $DIR"
+		exit 1
+	fi
+	
+	OUT=`find $DIR -maxdepth 1 -name "*.o${ID}"`
+	
+	if [[ ! -e $OUT ]];then
+		# try another format
+		OUT=`find $DIR -maxdepth 1 -name "*${ID}.out"`
+	fi
+	
+	if [[ ! -e $OUT ]];then
+		echo "Output not found for $ID in $DIR: $OUT"
+		exit 1
+	fi
 fi
 
 echo $OUT

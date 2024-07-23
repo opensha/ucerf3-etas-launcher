@@ -27,5 +27,10 @@ else
 	JOB_ID=$2
 fi
 
-sbatch -o ${SCRIPT}.o%j -e ${SCRIPT}.e%j --dependency=afterok:$JOB_ID $SCRIPT
+ACCT_ARG=""
+if [[ ! -z $SLURM_ACCT ]];then
+	ACCT_ARG="-A $SLURM_ACCT"
+fi
+
+sbatch $ACCT_ARG -o ${SCRIPT}.o%j -e ${SCRIPT}.e%j --dependency=afterok:$JOB_ID $SCRIPT
 exit $?

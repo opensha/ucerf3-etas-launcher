@@ -1,6 +1,6 @@
 # Slurm Helper Scripts
 
-The scripts in this directory can be used to help submit and monitor parallel jobs. Scripts in bold are most likely to be useful (some will only be called by other scripts and aren't very useful on their own).
+The scripts in this directory can be used to help submit and monitor parallel jobs. Scripts in bold are most likely to be useful (some will only be called by other scripts and aren't very useful on their own). Most are copied from https://github.com/kevinmilner/slurm_helper_scripts.
 
 Many of these scripts assume that the parallel job was submitted with `slurm_submit.sh`, and will not work otherwise.
 
