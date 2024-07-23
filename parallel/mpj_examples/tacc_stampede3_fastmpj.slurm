@@ -2,8 +2,8 @@
 
 #SBATCH -t 06:00:00
 #SBATCH -N 10
-#SBATCH -n 960
-#SBATCH -p skx-normal
+#SBATCH -n 480
+#SBATCH -p skx
 
 ######################
 ## INPUT PARAMETERS ##
@@ -12,7 +12,7 @@
 # the above '#SBATCH' lines are requred, and are supposed to start with a '#'. They must be at the beginning of the file
 # the '-t hh:mm:ss' argument is the wall clock time of the job
 # the '-N 10' argument specifies the number of nodes required, in this case 10
-# the '-n 960' argument specifies the number of cores, required by TACC. Set it to 96*the number of nodes for SKX nodes
+# the '-n 480' argument specifies the number of cores, required by TACC. Set it to 48*the number of nodes for SKX nodes
 # the 'p skx-normal' argument specifies the queue, in this case we want the SKX nodes
 
 ## ETAS PARAMETERS ##
@@ -23,13 +23,13 @@ ETAS_CONF_JSON=/path/to/etas_config.json
 ## JAVA/MPJ PARAMETERS ##
 
 # maxmimum memory in gigabytes. should be close to, but not over, total memory available
-MEM_GIGS=160
+MEM_GIGS=110
 
 # number of etas threads. should be approximately MEM_GIGS/5, and no more than the total number of threads available
-THREADS=18
+THREADS=20
 
 # FMPJ_HOME directory, fine to use mine
-FMPJ_HOME=/home1/00950/kevinm/FastMPJ
+FMPJ_HOME=/work2/02404/fsilva/stampede3/FastMPJ
 
 # path to the opensha-ucerf3 jar file
 JAR_FILE=${ETAS_LAUNCHER}/opensha/opensha-all.jar
@@ -37,7 +37,7 @@ JAR_FILE=${ETAS_LAUNCHER}/opensha/opensha-all.jar
 # simulations are sent out in batches to each compute node. these paramters control the size of those batches
 # smaller max size will allow for better checking of progress with watch_logparse.sh, but more wasted time at the end of batches waiting on a single calculation to finish
 MIN_DISPATCH=$THREADS
-MAX_DISPATCH=100
+MAX_DISPATCH=500
 
 # this allows for catalogs to be written locally on each compute node in a temporary directory, then only copied back onto shared storage after they complete. this reduces I/O load, but makes it harder to track progress of individual simulations. comment this out to disable this option
 TEMP_OPTION="--temp-dir /tmp/etas-results-tmp"
@@ -46,14 +46,14 @@ TEMP_OPTION="--temp-dir /tmp/etas-results-tmp"
 SCRATCH_OPTION="--scratch-dir $SCRATCH/etas-results-tmp"
 
 # this automatically deletes subdirectories of the results directory once a catalog has been sucessfully written to the master binary file. comment out to disable
-CLEAN_OPTION="--clean"
+#CLEAN_OPTION="--clean"
 
 ##########################
 ## END INPUT PARAMETERS ##
 ##   DO NOT EDIT BELOW  ##
 ##########################
 
-NEW_JAR="`dirname ${ETAS_CONF_JSON}`/`basename $JAR_FILE`"
+NEW_JAR="`dirname ${ETAS_CONF_JSON} | head -n 1`/`basename $JAR_FILE`"
 cp $JAR_FILE $NEW_JAR
 if [[ -e $NEW_JAR ]];then
 	JAR_FILE=$NEW_JAR
@@ -75,7 +75,7 @@ else
 fi
 
 export PBS_NODEFILE=$NEW_NODEFILE
-export FMPJ_HOME=/home1/00950/kevinm/FastMPJ
+export FMPJ_HOME
 export PATH=$PATH:$FMPJ_HOME/bin
 
 if [[ -e $PBS_NODEFILE ]]; then

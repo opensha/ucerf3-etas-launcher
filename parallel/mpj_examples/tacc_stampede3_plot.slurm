@@ -3,7 +3,7 @@
 #SBATCH -t 3:00:00
 #SBATCH -N 1
 #SBATCH -n 48
-#SBATCH -p skx-normal
+#SBATCH -p skx
 
 ######################
 ## INPUT PARAMETERS ##
@@ -12,7 +12,7 @@
 # the above '#SBATCH' lines are requred, and are supposed to start with a '#'. They must be at the beginning of the file
 # the '-t hh:mm:ss' argument is the wall clock time of the job
 # the '-N 1' argument specifies the number of nodes required, in this case 1
-# the '-n 48' argument specifies the number of cores, required by TACC. Set it to at most 96*the number of nodes for SKX nodes
+# the '-n 48' argument specifies the number of cores, required by TACC. Set it to at most 48*the number of nodes for SKX nodes
 # the 'p skx-normal' argument specifies the queue, in this case we want the SKX nodes
 
 ## ETAS PARAMETERS ##
@@ -33,7 +33,7 @@ ETAS_CONF_JSON=/path/to/etas_config.json
 ## JAVA PARAMETERS ##
 
 # maxmimum memory in gigabytes. should be close to, but not over, total memory available
-MEM_GIGS=160
+MEM_GIGS=110
 
 # number of processing threads to handle plots, can be up to 48
 THREADS=48
