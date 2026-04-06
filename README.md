@@ -13,7 +13,7 @@ UCERF3-ETAS Launcher binaries, documentation, and scripts
 
 UCERF3-ETAS Launcher will attempt to build the `etas-launcher-stable` branch of the upstream [OpenSHA](https://github.com/opensha/opensha/tree/etas-launcher-stable) project that contains all of the code for the UCERF3-ETAS model, and automatically pull in new updates to that code. In order for this to work, the following recommended requirements must also be met:
 
-* Java Development Kit (JDK, as opposed to just a Java Runtime Environment) 11 or above in your path
+* Java Development Kit (JDK, as opposed to just a Java Runtime Environment) 17 or above in your path
 * A recent version of [Git](https://git-scm.com/downloads)
     - Git is included in the macOS [developer tools](https://developer.apple.com/xcode/)
 
