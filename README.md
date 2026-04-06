@@ -4,7 +4,7 @@ UCERF3-ETAS Launcher binaries, documentation, and scripts
 
 ## Prerequisites
 
-* Java (JDK strongly recommended) 11 or above in your path, 64-bit: [AdoptOpenJDK](https://adoptopenjdk.net/) or [OpenJDK](https://jdk.java.net/)
+* Java (JDK strongly recommended) 17 or above in your path, 64-bit: [AdoptOpenJDK](https://adoptopenjdk.net/) or [OpenJDK](https://jdk.java.net/)
   * confirm by typing `java -version` in a terminal
 * Unix-like environment (Linux, Mac OS X, possibly Cygwin though untested)
 * Basic command line skills (changing directories, defining environmental variables, editing text files, running scripts)
