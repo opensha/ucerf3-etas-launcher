@@ -71,18 +71,11 @@ scontrol show hostnames $SLURM_NODELIST > $PBS_NODEFILE
 export MPJ_HOME=$MPJ_HOME
 export PATH=$PATH:$MPJ_HOME/bin
 
-# Load necessary modules for Expanse
-module load sdsc
-module load cpu/0.15.4
-module use /cm/shared/apps/spack/0.21.2/cpu/a/share/spack/lmod/linux-rocky8-x86_64/Core
-module load openjdk/17.0.8.1_1 
-
 t1=$(date +%s) # epoch start time in seconds                                       
 
 date                                                                               
 echo "RUNNING MPJ"                                                                 
-mpjrun_errdetect_wrapper.sh $PBS_NODEFILE -dev hybdev -Djava.library.path=$MPJ_HOME/lib -Xmx${MEM_GIGS}G -cp $JAR_FILE scratch.UCERF3.erf.ETAS.launcher.MPJ_ETAS_Launcher --min-dispatch $MIN_DISPATCH --max-dispatch $MAX_DISPATCH --threads $THREADS $TEMP_OPTION $SCRATCH_OPTION $CLEAN_OPTION --end-time `scontrol show job $SLURM_JOB_ID | egrep --only
--matching 'EndTime=[^ ]+' | cut -c 9-` $ETAS_CONF_JSON                          
+mpjrun_errdetect_wrapper.sh $PBS_NODEFILE -dev hybdev -Djava.library.path=$MPJ_HOME/lib -Xmx${MEM_GIGS}G -cp $JAR_FILE scratch.UCERF3.erf.ETAS.launcher.MPJ_ETAS_Launcher --min-dispatch $MIN_DISPATCH --max-dispatch $MAX_DISPATCH --threads $THREADS $TEMP_OPTION $SCRATCH_OPTION $CLEAN_OPTION --end-time `scontrol show job $SLURM_JOB_ID | egrep --only-matching 'EndTime=[^ ]+' | cut -c 9-` $ETAS_CONF_JSON                          
 ret=$?                                                                             
 date
 
