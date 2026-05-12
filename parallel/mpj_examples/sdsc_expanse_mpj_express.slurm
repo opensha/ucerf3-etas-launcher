@@ -71,6 +71,12 @@ scontrol show hostnames $SLURM_NODELIST > $PBS_NODEFILE
 export MPJ_HOME=$MPJ_HOME
 export PATH=$PATH:$MPJ_HOME/bin
 
+# Load necessary modules for Expanse
+module load sdsc
+module load cpu/0.15.4
+module use /cm/shared/apps/spack/0.21.2/cpu/a/share/spack/lmod/linux-rocky8-x86_64/Core
+module load openjdk/17.0.8.1_1 
+
 t1=$(date +%s) # epoch start time in seconds                                       
 
 date                                                                               
