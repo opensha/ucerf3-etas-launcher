@@ -3,7 +3,7 @@
 #SBATCH -t 3:00:00
 #SBATCH -N 1
 #SBATCH -n 56
-#SBATCH -p normal
+#SBATCH -p flex
 
 ######################
 ## INPUT PARAMETERS ##
