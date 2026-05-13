@@ -32,7 +32,7 @@ MEM_GIGS=144
 # number of etas threads. should be approximately MEM_GIGS/5, and no more than the total number of threads available
 THREADS=18
 
-# FMPJ_HOME directory, fine to use mine
+# MPJ_HOME directory, fine to use mine
 MPJ_HOME=/work2/10177/bhatthal/stampede3/mpj-express
 
 # path to the opensha-ucerf3 jar file
