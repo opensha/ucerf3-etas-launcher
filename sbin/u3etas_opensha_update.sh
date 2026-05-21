@@ -43,7 +43,7 @@ if [[ $UPDAYS -lt 1 ]];then
 fi
 
 if [[ ! -e ./git && ! -e $DIR/$JAR ]];then
-	echo "We need to download and/or build OpenSHA. The preferred method is to checkout the OpenSHA project from GitHub and build it. Checking if we have java compilers available (must have version 11 or greater):"
+	echo "We need to download and/or build OpenSHA. The preferred method is to checkout the OpenSHA project from GitHub and build it. Checking if we have java compilers available (must have version 17 or greater):"
 	javac --version
 	RET=$?
 	if [[ $RET -eq 0 ]];then
@@ -64,7 +64,7 @@ if [[ ! -e ./git && ! -e $DIR/$JAR ]];then
 		echo "javac and git are available and building is preferred for smart update checking, but you can optionally download (and routinely re-download) nightly builds instead."
 		read -r -p "	Would you like to use nightly builds instead? [y/N] " response
 		case "$response" in
-			[yY][eE][sS]|[yY]) 
+			[yY][eE][sS]|[yY])
 				DOWNLOAD=1
 				;;
 			*)
@@ -100,7 +100,7 @@ elif [[ -e $DIR/$JAR && ! -e $DIR/git/opensha ]];then
 			else
 				read -r -p "	$JAR is out of date ($UPDAYS days old), do you wish to download a new version? [Y/n] " response
 				case "$response" in
-					[nN][oO]|[nN]) 
+					[nN][oO]|[nN])
 						DOWNLOAD=0
 						echo "Skipping jar download, will check again in $UPDAYS days. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
 						touch $DIR/$JAR
@@ -148,7 +148,7 @@ if [[ $DOWNLOAD -ne 1 && -e $DIR/git/opensha ]];then
 					else
 						read -r -p "    Would you like to rebuild now? [Y/n] " response
 						case "$response" in
-							[nN][oO]|[nN]) 
+							[nN][oO]|[nN])
 								echo "Skipping jar rebuild, will prompt again in $UPDAYS days or next time the upstream repository is updated. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
 								touch $DIR/$JAR
 								;;
@@ -173,7 +173,7 @@ if [[ $DOWNLOAD -ne 1 && -e $DIR/git/opensha ]];then
 		elif [[ -e $DIR/$JAR ]];then
 			read -r -p "    Would you like to rebuild now? [Y/n] " response
 	                case "$response" in
-						[nN][oO]|[nN]) 
+						[nN][oO]|[nN])
 					echo "Skipping jar rebuild, will prompt again in $UPDAYS days or next time the upstream repository is updated. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
 					touch $DIR/$JAR
 					;;
@@ -225,14 +225,14 @@ if [[ $REBUILD -eq 1 ]];then
 			echo "$LOCAL" > "$DIR/build-version.githash"
 		fi
 	else
-		echo "Build failed. Make sure that you have java development kit 11 or higher installed and set as your default JDK, and examine any other error messages above."
+		echo "Build failed. Make sure that you have java development kit 17 or higher installed and set as your default JDK, and examine any other error messages above."
 		if [[ $DEFAULTS -eq 1 ]];then
 			echo "Will download nightly build instead"
 			DOWNLOAD=1
 		else
 			read -r -p "	Would you like to download nighly build instead? [Y/n] " response
 			case "$response" in
-				[nN][oO]|[nN]) 
+				[nN][oO]|[nN])
 					DOWNLOAD=0
 					;;
 				*)
