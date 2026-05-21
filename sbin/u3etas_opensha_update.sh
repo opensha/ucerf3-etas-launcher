@@ -148,7 +148,7 @@ if [[ $DOWNLOAD -ne 1 && -e $DIR/git/opensha ]];then
 					else
 						read -r -p "    Would you like to rebuild now? [Y/n] " response
 						case "$response" in
-							][oO]|[nN])
+							[nN][oO]|[nN]) 
 								echo "Skipping jar rebuild, will prompt again in $UPDAYS days or next time the upstream repository is updated. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
 								touch $DIR/$JAR
 								;;
@@ -173,7 +173,7 @@ if [[ $DOWNLOAD -ne 1 && -e $DIR/git/opensha ]];then
 		elif [[ -e $DIR/$JAR ]];then
 			read -r -p "    Would you like to rebuild now? [Y/n] " response
 	                case "$response" in
-				][oO]|[nN])
+						[nN][oO]|[nN]) 
 					echo "Skipping jar rebuild, will prompt again in $UPDAYS days or next time the upstream repository is updated. You can change the frequency of this check by setting ETAS_JAR_UPDATE_DAYS."
 					touch $DIR/$JAR
 					;;
