@@ -32,7 +32,7 @@ THREADS=10
 
 # MPJ_HOME directory. on USC CARC, it's fine to just use mine
 # you can also fetch this directory via Git by cloning https://github.com/kevinmilner/mpj-express.git
-MPJ_HOME=/project/scec_608/kmilner/mpj/mpj-current
+MPJ_HOME=/project2/scec_608/kmilner/mpj/mpj-current
 
 # path to the opensha-ucerf3 jar file
 JAR_FILE=${ETAS_LAUNCHER}/opensha/opensha-all.jar
@@ -46,7 +46,7 @@ MAX_DISPATCH=100
 TEMP_OPTION="--temp-dir $TMPDIR"
 
 # this allows for catalogs to be written to temporary scratch storage and symbolically linked back. only final consolidated binary files will be written to the primary output directory
-SCRATCH_OPTION="--scratch-dir /scratch2/$USER/etas_scratch"
+SCRATCH_OPTION="--scratch-dir /scratch/$USER/etas_scratch"
 
 # this automatically deletes subdirectories of the results directory once a catalog has been sucessfully written to the master binary file. comment out to disable
 CLEAN_OPTION="--clean"
