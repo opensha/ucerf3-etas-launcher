@@ -46,7 +46,7 @@ MAX_DISPATCH=100
 TEMP_OPTION="--temp-dir $TMPDIR"
 
 # this allows for catalogs to be written to temporary scratch storage and symbolically linked back. only final consolidated binary files will be written to the primary output directory
-SCRATCH_OPTION="--scratch-dir /scratch/$USER/etas_scratch"
+SCRATCH_OPTION="--scratch-dir /scratch1/$USER/etas_scratch"
 
 # this automatically deletes subdirectories of the results directory once a catalog has been sucessfully written to the master binary file. comment out to disable
 CLEAN_OPTION="--clean"
